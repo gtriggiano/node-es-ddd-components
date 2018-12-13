@@ -1,6 +1,6 @@
 require('jest')
 
-const { DomainEvent } = require('../../../dist/main/DomainEvent')
+const { DomainEvent } = require('../../../dist/main')
 
 const getDefinition = () => ({
   name: 'SomethingHappened',

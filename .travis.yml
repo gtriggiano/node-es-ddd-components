@@ -5,8 +5,8 @@ node_js:
   - '8'
   - '10'
 
-before_script:
-  - yarn
+cache:
+  yarn: true
 
 script:
   - npm run test
