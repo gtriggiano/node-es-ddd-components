@@ -21,15 +21,33 @@
     "readonly-keyword": true,
     "readonly-array": true,
     "no-let": true,
-    "no-object-mutation": true,
+    "no-object-mutation": [
+      true,
+      {
+        "ignore-prefix": ["error"]
+      }
+    ],
     "no-delete": true,
     "no-method-signature": true,
 
     // Functional style rules
     "no-this": true,
     "no-class": true,
-    "no-mixed-interface": true,
-    "no-expression-statement": [true, { "ignore-prefix": ["console.", "process.exit"] }],
+    // "no-mixed-interface": true,
+    "no-expression-statement": [
+      true,
+      {
+        "ignore-prefix": [
+          "console.",
+          "process.exit",
+          "error",
+          "assert",
+          "describe",
+          "it",
+          "expect"
+        ]
+      }
+    ],
     "no-if-statement": true
     /* end tslint-immutable rules */
   }
