@@ -10,7 +10,7 @@
   "keywords": [
     "DDD",
     "Event Sourcing",
-    "Domain Tactical Design"
+    "Domain Model Tactical Design"
   ],
   "scripts": {
     "info": "npm-scripts-info",
