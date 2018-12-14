@@ -1,13 +1,8 @@
-branches: [
-  master,
-  refactoring
-]
-
 kind: pipeline
 name: default
 
 steps:
-  - name: "Node 6: Install dependencies and execute tests":
+  - name: 'Node 6: Install dependencies and execute tests'
     when:
       event:
         - push
@@ -18,7 +13,7 @@ steps:
       - npm run test
       - rm -rf node_modules
 
-  - name: "Node 8: Install dependencies and execute tests":
+  - name: 'Node 8: Install dependencies and execute tests'
     when:
       event:
         - push
@@ -29,7 +24,7 @@ steps:
       - npm run test
       - rm -rf node_modules
 
-  - name: "Node 10: Install dependencies and execute tests":
+  - name: 'Node 10: Install dependencies and execute tests'
     when:
       event:
         - push
@@ -39,7 +34,7 @@ steps:
       - yarn
       - npm run test
 
-  - name: "Generate typedoc html":
+  - name: 'Generate typedoc html'
     when:
       branch:
         - master
@@ -48,5 +43,3 @@ steps:
     image: node:10-slim
     commands:
       - npm run doc:html
-
-
