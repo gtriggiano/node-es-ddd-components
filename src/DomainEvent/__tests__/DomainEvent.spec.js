@@ -16,7 +16,7 @@ describe('DomainEvent(definition)', () => {
     expect(typeof DomainEvent).toBe('function')
   })
 
-  describe('EventConstructor = DomainEvent(definition', () => {
+  describe('EventConstructor = DomainEvent(definition)', () => {
     it('is a function', () => {
       const definition = getDefinition()
       const EventConstructor = DomainEvent(definition)
@@ -45,7 +45,7 @@ describe('DomainEvent(definition)', () => {
         const event = EventType({ prop: 'value' })
         expect(event.name).toEqual(definition.name)
       })
-      it('event.data equals payload', () => {
+      it('event.data === payload', () => {
         const definition = getDefinition()
         const EventType = DomainEvent(definition)
         const payload = { prop: 'value' }
@@ -75,7 +75,7 @@ describe('DomainEvent(definition)', () => {
         const event = EventType.fromSerializedPayload('{ "prop": "value" }')
         expect(event.name).toEqual(definition.name)
       })
-      it('event.data equals deserialized payload', () => {
+      it('event.data === deserialized serializedPayload', () => {
         const definition = getDefinition()
         const EventType = DomainEvent(definition)
         const event = EventType.fromSerializedPayload('{ "prop": "value" }')

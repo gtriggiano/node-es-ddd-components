@@ -9,16 +9,16 @@ const INITIAL_STATE = {
 }
 const wasCreatedQuery = {
   name: 'wasCreated',
-  handler: (_, state) => !!state.created,
+  handler: state => !!state.created,
 }
 const getNameQuery = {
   name: 'getName',
   description: '',
-  handler: (_, state) => state.name,
+  handler: state => state.name,
 }
 const getAddressQuery = {
   name: 'getAddress',
-  handler: (_, state) => state.address,
+  handler: state => state.address,
 }
 const CreatedEvent = DomainEvent({
   name: 'Created',
@@ -100,8 +100,8 @@ const SetAddressCommand = {
 }
 
 const getDefinition = () => ({
-  description: 'a description',
-  context: 'Context',
+  description: 'An User',
+  context: 'UsersManagement',
   type: 'User',
   singleton: false,
   initialState: INITIAL_STATE,
