@@ -1,6 +1,7 @@
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ['**/*', '!**/__tests__/**'],
+  coverageDirectory: 'pages/coverage',
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
   coverageThreshold: {
     global: {
@@ -10,6 +11,8 @@ module.exports = {
       branches: 100,
     },
   },
-  testMatch: ['**/__tests__/**/?(*.)+(spec|test).js'],
+  reporters: ['default', 'jest-stare'],
   roots: ['<rootDir>/src'],
+  testMatch: ['**/__tests__/**/?(*.)+(spec|test).js'],
+  testResultsProcessor: './node_modules/jest-stare',
 }

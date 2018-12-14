@@ -1,11 +1,10 @@
 node_modules
 dist
-test
-typedoc
+pages
 
 .idea/*
 
-coverage
+
 .nyc_output
 *.log
 
