@@ -15,4 +15,7 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testMatch: ['**/__tests__/**/?(*.)+(spec|test).js'],
   testResultsProcessor: './node_modules/jest-stare',
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+  },
 }
