@@ -2,10 +2,12 @@
 .github
 .prettierignore
 .vscode
-coverage
-dist/docs
-examples
+dist/main/examples
+dist/module/examples
+pages
 src
+.babelrc
+.drone.yml
 .editorconfig
 .prettierignore
 jest.config.js

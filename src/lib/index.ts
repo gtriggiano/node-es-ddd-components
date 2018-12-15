@@ -5,8 +5,8 @@ export * from './Aggregate/events.types'
 export * from './Aggregate/queries.types'
 export * from './Aggregate/types'
 
-export * from './AggregateError'
-export * from './AggregateError/types'
+export * from './CustomError'
+export * from './CustomError/types'
 
 export * from './DomainEvent'
 export * from './DomainEvent/types'

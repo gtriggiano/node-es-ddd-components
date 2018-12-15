@@ -2,9 +2,9 @@
   "name": "es-ddd-components",
   "version": "0.0.0",
   "description": "A set of components to build event sourced business domain layers",
-  "main": "dist/main/index.js",
-  "typings": "dist/main/index.d.ts",
-  "module": "dist/module/index.js",
+  "main": "dist/main/lib/index.js",
+  "typings": "dist/main/lib/index.d.ts",
+  "module": "dist/module/lib/index.js",
   "repository": "https://github.com/gtriggiano/node-es-ddd-components",
   "license": "MIT",
   "keywords": [
