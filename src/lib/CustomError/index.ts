@@ -1,30 +1,28 @@
 import {
-  AggregateErrorConstructor,
-  AggregateErrorData,
-  AggregateErrorDefinition,
-  AggregateErrorName,
+  CustomErrorData,
+  CustomErrorName,
+  CustomErrorType,
+  CustomErrorTypeDefinition,
 } from './types'
 import validateDefinition from './validateDefinition'
 
-export function AggregateError<
-  Name extends AggregateErrorName,
-  Data extends AggregateErrorData = void
->(
-  definition: AggregateErrorDefinition<Name>
-): AggregateErrorConstructor<Name, Data> {
-  // tslint:disable no-expression-statement
+export function CustomError<
+  Name extends CustomErrorName,
+  Data extends CustomErrorData = void
+>(definition: CustomErrorTypeDefinition<Name>): CustomErrorType<Name, Data> {
   try {
+    // tslint:disable no-expression-statement
     validateDefinition(definition)
+    // tslint:enable
   } catch (e) {
     throw new TypeError(e.message)
   }
-  // tslint:enable
 
   const { name: errorName } = definition
-  const ErrorCtor = (message?: string, data?: Data) => {
+  const ErrorType = (message?: string, data?: Data) => {
     const error = new Error(message || errorName)
     return Object.defineProperties(error, {
-      __aeCtor: { value: ErrorCtor },
+      __factory: { value: ErrorType },
       name: { value: errorName },
       stack: {
         value:
@@ -34,10 +32,10 @@ export function AggregateError<
     })
   }
 
-  return Object.defineProperties(ErrorCtor, {
+  return Object.defineProperties(ErrorType, {
     name: { value: errorName },
     [Symbol.hasInstance]: {
-      value: (e: any) => e && e.__aeCtor && e.__aeCtor === ErrorCtor,
+      value: (e: any) => e && e.__factory && e.__factory === ErrorType,
     },
   })
 }
