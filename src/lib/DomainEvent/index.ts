@@ -1,16 +1,16 @@
 import { AggregateState } from '../Aggregate/types'
-import { AggregateError } from '../AggregateError'
+import { CustomError } from '../CustomError'
 import { getDeserializer, getSerializer } from '../utils'
 import {
   DomaiEventPayload,
-  DomainEventConstructor,
-  DomainEventDefinition,
   DomainEventInstance,
   DomainEventName,
+  DomainEventType,
+  DomainEventTypeDefinition,
 } from './types'
 import validateDefinition from './validateDefinition'
 
-export const BadDomainEventDefinition = AggregateError<
+export const BadDomainEventDefinition = CustomError<
   'DomainEventDefinitionError',
   { readonly originalError: Error }
 >({
@@ -22,8 +22,8 @@ export function DomainEvent<
   State extends AggregateState,
   Payload extends DomaiEventPayload
 >(
-  definition: DomainEventDefinition<Name, Payload, State>
-): DomainEventConstructor<Name, Payload, State> {
+  definition: DomainEventTypeDefinition<Name, Payload, State>
+): DomainEventType<Name, Payload, State> {
   try {
     // tslint:disable no-expression-statement
     validateDefinition(definition)

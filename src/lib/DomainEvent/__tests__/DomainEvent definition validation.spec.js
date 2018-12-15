@@ -1,7 +1,10 @@
-require('jest')
-const { noop } = require('lodash')
+import 'jest'
+import { noop } from 'lodash'
 
-const { DomainEvent, BadDomainEventDefinition } = require('../../../dist/main')
+import {
+  DomainEvent,
+  BadDomainEventDefinition,
+} from '../../../../dist/main/lib'
 
 const getDefinition = () => ({
   name: 'SomethingHappened',

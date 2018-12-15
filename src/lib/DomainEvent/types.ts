@@ -13,6 +13,16 @@ export type DomainEventName = string
 export type DomaiEventPayload = any
 
 /**
+ * An object representing a domain event,
+ * where the `data` property is a serialized version
+ * of the payload
+ */
+export interface SerializedEvent<Name extends DomainEventName> {
+  readonly name: Name
+  readonly data: string
+}
+
+/**
  * An instance of a domain event
  */
 export interface DomainEventInstance<
@@ -29,7 +39,7 @@ export interface DomainEventInstance<
 /**
  * The domain event definition type
  */
-export interface DomainEventDefinition<
+export interface DomainEventTypeDefinition<
   Name extends DomainEventName,
   Payload extends DomaiEventPayload,
   State extends AggregateState
@@ -44,16 +54,27 @@ export interface DomainEventDefinition<
   ) => State
 }
 
-export type FromSerializedPayloadConstructor<
+export type DomainEventInstanceFromSerializedPayloadFactory<
   Name extends DomainEventName,
   Payload extends DomaiEventPayload,
   State extends AggregateState
 > = (serializedData: string) => DomainEventInstance<Name, Payload, State>
 
 /**
+ * The payload type inferred
+ * from a DomainEventType signature
+ */
+export type DomainEventTypePayload<EventType> = EventType extends (
+  payload: infer Payload,
+  skipValidation?: boolean
+) => DomainEventInstance<DomainEventName, DomaiEventPayload, AggregateState>
+  ? Payload
+  : never
+
+/**
  * A domain event constructor
  */
-export interface DomainEventConstructor<
+export interface DomainEventType<
   Name extends DomainEventName,
   Payload extends DomaiEventPayload,
   State extends AggregateState
@@ -63,9 +84,11 @@ export interface DomainEventConstructor<
     Payload,
     State
   >
-  // tslint:disable readonly-keyword
-  name: Name
-  description: string
-  fromSerializedPayload: FromSerializedPayloadConstructor<Name, Payload, State>
-  // tslint:enable
+  readonly name: Name
+  readonly description: string
+  readonly fromSerializedPayload: DomainEventInstanceFromSerializedPayloadFactory<
+    Name,
+    Payload,
+    State
+  >
 }
