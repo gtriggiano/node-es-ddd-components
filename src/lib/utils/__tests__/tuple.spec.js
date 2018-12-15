@@ -1,6 +1,6 @@
-require('jest')
+import 'jest'
 
-const { tuple } = require('../../../dist/main')
+import { tuple } from '../../../../dist/main/lib'
 
 describe('tuple(...args: any[])', () => {
   it('returns the provided arguments as an array', () => {

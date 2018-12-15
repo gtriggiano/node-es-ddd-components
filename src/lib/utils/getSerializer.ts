@@ -1,13 +1,10 @@
-import { AggregateError } from '../AggregateError'
+import { CustomError } from '../CustomError'
 
 interface ErrorData {
   readonly originalError: Error
 }
 
-export const SerializationError = AggregateError<
-  'SerializationError',
-  ErrorData
->({
+export const SerializationError = CustomError<'SerializationError', ErrorData>({
   name: 'SerializationError',
 })
 

@@ -1,10 +1,10 @@
-import { AggregateError } from '../AggregateError'
+import { CustomError } from '../CustomError'
 
 interface ErrorData {
   readonly originalError: Error
 }
 
-export const DeserializationError = AggregateError<
+export const DeserializationError = CustomError<
   'DeserializationError',
   ErrorData
 >({

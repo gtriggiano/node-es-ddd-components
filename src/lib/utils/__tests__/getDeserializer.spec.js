@@ -1,6 +1,9 @@
-require('jest')
+import 'jest'
 
-const { getDeserializer, DeserializationError } = require('../../../dist/main')
+import {
+  getDeserializer,
+  DeserializationError,
+} from '../../../../dist/main/lib'
 
 describe('getDeserializer(deserializer?: function, errorMessage?: string)', () => {
   it('is a function', () => {

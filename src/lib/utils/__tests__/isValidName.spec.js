@@ -1,6 +1,6 @@
-require('jest')
+import 'jest'
 
-const { isValidName, validNameDescription } = require('../../../dist/main')
+import { isValidName, validNameDescription } from '../../../../dist/main/lib'
 
 describe('isValidName(x)', () => {
   it(`return TRUE if x is a ${validNameDescription}`, () => {
