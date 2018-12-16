@@ -34,4 +34,10 @@ describe('eventType = EventType(payload)', () => {
     const stateArray = eventType.applyToState([])
     expect(stateArray).toEqual([{ key: 'a key', value: 'a value' }])
   })
+  it('eventType is recognized as `instanceof EventType`', () => {
+    const definition = getDefinition()
+    const EventType = DomainEvent(definition)
+    const eventType = EventType({ key: 'a key', value: 'a value' })
+    expect(eventType instanceof EventType).toBe(true)
+  })
 })

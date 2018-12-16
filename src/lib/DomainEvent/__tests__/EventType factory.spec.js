@@ -31,4 +31,9 @@ describe('An `EventType` factory. EventType = DomainEvent(definition)', () => {
     const EventType = DomainEvent(definition)
     expect(typeof EventType.fromSerializedPayload).toBe('function')
   })
+  it('EventType is recognized as `instance of` DomainEvent', () => {
+    const definition = getDefinition()
+    const EventType = DomainEvent(definition)
+    expect(EventType instanceof DomainEvent).toBe(true)
+  })
 })

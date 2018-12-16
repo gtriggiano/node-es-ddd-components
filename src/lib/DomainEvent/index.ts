@@ -44,34 +44,56 @@ export function DomainEvent<
   const deserializePayload = getDeserializer<Payload>(providedDeserializer)
 
   const getInstanceFromPayload = (payload: Payload) => {
-    const serializedPayload = serializePayload(payload)
-    const event: DomainEventInstance<Name, Payload, State> = {
-      name,
-
-      data: payload,
-
-      applyToState: (state: State): State => reducer(state, event),
-      getSerializedPayload: () => serializedPayload,
-    }
-    return event
+    const event = {}
+    // tslint:disable no-let
+    let serializedPayload = ''
+    // tslint:enable
+    return Object.defineProperties(event, {
+      __factory: { value: EventType },
+      applyToState: {
+        value: (state: State) =>
+          reducer(state, event as DomainEventInstance<Name, Payload, State>),
+      },
+      data: { enumerable: true, value: payload },
+      getSerializedPayload: {
+        value: () =>
+          serializedPayload ||
+          (() => {
+            // tslint:disable no-expression-statement
+            serializedPayload = serializePayload(payload)
+            // tslint:enable
+            return serializedPayload
+          })(),
+      },
+      name: { enumerable: true, value: name },
+    })
   }
 
   const getInstanceFromPayloadValidated = getInstanceFromPayload
 
-  const Ctor = Object.defineProperties(
+  const EventType = Object.defineProperties(
     (payload: Payload, skipValidation?: boolean) =>
       skipValidation
         ? getInstanceFromPayload(payload)
         : getInstanceFromPayloadValidated(payload),
     {
+      __factory: { value: DomainEvent },
       description: { value: description || '' },
       fromSerializedPayload: {
         value: (serializedPayload: string) =>
-          Ctor(deserializePayload(serializedPayload), true),
+          EventType(deserializePayload(serializedPayload), true),
       },
       name: { value: name },
+      [Symbol.hasInstance]: {
+        value: (event: any) => event && event.__factory === EventType,
+      },
     }
   )
 
-  return Ctor
+  return EventType
 }
+
+// tslint:disable no-expression-statement
+Object.defineProperty(DomainEvent, Symbol.hasInstance, {
+  value: (EventType: any) => EventType && EventType.__factory === DomainEvent,
+})
