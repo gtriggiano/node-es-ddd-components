@@ -17,9 +17,9 @@ export type DomaiEventPayload = any
  * where the `data` property is a serialized version
  * of the payload
  */
-export interface SerializedEvent<Name extends DomainEventName> {
+export interface SerializedDomainEvent<Name extends DomainEventName> {
   readonly name: Name
-  readonly data: string
+  readonly serializedPayload: string
 }
 
 /**
@@ -31,7 +31,7 @@ export interface DomainEventInstance<
   State extends AggregateState
 > {
   readonly name: Name
-  readonly data: Payload
+  readonly payload: Payload
   readonly getSerializedPayload: () => string
   readonly applyToState: (state: State) => State
 }
@@ -65,8 +65,7 @@ export type DomainEventInstanceFromSerializedPayloadFactory<
  * from a DomainEventType signature
  */
 export type DomainEventTypePayload<EventType> = EventType extends (
-  payload: infer Payload,
-  skipValidation?: boolean
+  payload: infer Payload
 ) => DomainEventInstance<DomainEventName, DomaiEventPayload, AggregateState>
   ? Payload
   : never
@@ -79,11 +78,7 @@ export interface DomainEventType<
   Payload extends DomaiEventPayload,
   State extends AggregateState
 > {
-  (payload: Payload, skipValidation?: boolean): DomainEventInstance<
-    Name,
-    Payload,
-    State
-  >
+  (payload: Payload): DomainEventInstance<Name, Payload, State>
   readonly name: Name
   readonly description: string
   readonly fromSerializedPayload: DomainEventInstanceFromSerializedPayloadFactory<

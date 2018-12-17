@@ -1,6 +1,8 @@
 import assert from 'assert'
 import { isInteger, isObject, isString } from 'lodash'
 
+import { isValidName } from '../utils'
+
 interface ConstructorProps {
   readonly events: any
   readonly identity: any
@@ -22,11 +24,13 @@ export default function validateConstructorProps({
   )
   assert(
     !snapshot || isValidSnapshot(snapshot),
-    `'snapshot' MUST be either nil or a {version: number, state: string} compatible object`
+    `'snapshot' MUST be either nil or a {version: number, serializedState: string} compatible object. Received ${JSON.stringify(
+      snapshot
+    )}`
   )
   assert(
-    Array.isArray(events) && areAllValidDomainEvents(events),
-    `'events' MUST be either nil or an array of [DomainEvent | null]`
+    Array.isArray(events) && areAllValidSerializedDomainEvents(events),
+    `'events' MUST be either nil or an array of serialized domain events {name: string, serializedPayload: string}`
   )
 }
 
@@ -43,13 +47,19 @@ export function isValidSnapshot(snapshot: any): boolean {
   )
 }
 
-export function areAllValidDomainEvents(events: ReadonlyArray<any>): boolean {
+export function areAllValidSerializedDomainEvents(
+  events: ReadonlyArray<any>
+): boolean {
   return events.reduce(
-    (allValid, event) => allValid && isValidDomainEvent(event),
+    (allValid, event) => allValid && isValidSerializedDomainEvent(event),
     true
   )
 }
 
-export function isValidDomainEvent(event: any): boolean {
-  return !!event && isString(event.name) && isString(event.data)
+export function isValidSerializedDomainEvent(event: any): boolean {
+  return (
+    isObject(event) &&
+    isValidName(event.name) &&
+    isString(event.serializedPayload)
+  )
 }

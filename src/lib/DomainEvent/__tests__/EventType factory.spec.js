@@ -1,22 +1,26 @@
 import 'jest'
+import { noop } from 'lodash'
 
 import { DomainEvent } from '../../../../dist/main/lib'
 
-import { getEventTypeDefinition as getDefinition } from './mocks'
+const definition = {
+  name: 'SomethingHappened',
+  description: 'A description',
+  reducer: noop,
+  serializeData: noop,
+  deserializeData: noop,
+}
 
 describe('An `EventType` factory. EventType = DomainEvent(definition)', () => {
   it('EventType is a function', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
     expect(typeof EventType).toBe('function')
   })
   it('EventType.name === definition.name', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
     expect(EventType.name).toEqual(definition.name)
   })
   it('EventType.description === definition.description || ``', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
     expect(EventType.description).toBe(definition.description)
 
@@ -27,12 +31,10 @@ describe('An `EventType` factory. EventType = DomainEvent(definition)', () => {
     expect(EventType1.description).toEqual('')
   })
   it('EventType.fromSerializedPayload is a function', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
     expect(typeof EventType.fromSerializedPayload).toBe('function')
   })
   it('EventType is recognized as `instance of` DomainEvent', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
     expect(EventType instanceof DomainEvent).toBe(true)
   })

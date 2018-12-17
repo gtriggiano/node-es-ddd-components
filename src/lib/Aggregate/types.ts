@@ -1,13 +1,15 @@
 import {
-  AggregateErrorConstructor,
-  AggregateErrorData,
-  AggregateErrorName,
-} from '../AggregateError/types'
+  CustomErrorData,
+  CustomErrorName,
+  CustomErrorType,
+} from '../CustomError/types'
 import {
   DomaiEventPayload,
-  DomainEventConstructor,
   DomainEventInstance,
   DomainEventName,
+  DomainEventType,
+  DomainEventTypePayload,
+  SerializedDomainEvent,
 } from '../DomainEvent/types'
 import { Deserializer } from '../utils/getDeserializer'
 import { Serializer } from '../utils/getSerializer'
@@ -35,7 +37,7 @@ export type BoundedContext = string
 /**
  * The name of an aggregate type
  */
-export type AggregateType = string
+export type AggregateTypeName = string
 
 /**
  * The identity of an aggregate
@@ -88,7 +90,7 @@ export type ConsistencyPolicy = 0 | 1 | 2
  */
 export interface AggregateInstance<
   BC extends BoundedContext,
-  Type extends AggregateType,
+  TypeName extends AggregateTypeName,
   Identity extends AggregateIdentity,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
@@ -97,21 +99,17 @@ export interface AggregateInstance<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  E extends AggregateErrorConstructor<AggregateErrorName, AggregateErrorData>,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >,
+  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    E,
-    Event,
-    E['name'],
-    Event['name']
+    ErrorType,
+    EventType,
+    ErrorType['name'],
+    EventType['name']
   >
 > {
   /**
@@ -125,7 +123,7 @@ export interface AggregateInstance<
    * The aggregate type
    * @see AggregateType
    */
-  readonly type: Type
+  readonly type: TypeName
 
   /**
    * The identity of the aggregate
@@ -166,10 +164,10 @@ export interface AggregateInstance<
   readonly execute: AggregateCommandInterface<
     State,
     Query,
-    E,
-    Event,
+    ErrorType,
+    EventType,
     Command,
-    AggregateCommandDictionary<State, Query, E, Event, Command>
+    AggregateCommandDictionary<State, Query, ErrorType, EventType, Command>
   >
 
   /**
@@ -177,8 +175,23 @@ export interface AggregateInstance<
    * adding new events to the aggregate's history
    */
   readonly appendEvents: (
-    events: ReadonlyArray<AggregateConstructorEvent<Event['name']>>
-  ) => AggregateInstance<BC, Type, Identity, State, Query, E, Event, Command>
+    events: ReadonlyArray<
+      DomainEventInstance<
+        EventType['name'],
+        DomainEventTypePayload<EventType>,
+        State
+      >
+    >
+  ) => AggregateInstance<
+    BC,
+    TypeName,
+    Identity,
+    State,
+    Query,
+    ErrorType,
+    EventType,
+    Command
+  >
 
   /**
    * Returns another instance of the same aggregate
@@ -187,26 +200,26 @@ export interface AggregateInstance<
    */
   readonly clone: () => AggregateInstance<
     BC,
-    Type,
+    TypeName,
     Identity,
     State,
     Query,
-    E,
-    Event,
+    ErrorType,
+    EventType,
     Command
   >
 
   /**
    * A reference to the function which generated the instance
    */
-  readonly New: AggregateConstructor<
+  readonly New: AggregateTypeFactory<
     BC,
-    Type,
+    TypeName,
     Identity,
     State,
     Query,
-    E,
-    Event,
+    ErrorType,
+    EventType,
     Command
   >
 
@@ -249,7 +262,7 @@ export interface AggregateInstance<
  */
 export interface AggregateDefinition<
   BC extends BoundedContext,
-  Type extends AggregateType,
+  Type extends AggregateTypeName,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
     AggregateQueryName,
@@ -257,20 +270,16 @@ export interface AggregateDefinition<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  E extends AggregateErrorConstructor<AggregateErrorName, AggregateErrorData>,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >,
+  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
+  Event extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    E,
+    ErrorType,
     Event,
-    E['name'],
+    ErrorType['name'],
     Event['name']
   >
 > {
@@ -320,7 +329,7 @@ export interface AggregateDefinition<
    * The collection is converted into a dictionary of
    * error constructors that will be passed to the aggregate commands at runtime.
    */
-  readonly errors: ReadonlyArray<E>
+  readonly errors: ReadonlyArray<ErrorType>
 
   /**
    * The collection of events.
@@ -355,17 +364,12 @@ export interface AggregateDefinition<
   readonly deserializeState?: Deserializer<State>
 }
 
-export interface AggregateConstructorEvent<Name extends DomainEventName> {
-  readonly name: Name
-  readonly data: string
-}
-
 /**
  * Returns an aggregate instance
  */
-export interface AggregateConstructor<
+export interface AggregateTypeFactory<
   BC extends BoundedContext,
-  Type extends AggregateType,
+  TypeName extends AggregateTypeName,
   Identity extends AggregateIdentity,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
@@ -374,28 +378,33 @@ export interface AggregateConstructor<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  E extends AggregateErrorConstructor<AggregateErrorName, AggregateErrorData>,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >,
+  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    E,
-    Event,
-    E['name'],
-    Event['name']
+    ErrorType,
+    EventType,
+    ErrorType['name'],
+    EventType['name']
   >
 > {
   (
     identity?: Identity,
     snapshot?: AggregateSnapshot,
-    events?: ReadonlyArray<AggregateConstructorEvent<Event['name']>>
-  ): AggregateInstance<BC, Type, Identity, State, Query, E, Event, Command>
+    events?: ReadonlyArray<SerializedDomainEvent<EventType['name']>>
+  ): AggregateInstance<
+    BC,
+    TypeName,
+    Identity,
+    State,
+    Query,
+    ErrorType,
+    EventType,
+    Command
+  >
 
   /**
    * @see BoundedContext
@@ -405,7 +414,7 @@ export interface AggregateConstructor<
   /**
    * @see AggregateType
    */
-  readonly type: Type
+  readonly type: TypeName
 
   /**
    * A description of the aggregate.

@@ -13,6 +13,6 @@ export default DomainEvent<'ListNameChanged', TodoListState, Payload>({
 
   reducer: (list, event) => ({
     ...list,
-    name: event.data,
+    name: event.payload,
   }),
 })

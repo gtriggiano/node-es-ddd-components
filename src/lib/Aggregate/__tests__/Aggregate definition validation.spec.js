@@ -1,27 +1,13 @@
-require('jest')
-const { omit, sample } = require('lodash')
+import 'jest'
+import { omit, sample } from 'lodash'
 
-const {
+import {
   Aggregate,
   BadAggregateDefinition,
   validNameDescription,
-} = require('../../../dist/main')
+} from '../../../../dist/main/lib'
 
-const {
-  getDefinition,
-  CreateCommand,
-  RenameCommand,
-  SetAddressCommand,
-  wasCreatedQuery,
-  getNameQuery,
-  getAddressQuery,
-  CreatedEvent,
-  RenamedEvent,
-  DeclaredAddressEvent,
-  MovedEvent,
-  UserAlreadyExist,
-  UserDoesNotExist,
-} = require('./getDefinition.mocks')
+import { definition } from '../../../../dist/main/tests/TodoList'
 
 describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
   it('definition is not an object', () => {
@@ -29,20 +15,18 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     expect(() => Aggregate(3)).toThrow(BadAggregateDefinition)
   })
   it(`definition.context is not a ${validNameDescription}`, () => {
-    const definition = getDefinition()
     expect(() => Aggregate(omit(definition, ['context']))).toThrow(
       BadAggregateDefinition
     )
     expect(() => Aggregate({ ...definition, context: 2 })).toThrow(
       BadAggregateDefinition
     )
-    expect(() => Aggregate({ ...definition, context: '2' })).toThrow(
+    expect(() => Aggregate({ ...definition, context: '2a' })).toThrow(
       BadAggregateDefinition
     )
     expect(() => Aggregate({ ...definition, context: 'a2' })).not.toThrow()
   })
   it(`definition.type is not a ${validNameDescription}`, () => {
-    const definition = getDefinition()
     expect(() => Aggregate(omit(definition, ['type']))).toThrow(
       BadAggregateDefinition
     )
@@ -55,7 +39,6 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     expect(() => Aggregate({ ...definition, type: 'a2' })).not.toThrow()
   })
   it('definition.singleton is neither nil nor a boolean', () => {
-    const definition = getDefinition()
     expect(() => Aggregate({ ...definition, singleton: 'a' })).toThrow(
       BadAggregateDefinition
     )
@@ -64,7 +47,6 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     expect(() => Aggregate({ ...definition, singleton: false })).not.toThrow()
   })
   it('definition.description is neither nil nor a string', () => {
-    const definition = getDefinition()
     expect(() => Aggregate({ ...definition, description: true })).toThrow(
       BadAggregateDefinition
     )
@@ -75,7 +57,6 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     ).not.toThrow()
   })
   it('definition.initialState is not an object', () => {
-    const definition = getDefinition()
     expect(() => Aggregate({ ...definition, initialState: undefined })).toThrow(
       BadAggregateDefinition
     )
@@ -91,7 +72,6 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     expect(() => Aggregate({ ...definition, initialState: {} })).not.toThrow()
   })
   it('definition.snapshotThreshold is neither nil nor an integer > 0', () => {
-    const definition = getDefinition()
     expect(() => Aggregate({ ...definition, snapshotThreshold: 'a' })).toThrow(
       BadAggregateDefinition
     )
@@ -109,7 +89,6 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     ).not.toThrow()
   })
   it('definition.snapshotPrefix is neither nil nor a string', () => {
-    const definition = getDefinition()
     expect(() => Aggregate({ ...definition, snapshotPrefix: true })).toThrow(
       BadAggregateDefinition
     )
@@ -120,7 +99,6 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     ).not.toThrow()
   })
   it('definition.[commands|queries|events|errors] are not array', () => {
-    const definition = getDefinition()
     const key = sample(['commands', 'queries', 'events', 'errors'])
 
     expect(() => Aggregate({ ...definition, [key]: {} })).toThrow(
@@ -135,95 +113,48 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     expect(() => Aggregate({ ...definition, [key]: [] })).not.toThrow()
   })
   it('definition.commands are not unique by .name', () => {
-    const definition = getDefinition()
     expect(() =>
       Aggregate({
         ...definition,
-        commands: [
-          CreateCommand,
-          CreateCommand,
-          RenameCommand,
-          SetAddressCommand,
-        ],
+        commands: [...definition.commands, definition.commands[0]],
       })
     ).toThrow(BadAggregateDefinition)
-    expect(() =>
-      Aggregate({
-        ...definition,
-        commands: [CreateCommand, RenameCommand, SetAddressCommand],
-      })
-    ).not.toThrow()
   })
   it('definition.commands are not all valid commands', () => {
-    const definition = getDefinition()
     expect(() =>
       Aggregate({ ...definition, commands: definition.commands.concat(null) })
     ).toThrow(BadAggregateDefinition)
   })
   it('definition.queries are not unique by .name', () => {
-    const definition = getDefinition()
     expect(() =>
       Aggregate({
         ...definition,
-        queries: [
-          wasCreatedQuery,
-          wasCreatedQuery,
-          getNameQuery,
-          getAddressQuery,
-        ],
+        queries: [...definition.queries, definition.queries[0]],
       })
     ).toThrow(BadAggregateDefinition)
-    expect(() =>
-      Aggregate({
-        ...definition,
-        queries: [wasCreatedQuery, getNameQuery, getAddressQuery],
-      })
-    ).not.toThrow()
   })
   it('definition.queries are not all valid queries', () => {
-    const definition = getDefinition()
     expect(() =>
       Aggregate({ ...definition, queries: definition.queries.concat(null) })
     ).toThrow(BadAggregateDefinition)
   })
   it('definition.events are not unique by .type', () => {
-    const definition = getDefinition()
     expect(() =>
       Aggregate({
         ...definition,
-        events: [
-          CreatedEvent,
-          CreatedEvent,
-          RenamedEvent,
-          DeclaredAddressEvent,
-          MovedEvent,
-        ],
+        events: [...definition.events, definition.events[0]],
       })
     ).toThrow(BadAggregateDefinition)
-    expect(() =>
-      Aggregate({
-        ...definition,
-        events: [CreatedEvent, RenamedEvent, DeclaredAddressEvent, MovedEvent],
-      })
-    ).not.toThrow()
   })
   it('definition.errors are not unique by .name', () => {
-    const definition = getDefinition()
     expect(() =>
       Aggregate({
         ...definition,
-        errors: [UserAlreadyExist, UserAlreadyExist, UserDoesNotExist],
+        errors: [...definition.errors, definition.errors[0]],
       })
     ).toThrow(BadAggregateDefinition)
-    expect(() =>
-      Aggregate({
-        ...definition,
-        errors: [UserAlreadyExist, UserDoesNotExist],
-      })
-    ).not.toThrow()
   })
   it('definition.serializeState is neither nil nor a function', () => {
-    const definition = getDefinition()
     expect(() => Aggregate({ ...definition, serializeState: true })).toThrow(
       BadAggregateDefinition
     )
@@ -236,7 +167,6 @@ describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
     ).not.toThrow()
   })
   it('definition.deserializeState is neither nil nor a function', () => {
-    const definition = getDefinition()
     expect(() => Aggregate({ ...definition, deserializeState: true })).toThrow(
       BadAggregateDefinition
     )

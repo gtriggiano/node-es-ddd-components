@@ -1,6 +1,6 @@
 import 'jest'
 
-import { CustomError, validNameDescription } from '../../../../dist/main/lib'
+import { CustomError } from '../../../../dist/main/lib'
 
 describe('CustomErrorType factory. CustomErrorType = CustomError(definition)', () => {
   const definition = { name: 'BadThingError' }

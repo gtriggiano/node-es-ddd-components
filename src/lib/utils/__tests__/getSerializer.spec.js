@@ -67,4 +67,18 @@ describe('getSerializer(serializer?: function, errorMessage?: string)', () => {
       }
     })
   })
+
+  describe('const serialize = getSerializer(null, `a message`)', () => {
+    it('if serialize() throws the error message is `a message`', () => {
+      const serialize = getSerializer(null, 'a message')
+      const a = {}
+      const b = { a }
+      a.b = b
+      try {
+        serialize(a)
+      } catch (serializationError) {
+        expect(serializationError.message).toBe('a message')
+      }
+    })
+  })
 })

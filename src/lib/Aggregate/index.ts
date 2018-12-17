@@ -1,14 +1,15 @@
-import { AggregateError } from '../AggregateError'
+import { CustomError } from '../CustomError'
 import {
-  AggregateErrorConstructor,
-  AggregateErrorData,
-  AggregateErrorName,
-} from '../AggregateError/types'
+  CustomErrorData,
+  CustomErrorName,
+  CustomErrorType,
+} from '../CustomError/types'
 import {
   DomaiEventPayload,
-  DomainEventConstructor,
   DomainEventInstance,
   DomainEventName,
+  DomainEventType,
+  SerializedDomainEvent,
 } from '../DomainEvent/types'
 import { getDeserializer, getSerializer } from '../utils'
 
@@ -34,14 +35,13 @@ import {
 import QueryInterface from './QueryInterface'
 import { getSnaphotKey, getSnaphotNamespace } from './snapshotUtils'
 import {
-  AggregateConstructor,
-  AggregateConstructorEvent,
   AggregateDefinition,
   AggregateIdentity,
   AggregateInstance,
   AggregateSnapshot,
   AggregateState,
-  AggregateType,
+  AggregateTypeFactory,
+  AggregateTypeName,
   BoundedContext,
   ConsistencyPolicy,
 } from './types'
@@ -56,14 +56,14 @@ interface WithOriginalError {
   readonly originalError: Error
 }
 
-export const BadAggregateConstruction = AggregateError<
+export const BadAggregateConstruction = CustomError<
   'BadAggregateConstruction',
   WithOriginalError
 >({
   name: 'BadAggregateConstruction',
 })
 
-export const BadAggregateDefinition = AggregateError<
+export const BadAggregateDefinition = CustomError<
   'BadAggregateDefinition',
   WithOriginalError
 >({
@@ -80,7 +80,7 @@ export interface AggregateCommand<Name extends string, Input extends any> {
 
 export function Aggregate<
   BC extends BoundedContext,
-  Type extends AggregateType,
+  TypeName extends AggregateTypeName,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
     AggregateQueryName,
@@ -88,32 +88,36 @@ export function Aggregate<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  E extends AggregateErrorConstructor<AggregateErrorName, AggregateErrorData>,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >,
+  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    E,
-    Event,
-    E['name'],
-    Event['name']
+    ErrorType,
+    EventType,
+    ErrorType['name'],
+    EventType['name']
   >
 >(
-  definition: AggregateDefinition<BC, Type, State, Query, E, Event, Command>
-): AggregateConstructor<
+  definition: AggregateDefinition<
+    BC,
+    TypeName,
+    State,
+    Query,
+    ErrorType,
+    EventType,
+    Command
+  >
+): AggregateTypeFactory<
   BC,
-  Type,
+  TypeName,
   AggregateIdentity,
   State,
   Query,
-  E,
-  Event,
+  ErrorType,
+  EventType,
   Command
 > {
   try {
@@ -145,19 +149,26 @@ export function Aggregate<
   const snapshotNamespace = getSnaphotNamespace(snapshotPrefix, context)
   const serializeState = getSerializer<State>(providedSerializer)
   const deserializeState = getDeserializer<State>(providedDeserializer)
+  const emittableEventsDictionary = emittableEvents.reduce(
+    (dict, EvtType) => ({
+      ...dict,
+      [EvtType.name]: EvtType,
+    }),
+    {}
+  ) as { readonly [k: string]: EventType }
 
-  const AggregateCtor = (
+  const Factory = (
     identity?: AggregateIdentity,
     snapshot?: AggregateSnapshot,
-    events?: ReadonlyArray<AggregateConstructorEvent<Event['name']>>
+    events?: ReadonlyArray<SerializedDomainEvent<DomainEventName>>
   ): AggregateInstance<
     BC,
-    Type,
+    TypeName,
     typeof identity,
     State,
     Query,
-    E,
-    Event,
+    ErrorType,
+    EventType,
     Command
   > => {
     const history = events || []
@@ -174,18 +185,36 @@ export function Aggregate<
       throw BadAggregateConstruction(error.message, { originalError: error })
     }
 
-    let currentState = snapshot
-      ? deserializeState(snapshot.serializedState)
-      : initialState
+    const name = getAggregateName(type, identity)
 
-    let currentConsistencyPolicy: ConsistencyPolicy = 2
+    const rebuiltState = history.reduce(
+      (state, event, idx) => {
+        const EvtType: EventType | undefined =
+          emittableEventsDictionary[event.name]
+        return EvtType
+          ? EvtType.fromSerializedPayload(event.serializedPayload).applyToState(
+              state
+            )
+          : (() => {
+              const error = new Error(
+                `Aggregate ${context}:${name} does not recognizes an event named "${
+                  event.name
+                }". Please check events[${idx}]`
+              )
+              throw BadAggregateConstruction(error.message, {
+                originalError: error,
+              })
+            })()
+      },
+      snapshot ? deserializeState(snapshot.serializedState) : initialState
+    )
+    let currentState = rebuiltState
 
+    let currentConsistencyPolicy: ConsistencyPolicy | undefined
     const emittedEvents: Array<
       DomainEventInstance<DomainEventName, DomaiEventPayload, State>
     > = []
     // tslint:enable
-
-    const name = getAggregateName(type, identity)
 
     const snapshotKey = getSnaphotKey(snapshotNamespace, name)
     const needsSnapshot =
@@ -205,14 +234,17 @@ export function Aggregate<
       getState: () => currentState,
     })
 
-    const errorInterface = ErrorInterface<E, AggregateErrorDictionary<E>>({
+    const errorInterface = ErrorInterface<
+      ErrorType,
+      AggregateErrorDictionary<ErrorType>
+    >({
       raisableErrors,
     })
 
     const emissionInterface = EmissionInterface<
       State,
-      Event,
-      AggregateEventDictionary<State, Event>
+      EventType,
+      AggregateEventDictionary<State, EventType>
     >({
       emittableEvents,
       onNewEvent: (event, consistencyPolicy) => {
@@ -220,7 +252,8 @@ export function Aggregate<
         currentState = event.applyToState(currentState)
         emittedEvents.push(event)
         currentConsistencyPolicy =
-          currentConsistencyPolicy < consistencyPolicy
+          currentConsistencyPolicy !== undefined &&
+          currentConsistencyPolicy <= consistencyPolicy
             ? currentConsistencyPolicy
             : consistencyPolicy
         // tslint:enable
@@ -231,12 +264,12 @@ export function Aggregate<
       State,
       Query,
       AggregateQueryDictionary<State, Query>,
-      E,
-      AggregateErrorDictionary<E>,
-      Event,
-      AggregateEventDictionary<State, Event>,
+      ErrorType,
+      AggregateErrorDictionary<ErrorType>,
+      EventType,
+      AggregateEventDictionary<State, EventType>,
       Command,
-      AggregateCommandDictionary<State, Query, E, Event, Command>
+      AggregateCommandDictionary<State, Query, ErrorType, EventType, Command>
     >({
       availableCommands,
       emissionInterface,
@@ -247,16 +280,17 @@ export function Aggregate<
     return Object.defineProperties(
       {},
       {
-        New: { value: AggregateCtor },
+        New: { value: Factory },
         appendEvents: {
           value: (
             eventsToAppend: ReadonlyArray<
-              AggregateConstructorEvent<Event['name']>
+              SerializedDomainEvent<DomainEventName>
             >
-          ) =>
-            AggregateCtor(identity, snapshot, history.concat(eventsToAppend)),
+          ) => Factory(identity, snapshot, history.concat(eventsToAppend)),
         },
-        clone: { value: () => AggregateCtor(identity, snapshot, events) },
+        clone: {
+          value: () => Factory(identity, snapshot, events),
+        },
         context: { value: context },
         execute: { value: commandInterface },
         getConsistencyPolicy: {
@@ -266,7 +300,7 @@ export function Aggregate<
         getSerializedState: { value: () => serializeState(currentState) },
         getSnapshot: {
           value: () => ({
-            serializedState: serializeState(currentState),
+            serializedState: serializeState(rebuiltState),
             version: currentVersion,
           }),
         },
@@ -289,7 +323,8 @@ export function Aggregate<
 
   const aggregateCtorToStringOutput = `[Function ${context}:${type}]`
 
-  return Object.defineProperties(AggregateCtor, {
+  return Object.defineProperties(Factory, {
+    __factory: { value: Aggregate },
     context: { value: context, enumerable: true },
     description: { value: description || '' },
     name: { value: type },
@@ -297,7 +332,12 @@ export function Aggregate<
     type: { value: type },
     [Symbol.hasInstance]: {
       value: (instance: any) =>
-        instance && instance.New && instance.New === AggregateCtor,
+        instance && instance.New && instance.New === Factory,
     },
   })
 }
+
+// tslint:disable no-expression-statement
+Object.defineProperty(Aggregate, Symbol.hasInstance, {
+  value: (Factory: any) => Factory && Factory.__factory === Aggregate,
+})

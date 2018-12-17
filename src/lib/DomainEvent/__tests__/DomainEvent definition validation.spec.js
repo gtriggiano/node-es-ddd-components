@@ -2,27 +2,26 @@ import 'jest'
 import { noop } from 'lodash'
 
 import {
-  DomainEvent,
   BadDomainEventDefinition,
+  DomainEvent,
 } from '../../../../dist/main/lib'
 
-const getDefinition = () => ({
+const definition = {
   name: 'SomethingHappened',
+  description: 'A description',
   reducer: noop,
   serializeData: noop,
   deserializeData: noop,
-})
+}
 
 describe('DomainEvent(definition) throws `BadDomainEventDefinition when:', () => {
   it('definition is not an object', () => {
-    const definition = getDefinition()
     expect(() => DomainEvent(noop)).toThrow(BadDomainEventDefinition)
     expect(() => DomainEvent(2)).toThrow(BadDomainEventDefinition)
     expect(() => DomainEvent('aaaa')).toThrow(BadDomainEventDefinition)
     expect(() => DomainEvent(definition)).not.toThrow()
   })
   it('definition.name is not a valid name', () => {
-    const definition = getDefinition()
     expect(() => DomainEvent({ ...definition, name: true })).toThrow(
       BadDomainEventDefinition
     )
@@ -34,7 +33,6 @@ describe('DomainEvent(definition) throws `BadDomainEventDefinition when:', () =>
     )
   })
   it('definition.description is neither nnil nor a string', () => {
-    const definition = getDefinition()
     expect(() => DomainEvent({ ...definition, description: 2 })).toThrow(
       BadDomainEventDefinition
     )
@@ -46,13 +44,11 @@ describe('DomainEvent(definition) throws `BadDomainEventDefinition when:', () =>
     )
   })
   it('definition.reducer is not a function', () => {
-    const definition = getDefinition()
     expect(() => DomainEvent({ ...definition, reducer: undefined })).toThrow(
       BadDomainEventDefinition
     )
   })
   it('definition.serializePayload is neither nil nor a function', () => {
-    const definition = getDefinition()
     expect(() => DomainEvent({ ...definition, serializePayload: '' })).toThrow(
       BadDomainEventDefinition
     )
@@ -64,7 +60,6 @@ describe('DomainEvent(definition) throws `BadDomainEventDefinition when:', () =>
     ).not.toThrow()
   })
   it('definition.deserializePayload is neither nil nor a function', () => {
-    const definition = getDefinition()
     expect(() =>
       DomainEvent({ ...definition, deserializePayload: '' })
     ).toThrow(BadDomainEventDefinition)

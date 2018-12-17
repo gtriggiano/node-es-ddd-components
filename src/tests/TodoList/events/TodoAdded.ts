@@ -17,7 +17,7 @@ export default DomainEvent<'TodoAdded', TodoListState, Payload>({
     todos: [
       ...list.todos,
       {
-        ...event.data,
+        ...event.payload,
         done: false,
       },
     ],

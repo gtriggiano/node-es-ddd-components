@@ -1,15 +1,22 @@
 import 'jest'
+import { noop } from 'lodash'
 
 import { DomainEvent } from '../../../../dist/main/lib'
 
-import { getEventTypeDefinition as getDefinition } from './mocks'
+const definition = {
+  name: 'SomethingHappened',
+  description: 'A description',
+  reducer: noop,
+  serializeData: noop,
+  deserializeData: noop,
+}
 
 describe('DomainEvent(definition)', () => {
   it('is a function', () => {
     expect(typeof DomainEvent).toBe('function')
   })
   it('return a function', () => {
-    const ret = DomainEvent(getDefinition())
+    const ret = DomainEvent(definition)
     expect(typeof ret).toBe('function')
   })
 })

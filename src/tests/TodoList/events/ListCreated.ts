@@ -14,7 +14,7 @@ export default DomainEvent<'ListCreated', TodoListState, Payload>({
 
   reducer: (list, event) => ({
     ...list,
-    identity: event.data.identity,
-    name: event.data.name,
+    identity: event.payload.identity,
+    name: event.payload.name,
   }),
 })

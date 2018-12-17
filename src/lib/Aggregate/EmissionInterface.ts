@@ -1,8 +1,8 @@
 import {
   DomaiEventPayload,
-  DomainEventConstructor,
   DomainEventInstance,
   DomainEventName,
+  DomainEventType,
 } from '../DomainEvent/types'
 import {
   AggregateEmissionInterface,
@@ -12,13 +12,9 @@ import { AggregateState, ConsistencyPolicy } from './types'
 
 export interface EmissionInterfaceConfiguration<
   State extends AggregateState,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>
 > {
-  readonly emittableEvents: ReadonlyArray<Event>
+  readonly emittableEvents: ReadonlyArray<EventType>
   readonly onNewEvent: (
     event: DomainEventInstance<DomainEventName, DomaiEventPayload, State>,
     consistencyPolicy: ConsistencyPolicy
@@ -31,26 +27,22 @@ export interface EmissionInterfaceConfiguration<
  */
 export default function EmissionInterface<
   State extends AggregateState,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >,
-  EventDictionary extends AggregateEventDictionary<State, Event>
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  EventDictionary extends AggregateEventDictionary<State, EventType>
 >(
-  config: EmissionInterfaceConfiguration<State, Event>
-): AggregateEmissionInterface<State, Event, EventDictionary> {
+  config: EmissionInterfaceConfiguration<State, EventType>
+): AggregateEmissionInterface<State, EventType, EventDictionary> {
   const { emittableEvents, onNewEvent } = config
 
-  return emittableEvents.reduce((emissionInterface, Evt) => {
-    return Object.defineProperty(emissionInterface, Evt.name, {
+  return emittableEvents.reduce((emissionInterface, EvType) => {
+    return Object.defineProperty(emissionInterface, EvType.name, {
       enumerable: true,
       value: Object.defineProperty(
         (input?: any, consistencyPolicy?: ConsistencyPolicy) =>
-          onNewEvent(Evt(input), consistencyPolicy || 0),
+          onNewEvent(EvType(input), consistencyPolicy || 0),
         'name',
-        { value: Evt.name }
+        { value: EvType.name }
       ),
     })
-  }, {})
+  }, {}) as AggregateEmissionInterface<State, EventType, EventDictionary>
 }

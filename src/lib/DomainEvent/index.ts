@@ -1,3 +1,5 @@
+import { isFunction, isObject } from 'lodash'
+
 import { AggregateState } from '../Aggregate/types'
 import { CustomError } from '../CustomError'
 import { getDeserializer, getSerializer } from '../utils'
@@ -43,18 +45,19 @@ export function DomainEvent<
   const serializePayload = getSerializer<Payload>(providedSerializer)
   const deserializePayload = getDeserializer<Payload>(providedDeserializer)
 
-  const getInstanceFromPayload = (payload: Payload) => {
+  function EventTypeFactory(
+    payload: Payload
+  ): DomainEventInstance<Name, Payload, State> {
     const event = {}
     // tslint:disable no-let
     let serializedPayload = ''
     // tslint:enable
     return Object.defineProperties(event, {
-      __factory: { value: EventType },
+      __factory: { value: EventTypeFactory },
       applyToState: {
         value: (state: State) =>
           reducer(state, event as DomainEventInstance<Name, Payload, State>),
       },
-      data: { enumerable: true, value: payload },
       getSerializedPayload: {
         value: () =>
           serializedPayload ||
@@ -66,34 +69,29 @@ export function DomainEvent<
           })(),
       },
       name: { enumerable: true, value: name },
+      payload: { enumerable: true, value: payload },
     })
   }
 
-  const getInstanceFromPayloadValidated = getInstanceFromPayload
-
-  const EventType = Object.defineProperties(
-    (payload: Payload, skipValidation?: boolean) =>
-      skipValidation
-        ? getInstanceFromPayload(payload)
-        : getInstanceFromPayloadValidated(payload),
-    {
-      __factory: { value: DomainEvent },
-      description: { value: description || '' },
-      fromSerializedPayload: {
-        value: (serializedPayload: string) =>
-          EventType(deserializePayload(serializedPayload), true),
-      },
-      name: { value: name },
-      [Symbol.hasInstance]: {
-        value: (event: any) => event && event.__factory === EventType,
-      },
-    }
-  )
-
-  return EventType
+  return Object.defineProperties(EventTypeFactory, {
+    __factory: { value: DomainEvent },
+    description: { value: description || '' },
+    fromSerializedPayload: {
+      value: (serializedPayload: string) =>
+        EventTypeFactory(deserializePayload(serializedPayload)),
+    },
+    name: { value: name },
+    [Symbol.hasInstance]: {
+      value: (event: any) =>
+        isObject(event) && event.__factory === EventTypeFactory,
+    },
+  }) as DomainEventType<Name, Payload, State>
 }
 
 // tslint:disable no-expression-statement
-Object.defineProperty(DomainEvent, Symbol.hasInstance, {
-  value: (EventType: any) => EventType && EventType.__factory === DomainEvent,
+Object.defineProperties(DomainEvent, {
+  [Symbol.hasInstance]: {
+    value: (EventType: any) =>
+      isFunction(EventType) && (EventType as any).__factory === DomainEvent,
+  },
 })

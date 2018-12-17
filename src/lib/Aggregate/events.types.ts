@@ -1,7 +1,7 @@
 import {
   DomaiEventPayload,
-  DomainEventConstructor,
   DomainEventName,
+  DomainEventType,
 } from '../DomainEvent/types'
 import { AggregateState, MapDiscriminatedUnion } from './types'
 
@@ -16,30 +16,18 @@ export type DomainEventPayloadType<
 
 export type AggregateEmissionInterfaceMethod<
   State extends AggregateState,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >
-> = (input: DomainEventPayloadType<Event>) => void
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>
+> = (input: DomainEventPayloadType<EventType>) => void
 
 export type AggregateEventDictionary<
   State extends AggregateState,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >
-> = MapDiscriminatedUnion<Event, 'name'>
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>
+> = MapDiscriminatedUnion<EventType, 'name'>
 
 export type AggregateEmissionInterface<
   State extends AggregateState,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >,
-  EventDictionary extends AggregateEventDictionary<State, Event>
+  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  EventDictionary extends AggregateEventDictionary<State, EventType>
 > = {
   readonly [K in keyof EventDictionary]: AggregateEmissionInterfaceMethod<
     State,
@@ -49,11 +37,7 @@ export type AggregateEmissionInterface<
 
 export type AggregateCommandEmissionInterface<
   State extends AggregateState,
-  Event extends DomainEventConstructor<
-    DomainEventName,
-    DomaiEventPayload,
-    State
-  >,
+  Event extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
   EventDictionary extends AggregateEventDictionary<State, Event>,
   EmittableEvent extends keyof EventDictionary
 > = {

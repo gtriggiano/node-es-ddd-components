@@ -35,7 +35,7 @@ export function CustomError<
   return Object.defineProperties(ErrorType, {
     name: { value: errorName },
     [Symbol.hasInstance]: {
-      value: (e: any) => e && e.__factory && e.__factory === ErrorType,
+      value: (e: any) => !!e && e.__factory && e.__factory === ErrorType,
     },
   })
 }

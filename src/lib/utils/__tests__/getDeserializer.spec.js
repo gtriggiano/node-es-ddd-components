@@ -21,13 +21,13 @@ describe('getDeserializer(deserializer?: function, errorMessage?: string)', () =
       const expected = { a: 'value', b: 1 }
       expect(actual).toEqual(expected)
     })
-    it('deserializer defaults to JSON.parse', () => {
+    it('deserialize defaults to JSON.parse', () => {
       const deserialize = getDeserializer()
       const actual = deserialize(`{"a":"value","b":1}`)
       const expected = { a: 'value', b: 1 }
       expect(actual).toEqual(expected)
     })
-    it('if deserializer() throws, the error is encapsulated in DeserializationError.data.originalError', () => {
+    it('if deserialize() throws, the error is encapsulated in DeserializationError.data.originalError', () => {
       const deserialize = getDeserializer()
       expect(() => deserialize(`"4: "invalid`)).toThrowError(
         DeserializationError
@@ -58,6 +58,17 @@ describe('getDeserializer(deserializer?: function, errorMessage?: string)', () =
           deserializationError.message ===
             deserializationError.data.originalError.message
         ).toBe(true)
+      }
+    })
+  })
+
+  describe('const deserialize = getDeserializer(null, `a message`)', () => {
+    it('if deserializer() throws the error message is `a message`', () => {
+      const deserialize = getDeserializer(null, 'a message')
+      try {
+        deserialize(`"4: "invalid`)
+      } catch (deserializationError) {
+        expect(deserializationError.message).toBe('a message')
       }
     })
   })

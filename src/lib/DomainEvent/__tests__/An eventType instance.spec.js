@@ -2,30 +2,37 @@ import 'jest'
 
 import { DomainEvent } from '../../../../dist/main/lib'
 
-import { getEventTypeDefinition as getDefinition } from './mocks'
+const definition = {
+  description: 'A description',
+  name: 'SomethingHappened',
+  reducer: (state, event) =>
+    Array.isArray(state)
+      ? [...state, event.payload]
+      : {
+          ...state,
+          [event.payload.key]: event.payload.value,
+        },
+}
 
 describe('eventType = EventType(payload)', () => {
   it('eventType.name === EventType.name', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
-    const eventType = EventType({ prop: 'value' })
+    const eventType = EventType({ key: 'a', value: 'b' })
     expect(eventType.name).toEqual(definition.name)
   })
   it('eventType.data === payload', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
-    const payload = { prop: 'value' }
+    const payload = { key: 'a', value: 'b' }
     const eventType = EventType(payload)
-    expect(eventType.data).toEqual(payload)
+    expect(eventType.payload).toEqual(payload)
   })
   it('eventType.getSerializedPayload() returns the serialization of eventType.data', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
-    const eventType = EventType({ prop: 'test' })
-    expect(eventType.getSerializedPayload()).toEqual(`{"prop":"test"}`)
+    const payload = { key: 'a', value: 'b' }
+    const eventType = EventType(payload)
+    expect(eventType.getSerializedPayload()).toEqual(JSON.stringify(payload))
   })
   it('eventType.applyToState(state) returns definition.reducer(state, eventType)', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
     const eventType = EventType({ key: 'a key', value: 'a value' })
 
@@ -35,7 +42,6 @@ describe('eventType = EventType(payload)', () => {
     expect(stateArray).toEqual([{ key: 'a key', value: 'a value' }])
   })
   it('eventType is recognized as `instanceof EventType`', () => {
-    const definition = getDefinition()
     const EventType = DomainEvent(definition)
     const eventType = EventType({ key: 'a key', value: 'a value' })
     expect(eventType instanceof EventType).toBe(true)

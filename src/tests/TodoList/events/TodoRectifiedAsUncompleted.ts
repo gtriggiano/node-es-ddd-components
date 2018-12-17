@@ -11,7 +11,7 @@ export default DomainEvent<'TodoRectifiedAsUncompleted', TodoListState, Todo>({
 
   description: 'A todo was marked as uncompleted',
 
-  reducer: (list, { data: { identity: identityOfUncompletedTodo } }) => ({
+  reducer: (list, { payload: { identity: identityOfUncompletedTodo } }) => ({
     ...list,
     todos: list.todos.map(todo =>
       todo.identity !== identityOfUncompletedTodo
