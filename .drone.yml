@@ -17,3 +17,4 @@ steps:
       - npm run typedoc:html
       - npm run typedoc:json
       - npm run sendcoverage
+      - npm run gh-pages:publish
