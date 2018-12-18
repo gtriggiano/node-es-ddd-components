@@ -30,7 +30,7 @@
     "remap:coverage": "run-p remap:coverage:*",
     "remap:coverage:json": "remap-istanbul -i coverage/coverage-final.json -o pages/coverage-report/coverage-final.json",
     "remap:coverage:html": "remap-istanbul -i coverage/coverage-final.json -o pages/coverage-report -t html",
-    "sendcoverage": "codecov -f pages/coverage-report/coverage-final.json",
+    "sendcoverage": "codecov -f pages/coverage-report/coverage-final.json -t $CODECOV_TOKEN",
     "typedoc": "run-s typedoc:html && opn pages/typedoc/index.html",
     "typedoc:html": "typedoc src/ --target ES6 --mode file --out pages/typedoc",
     "typedoc:json": "typedoc src/ --target ES6 --mode file --json pages/typedoc/typedoc.json",
