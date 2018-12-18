@@ -8,5 +8,3 @@ pages
 
 .nyc_output
 *.log
-
-package-lock.json

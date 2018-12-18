@@ -40,8 +40,7 @@
     "reset": "git clean -dfx && git reset --hard && yarn",
     "all": "run-s reset test doc:html",
     "commit": "git-cz",
-    "prepare-release": "run-s all version gh-pages:publish",
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('node-es-ddd-components must be installed with Yarn: https://yarnpkg.com/')\""
+    "prepare-release": "run-s all version gh-pages:publish"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
