@@ -17,7 +17,7 @@ const definition = {
   ],
 }
 
-describe('AggregateType factory. AggregateType = Aggregate(definition)', () => {
+describe('An AggregateType factory. AggregateType = Aggregate(definition)', () => {
   it('AggregateType is a function', () => {
     const AggregateType = Aggregate(definition)
     expect(typeof AggregateType).toBe('function')

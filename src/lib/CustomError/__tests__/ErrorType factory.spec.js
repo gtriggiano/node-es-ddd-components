@@ -2,7 +2,7 @@ import 'jest'
 
 import { CustomError } from '../../../../dist/main/lib'
 
-describe('CustomErrorType factory. CustomErrorType = CustomError(definition)', () => {
+describe('A CustomErrorType factory. CustomErrorType = CustomError(definition)', () => {
   const definition = { name: 'BadThingError' }
 
   it('CustomErrorType.name === definition.name', () => {

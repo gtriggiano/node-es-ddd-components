@@ -9,7 +9,7 @@ import {
 
 import { definition } from '../../../../dist/main/tests/TodoList'
 
-describe('Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
+describe('Aggregate definition validation. Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
   it('definition is not an object', () => {
     expect(() => Aggregate()).toThrow(BadAggregateDefinition)
     expect(() => Aggregate(3)).toThrow(BadAggregateDefinition)

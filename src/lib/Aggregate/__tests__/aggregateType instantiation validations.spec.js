@@ -11,7 +11,7 @@ const toSerializedEvent = e => ({
   serializedPayload: e.getSerializedPayload(),
 })
 
-describe('AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:', () => {
+describe('The AggregateType instantiation validation. AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:', () => {
   it('identity is neither nil nor a string', () => {
     const AggregateType = Aggregate(definition)
     const AggregateTypeSingleton = Aggregate({ ...definition, singleton: true })

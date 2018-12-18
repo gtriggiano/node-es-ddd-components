@@ -4,7 +4,7 @@ import { CustomError, validNameDescription } from '../../../../dist/main/lib'
 
 const definition = { name: 'CustomErrorType' }
 
-describe('customErrorType instance. customErrorType = CustomErrorType(message [, data])', () => {
+describe('A customErrorType instance. customErrorType = CustomErrorType(message [, data])', () => {
   it('customErrorType.name === CustomErrorType.name', () => {
     const CustomErrorType = CustomError(definition)
     const customErrorType = CustomErrorType()
