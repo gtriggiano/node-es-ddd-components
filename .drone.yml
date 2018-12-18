@@ -13,3 +13,4 @@ steps:
       - npm run test
       - npm run typedoc:html
       - npm run typedoc:json
+      - npm run sendcoverage
