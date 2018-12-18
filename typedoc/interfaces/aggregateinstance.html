@@ -1,0 +1,663 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AggregateInstance | es-ddd-components</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">es-ddd-components</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="aggregateinstance.html">AggregateInstance</a>
+				</li>
+			</ul>
+			<h1>Interface AggregateInstance&lt;BC, TypeName, Identity, State, Query, ErrorType, EventType, Command&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An instance of an aggregate</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>BC<span class="tsd-signature-symbol">: </span><a href="../globals.html#boundedcontext" class="tsd-signature-type">BoundedContext</a></h4>
+					</li>
+					<li>
+						<h4>TypeName<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregatetypename" class="tsd-signature-type">AggregateTypeName</a></h4>
+					</li>
+					<li>
+						<h4>Identity<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregateidentity" class="tsd-signature-type">AggregateIdentity</a></h4>
+					</li>
+					<li>
+						<h4>State<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregatestate" class="tsd-signature-type">AggregateState</a></h4>
+					</li>
+					<li>
+						<h4>Query<span class="tsd-signature-symbol">: </span><a href="aggregatequerydefinition.html" class="tsd-signature-type">AggregateQueryDefinition</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#aggregatequeryname" class="tsd-signature-type">AggregateQueryName</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatequeryinput" class="tsd-signature-type">AggregateQueryInput</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatequeryoutput" class="tsd-signature-type">AggregateQueryOutput</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+					<li>
+						<h4>ErrorType<span class="tsd-signature-symbol">: </span><a href="../globals.html#customerrortype" class="tsd-signature-type">CustomErrorType</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#customerrorname" class="tsd-signature-type">CustomErrorName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#customerrordata" class="tsd-signature-type">CustomErrorData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+					<li>
+						<h4>EventType<span class="tsd-signature-symbol">: </span><a href="domaineventtype.html" class="tsd-signature-type">DomainEventType</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+					<li>
+						<h4>Command<span class="tsd-signature-symbol">: </span><a href="aggregatecommanddefinition.html" class="tsd-signature-type">AggregateCommandDefinition</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#aggregatecommandname" class="tsd-signature-type">AggregateCommandName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatecommandinput" class="tsd-signature-type">AggregateCommandInput</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType[&quot;name&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType[&quot;name&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AggregateInstance</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#new" class="tsd-kind-icon">New</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#appendevents" class="tsd-kind-icon">append<wbr>Events</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#execute" class="tsd-kind-icon">execute</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#getconsistencypolicy" class="tsd-kind-icon">get<wbr>Consistency<wbr>Policy</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#getnewevents" class="tsd-kind-icon">get<wbr>New<wbr>Events</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#getserializedstate" class="tsd-kind-icon">get<wbr>Serialized<wbr>State</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#getsnapshot" class="tsd-kind-icon">get<wbr>Snapshot</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#identity" class="tsd-kind-icon">identity</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#isdirty" class="tsd-kind-icon">is<wbr>Dirty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#needssnapshot" class="tsd-kind-icon">needs<wbr>Snapshot</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#query" class="tsd-kind-icon">query</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#snapshotkey" class="tsd-kind-icon">snapshot<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="aggregateinstance.html#version" class="tsd-kind-icon">version</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="new" class="tsd-anchor"></a>
+					<h3>New</h3>
+					<div class="tsd-signature tsd-kind-icon">New<span class="tsd-signature-symbol">:</span> <a href="aggregatetypefactory.html" class="tsd-signature-type">AggregateTypeFactory</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L215">lib/Aggregate/types.ts:215</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A reference to the function which generated the instance</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="appendevents" class="tsd-anchor"></a>
+					<h3>append<wbr>Events</h3>
+					<div class="tsd-signature tsd-kind-icon">append<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L177">lib/Aggregate/types.ts:177</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Generates a new instance obtained
+							adding new events to the aggregate&#39;s history</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>events<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="domaineventinstance.html" class="tsd-signature-type">DomainEventInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventType[&quot;name&quot;]</span><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaineventtypepayload" class="tsd-signature-type">DomainEventTypePayload</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>events: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="domaineventinstance.html" class="tsd-signature-type">DomainEventInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventType[&quot;name&quot;]</span><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaineventtypepayload" class="tsd-signature-type">DomainEventTypePayload</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<div class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L201">lib/Aggregate/types.ts:201</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns another instance of the same aggregate
+								with state and version as they where before any command
+							was executed</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BC</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L120">lib/Aggregate/types.ts:120</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of the Bounded Context
+							the aggregate belongs to</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p>BoundedContext</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="execute" class="tsd-anchor"></a>
+					<h3>execute</h3>
+					<div class="tsd-signature tsd-kind-icon">execute<span class="tsd-signature-symbol">:</span> <a href="../globals.html#aggregatecommandinterface" class="tsd-signature-type">AggregateCommandInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatecommanddictionary" class="tsd-signature-type">AggregateCommandDictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L164">lib/Aggregate/types.ts:164</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The behaviours interface of the aggregate</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="getconsistencypolicy" class="tsd-anchor"></a>
+					<h3>get<wbr>Consistency<wbr>Policy</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Consistency<wbr>Policy<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L243">lib/Aggregate/types.ts:243</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p>ConsistencyPolicy</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#consistencypolicy" class="tsd-signature-type">ConsistencyPolicy</a></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <a href="../globals.html#consistencypolicy" class="tsd-signature-type">ConsistencyPolicy</a></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="getnewevents" class="tsd-anchor"></a>
+					<h3>get<wbr>New<wbr>Events</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>New<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L236">lib/Aggregate/types.ts:236</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns the list of events emitted by the instance
+							since when it was created</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="domaineventinstance.html" class="tsd-signature-type">DomainEventInstance</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="domaineventinstance.html" class="tsd-signature-type">DomainEventInstance</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="getserializedstate" class="tsd-anchor"></a>
+					<h3>get<wbr>Serialized<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Serialized<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L248">lib/Aggregate/types.ts:248</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns the serialized internal aggregate&#39;state</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="getsnapshot" class="tsd-anchor"></a>
+					<h3>get<wbr>Snapshot</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Snapshot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L256">lib/Aggregate/types.ts:256</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns a snapshot of the internal state of the aggregate
+								paired with its current version.
+								Should be used just by the repository (after having rebuilt an instance)
+							or for testing purposes</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="aggregatesnapshot.html" class="tsd-signature-type">AggregateSnapshot</a></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <a href="aggregatesnapshot.html" class="tsd-signature-type">AggregateSnapshot</a></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="identity" class="tsd-anchor"></a>
+					<h3>identity</h3>
+					<div class="tsd-signature tsd-kind-icon">identity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Identity</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L132">lib/Aggregate/types.ts:132</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The identity of the aggregate</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p>AggregateIdentity</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="isdirty" class="tsd-anchor"></a>
+					<h3>is<wbr>Dirty</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Dirty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L230">lib/Aggregate/types.ts:230</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reveals if the instance emitted new event
+							since when it was created</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="needssnapshot" class="tsd-anchor"></a>
+					<h3>needs<wbr>Snapshot</h3>
+					<div class="tsd-signature tsd-kind-icon">needs<wbr>Snapshot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L145">lib/Aggregate/types.ts:145</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Flag to signal if the instance should be
+							snapshotted</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="query" class="tsd-anchor"></a>
+					<h3>query</h3>
+					<div class="tsd-signature tsd-kind-icon">query<span class="tsd-signature-symbol">:</span> <a href="../globals.html#aggregatequeryinterface" class="tsd-signature-type">AggregateQueryInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatequerydictionary" class="tsd-signature-type">AggregateQueryDictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L155">lib/Aggregate/types.ts:155</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The query interface of the aggregate</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="snapshotkey" class="tsd-anchor"></a>
+					<h3>snapshot<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">snapshot<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L150">lib/Aggregate/types.ts:150</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The snapshot key</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TypeName</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L126">lib/Aggregate/types.ts:126</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The aggregate type</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p>AggregateType</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="version" class="tsd-anchor"></a>
+					<h3>version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/96daa5a/src/lib/Aggregate/types.ts#L139">lib/Aggregate/types.ts:139</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The current version of the aggregate.
+								It is calculated when the aggregate state is
+							rebuilt and <strong>does not change during the instance lifecycle</strong>.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-has-type-parameter">
+						<a href="aggregateinstance.html" class="tsd-kind-icon">Aggregate<wbr>Instance</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#new" class="tsd-kind-icon">New</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#appendevents" class="tsd-kind-icon">append<wbr>Events</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#clone" class="tsd-kind-icon">clone</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#execute" class="tsd-kind-icon">execute</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#getconsistencypolicy" class="tsd-kind-icon">get<wbr>Consistency<wbr>Policy</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#getnewevents" class="tsd-kind-icon">get<wbr>New<wbr>Events</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#getserializedstate" class="tsd-kind-icon">get<wbr>Serialized<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#getsnapshot" class="tsd-kind-icon">get<wbr>Snapshot</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#identity" class="tsd-kind-icon">identity</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#isdirty" class="tsd-kind-icon">is<wbr>Dirty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#needssnapshot" class="tsd-kind-icon">needs<wbr>Snapshot</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#query" class="tsd-kind-icon">query</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#snapshotkey" class="tsd-kind-icon">snapshot<wbr>Key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="aggregateinstance.html#version" class="tsd-kind-icon">version</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
