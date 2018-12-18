@@ -30,11 +30,12 @@
     "remap:coverage": "run-p remap:coverage:*",
     "remap:coverage:json": "remap-istanbul -i coverage/coverage-final.json -o pages/coverage/coverage-final.json",
     "remap:coverage:html": "remap-istanbul -i coverage/coverage-final.json -o pages/coverage -t html",
-    "sendcoverage": "codecov -f pages/coverage/coverage-final.json -t $CODECOV_TOKEN",
+    "check:coverage": "istanbul check-coverage --statements 100 --functions 100 --branches 95 --lines 100 pages/coverage/coverage-final.json",
+    "send:coverage": "codecov -f pages/coverage/coverage-final.json -t $CODECOV_TOKEN",
     "typedoc": "run-s typedoc:html && opn pages/typedoc/index.html",
     "typedoc:html": "typedoc src/ --target ES6 --mode file --out pages/typedoc",
     "typedoc:json": "typedoc src/ --target ES6 --mode file --json pages/typedoc/typedoc.json",
-    "gh-pages:publish": "gh-pages -m \"[ci skip] Updates\" -d pages",
+    "gh-pages:publish": "gh-pages -m \"[ci skip] Updates\" -d pages -u \"Your Name <email@example.com>\"",
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && yarn",
     "all": "run-s reset test doc:html",
@@ -69,6 +70,7 @@
     "commitizen": "^3.0.4",
     "cz-conventional-changelog": "^2.1.0",
     "gh-pages": "^2.0.0",
+    "istanbul": "^0.4.5",
     "jest": "^23.6.0",
     "jest-sourcemaps": "^1.0.1",
     "jest-stare": "^1.8.0",
@@ -104,6 +106,6 @@
   },
   "jest-stare": {
     "resultDir": "pages",
-    "coverageLink": "../coverage/index.html"
+    "coverageLink": "./coverage/index.html"
   }
 }

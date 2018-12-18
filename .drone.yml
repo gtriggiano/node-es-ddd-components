@@ -14,7 +14,8 @@ steps:
     commands:
       - yarn
       - npm run test
+      - npm run check:coverage
       - npm run typedoc:html
       - npm run typedoc:json
-      - npm run sendcoverage
+      - npm run send:coverage
       - npm run gh-pages:publish
