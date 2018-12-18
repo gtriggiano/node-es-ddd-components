@@ -35,7 +35,7 @@
     "typedoc": "run-s typedoc:html && opn pages/typedoc/index.html",
     "typedoc:html": "typedoc src/ --target ES6 --mode file --out pages/typedoc",
     "typedoc:json": "typedoc src/ --target ES6 --mode file --json pages/typedoc/typedoc.json",
-    "gh-pages:publish": "gh-pages -m \"[ci skip] Updates\" -d pages -u \"Your Name <email@example.com>\"",
+    "gh-pages:publish": "gh-pages -m \"[ci skip] Updates\" -d pages",
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && yarn",
     "all": "run-s reset test doc:html",
