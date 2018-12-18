@@ -63,7 +63,7 @@ describe('getDeserializer(deserializer?: function, errorMessage?: string)', () =
   })
 
   describe('const deserialize = getDeserializer(null, `a message`)', () => {
-    it('if deserializer() throws the error message is `a message`', () => {
+    it('if deserialize() throws the error message is `a message`', () => {
       const deserialize = getDeserializer(null, 'a message')
       try {
         deserialize(`"4: "invalid`)
