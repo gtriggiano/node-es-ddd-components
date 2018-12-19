@@ -160,7 +160,7 @@ export function Aggregate<
   const Factory = (
     identity?: AggregateIdentity,
     snapshot?: AggregateSnapshot,
-    events?: ReadonlyArray<SerializedDomainEvent<DomainEventName>>
+    events?: ReadonlyArray<SerializedDomainEvent>
   ): AggregateInstance<
     BC,
     TypeName,
@@ -282,11 +282,8 @@ export function Aggregate<
       {
         New: { value: Factory },
         appendEvents: {
-          value: (
-            eventsToAppend: ReadonlyArray<
-              SerializedDomainEvent<DomainEventName>
-            >
-          ) => Factory(identity, snapshot, history.concat(eventsToAppend)),
+          value: (eventsToAppend: ReadonlyArray<SerializedDomainEvent>) =>
+            Factory(identity, snapshot, history.concat(eventsToAppend)),
         },
         clone: {
           value: () => Factory(identity, snapshot, events),

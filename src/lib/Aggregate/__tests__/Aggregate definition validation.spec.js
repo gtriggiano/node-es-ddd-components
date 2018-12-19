@@ -1,5 +1,5 @@
 import 'jest'
-import { omit, sample } from 'lodash'
+import { omit, sample, isObject } from 'lodash'
 
 import {
   Aggregate,
@@ -13,6 +13,9 @@ describe('Aggregate definition validation. Aggregate(definition) throws `BadAggr
   it('definition is not an object', () => {
     expect(() => Aggregate()).toThrow(BadAggregateDefinition)
     expect(() => Aggregate(3)).toThrow(BadAggregateDefinition)
+
+    expect(isObject(definition)).toBe(true)
+    expect(() => Aggregate(definition)).not.toThrow()
   })
   it(`definition.context is not a ${validNameDescription}`, () => {
     expect(() => Aggregate(omit(definition, ['context']))).toThrow(

@@ -394,7 +394,7 @@ export interface AggregateTypeFactory<
   (
     identity?: Identity,
     snapshot?: AggregateSnapshot,
-    events?: ReadonlyArray<SerializedDomainEvent<EventType['name']>>
+    events?: ReadonlyArray<SerializedDomainEvent>
   ): AggregateInstance<
     BC,
     TypeName,
