@@ -257,6 +257,39 @@ export interface AggregateInstance<
 }
 
 /**
+ * A generic instance of an aggregate
+ */
+export type GenericAggregateInstance = AggregateInstance<
+  BoundedContext,
+  AggregateTypeName,
+  AggregateIdentity,
+  AggregateState,
+  AggregateQueryDefinition<
+    AggregateQueryName,
+    AggregateState,
+    AggregateQueryInput,
+    AggregateQueryOutput
+  >,
+  CustomErrorType<CustomErrorName, CustomErrorData>,
+  DomainEventType<DomainEventName, DomaiEventPayload, AggregateState>,
+  AggregateCommandDefinition<
+    AggregateCommandName,
+    AggregateCommandInput,
+    AggregateState,
+    AggregateQueryDefinition<
+      AggregateQueryName,
+      AggregateState,
+      AggregateQueryInput,
+      AggregateQueryOutput
+    >,
+    CustomErrorType<CustomErrorName, CustomErrorData>,
+    DomainEventType<DomainEventName, DomaiEventPayload, AggregateState>,
+    CustomErrorName,
+    DomainEventName
+  >
+>
+
+/**
  * An aggregate definition to pass to the @see Aggregate
  * factory function
  */
