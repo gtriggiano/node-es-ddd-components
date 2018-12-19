@@ -2,17 +2,37 @@ kind: pipeline
 name: default
 
 steps:
-  - name: 'Node 6: Install dependencies and execute tests'
+  - name: 'Install dependencies and execute tests'
     when:
       event:
         - push
+        - tag
+        - pull_request
+    image: node:6
+    commands:
+      - yarn
+      - npm run test
+
+  - name: 'Publish code coverage'
+    when:
+      event:
+        - push
+        - tag
         - pull_request
     image: node:6
     environment:
       CODECOV_TOKEN:
         from_secret: CODECOV_TOKEN
     commands:
-      - yarn
-      - npm run test
-      - npm run check:coverage
       - npm run send:coverage
+
+  - name: 'Check code coverage'
+    when:
+      branch: master
+      event:
+        - push
+        - tag
+        - pull_request
+    image: node:6
+    commands:
+      - npm run check:coverage
