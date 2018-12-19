@@ -10,7 +10,7 @@ steps:
         - pull_request
     image: node:6
     commands:
-      - yarn
+      - npm i
       - npm run test
 
   - name: 'Publish code coverage'
