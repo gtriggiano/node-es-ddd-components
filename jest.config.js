@@ -1,7 +1,8 @@
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ['dist/main/lib/**/*'],
-  coverageReporters: ['json'],
+  coverageReporters: ['json', 'lcov', 'text', 'clover'],
+  coverageDirectory: '<rootDir>/pages/coverage',
   // coverageThreshold: {
   //   global: {
   //     lines: 100,
@@ -14,6 +15,7 @@ module.exports = {
   roots: ['<rootDir>/src/lib'],
   testMatch: ['**/__tests__/**/?(*.)+(spec|test).js'],
   testResultsProcessor: './node_modules/jest-stare',
+  transformIgnorePatterns: ['/node_modules/', '<rootDir>/dist/'],
   // moduleFileExtensions: ['ts', 'js'],
   // transform: {
   //   '^.+\\.(js)$': 'babel-jest',
