@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/Repository/InMemoryEventStore.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">lib/Repository</a> InMemoryEventStore.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.25% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>39/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.37% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.31% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.58% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>31/38</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">342x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { range, uniqueId } from 'lodash'
+&nbsp;
+import {
+  AggregateIdentity,
+  AggregateTypeName,
+  BoundedContext,
+} from '../Aggregate/types'
+import { PersistedDomainEvent } from '../DomainEvent/types'
+&nbsp;
+import { WriteConcurrencyError } from './index'
+import { EventStore } from './types'
+&nbsp;
+export type StoredEvent = PersistedDomainEvent &amp; {
+  readonly aggregate: {
+    readonly context: BoundedContext
+    readonly type: AggregateTypeName
+    readonly identity: AggregateIdentity
+  }
+  readonly version: number
+}
+&nbsp;
+export const InMemoryEventStore = (): EventStore =&gt; {
+  // tslint:disable readonly-array
+  const events: StoredEvent[] = []
+  // tslint:enable
+&nbsp;
+  const getAggregateEvents = (aggregate: {
+    readonly context: BoundedContext
+    readonly type: AggregateTypeName
+    readonly identity: AggregateIdentity
+  }) =&gt;
+    events.filter(
+      event =&gt;
+        event.aggregate.context === aggregate.context &amp;&amp;
+        event.aggregate.type === aggregate.type &amp;&amp;
+        event.aggregate.identity === aggregate.identity
+    )
+&nbsp;
+  return {
+    appendEventsToAggregates: (insertions, <span class="missing-if-branch" title="if path not taken" >I</span>correlationId = '') =&gt; {
+      // tslint:disable readonly-array
+      const persistedEvents: PersistedDomainEvent[] = []
+      // tslint:enable
+&nbsp;
+      /**
+       * Concurrency check
+       */
+      // tslint:disable no-expression-statement no-if-statement
+      insertions.forEach(({ aggregate, expectedAggregateVersion }) =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (expectedAggregateVersion === -2) <span class="cstat-no" title="statement not covered" >return</span>
+&nbsp;
+        const aggregateEvents = getAggregateEvents(aggregate)
+        const aggregateVersion = aggregateEvents.length
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (expectedAggregateVersion === -1 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >aggregateVersion)</span> <span class="cstat-no" title="statement not covered" >return</span>
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (expectedAggregateVersion === aggregateVersion) return
+&nbsp;
+        const aggregateName = <span class="cstat-no" title="statement not covered" >getAggregateName(aggregate)</span>
+        const errorMessage =
+<span class="cstat-no" title="statement not covered" >          expectedAggregateVersion === -1</span>
+            ? `Aggregate ${aggregateName} was expected to exist but it does not`
+            : `Aggregate ${aggregateName} was expected to be at version ${expectedAggregateVersion} but it is at version ${aggregateVersion}`
+<span class="cstat-no" title="statement not covered" >        throw WriteConcurrencyError(errorMessage)</span>
+      })
+&nbsp;
+      /**
+       * Events storage operation
+       */
+      insertions.forEach(({ aggregate, eventsToAppend }) =&gt; {
+        const aggregateVersion = getAggregateEvents(aggregate).length
+        eventsToAppend.forEach(({ name, payload }, idx) =&gt; {
+          const version = aggregateVersion + 1 + idx
+          const eventToPersist = {
+            aggregate: { ...aggregate },
+            correlationId,
+            id: getNewId(),
+            name,
+            serializedPayload: payload,
+            version,
+          }
+          events.push(eventToPersist)
+          persistedEvents.push(eventToPersist)
+        })
+      })
+      // tslint:enable
+&nbsp;
+      return Promise.resolve(persistedEvents)
+    },
+    getEventsOfAggregate: (aggregate, fromVersion) =&gt; {
+      return Promise.resolve(
+        getAggregateEvents(aggregate).filter(
+          event =&gt; event.version &gt; fromVersion
+        )
+      )
+    },
+  }
+}
+&nbsp;
+const getAggregateName = <span class="fstat-no" title="function not covered" >(</span>{
+<span class="cstat-no" title="statement not covered" >  context,</span>
+<span class="cstat-no" title="statement not covered" >  type,</span>
+<span class="cstat-no" title="statement not covered" >  identity,</span>
+}: {
+  readonly context: BoundedContext
+  readonly type: AggregateTypeName
+  readonly identity: AggregateIdentity
+}) =&gt; <span class="cstat-no" title="statement not covered" >`${context}:${type}${identity ? `:${identity}` : ''}`</span>
+&nbsp;
+const getNewId = (): string =&gt; pad0(uniqueId(), 20)
+&nbsp;
+const pad0 = (i: string, n: number): string =&gt;
+  i.length &gt;= n
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >i</span>
+    : range(n - i.length)
+        .map(() =&gt; '0')
+        .join('') + i
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 20 2018 18:08:06 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
