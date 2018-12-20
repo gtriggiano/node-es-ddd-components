@@ -13,7 +13,7 @@ const toSerializedEvent = e => ({
 })
 const serializedInitialState = JSON.stringify(initialState)
 
-describe('An aggregate type instance. aggregate = AggregateType(identity [, snapshot] [, events])', () => {
+describe('aggregate = AggregateType(identity [, snapshot] [, events])', () => {
   it('aggregate.identity === identity', () => {
     const AggregateType = Aggregate(definition)
     const aggregate = AggregateType('x')
@@ -224,7 +224,7 @@ describe('An aggregate type instance. aggregate = AggregateType(identity [, snap
       const aggregate = AggregateType('x')
       expect(typeof aggregate.needsSnapshot).toBe('boolean')
     })
-    it('is true if aggregate was rebuilt from a number of events > of AggregateType definition.snapshotThreshold', () => {
+    it('is true if aggregate was rebuilt from a number of events > of definition.snapshotThreshold', () => {
       const AggregateType = Aggregate({
         ...definition,
         snapshotThreshold: 2,
@@ -234,7 +234,7 @@ describe('An aggregate type instance. aggregate = AggregateType(identity [, snap
 
       expect(AggregateType('x').needsSnapshot).toBe(false)
     })
-    it('is always false if a snapshotThreshold was not passed in Type definition', () => {
+    it('is always false if a snapshotThreshold was not specified in definition', () => {
       const AggregateType = Aggregate({
         ...definition,
         snapshotThreshold: undefined,

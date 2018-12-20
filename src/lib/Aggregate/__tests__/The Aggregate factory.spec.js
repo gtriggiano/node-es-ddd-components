@@ -5,11 +5,16 @@ import {
   Aggregate,
   BadAggregateDefinition,
   validNameDescription,
-} from '../../../../dist/main/lib'
+} from 'lib-export'
+import { definition } from 'lib-tests/TodoList'
 
-import { definition } from '../../../../dist/main/tests/TodoList'
+describe('The Aggregate() factory', () => {
+  it('is a function', () => {
+    expect(typeof Aggregate).toBe('function')
+  })
+})
 
-describe('Aggregate definition validation. Aggregate(definition) throws `BadAggregateDefinition` when:', () => {
+describe('Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:', () => {
   it('definition is not an object', () => {
     expect(() => Aggregate()).toThrow(BadAggregateDefinition)
     expect(() => Aggregate(3)).toThrow(BadAggregateDefinition)
@@ -182,5 +187,41 @@ describe('Aggregate definition validation. Aggregate(definition) throws `BadAggr
     expect(() =>
       Aggregate({ ...definition, deserializeState: () => {} })
     ).not.toThrow()
+  })
+})
+
+describe('Aggregate(definition: AggregateDefinition) returns an AggregateType() factory', () => {
+  it('AggregateType is a function', () => {
+    const AggregateType = Aggregate(definition)
+    expect(typeof AggregateType).toBe('function')
+  })
+  it('AggregateType.name === definition.type', () => {
+    const AggregateType = Aggregate({ ...definition, type: 'xs' })
+    expect(AggregateType.name).toBe('xs')
+  })
+  it('AggregateType.context === definition.context', () => {
+    const AggregateType = Aggregate({ ...definition, context: 'x' })
+    expect(AggregateType.context).toBe('x')
+  })
+  it('AggregateType.type === definition.type', () => {
+    const AggregateType = Aggregate(definition)
+    expect(AggregateType.type).toBe(definition.type)
+  })
+  it('AggregateType.description === definition.description || ``', () => {
+    const AggregateType = Aggregate({ ...definition, description: 'x' })
+    expect(AggregateType.description).toBe('x')
+
+    const AggregateType2 = Aggregate({ ...definition, description: undefined })
+    expect(AggregateType2.description).toBe('')
+  })
+  it('AggregateType is recognized as `instance of` Aggregate', () => {
+    const AggregateType = Aggregate(definition)
+    expect(AggregateType instanceof Aggregate).toBe(true)
+  })
+  it('AggregateType.toString() === `[Function ${definition.context}:${definition.type}]`', () => {
+    const AggregateType = Aggregate(definition)
+    expect(AggregateType.toString()).toBe(
+      `[Function ${definition.context}:${definition.type}]`
+    )
   })
 })

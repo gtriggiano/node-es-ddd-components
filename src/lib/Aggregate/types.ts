@@ -81,7 +81,7 @@ export interface AggregateSnapshot {
  *      persistence layer.
  *
  *  `2`: No consistency policy.
- *      We have no expectations regarding consistency *
+ *      We have no expectations regarding consistency
  */
 export type ConsistencyPolicy = 0 | 1 | 2
 

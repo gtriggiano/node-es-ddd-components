@@ -54,6 +54,8 @@ export interface SnapshotService {
 export interface RepositoryDefinition {
   readonly eventStore: EventStore
   readonly snapshotService?: SnapshotService
+
+  readonly loadCanFailBecauseOfSnaphotService?: boolean
 }
 
 export interface RepositoryInstance<

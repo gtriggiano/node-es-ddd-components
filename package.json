@@ -24,8 +24,9 @@
     "test": "run-s build test:*",
     "test:lint": "tslint --project . && prettier \"src/**/*.ts\" --list-different",
     "test:unit": "jest",
-    "watch": "run-s clean build:main test:unit && run-p \"build:main -- -w\" \"test:unit -- --watch\" watch:coverage",
-    "watch:build": "run-s clean \"build:main -- -w\"",
+    "dev": "run-s clean build:main test:unit && run-p \"build:main -- -w\" \"test:unit -- --watch\"",
+    "watch": "run-s clean \"build:main -- -w\"",
+    "cov": "npm test && opn pages/coverage/lcov-report/index.html",
     "check:coverage": "istanbul check-coverage --statements 100 --functions 100 --branches -2 --lines 100 pages/coverage/coverage-final.json",
     "send:coverage": "codecov -f pages/coverage/coverage-final.json -t $CODECOV_TOKEN",
     "typedoc": "run-s typedoc:html && opn pages/typedoc/index.html",
@@ -33,24 +34,26 @@
     "typedoc:json": "typedoc src/ --target ES6 --mode file --json pages/typedoc/typedoc.json",
     "gh-pages:publish": "gh-pages -m \"[ci skip] Updates\" -d pages",
     "version": "standard-version",
-    "reset": "git clean -dfx && git reset --hard && yarn",
-    "all": "run-s reset test doc:html",
+    "reset": "git clean -dfx && git reset --hard && rm -rf node_modules && npm i",
+    "all": "run-s reset test typedoc:*",
     "commit": "git-cz",
-    "prepare-release": "run-s all version gh-pages:publish"
+    "prepare-release": "run-s all version"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
     "build": "Clean and rebuild the project",
     "fix": "Try to automatically fix any linting problems",
-    "test": "Lint and unit test the project",
-    "watch": "Watch and rebuild the project on save, then rerun relevant tests",
+    "test": "Clean and rebuild the project. Then lint and unit test the project",
+    "dev": "Watch and rebuild the project on save, then rerun tests",
+    "watch": "Watch and rebuild the project on save",
     "cov": "Rebuild, run tests, then create and open the coverage report",
-    "doc": "Generate HTML API documentation and open it in a browser",
-    "doc:json": "Generate API documentation in typedoc JSON format",
+    "typedoc": "Generate TypeDoc documentation and open it in a browser",
+    "typedoc:html": "Generate TypeDoc documentation",
+    "typedoc:json": "Generate documentation in typedoc JSON format",
     "version": "Bump package.json version, update CHANGELOG.md, tag release",
     "reset": "Delete all untracked files and reset the repo to the last commit",
     "commit": "Make a new commit through commitizen",
-    "prepare-release": "One-step: clean, build, test, publish docs, and prep a release"
+    "prepare-release": "One-step: clean, build, test, generate TypeDoc, and prepare a release"
   },
   "dependencies": {
     "lodash": "^4.17.11"

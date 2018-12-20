@@ -3,6 +3,10 @@ module.exports = {
   collectCoverageFrom: ['dist/main/lib/**/*'],
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
   coverageDirectory: '<rootDir>/pages/coverage',
+  moduleNameMapper: {
+    '^lib-export$': '<rootDir>/dist/main/lib',
+    '^lib-tests(.*)$': '<rootDir>/dist/main/tests$1',
+  },
   // coverageThreshold: {
   //   global: {
   //     lines: 100,
@@ -14,7 +18,7 @@ module.exports = {
   reporters: ['default', 'jest-stare'],
   roots: ['<rootDir>/src/lib'],
   testMatch: ['**/__tests__/**/?(*.)+(spec|test).js'],
-  testResultsProcessor: './node_modules/jest-stare',
+  testResultsProcessor: './jest.processor.js',
   transformIgnorePatterns: ['/node_modules/', '<rootDir>/dist/'],
   // moduleFileExtensions: ['ts', 'js'],
   // transform: {

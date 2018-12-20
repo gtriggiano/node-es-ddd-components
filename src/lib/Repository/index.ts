@@ -24,10 +24,10 @@ export const WriteConcurrencyError = CustomError<'WriteConcurrencyError'>({
 })
 
 export function Repository<
-  Aggregate extends GenericAggregateInstance = GenericAggregateInstance
+  AggregateInstance extends GenericAggregateInstance = GenericAggregateInstance
 >(
   definition: RepositoryDefinition
-): RepositoryInstance<ReadonlyArray<Aggregate>> {
+): RepositoryInstance<ReadonlyArray<AggregateInstance>> {
   try {
     // tslint:disable no-expression-statement
     validateDefinition(definition)
@@ -36,11 +36,24 @@ export function Repository<
     throw BadRepositoryDefinition(e.message, { originalError: e })
   }
 
-  const { eventStore, snapshotService } = definition
+  const {
+    eventStore,
+    snapshotService,
+    loadCanFailBecauseOfSnaphotService,
+  } = definition
 
-  const loadAggregate = async (aggregate: Aggregate): Promise<Aggregate> => {
+  const loadAggregate = async (
+    aggregate: AggregateInstance
+  ): Promise<AggregateInstance> => {
     const snapshot = snapshotService
-      ? await snapshotService.loadAggregateSnapshot(aggregate.snapshotKey)
+      ? await snapshotService
+          .loadAggregateSnapshot(aggregate.snapshotKey)
+          .catch(e => {
+            // tslint:disable no-if-statement
+            if (!loadCanFailBecauseOfSnaphotService) return undefined
+            // tslint:enable
+            throw e
+          })
       : undefined
     const events = await eventStore.getEventsOfAggregate(
       aggregate,
@@ -59,15 +72,15 @@ export function Repository<
     }
     // tslint:enable
 
-    return loadedAggregate as Aggregate
+    return loadedAggregate as AggregateInstance
   }
 
   const load: RepositoryInstance<
-    ReadonlyArray<Aggregate>
+    ReadonlyArray<AggregateInstance>
   >['load'] = aggregates => Promise.all(aggregates.map(loadAggregate))
 
   const persist: RepositoryInstance<
-    ReadonlyArray<Aggregate>
+    ReadonlyArray<AggregateInstance>
   >['persist'] = async (aggregates, correlationId) => {
     const insertions = aggregates.reduce<ReadonlyArray<EventStoreInsertion>>(
       (list, aggregate) => {

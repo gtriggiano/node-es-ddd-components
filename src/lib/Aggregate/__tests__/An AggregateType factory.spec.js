@@ -1,17 +1,30 @@
 import 'jest'
 
-import { Aggregate, BadAggregateConstruction } from '../../../../dist/main/lib'
+import { Aggregate, BadAggregateConstruction } from 'lib-export'
+import { definition as originalDefinition } from 'lib-tests/TodoList'
+import ListCreated from 'lib-tests/TodoList/events/ListCreated'
+import ListNameChanged from 'lib-tests/TodoList/events/ListNameChanged'
 
-import { definition } from '../../../../dist/main/tests/TodoList'
-import ListCreated from '../../../../dist/main/tests/TodoList/events/ListCreated'
-import ListNameChanged from '../../../../dist/main/tests/TodoList/events/ListNameChanged'
+const [firstCommand, ...otherCommands] = originalDefinition.commands
+
+const definition = {
+  ...originalDefinition,
+  commands: [
+    ...otherCommands,
+    {
+      ...firstCommand,
+      emittableEvents: [...firstCommand.emittableEvents, 'UnknownEvent'],
+      raisableErrors: [...firstCommand.raisableErrors, 'UnknownError'],
+    },
+  ],
+}
 
 const toSerializedEvent = e => ({
   name: e.name,
   serializedPayload: e.getSerializedPayload(),
 })
 
-describe('The AggregateType instantiation validation. AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:', () => {
+describe('AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:', () => {
   it('identity is neither nil nor a string', () => {
     const AggregateType = Aggregate(definition)
     const AggregateTypeSingleton = Aggregate({ ...definition, singleton: true })
