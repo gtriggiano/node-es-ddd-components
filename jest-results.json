@@ -1,13 +1,13 @@
 {
   "numFailedTestSuites": 0,
   "numFailedTests": 0,
-  "numPassedTestSuites": 17,
-  "numPassedTests": 122,
+  "numPassedTestSuites": 16,
+  "numPassedTests": 139,
   "numPendingTestSuites": 0,
   "numPendingTests": 0,
   "numRuntimeErrorTestSuites": 0,
-  "numTotalTestSuites": 17,
-  "numTotalTests": 122,
+  "numTotalTestSuites": 16,
+  "numTotalTests": 139,
   "openHandles": [],
   "snapshot": {
     "added": 0,
@@ -24,18 +24,18 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1545325682578,
+  "startTime": 1545400768684,
   "success": true,
   "testResults": [
     {
       "console": [],
       "failureMessage": null,
       "numFailingTests": 0,
-      "numPassingTests": 5,
+      "numPassingTests": 22,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685118,
-        "start": 1545325684125
+        "end": 1545400769708,
+        "start": 1545400769580
       },
       "snapshot": {
         "added": 0,
@@ -52,7 +52,7 @@
           "ancestorTitles": [
             "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 53,
+          "duration": 21,
           "failureMessages": [],
           "fullName": "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when: identity is neither nil nor a string",
           "location": null,
@@ -64,7 +64,7 @@
           "ancestorTitles": [
             "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when: identity is undefined and aggregate is NOT a singleton",
           "location": null,
@@ -76,7 +76,7 @@
           "ancestorTitles": [
             "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when: identity is a string and aggregate is a singleton",
           "location": null,
@@ -88,7 +88,7 @@
           "ancestorTitles": [
             "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 7,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when: snapshot is neither falsy nor a valid snapshot object",
           "location": null,
@@ -100,18 +100,500 @@
           "ancestorTitles": [
             "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 11,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "AggregateType([identity] [, snapshot] [, events]) throws `BadAggregateConstruction` when: events is neither falsy nor an array of serialized domain events recognized by the aggregate",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
           "title": "events is neither falsy nor an array of serialized domain events recognized by the aggregate"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate is recognized as an `instanceof AggregateType`",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate is recognized as an `instanceof AggregateType`"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.context === AggregateType.context",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.context === AggregateType.context"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.type === AggregateType.type",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.type === AggregateType.type"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.identity === identity",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.identity === identity"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.version is a number",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.version is a number"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.needsSnapshot is a boolean",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.needsSnapshot is a boolean"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.snapshotKey is a string: [{definition.snapshotPrefix}:]AGGREGATE_SNAPSHOT:{definition.context}:{definition.type}[(id)]",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.snapshotKey is a string: [{definition.snapshotPrefix}:]AGGREGATE_SNAPSHOT:{definition.context}:{definition.type}[(id)]"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.query is a dictionary of functions keyed by definition.queries[*].name",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.query is a dictionary of functions keyed by definition.queries[*].name"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.execute is a dictionary of functions keyed by definition.commands[*].name",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.execute is a dictionary of functions keyed by definition.commands[*].name"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.appendEvents is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.appendEvents is a function"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.clone is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.clone is a function"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.New is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.New is a function"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.isDirty is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.isDirty is a function"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.getNewEvents is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.getNewEvents is a function"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.getConsistencyPolicy is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.getConsistencyPolicy is a function"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.getSerializedState is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.getSerializedState is a function"
+        },
+        {
+          "ancestorTitles": [
+            "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "AggregateType([identity] [, snapshot] [, events]) returns an `aggregate` instance aggregate.getSnapshot is a function",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "aggregate.getSnapshot is a function"
         }
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/b2/index_b2c00f5ead65d072f8c5561f25961836.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/getDeserializer.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d8/getDeserializer_d859f326946812e14afe3a5937385a54.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/getSerializer.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/a8/getSerializer_a8af3d15d1aa2f387f10219b519879f6.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/tuple.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3c/tuple_3c397deeccbb723e856323be4e6d11bb.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/aggregateUtils.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/b8/aggregateUtils_b847cbc83e1a31d27773213b5f5663d8.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/CommandInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/06/CommandInterface_062f6279b62735157a3a8ee124139111.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/EmissionInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/fa/EmissionInterface_fa35e3e02afc6573c31096e4cdb3229c.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/ErrorInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/37/ErrorInterface_37fe09b0429c98a4802bdbdb71fcf1f6.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/QueryInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/69/QueryInterface_69fd0f66a657741347b54b8d7b92bfde.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/snapshotUtils.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/0c/snapshotUtils_0cad7fd8ebe804703679364f72d40657.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/validateConstructorProps.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/44/validateConstructorProps_444b6f1f47ac2d3e998c4ff55f808d59.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/96/validateDefinition_961584b1a4a418d383d6b6a25d53b015.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/DomainEvent/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/ae/index_ae1a78bf3a9e2400f71ea7635241a285.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/DomainEvent/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3c/validateDefinition_3cf677f9b3298ec37d53ee884b9db238.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3e/index_3efa4d17872498cf792fb96717ddd325.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/27/validateDefinition_2787b69c24bf56545b5cad089505f85f.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/InMemoryEventStore.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/bf/InMemoryEventStore_bf6e60456b494162759e9dcce463a90f.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/InMemorySnapshotService.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/2f/InMemorySnapshotService_2fb658ae8460d5425f51bea7d7191969.map"
+      },
+      "skipped": false,
+      "leaks": false
+    },
+    {
+      "console": [],
+      "failureMessage": null,
+      "numFailingTests": 0,
+      "numPassingTests": 19,
+      "numPendingTests": 0,
+      "perfStats": {
+        "end": 1545400769544,
+        "start": 1545400769159
+      },
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "unmatched": 0,
+        "updated": 0,
+        "uncheckedKeys": []
+      },
+      "testFilePath": "src/lib/Aggregate/__tests__/An aggregate instance.spec.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "aggregate.version"
+          ],
+          "duration": 6,
+          "failureMessages": [],
+          "fullName": "aggregate.version it is calculated as ((snapshot && snapshot.version) || 0) + (events && events.length) || 0",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "it is calculated as ((snapshot && snapshot.version) || 0) + (events && events.length) || 0"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.version"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.version does not change when the aggregate produces new events",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "does not change when the aggregate produces new events"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.needsSnapshot"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.needsSnapshot is true if aggregate was rebuilt from a number of events >= of definition.snapshotThreshold",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "is true if aggregate was rebuilt from a number of events >= of definition.snapshotThreshold"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.needsSnapshot"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.needsSnapshot is always false if a snapshotThreshold was not specified in definition",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "is always false if a snapshotThreshold was not specified in definition"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.query"
+          ],
+          "duration": 2,
+          "failureMessages": [],
+          "fullName": "aggregate.query is a dictionary of functions keyed by definition.queries[*].name",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "is a dictionary of functions keyed by definition.queries[*].name"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.query"
+          ],
+          "duration": 3,
+          "failureMessages": [],
+          "fullName": "aggregate.query every query[queryName](input: any) maps to the corresponding query handler. Current aggregate state is passed as first argument, while `input` as second argument",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "every query[queryName](input: any) maps to the corresponding query handler. Current aggregate state is passed as first argument, while `input` as second argument"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.execute"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "aggregate.execute is a dictionary of functions keyed by definition.commands[*].name",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "is a dictionary of functions keyed by definition.commands[*].name"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.execute"
+          ],
+          "duration": 2,
+          "failureMessages": [],
+          "fullName": "aggregate.execute every execute[commandName](input: any) maps to the corresponding command handler. `input` is passed as first argument while a CommandHandlerInterface as second argument",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "every execute[commandName](input: any) maps to the corresponding command handler. `input` is passed as first argument while a CommandHandlerInterface as second argument"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.appendEvents(events: SerializedDomainEvent[]): AggregateInstance "
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.appendEvents(events: SerializedDomainEvent[]): AggregateInstance  returns a new instance of the same aggregate with events appended to its history",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns a new instance of the same aggregate with events appended to its history"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.clone(): AggregateInstance"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.clone(): AggregateInstance returns another instance of the same aggregate, as it was before producing any event",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns another instance of the same aggregate, as it was before producing any event"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.New"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "aggregate.New is a reference to the AggregateType factory which generated the instance",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "is a reference to the AggregateType factory which generated the instance"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.isDirty(): boolen"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.isDirty(): boolen returns true if aggregate produced new events, false otherwise",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns true if aggregate produced new events, false otherwise"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.isDirty(): boolen"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "aggregate.isDirty(): boolen returns false if aggregate did not produce new events",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns false if aggregate did not produce new events"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.getNewEvents(): DomainEventInstance[]"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.getNewEvents(): DomainEventInstance[] returns the list of produced events",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns the list of produced events"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.consistencyPolicy(): ConsistencyPolicy"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.consistencyPolicy(): ConsistencyPolicy returns the consistency policy to use to persist the new events. defaults to 0.",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns the consistency policy to use to persist the new events. defaults to 0."
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.getSerializedState(): string"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "aggregate.getSerializedState(): string returns the aggregate state serialized as a string",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns the aggregate state serialized as a string"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.getSnapshot(): AggregateSnapshot"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.getSnapshot(): AggregateSnapshot returns a snapshot of the aggregate as it was before producing new events",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns a snapshot of the aggregate as it was before producing new events"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.toString(): string"
+          ],
+          "duration": 0,
+          "failureMessages": [],
+          "fullName": "aggregate.toString(): string returns `[object {context}:{type}(identity) #{version}+{newEvents.length}]` if aggregate is not a singleton",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns `[object {context}:{type}(identity) #{version}+{newEvents.length}]` if aggregate is not a singleton"
+        },
+        {
+          "ancestorTitles": [
+            "aggregate.toString(): string"
+          ],
+          "duration": 1,
+          "failureMessages": [],
+          "fullName": "aggregate.toString(): string returns `[object {context}:{type} #{version}+{newEvents.length}]` if aggregate is a singleton",
+          "location": null,
+          "numPassingAsserts": 0,
+          "status": "passed",
+          "title": "returns `[object {context}:{type} #{version}+{newEvents.length}]` if aggregate is a singleton"
+        }
+      ],
+      "sourceMaps": {
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -144,8 +626,8 @@
       "numPassingTests": 25,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685262,
-        "start": 1545325684161
+        "end": 1545400769877,
+        "start": 1545400769746
       },
       "snapshot": {
         "added": 0,
@@ -160,11 +642,11 @@
       "testResults": [
         {
           "ancestorTitles": [
-            "The Aggregate() factory"
+            "The Aggregate factory"
           ],
-          "duration": 10,
+          "duration": 1,
           "failureMessages": [],
-          "fullName": "The Aggregate() factory is a function",
+          "fullName": "The Aggregate factory is a function",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -174,7 +656,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 53,
+          "duration": 15,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition is not an object",
           "location": null,
@@ -186,7 +668,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 9,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.context is not a string starting with a letter and composed by letters, numbers and underscores only",
           "location": null,
@@ -198,7 +680,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 8,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.type is not a string starting with a letter and composed by letters, numbers and underscores only",
           "location": null,
@@ -210,7 +692,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.singleton is neither nil nor a boolean",
           "location": null,
@@ -222,7 +704,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.description is neither nil nor a string",
           "location": null,
@@ -234,7 +716,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 18,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.initialState is not an object",
           "location": null,
@@ -246,7 +728,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 16,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.snapshotThreshold is neither nil nor an integer > 0",
           "location": null,
@@ -258,7 +740,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.snapshotPrefix is neither nil nor a string",
           "location": null,
@@ -270,7 +752,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.[commands|queries|events|errors] are not array",
           "location": null,
@@ -294,7 +776,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.commands are not all valid commands",
           "location": null,
@@ -306,7 +788,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.queries are not unique by .name",
           "location": null,
@@ -318,7 +800,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.queries are not all valid queries",
           "location": null,
@@ -330,7 +812,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.events are not unique by .type",
           "location": null,
@@ -342,7 +824,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 4,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.errors are not unique by .name",
           "location": null,
@@ -354,7 +836,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 6,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.serializeState is neither nil nor a function",
           "location": null,
@@ -366,7 +848,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 7,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.deserializeState is neither nil nor a function",
           "location": null,
@@ -376,11 +858,11 @@
         },
         {
           "ancestorTitles": [
-            "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory"
+            "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
           "duration": 1,
           "failureMessages": [],
-          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory AggregateType is a function",
+          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType is a function",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -388,11 +870,11 @@
         },
         {
           "ancestorTitles": [
-            "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory"
+            "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
-          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory AggregateType.name === definition.type",
+          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.name === definition.type",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -400,11 +882,11 @@
         },
         {
           "ancestorTitles": [
-            "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory"
+            "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
-          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory AggregateType.context === definition.context",
+          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.context === definition.context",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -412,11 +894,11 @@
         },
         {
           "ancestorTitles": [
-            "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory"
+            "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
           "duration": 0,
           "failureMessages": [],
-          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory AggregateType.type === definition.type",
+          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.type === definition.type",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -424,11 +906,11 @@
         },
         {
           "ancestorTitles": [
-            "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory"
+            "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
           "duration": 1,
           "failureMessages": [],
-          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory AggregateType.description === definition.description || ``",
+          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.description === definition.description || ``",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -436,11 +918,11 @@
         },
         {
           "ancestorTitles": [
-            "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory"
+            "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
-          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory AggregateType is recognized as `instance of` Aggregate",
+          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType is recognized as `instance of` Aggregate",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -448,11 +930,11 @@
         },
         {
           "ancestorTitles": [
-            "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory"
+            "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
-          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType() factory AggregateType.toString() === `[Function ${definition.context}:${definition.type}]`",
+          "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.toString() === `[Function ${definition.context}:${definition.type}]`",
           "location": null,
           "numPassingAsserts": 0,
           "status": "passed",
@@ -461,338 +943,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/b2/index_b2c00f5ead65d072f8c5561f25961836.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/getDeserializer.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d8/getDeserializer_d859f326946812e14afe3a5937385a54.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/getSerializer.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/a8/getSerializer_a8af3d15d1aa2f387f10219b519879f6.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/tuple.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3c/tuple_3c397deeccbb723e856323be4e6d11bb.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/aggregateUtils.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/b8/aggregateUtils_b847cbc83e1a31d27773213b5f5663d8.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/CommandInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/06/CommandInterface_062f6279b62735157a3a8ee124139111.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/EmissionInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/fa/EmissionInterface_fa35e3e02afc6573c31096e4cdb3229c.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/ErrorInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/37/ErrorInterface_37fe09b0429c98a4802bdbdb71fcf1f6.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/QueryInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/69/QueryInterface_69fd0f66a657741347b54b8d7b92bfde.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/snapshotUtils.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/0c/snapshotUtils_0cad7fd8ebe804703679364f72d40657.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/validateConstructorProps.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/44/validateConstructorProps_444b6f1f47ac2d3e998c4ff55f808d59.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/96/validateDefinition_961584b1a4a418d383d6b6a25d53b015.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/DomainEvent/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/ae/index_ae1a78bf3a9e2400f71ea7635241a285.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/DomainEvent/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3c/validateDefinition_3cf677f9b3298ec37d53ee884b9db238.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3e/index_3efa4d17872498cf792fb96717ddd325.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/27/validateDefinition_2787b69c24bf56545b5cad089505f85f.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/InMemoryEventStore.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/bf/InMemoryEventStore_bf6e60456b494162759e9dcce463a90f.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/InMemorySnapshotService.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/2f/InMemorySnapshotService_2fb658ae8460d5425f51bea7d7191969.map"
-      },
-      "skipped": false,
-      "leaks": false
-    },
-    {
-      "console": [],
-      "failureMessage": null,
-      "numFailingTests": 0,
-      "numPassingTests": 1,
-      "numPendingTests": 0,
-      "perfStats": {
-        "end": 1545325685046,
-        "start": 1545325684119
-      },
-      "snapshot": {
-        "added": 0,
-        "fileDeleted": false,
-        "matched": 0,
-        "unchecked": 0,
-        "unmatched": 0,
-        "updated": 0,
-        "uncheckedKeys": []
-      },
-      "testFilePath": "src/lib/Aggregate/__tests__/The aggregate instance query interface.spec.js",
-      "testResults": [
-        {
-          "ancestorTitles": [
-            "The aggregate instance query interface"
-          ],
-          "duration": 13,
-          "failureMessages": [],
-          "fullName": "The aggregate instance query interface every prop maps to one of the definition.queries handler",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "every prop maps to one of the definition.queries handler"
-        }
-      ],
-      "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/b2/index_b2c00f5ead65d072f8c5561f25961836.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/getDeserializer.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d8/getDeserializer_d859f326946812e14afe3a5937385a54.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/getSerializer.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/a8/getSerializer_a8af3d15d1aa2f387f10219b519879f6.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/tuple.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3c/tuple_3c397deeccbb723e856323be4e6d11bb.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/aggregateUtils.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/b8/aggregateUtils_b847cbc83e1a31d27773213b5f5663d8.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/CommandInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/06/CommandInterface_062f6279b62735157a3a8ee124139111.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/EmissionInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/fa/EmissionInterface_fa35e3e02afc6573c31096e4cdb3229c.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/ErrorInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/37/ErrorInterface_37fe09b0429c98a4802bdbdb71fcf1f6.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/QueryInterface.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/69/QueryInterface_69fd0f66a657741347b54b8d7b92bfde.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/snapshotUtils.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/0c/snapshotUtils_0cad7fd8ebe804703679364f72d40657.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/validateConstructorProps.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/44/validateConstructorProps_444b6f1f47ac2d3e998c4ff55f808d59.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/96/validateDefinition_961584b1a4a418d383d6b6a25d53b015.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/DomainEvent/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/ae/index_ae1a78bf3a9e2400f71ea7635241a285.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/DomainEvent/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3c/validateDefinition_3cf677f9b3298ec37d53ee884b9db238.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/3e/index_3efa4d17872498cf792fb96717ddd325.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/27/validateDefinition_2787b69c24bf56545b5cad089505f85f.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/InMemoryEventStore.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/bf/InMemoryEventStore_bf6e60456b494162759e9dcce463a90f.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Repository/InMemorySnapshotService.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/2f/InMemorySnapshotService_2fb658ae8460d5425f51bea7d7191969.map"
-      },
-      "skipped": false,
-      "leaks": false
-    },
-    {
-      "console": [],
-      "failureMessage": null,
-      "numFailingTests": 0,
-      "numPassingTests": 18,
-      "numPendingTests": 0,
-      "perfStats": {
-        "end": 1545325685202,
-        "start": 1545325684218
-      },
-      "snapshot": {
-        "added": 0,
-        "fileDeleted": false,
-        "matched": 0,
-        "unchecked": 0,
-        "unmatched": 0,
-        "updated": 0,
-        "uncheckedKeys": []
-      },
-      "testFilePath": "src/lib/Aggregate/__tests__/The instance of an AggregateType.spec.js",
-      "testResults": [
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 13,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.identity === identity",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.identity === identity"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 2,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.context === AggregateType.context",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.context === AggregateType.context"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 1,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.type === AggregateType.type",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.type === AggregateType.type"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 7,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.version === ((snapshot && snapshot.version) || 0) + (events && events.length) || 0",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.version === ((snapshot && snapshot.version) || 0) + (events && events.length) || 0"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 4,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.snapshotKey is a string: [{definition.snapshotPrefix}:]AGGREGATE_SNAPSHOT:{definition.context}:{definition.type}[(id)]",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.snapshotKey is a string: [{definition.snapshotPrefix}:]AGGREGATE_SNAPSHOT:{definition.context}:{definition.type}[(id)]"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 6,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.query is a dictionary of functions keyed by definition.queries[*].name",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.query is a dictionary of functions keyed by definition.queries[*].name"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 2,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.execute is a dictionary of functions keyed by definition.commands[*].name",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.execute is a dictionary of functions keyed by definition.commands[*].name"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 3,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.getSerializedState() returns the serialization of the current state",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.getSerializedState() returns the serialization of the current state"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 5,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.getSnapshot() returns a snapshot of the aggregate as it was before emitting events",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.getSnapshot() returns a snapshot of the aggregate as it was before emitting events"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 1,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.isDirty() returns true if aggregate has emitted new events, false otherwise",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.isDirty() returns true if aggregate has emitted new events, false otherwise"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 2,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.getConsistencyPolicy() returns the consistency policy to use to persist the new events. defaults to 0.",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.getConsistencyPolicy() returns the consistency policy to use to persist the new events. defaults to 0."
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 5,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.clone() returns another instance indentical to the one holding the clone fn, with the same state it had at instantiation time",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.clone() returns another instance indentical to the one holding the clone fn, with the same state it had at instantiation time"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 3,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.getNewEvents() returns the list of emitted domain event instances",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.getNewEvents() returns the list of emitted domain event instances"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 4,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.appendEvents() returns a new instance of the same aggregate with newEvents appended",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.appendEvents() returns a new instance of the same aggregate with newEvents appended"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])"
-          ],
-          "duration": 1,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.toString() === `[object {context}:{type}(identity) #{version}+{totalEmittedEvents}]`",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "aggregate.toString() === `[object {context}:{type}(identity) #{version}+{totalEmittedEvents}]`"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])",
-            "aggregate.needsSnapshot"
-          ],
-          "duration": 3,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.needsSnapshot is a boolean",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "is a boolean"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])",
-            "aggregate.needsSnapshot"
-          ],
-          "duration": 2,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.needsSnapshot is true if aggregate was rebuilt from a number of events > of definition.snapshotThreshold",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "is true if aggregate was rebuilt from a number of events > of definition.snapshotThreshold"
-        },
-        {
-          "ancestorTitles": [
-            "aggregate = AggregateType(identity [, snapshot] [, events])",
-            "aggregate.needsSnapshot"
-          ],
-          "duration": 2,
-          "failureMessages": [],
-          "fullName": "aggregate = AggregateType(identity [, snapshot] [, events]) aggregate.needsSnapshot is always false if a snapshotThreshold was not specified in definition",
-          "location": null,
-          "numPassingAsserts": 0,
-          "status": "passed",
-          "title": "is always false if a snapshotThreshold was not specified in definition"
-        }
-      ],
-      "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -825,8 +976,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685088,
-        "start": 1545325684175
+        "end": 1545400770933,
+        "start": 1545400770852
       },
       "snapshot": {
         "added": 0,
@@ -843,7 +994,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 28,
+          "duration": 6,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) error is an instance of Error",
           "location": null,
@@ -867,7 +1018,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) error.message === message || ErrorType.name",
           "location": null,
@@ -879,7 +1030,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) error.data === data",
           "location": null,
@@ -891,7 +1042,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) customErrorType.stack is populated",
           "location": null,
@@ -903,7 +1054,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) CustomErrorType.name shows as error name in the customErrorType.stack first line",
           "location": null,
@@ -915,7 +1066,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) the second line of the stack refers to the file where you invoke CustomErrorType()",
           "location": null,
@@ -926,7 +1077,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -959,8 +1110,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685063,
-        "start": 1545325684158
+        "end": 1545400770552,
+        "start": 1545400770461
       },
       "snapshot": {
         "added": 0,
@@ -977,7 +1128,7 @@
           "ancestorTitles": [
             "The CustomError() factory"
           ],
-          "duration": 8,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "The CustomError() factory is a function",
           "location": null,
@@ -989,7 +1140,7 @@
           "ancestorTitles": [
             "CustomError(definition) throws `TypeError` when:"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "CustomError(definition) throws `TypeError` when: definition is not an object",
           "location": null,
@@ -1001,7 +1152,7 @@
           "ancestorTitles": [
             "CustomError(definition) throws `TypeError` when:"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "CustomError(definition) throws `TypeError` when: definition.name is not a string starting with a letter and composed by letters, numbers and underscores only",
           "location": null,
@@ -1037,7 +1188,7 @@
           "ancestorTitles": [
             "CustomError(definition) returns an ErrorType() factory"
           ],
-          "duration": 17,
+          "duration": 5,
           "failureMessages": [],
           "fullName": "CustomError(definition) returns an ErrorType() factory ErrorType is an error constructor",
           "location": null,
@@ -1049,7 +1200,7 @@
           "ancestorTitles": [
             "CustomError(definition) returns an ErrorType() factory"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "CustomError(definition) returns an ErrorType() factory ErrorType can be invoked without `new`",
           "location": null,
@@ -1060,7 +1211,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1093,8 +1244,8 @@
       "numPassingTests": 5,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685416,
-        "start": 1545325685259
+        "end": 1545400771294,
+        "start": 1545400771216
       },
       "snapshot": {
         "added": 0,
@@ -1111,7 +1262,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 4,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType.name === EventType.name",
           "location": null,
@@ -1123,7 +1274,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 0,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType.data === payload",
           "location": null,
@@ -1135,7 +1286,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType.getSerializedPayload() returns the serialization of eventType.data",
           "location": null,
@@ -1147,7 +1298,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType.applyToState(state) returns definition.reducer(state, eventType)",
           "location": null,
@@ -1159,7 +1310,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType is recognized as `instanceof EventType`",
           "location": null,
@@ -1170,7 +1321,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1203,8 +1354,8 @@
       "numPassingTests": 6,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685129,
-        "start": 1545325684191
+        "end": 1545400770309,
+        "start": 1545400770217
       },
       "snapshot": {
         "added": 0,
@@ -1221,7 +1372,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 34,
+          "duration": 10,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition is not an object",
           "location": null,
@@ -1233,7 +1384,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.name is not a valid name",
           "location": null,
@@ -1245,7 +1396,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.description is neither nnil nor a string",
           "location": null,
@@ -1257,7 +1408,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.reducer is not a function",
           "location": null,
@@ -1269,7 +1420,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.serializePayload is neither nil nor a function",
           "location": null,
@@ -1281,7 +1432,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.deserializePayload is neither nil nor a function",
           "location": null,
@@ -1292,7 +1443,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1325,8 +1476,8 @@
       "numPassingTests": 2,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685530,
-        "start": 1545325685401
+        "end": 1545400771523,
+        "start": 1545400771441
       },
       "snapshot": {
         "added": 0,
@@ -1343,7 +1494,7 @@
           "ancestorTitles": [
             "The DomainEvent factory. DomainEvent(definition)"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "The DomainEvent factory. DomainEvent(definition) is a function",
           "location": null,
@@ -1366,7 +1517,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1399,8 +1550,8 @@
       "numPassingTests": 5,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685500,
-        "start": 1545325685357
+        "end": 1545400771148,
+        "start": 1545400771069
       },
       "snapshot": {
         "added": 0,
@@ -1417,7 +1568,7 @@
           "ancestorTitles": [
             "An EventType factory. EventType = DomainEvent(definition)"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "An EventType factory. EventType = DomainEvent(definition) EventType is a function",
           "location": null,
@@ -1441,7 +1592,7 @@
           "ancestorTitles": [
             "An EventType factory. EventType = DomainEvent(definition)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "An EventType factory. EventType = DomainEvent(definition) EventType.description === definition.description || ``",
           "location": null,
@@ -1453,7 +1604,7 @@
           "ancestorTitles": [
             "An EventType factory. EventType = DomainEvent(definition)"
           ],
-          "duration": 0,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "An EventType factory. EventType = DomainEvent(definition) EventType.fromSerializedPayload is a function",
           "location": null,
@@ -1465,7 +1616,7 @@
           "ancestorTitles": [
             "An EventType factory. EventType = DomainEvent(definition)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "An EventType factory. EventType = DomainEvent(definition) EventType is recognized as `instance of` DomainEvent",
           "location": null,
@@ -1476,7 +1627,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1509,8 +1660,8 @@
       "numPassingTests": 6,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685076,
-        "start": 1545325684156
+        "end": 1545400770432,
+        "start": 1545400770337
       },
       "snapshot": {
         "added": 0,
@@ -1527,7 +1678,7 @@
           "ancestorTitles": [
             "The Repository factory"
           ],
-          "duration": 6,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "The Repository factory is a function",
           "location": null,
@@ -1539,7 +1690,7 @@
           "ancestorTitles": [
             "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when:"
           ],
-          "duration": 26,
+          "duration": 9,
           "failureMessages": [],
           "fullName": "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when: definition is not an object",
           "location": null,
@@ -1551,7 +1702,7 @@
           "ancestorTitles": [
             "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when:"
           ],
-          "duration": 7,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when: definition.eventStore is not an EventStore",
           "location": null,
@@ -1563,7 +1714,7 @@
           "ancestorTitles": [
             "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when:"
           ],
-          "duration": 9,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when: definition.snapshotService is neither falsy nor a SnapshotService",
           "location": null,
@@ -1587,7 +1738,7 @@
           "ancestorTitles": [
             "Repository(definition) returns a `respository` instance"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Repository(definition) returns a `respository` instance repository.persist is a function",
           "location": null,
@@ -1598,7 +1749,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1631,8 +1782,8 @@
       "numPassingTests": 12,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685169,
-        "start": 1545325684172
+        "end": 1545400770060,
+        "start": 1545400769942
       },
       "snapshot": {
         "added": 0,
@@ -1649,7 +1800,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 18,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Returned value is a promise",
           "location": null,
@@ -1661,7 +1812,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 15,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Returned value promised value is a list of rebuilt aggregate instances",
           "location": null,
@@ -1673,7 +1824,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Returned value the order of entities received as argument in mantained in the returned list",
           "location": null,
@@ -1685,7 +1836,7 @@
           "ancestorTitles": [
             "Interaction with `snapshotService`"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Interaction with `snapshotService` calls snapshotService.loadAggregateSnapshot(aggregate.snapshotKey)",
           "location": null,
@@ -1697,7 +1848,7 @@
           "ancestorTitles": [
             "Interaction with `snapshotService`"
           ],
-          "duration": 8,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Interaction with `snapshotService` calls snapshotService.saveAggregateSnapshot(aggregate.snapshotKey, {version: aggregate.version, serializedState: aggregate.getSerializedState()}) after rebuilding an aggregate, if `!!aggregate.needsSnapshot` ",
           "location": null,
@@ -1709,7 +1860,7 @@
           "ancestorTitles": [
             "Behaviour in case of snpshotService.loadAggregateSnapshot() failure with `error`"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Behaviour in case of snpshotService.loadAggregateSnapshot() failure with `error` DOES NOT FAIL if definition.loadCanFailBecauseOfSnaphotService is falsy",
           "location": null,
@@ -1721,7 +1872,7 @@
           "ancestorTitles": [
             "Behaviour in case of snpshotService.loadAggregateSnapshot() failure with `error`"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Behaviour in case of snpshotService.loadAggregateSnapshot() failure with `error` FAILS PASSING THE snpshotService ERROR if definition.loadCanFailBecauseOfSnaphotService is truthy",
           "location": null,
@@ -1733,7 +1884,7 @@
           "ancestorTitles": [
             "Behaviour in case of snapshotService.saveAggregateSnapshot() failure"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Behaviour in case of snapshotService.saveAggregateSnapshot() failure DOES NOT FAIL",
           "location": null,
@@ -1746,7 +1897,7 @@
             "Interaction with `eventStore`",
             "When a `snapshotService` is not specified in the repository definition"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` When a `snapshotService` is not specified in the repository definition calls eventStore.getEventsOfAggregate(aggregate, 0)",
           "location": null,
@@ -1759,7 +1910,7 @@
             "Interaction with `eventStore`",
             "When a `snapshot` has been retrieved through snapshotService"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` When a `snapshot` has been retrieved through snapshotService calls eventStore.getEventsOfAggregate(aggregate, snapshot.version)",
           "location": null,
@@ -1772,7 +1923,7 @@
             "Interaction with `eventStore`",
             "When a snapshot has not been retrieved"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` When a snapshot has not been retrieved calls eventStore.getEventsOfAggregate(aggregate, 0)",
           "location": null,
@@ -1795,7 +1946,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1828,8 +1979,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685135,
-        "start": 1545325684155
+        "end": 1545400770187,
+        "start": 1545400770092
       },
       "snapshot": {
         "added": 0,
@@ -1846,7 +1997,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 25,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Returned value is a promise",
           "location": null,
@@ -1858,7 +2009,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 7,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Returned value promised value is `{aggregates: Aggregates[], persistedEvents: PersistedDomainEvent[]}`",
           "location": null,
@@ -1870,7 +2021,7 @@
           "ancestorTitles": [
             "Invocation of `eventStore.appendEventsToAggregates(insertions, cId)"
           ],
-          "duration": 8,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Invocation of `eventStore.appendEventsToAggregates(insertions, cId) every insertion describes a request to append events for a dirty aggregate",
           "location": null,
@@ -1882,7 +2033,7 @@
           "ancestorTitles": [
             "Invocation of `eventStore.appendEventsToAggregates(insertions, cId)"
           ],
-          "duration": 4,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Invocation of `eventStore.appendEventsToAggregates(insertions, cId) clean aggregates do not get mapped to insertion objects",
           "location": null,
@@ -1894,7 +2045,7 @@
           "ancestorTitles": [
             "Invocation of `eventStore.appendEventsToAggregates(insertions, cId)"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Invocation of `eventStore.appendEventsToAggregates(insertions, cId) if only clean aggregates get passed to `persist` then `` does not get invoked",
           "location": null,
@@ -1918,7 +2069,7 @@
           "ancestorTitles": [
             "Invocation of `eventStore.appendEventsToAggregates(insertions, cId)"
           ],
-          "duration": 5,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Invocation of `eventStore.appendEventsToAggregates(insertions, cId) cId === correlationId || ``",
           "location": null,
@@ -1929,7 +2080,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -1962,8 +2113,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685398,
-        "start": 1545325685218
+        "end": 1545400770706,
+        "start": 1545400770616
       },
       "snapshot": {
         "added": 0,
@@ -1993,7 +2144,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(JSON.parse)"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(JSON.parse) deserialize is a function",
           "location": null,
@@ -2006,7 +2157,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(JSON.parse)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(JSON.parse) deserialize returns the result of deserializer",
           "location": null,
@@ -2019,7 +2170,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(JSON.parse)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(JSON.parse) deserialize defaults to JSON.parse",
           "location": null,
@@ -2032,7 +2183,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(JSON.parse)"
           ],
-          "duration": 15,
+          "duration": 7,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(JSON.parse) if deserialize() throws, the error is encapsulated in DeserializationError.data.originalError",
           "location": null,
@@ -2058,7 +2209,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(null, `a message`)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(null, `a message`) if deserialize() throws the error message is `a message`",
           "location": null,
@@ -2069,7 +2220,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -2102,8 +2253,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685049,
-        "start": 1545325684147
+        "end": 1545400770822,
+        "start": 1545400770739
       },
       "snapshot": {
         "added": 0,
@@ -2120,7 +2271,7 @@
           "ancestorTitles": [
             "getSerializer(serializer?: function, errorMessage?: string)"
           ],
-          "duration": 8,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) is a function",
           "location": null,
@@ -2133,7 +2284,7 @@
             "getSerializer(serializer?: function, errorMessage?: string)",
             "const serialize = getSerializer(JSON.stringify)"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) const serialize = getSerializer(JSON.stringify) serialize is a function",
           "location": null,
@@ -2159,7 +2310,7 @@
             "getSerializer(serializer?: function, errorMessage?: string)",
             "const serialize = getSerializer(JSON.stringify)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) const serialize = getSerializer(JSON.stringify) serializer defaults to JSON.stringify",
           "location": null,
@@ -2172,7 +2323,7 @@
             "getSerializer(serializer?: function, errorMessage?: string)",
             "const serialize = getSerializer(JSON.stringify)"
           ],
-          "duration": 22,
+          "duration": 8,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) const serialize = getSerializer(JSON.stringify) if serializer() throws the original error is encapsulated in SerializationError.data.originalError",
           "location": null,
@@ -2185,7 +2336,7 @@
             "getSerializer(serializer?: function, errorMessage?: string)",
             "const serialize = getSerializer(JSON.stringify)"
           ],
-          "duration": 2,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) const serialize = getSerializer(JSON.stringify) SerializationError.message === errorMessage ? errorMessage : SerializationError.data.originalError.message",
           "location": null,
@@ -2209,7 +2360,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -2242,8 +2393,8 @@
       "numPassingTests": 1,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685439,
-        "start": 1545325685288
+        "end": 1545400771404,
+        "start": 1545400771328
       },
       "snapshot": {
         "added": 0,
@@ -2260,7 +2411,7 @@
           "ancestorTitles": [
             "isValidName(x)"
           ],
-          "duration": 6,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "isValidName(x) return TRUE if x is a string starting with a letter and composed by letters, numbers and underscores only, false otherwise",
           "location": null,
@@ -2271,7 +2422,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -2304,8 +2455,8 @@
       "numPassingTests": 1,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545325685477,
-        "start": 1545325685334
+        "end": 1545400771034,
+        "start": 1545400770963
       },
       "snapshot": {
         "added": 0,
@@ -2322,7 +2473,7 @@
           "ancestorTitles": [
             "tuple(...args: any[])"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "tuple(...args: any[]) returns the provided arguments as an array",
           "location": null,
@@ -2333,7 +2484,7 @@
       ],
       "sourceMaps": {
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/12/index_128a0b5d7173f49fdb944995df63e996.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d1/index_d13524924ba8f82486fc8b4918b54da4.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/00/index_00edff78ad010043dac3c703cafca048.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/utils/isValidName.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/54/isValidName_540dc713413f65bf80217d161e6b88eb.map",
@@ -2419,11 +2570,11 @@
       "fnMap": {},
       "branchMap": {},
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 17,
-        "4": 17
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 16,
+        "4": 16
       },
       "f": {},
       "b": {}
@@ -2797,7 +2948,7 @@
             "column": 18
           },
           "end": {
-            "line": 319,
+            "line": 316,
             "column": 3
           }
         },
@@ -3047,7 +3198,7 @@
             "column": 4
           },
           "end": {
-            "line": 318,
+            "line": 315,
             "column": 5
           }
         },
@@ -3123,51 +3274,51 @@
         },
         "69": {
           "start": {
-            "line": 313,
-            "column": 12
+            "line": 312,
+            "column": 21
           },
           "end": {
-            "line": 315,
-            "column": 14
+            "line": 312,
+            "column": 73
           }
         },
         "70": {
           "start": {
-            "line": 321,
+            "line": 318,
             "column": 38
           },
           "end": {
-            "line": 321,
+            "line": 318,
             "column": 69
           }
         },
         "71": {
           "start": {
-            "line": 323,
+            "line": 320,
             "column": 2
           },
           "end": {
-            "line": 334,
+            "line": 331,
             "column": 4
           }
         },
         "72": {
           "start": {
-            "line": 328,
+            "line": 325,
             "column": 29
           },
           "end": {
-            "line": 328,
+            "line": 325,
             "column": 56
           }
         },
         "73": {
           "start": {
-            "line": 332,
+            "line": 329,
             "column": 8
           },
           "end": {
-            "line": 332,
+            "line": 329,
             "column": 60
           }
         },
@@ -3177,27 +3328,27 @@
             "column": 0
           },
           "end": {
-            "line": 335,
+            "line": 332,
             "column": 1
           }
         },
         "75": {
           "start": {
-            "line": 338,
+            "line": 335,
             "column": 0
           },
           "end": {
-            "line": 340,
+            "line": 337,
             "column": 2
           }
         },
         "76": {
           "start": {
-            "line": 339,
+            "line": 336,
             "column": 27
           },
           "end": {
-            "line": 339,
+            "line": 336,
             "column": 69
           }
         }
@@ -3221,7 +3372,7 @@
               "column": 3
             },
             "end": {
-              "line": 335,
+              "line": 332,
               "column": 1
             }
           }
@@ -3267,7 +3418,7 @@
               "column": 49
             },
             "end": {
-              "line": 319,
+              "line": 316,
               "column": 3
             }
           }
@@ -3533,8 +3684,8 @@
               "column": 15
             },
             "end": {
-              "line": null,
-              "column": -1
+              "line": 312,
+              "column": 20
             }
           },
           "loc": {
@@ -3543,8 +3694,8 @@
               "column": 15
             },
             "end": {
-              "line": 315,
-              "column": 14
+              "line": 312,
+              "column": 73
             }
           }
         },
@@ -3552,21 +3703,21 @@
           "name": "(anonymous_18)",
           "decl": {
             "start": {
-              "line": 328,
+              "line": 325,
               "column": 23
             },
             "end": {
-              "line": 328,
+              "line": 325,
               "column": 28
             }
           },
           "loc": {
             "start": {
-              "line": 328,
+              "line": 325,
               "column": 23
             },
             "end": {
-              "line": 328,
+              "line": 325,
               "column": 56
             }
           }
@@ -3575,21 +3726,21 @@
           "name": "(anonymous_19)",
           "decl": {
             "start": {
-              "line": 331,
+              "line": 328,
               "column": 13
             },
             "end": {
-              "line": 331,
+              "line": 328,
               "column": 13
             }
           },
           "loc": {
             "start": {
-              "line": 331,
+              "line": 328,
               "column": 27
             },
             "end": {
-              "line": 332,
+              "line": 329,
               "column": 60
             }
           }
@@ -3598,21 +3749,21 @@
           "name": "(anonymous_20)",
           "decl": {
             "start": {
-              "line": 339,
+              "line": 336,
               "column": 9
             },
             "end": {
-              "line": 339,
+              "line": 336,
               "column": 9
             }
           },
           "loc": {
             "start": {
-              "line": 339,
+              "line": 336,
               "column": 22
             },
             "end": {
-              "line": 339,
+              "line": 336,
               "column": 69
             }
           }
@@ -3912,34 +4063,34 @@
         "8": {
           "loc": {
             "start": {
-              "line": 314,
-              "column": 37
+              "line": 323,
+              "column": 26
             },
             "end": {
-              "line": 314,
-              "column": 63
+              "line": 323,
+              "column": 37
             }
           },
-          "type": "cond-expr",
+          "type": "binary-expr",
           "locations": [
             {
               "start": {
-                "line": 314,
-                "column": 37
+                "line": 323,
+                "column": 26
               },
               "end": {
-                "line": 314,
-                "column": 63
+                "line": 323,
+                "column": 37
               }
             },
             {
               "start": {
-                "line": 314,
-                "column": 66
+                "line": 323,
+                "column": 41
               },
               "end": {
-                "line": 314,
-                "column": 68
+                "line": 323,
+                "column": 43
               }
             }
           ]
@@ -3947,46 +4098,11 @@
         "9": {
           "loc": {
             "start": {
-              "line": 326,
-              "column": 26
-            },
-            "end": {
-              "line": 326,
-              "column": 37
-            }
-          },
-          "type": "binary-expr",
-          "locations": [
-            {
-              "start": {
-                "line": 326,
-                "column": 26
-              },
-              "end": {
-                "line": 326,
-                "column": 37
-              }
-            },
-            {
-              "start": {
-                "line": 326,
-                "column": 41
-              },
-              "end": {
-                "line": 326,
-                "column": 43
-              }
-            }
-          ]
-        },
-        "10": {
-          "loc": {
-            "start": {
-              "line": 332,
+              "line": 329,
               "column": 8
             },
             "end": {
-              "line": 332,
+              "line": 329,
               "column": 16
             }
           },
@@ -3994,44 +4110,44 @@
           "locations": [
             {
               "start": {
-                "line": 332,
+                "line": 329,
                 "column": 8
               },
               "end": {
-                "line": 332,
+                "line": 329,
                 "column": 16
               }
             },
             {
               "start": {
-                "line": 332,
+                "line": 329,
                 "column": 20
               },
               "end": {
-                "line": 332,
+                "line": 329,
                 "column": 32
               }
             },
             {
               "start": {
-                "line": 332,
+                "line": 329,
                 "column": 36
               },
               "end": {
-                "line": 332,
+                "line": 329,
                 "column": 60
               }
             }
           ]
         },
-        "11": {
+        "10": {
           "loc": {
             "start": {
-              "line": 339,
+              "line": 336,
               "column": 27
             },
             "end": {
-              "line": 339,
+              "line": 336,
               "column": 34
             }
           },
@@ -4039,21 +4155,21 @@
           "locations": [
             {
               "start": {
-                "line": 339,
+                "line": 336,
                 "column": 27
               },
               "end": {
-                "line": 339,
+                "line": 336,
                 "column": 34
               }
             },
             {
               "start": {
-                "line": 339,
+                "line": 336,
                 "column": 38
               },
               "end": {
-                "line": 339,
+                "line": 336,
                 "column": 69
               }
             }
@@ -4061,152 +4177,148 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 17,
-        "4": 17,
-        "5": 17,
-        "6": 17,
-        "7": 17,
-        "8": 17,
-        "9": 17,
-        "10": 17,
-        "11": 17,
-        "12": 17,
-        "13": 17,
-        "14": 17,
-        "15": 96,
-        "16": 96,
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 16,
+        "4": 16,
+        "5": 16,
+        "6": 16,
+        "7": 16,
+        "8": 16,
+        "9": 16,
+        "10": 16,
+        "11": 16,
+        "12": 16,
+        "13": 16,
+        "14": 16,
+        "15": 113,
+        "16": 113,
         "17": 31,
-        "18": 65,
-        "19": 65,
-        "20": 65,
-        "21": 65,
-        "22": 65,
-        "23": 65,
-        "24": 65,
-        "25": 65,
-        "26": 65,
-        "27": 65,
-        "28": 65,
-        "29": 65,
-        "30": 65,
-        "31": 65,
-        "32": 65,
-        "33": 65,
-        "34": 65,
-        "35": 455,
-        "36": 65,
-        "37": 104,
-        "38": 104,
-        "39": 104,
+        "18": 82,
+        "19": 82,
+        "20": 82,
+        "21": 82,
+        "22": 82,
+        "23": 82,
+        "24": 82,
+        "25": 82,
+        "26": 82,
+        "27": 82,
+        "28": 82,
+        "29": 82,
+        "30": 82,
+        "31": 82,
+        "32": 82,
+        "33": 82,
+        "34": 82,
+        "35": 562,
+        "36": 82,
+        "37": 129,
+        "38": 129,
+        "39": 129,
         "40": 12,
-        "41": 92,
-        "42": 92,
-        "43": 34,
-        "44": 34,
+        "41": 117,
+        "42": 117,
+        "43": 47,
+        "44": 47,
         "45": 1,
         "46": 1,
-        "47": 91,
-        "48": 91,
-        "49": 91,
-        "50": 91,
-        "51": 91,
-        "52": 91,
-        "53": 91,
-        "54": 30,
-        "55": 91,
-        "56": 91,
-        "57": 27,
-        "58": 27,
-        "59": 27,
-        "60": 91,
-        "61": 91,
-        "62": 1,
+        "47": 116,
+        "48": 116,
+        "49": 116,
+        "50": 116,
+        "51": 116,
+        "52": 116,
+        "53": 116,
+        "54": 47,
+        "55": 116,
+        "56": 116,
+        "57": 46,
+        "58": 46,
+        "59": 46,
+        "60": 116,
+        "61": 116,
+        "62": 3,
         "63": 1,
         "64": 1,
-        "65": 21,
-        "66": 13,
+        "65": 31,
+        "66": 17,
         "67": 1,
         "68": 2,
-        "69": 1,
-        "70": 65,
-        "71": 65,
+        "69": 4,
+        "70": 82,
+        "71": 82,
         "72": 1,
-        "73": 1,
-        "74": 17,
-        "75": 17,
+        "73": 2,
+        "74": 16,
+        "75": 16,
         "76": 1
       },
       "f": {
-        "0": 96,
-        "1": 455,
-        "2": 104,
-        "3": 34,
+        "0": 113,
+        "1": 562,
+        "2": 129,
+        "3": 47,
         "4": 1,
-        "5": 30,
-        "6": 27,
-        "7": 1,
+        "5": 47,
+        "6": 46,
+        "7": 3,
         "8": 1,
         "9": 1,
-        "10": 21,
-        "11": 13,
+        "10": 31,
+        "11": 17,
         "12": 1,
         "13": 2,
-        "14": 1,
+        "14": 4,
         "15": 1,
-        "16": 1,
+        "16": 2,
         "17": 1
       },
       "b": {
         "0": [
-          104,
-          68
+          129,
+          90
         ],
         "1": [
-          33,
+          46,
           1
         ],
         "2": [
-          5,
-          87
+          8,
+          109
         ],
         "3": [
-          91,
-          6
+          116,
+          7
         ],
         "4": [
-          91,
-          5,
-          86
+          116,
+          8,
+          108
         ],
         "5": [
-          10,
-          17
+          20,
+          26
         ],
         "6": [
-          27,
-          10
+          46,
+          20
         ],
         "7": [
           1,
           1
         ],
         "8": [
-          1,
-          0
+          82,
+          80
         ],
         "9": [
-          65,
-          63
+          2,
+          2,
+          2
         ],
         "10": [
-          1,
-          1,
-          1
-        ],
-        "11": [
           1,
           1
         ]
@@ -4656,30 +4768,30 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 179,
-        "2": 179,
+        "0": 16,
+        "1": 165,
+        "2": 165,
         "3": 5,
-        "4": 174,
-        "5": 174,
+        "4": 160,
+        "5": 160,
         "6": 94,
         "7": 94,
-        "8": 174,
+        "8": 160,
         "9": 74,
-        "10": 17,
-        "11": 17,
+        "10": 16,
+        "11": 16,
         "12": 94,
-        "13": 1243,
+        "13": 1149,
         "14": 94,
         "15": 94,
         "16": 94
       },
       "f": {
-        "0": 179,
+        "0": 165,
         "1": 94,
         "2": 74,
         "3": 94,
-        "4": 1243
+        "4": 1149
       },
       "b": {
         "0": [
@@ -4802,16 +4914,16 @@
       },
       "branchMap": {},
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 179,
-        "4": 176,
-        "5": 176,
-        "6": 17
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 165,
+        "4": 162,
+        "5": 162,
+        "6": 16
       },
       "f": {
-        "0": 179
+        "0": 165
       },
       "b": {}
     },
@@ -4922,18 +5034,18 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 3560,
-        "2": 17,
-        "3": 17
+        "0": 16,
+        "1": 4132,
+        "2": 16,
+        "3": 16
       },
       "f": {
-        "0": 3560
+        "0": 4132
       },
       "b": {
         "0": [
-          3560,
-          3550
+          4132,
+          4122
         ]
       }
     },
@@ -4984,10 +5096,10 @@
       "fnMap": {},
       "branchMap": {},
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 17
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 16
       },
       "f": {},
       "b": {}
@@ -5197,23 +5309,23 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 129,
-        "3": 129,
-        "4": 45,
-        "5": 45,
+        "0": 16,
+        "1": 16,
+        "2": 141,
+        "3": 141,
+        "4": 61,
+        "5": 61,
         "6": 5,
-        "7": 17
+        "7": 16
       },
       "f": {
-        "0": 129,
-        "1": 45
+        "0": 141,
+        "1": 61
       },
       "b": {
         "0": [
-          129,
-          126
+          141,
+          138
         ],
         "1": [
           5,
@@ -5426,23 +5538,23 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 129,
-        "3": 129,
-        "4": 48,
-        "5": 48,
+        "0": 16,
+        "1": 16,
+        "2": 141,
+        "3": 141,
+        "4": 65,
+        "5": 65,
         "6": 5,
-        "7": 17
+        "7": 16
       },
       "f": {
-        "0": 129,
-        "1": 48
+        "0": 141,
+        "1": 65
       },
       "b": {
         "0": [
-          129,
-          123
+          141,
+          135
         ],
         "1": [
           5,
@@ -5521,13 +5633,13 @@
       },
       "branchMap": {},
       "s": {
-        "0": 17,
-        "1": 109,
-        "2": 286,
-        "3": 109
+        "0": 16,
+        "1": 91,
+        "2": 239,
+        "3": 91
       },
       "f": {
-        "0": 109
+        "0": 91
       },
       "b": {}
     },
@@ -5618,16 +5730,16 @@
         }
       },
       "s": {
-        "0": 92,
-        "1": 17
+        "0": 117,
+        "1": 16
       },
       "f": {
-        "0": 92
+        "0": 117
       },
       "b": {
         "0": [
-          89,
-          3
+          110,
+          7
         ]
       }
     },
@@ -5955,35 +6067,35 @@
         }
       },
       "s": {
-        "0": 91,
-        "1": 91,
-        "2": 91,
-        "3": 91,
-        "4": 91,
-        "5": 637,
-        "6": 647,
-        "7": 637,
-        "8": 1193,
-        "9": 637,
-        "10": 637,
-        "11": 27,
-        "12": 17
+        "0": 116,
+        "1": 116,
+        "2": 116,
+        "3": 116,
+        "4": 116,
+        "5": 790,
+        "6": 786,
+        "7": 790,
+        "8": 1456,
+        "9": 790,
+        "10": 790,
+        "11": 48,
+        "12": 16
       },
       "f": {
-        "0": 91,
-        "1": 637,
-        "2": 647,
-        "3": 1193,
-        "4": 27
+        "0": 116,
+        "1": 790,
+        "2": 786,
+        "3": 1456,
+        "4": 48
       },
       "b": {
         "0": [
-          637,
-          10
+          786,
+          0
         ],
         "1": [
-          1183,
-          10
+          1456,
+          0
         ]
       }
     },
@@ -6160,22 +6272,22 @@
         }
       },
       "s": {
-        "0": 91,
-        "1": 91,
-        "2": 91,
-        "3": 637,
-        "4": 27,
-        "5": 17
+        "0": 116,
+        "1": 116,
+        "2": 116,
+        "3": 800,
+        "4": 46,
+        "5": 16
       },
       "f": {
-        "0": 91,
-        "1": 637,
-        "2": 27
+        "0": 116,
+        "1": 800,
+        "2": 46
       },
       "b": {
         "0": [
-          27,
-          27
+          46,
+          46
         ]
       }
     },
@@ -6273,14 +6385,14 @@
       },
       "branchMap": {},
       "s": {
-        "0": 91,
-        "1": 91,
-        "2": 637,
-        "3": 17
+        "0": 116,
+        "1": 116,
+        "2": 798,
+        "3": 16
       },
       "f": {
-        "0": 91,
-        "1": 637
+        "0": 116,
+        "1": 798
       },
       "b": {}
     },
@@ -6421,17 +6533,17 @@
       },
       "branchMap": {},
       "s": {
-        "0": 91,
-        "1": 91,
-        "2": 91,
-        "3": 549,
-        "4": 30,
-        "5": 17
+        "0": 116,
+        "1": 116,
+        "2": 116,
+        "3": 686,
+        "4": 47,
+        "5": 16
       },
       "f": {
-        "0": 91,
-        "1": 549,
-        "2": 30
+        "0": 116,
+        "1": 686,
+        "2": 47
       },
       "b": {}
     },
@@ -6565,19 +6677,19 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 65,
-        "2": 17,
-        "3": 91
+        "0": 16,
+        "1": 82,
+        "2": 16,
+        "3": 116
       },
       "f": {
-        "0": 65,
-        "1": 91
+        "0": 82,
+        "1": 116
       },
       "b": {
         "0": [
           3,
-          62
+          79
         ]
       }
     },
@@ -7258,72 +7370,72 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 104,
-        "4": 104,
-        "5": 104,
-        "6": 104,
-        "7": 104,
-        "8": 98,
-        "9": 95,
-        "10": 17,
-        "11": 100,
-        "12": 17,
-        "13": 8,
-        "14": 17,
-        "15": 93,
-        "16": 35,
-        "17": 17,
-        "18": 35,
-        "19": 17
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 129,
+        "4": 129,
+        "5": 129,
+        "6": 129,
+        "7": 129,
+        "8": 123,
+        "9": 120,
+        "10": 16,
+        "11": 121,
+        "12": 16,
+        "13": 11,
+        "14": 16,
+        "15": 118,
+        "16": 48,
+        "17": 16,
+        "18": 48,
+        "19": 16
       },
       "f": {
-        "0": 104,
-        "1": 100,
-        "2": 8,
-        "3": 93,
-        "4": 35,
-        "5": 35
+        "0": 129,
+        "1": 121,
+        "2": 11,
+        "3": 118,
+        "4": 48,
+        "5": 48
       },
       "b": {
         "0": [
-          104,
-          4,
-          101,
-          100
+          129,
+          8,
+          122,
+          121
         ],
         "1": [
-          4,
-          100
+          8,
+          121
         ],
         "2": [
-          98,
-          8
+          123,
+          11
         ],
         "3": [
-          95,
-          93
+          120,
+          118
         ],
         "4": [
-          100,
-          95
+          121,
+          116
         ],
         "5": [
+          11,
+          9,
           8,
-          6,
-          5,
-          5
+          8
         ],
         "6": [
-          35,
-          35
+          48,
+          48
         ],
         "7": [
-          35,
-          34,
-          34
+          48,
+          47,
+          47
         ]
       }
     },
@@ -8605,131 +8717,131 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 96,
-        "4": 94,
-        "5": 94,
-        "6": 94,
-        "7": 94,
-        "8": 94,
-        "9": 94,
-        "10": 94,
-        "11": 94,
-        "12": 94,
-        "13": 94,
-        "14": 94,
-        "15": 94,
-        "16": 94,
-        "17": 94,
-        "18": 93,
-        "19": 90,
-        "20": 87,
-        "21": 86,
-        "22": 82,
-        "23": 79,
-        "24": 78,
-        "25": 465,
-        "26": 465,
-        "27": 78,
-        "28": 77,
-        "29": 76,
-        "30": 533,
-        "31": 533,
-        "32": 76,
-        "33": 75,
-        "34": 526,
-        "35": 526,
-        "36": 75,
-        "37": 74,
-        "38": 74,
-        "39": 519,
-        "40": 519,
-        "41": 74,
-        "42": 73,
-        "43": 72,
-        "44": 69,
-        "45": 67,
-        "46": 17,
-        "47": 17,
-        "48": 519,
-        "49": 17,
-        "50": 541,
-        "51": 17,
-        "52": 472
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 113,
+        "4": 111,
+        "5": 111,
+        "6": 111,
+        "7": 111,
+        "8": 111,
+        "9": 111,
+        "10": 111,
+        "11": 111,
+        "12": 111,
+        "13": 111,
+        "14": 111,
+        "15": 111,
+        "16": 111,
+        "17": 111,
+        "18": 110,
+        "19": 107,
+        "20": 104,
+        "21": 103,
+        "22": 99,
+        "23": 96,
+        "24": 95,
+        "25": 555,
+        "26": 555,
+        "27": 95,
+        "28": 94,
+        "29": 93,
+        "30": 630,
+        "31": 630,
+        "32": 93,
+        "33": 92,
+        "34": 631,
+        "35": 631,
+        "36": 92,
+        "37": 91,
+        "38": 91,
+        "39": 626,
+        "40": 626,
+        "41": 91,
+        "42": 90,
+        "43": 89,
+        "44": 86,
+        "45": 84,
+        "46": 16,
+        "47": 16,
+        "48": 626,
+        "49": 16,
+        "50": 638,
+        "51": 16,
+        "52": 562
       },
       "f": {
-        "0": 96,
-        "1": 465,
-        "2": 533,
-        "3": 526,
-        "4": 519,
-        "5": 519,
-        "6": 541,
-        "7": 472
+        "0": 113,
+        "1": 555,
+        "2": 630,
+        "3": 631,
+        "4": 626,
+        "5": 626,
+        "6": 638,
+        "7": 562
       },
       "b": {
         "0": [
-          94,
+          111,
           4
         ],
         "1": [
-          87,
-          86
+          104,
+          103
         ],
         "2": [
-          86,
-          84
+          103,
+          101
         ],
         "3": [
-          82,
-          79,
-          79,
-          79
+          99,
+          96,
+          96,
+          96
         ],
         "4": [
-          73,
+          90,
           5
         ],
         "5": [
-          72,
+          89,
           7,
           5
         ],
         "6": [
-          69,
+          86,
           3
         ],
         "7": [
-          67,
+          84,
           3
         ],
         "8": [
-          519,
-          519,
-          519,
-          519
+          626,
+          626,
+          626,
+          626
         ],
         "9": [
-          541,
-          540,
-          540,
-          540,
-          540,
-          540,
-          540,
-          540,
-          540,
-          540,
-          540
+          638,
+          637,
+          637,
+          631,
+          637,
+          637,
+          637,
+          637,
+          637,
+          637,
+          637
         ],
         "10": [
-          472,
-          471,
-          471,
-          469,
-          471
+          562,
+          561,
+          561,
+          559,
+          561
         ]
       }
     },
@@ -9346,57 +9458,57 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 17,
-        "4": 17,
-        "5": 71,
-        "6": 71,
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 16,
+        "4": 16,
+        "5": 66,
+        "6": 66,
         "7": 14,
-        "8": 57,
-        "9": 57,
-        "10": 57,
-        "11": 57,
-        "12": 57,
-        "13": 57,
-        "14": 57,
-        "15": 71,
-        "16": 71,
-        "17": 71,
-        "18": 63,
-        "19": 30,
-        "20": 27,
-        "21": 27,
-        "22": 57,
-        "23": 33,
-        "24": 3,
-        "25": 17,
-        "26": 17,
+        "8": 52,
+        "9": 52,
+        "10": 52,
+        "11": 52,
+        "12": 52,
+        "13": 52,
+        "14": 52,
+        "15": 101,
+        "16": 101,
+        "17": 101,
+        "18": 95,
+        "19": 43,
+        "20": 40,
+        "21": 40,
+        "22": 52,
+        "23": 46,
+        "24": 2,
+        "25": 16,
+        "26": 16,
         "27": 1
       },
       "f": {
-        "0": 71,
-        "1": 71,
-        "2": 63,
-        "3": 30,
-        "4": 27,
-        "5": 33,
-        "6": 3,
+        "0": 66,
+        "1": 101,
+        "2": 95,
+        "3": 43,
+        "4": 40,
+        "5": 46,
+        "6": 2,
         "7": 1
       },
       "b": {
         "0": [
-          30,
-          27
+          43,
+          40
         ],
         "1": [
-          57,
-          1
+          52,
+          3
         ],
         "2": [
-          3,
-          3
+          2,
+          2
         ],
         "3": [
           1,
@@ -9691,36 +9803,36 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 71,
-        "4": 69,
-        "5": 69,
-        "6": 69,
-        "7": 69,
-        "8": 69,
-        "9": 69,
-        "10": 66,
-        "11": 63,
-        "12": 61,
-        "13": 59,
-        "14": 17
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 66,
+        "4": 64,
+        "5": 64,
+        "6": 64,
+        "7": 64,
+        "8": 64,
+        "9": 64,
+        "10": 61,
+        "11": 58,
+        "12": 56,
+        "13": 54,
+        "14": 16
       },
       "f": {
-        "0": 71
+        "0": 66
       },
       "b": {
         "0": [
-          66,
-          64
+          61,
+          57
         ],
         "1": [
-          61,
+          56,
           2
         ],
         "2": [
-          59,
+          54,
           2
         ]
       }
@@ -10565,11 +10677,11 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
-        "3": 17,
-        "4": 17,
+        "0": 16,
+        "1": 16,
+        "2": 16,
+        "3": 16,
+        "4": 16,
         "5": 35,
         "6": 35,
         "7": 35,
@@ -10608,9 +10720,9 @@
         "40": 10,
         "41": 10,
         "42": 22,
-        "43": 17,
-        "44": 17,
-        "45": 17
+        "43": 16,
+        "44": 16,
+        "45": 16
       },
       "f": {
         "0": 35,
@@ -10880,8 +10992,8 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
+        "0": 16,
+        "1": 16,
         "2": 35,
         "3": 33,
         "4": 33,
@@ -10892,7 +11004,7 @@
         "9": 25,
         "10": 23,
         "11": 21,
-        "12": 17
+        "12": 16
       },
       "f": {
         "0": 35
@@ -12021,9 +12133,9 @@
         }
       },
       "s": {
-        "0": 17,
-        "1": 17,
-        "2": 17,
+        "0": 16,
+        "1": 16,
+        "2": 16,
         "3": 19,
         "4": 19,
         "5": 48,
@@ -12059,14 +12171,14 @@
         "35": 9,
         "36": 26,
         "37": 27,
-        "38": 17,
+        "38": 16,
         "39": 0,
         "40": 0,
         "41": 0,
         "42": 0,
-        "43": 17,
+        "43": 16,
         "44": 18,
-        "45": 17,
+        "45": 16,
         "46": 18,
         "47": 342
       },
@@ -12282,7 +12394,7 @@
       },
       "branchMap": {},
       "s": {
-        "0": 17,
+        "0": 16,
         "1": 19,
         "2": 19,
         "3": 25,
