@@ -1,22 +1,20 @@
-import { range, uniqueId } from 'lodash'
+import { range } from 'lodash'
 
 import {
   AggregateIdentity,
   AggregateTypeName,
   BoundedContext,
 } from '../Aggregate/types'
-import { PersistedDomainEvent } from '../DomainEvent/types'
 
-import { WriteConcurrencyError } from './index'
-import { EventStore } from './types'
+import { EventStore, PersistedDomainEvent } from './types'
 
 export type StoredEvent = PersistedDomainEvent & {
+  readonly id: string
   readonly aggregate: {
     readonly context: BoundedContext
     readonly type: AggregateTypeName
     readonly identity: AggregateIdentity
   }
-  readonly version: number
 }
 
 export const InMemoryEventStore = (): EventStore => {
@@ -29,15 +27,19 @@ export const InMemoryEventStore = (): EventStore => {
     readonly type: AggregateTypeName
     readonly identity: AggregateIdentity
   }) =>
-    events.filter(
-      event =>
-        event.aggregate.context === aggregate.context &&
-        event.aggregate.type === aggregate.type &&
-        event.aggregate.identity === aggregate.identity
-    )
+    events
+      .filter(
+        event =>
+          event.aggregate.context === aggregate.context &&
+          event.aggregate.type === aggregate.type &&
+          event.aggregate.identity === aggregate.identity
+      )
+      .map(({ name, payload }) => ({ name, payload }))
+
+  const getNewId = (): string => padLeftWithZeroes(`${events.length + 1}`)
 
   return {
-    appendEventsToAggregates: (insertions, correlationId = '') => {
+    appendEventsToAggregates: async (insertions, correlationId = '') => {
       // tslint:disable readonly-array
       const persistedEvents: PersistedDomainEvent[] = []
       // tslint:enable
@@ -45,7 +47,7 @@ export const InMemoryEventStore = (): EventStore => {
       /**
        * Concurrency check
        */
-      // tslint:disable no-expression-statement no-if-statement
+      // tslint:disable no-expression-statement no-if-statement no-object-mutation
       insertions.forEach(({ aggregate, expectedAggregateVersion }) => {
         if (expectedAggregateVersion === -2) return
 
@@ -59,23 +61,23 @@ export const InMemoryEventStore = (): EventStore => {
           expectedAggregateVersion === -1
             ? `Aggregate ${aggregateName} was expected to exist but it does not`
             : `Aggregate ${aggregateName} was expected to be at version ${expectedAggregateVersion} but it is at version ${aggregateVersion}`
-        throw WriteConcurrencyError(errorMessage)
+        const error = new Error(errorMessage)
+        ;(error as any).concurrency = true
+
+        throw error
       })
 
       /**
        * Events storage operation
        */
       insertions.forEach(({ aggregate, eventsToAppend }) => {
-        const aggregateVersion = getAggregateEvents(aggregate).length
-        eventsToAppend.forEach(({ name, payload }, idx) => {
-          const version = aggregateVersion + 1 + idx
+        eventsToAppend.forEach(({ name, payload }) => {
           const eventToPersist = {
             aggregate: { ...aggregate },
             correlationId,
             id: getNewId(),
             name,
-            serializedPayload: payload,
-            version,
+            payload,
           }
           events.push(eventToPersist)
           persistedEvents.push(eventToPersist)
@@ -83,14 +85,10 @@ export const InMemoryEventStore = (): EventStore => {
       })
       // tslint:enable
 
-      return Promise.resolve(persistedEvents)
+      return persistedEvents as ReadonlyArray<PersistedDomainEvent>
     },
-    getEventsOfAggregate: (aggregate, fromVersion) => {
-      return Promise.resolve(
-        getAggregateEvents(aggregate).filter(
-          event => event.version > fromVersion
-        )
-      )
+    getEventsOfAggregate: async (aggregate, fromVersion = 0) => {
+      return getAggregateEvents(aggregate).slice(fromVersion)
     },
   }
 }
@@ -105,11 +103,9 @@ const getAggregateName = ({
   readonly identity: AggregateIdentity
 }) => `${context}:${type}${identity ? `:${identity}` : ''}`
 
-const getNewId = (): string => pad0(uniqueId(), 20)
-
-const pad0 = (i: string, n: number): string =>
-  i.length >= n
+export const padLeftWithZeroes = (i: string, minLength: number = 10): string =>
+  i.length >= minLength
     ? i
-    : range(n - i.length)
+    : range(minLength - i.length)
         .map(() => '0')
         .join('') + i

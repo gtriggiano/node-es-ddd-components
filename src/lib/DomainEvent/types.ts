@@ -19,12 +19,7 @@ export type DomaiEventPayload = any
  */
 export interface SerializedDomainEvent {
   readonly name: DomainEventName
-  readonly serializedPayload: string
-}
-
-export type PersistedDomainEvent = SerializedDomainEvent & {
-  readonly id: string
-  readonly correlationId: string
+  readonly payload: string
 }
 
 /**

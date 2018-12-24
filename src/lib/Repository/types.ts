@@ -6,31 +6,29 @@ import {
   GenericAggregateInstance,
 } from '../Aggregate/types'
 
-import {
-  PersistedDomainEvent,
-  SerializedDomainEvent,
-} from '../DomainEvent/types'
+import { SerializedDomainEvent } from '../DomainEvent/types'
+
+export interface AggregateIdentifier {
+  readonly context: BoundedContext
+  readonly type: AggregateTypeName
+  readonly identity: AggregateIdentity
+}
+
+export type PersistedDomainEvent = SerializedDomainEvent & {
+  readonly aggregate: AggregateIdentifier
+  readonly id: string
+  readonly correlationId: string
+}
 
 export interface EventStoreInsertion {
-  readonly aggregate: {
-    readonly context: BoundedContext
-    readonly type: AggregateTypeName
-    readonly identity: AggregateIdentity
-  }
+  readonly aggregate: AggregateIdentifier
   readonly expectedAggregateVersion: number
-  readonly eventsToAppend: ReadonlyArray<{
-    readonly name: string
-    readonly payload: string
-  }>
+  readonly eventsToAppend: ReadonlyArray<SerializedDomainEvent>
 }
 
 export interface EventStore {
   readonly getEventsOfAggregate: (
-    aggregate: {
-      readonly context: BoundedContext
-      readonly type: AggregateTypeName
-      readonly identity: AggregateIdentity
-    },
+    aggregate: AggregateIdentifier,
     fromVersion: number
   ) => Promise<ReadonlyArray<SerializedDomainEvent>>
 
@@ -69,7 +67,7 @@ export interface RepositoryInstance<
     aggregates: AggregatesCollection,
     correlationId?: string
   ) => Promise<{
-    readonly aggregates: AggregatesCollection
+    readonly aggregates?: AggregatesCollection
     readonly persistedEvents: ReadonlyArray<PersistedDomainEvent>
   }>
 }

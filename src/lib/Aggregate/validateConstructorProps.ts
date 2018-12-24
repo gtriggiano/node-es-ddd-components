@@ -57,9 +57,5 @@ export function areAllValidSerializedDomainEvents(
 }
 
 export function isValidSerializedDomainEvent(event: any): boolean {
-  return (
-    isObject(event) &&
-    isValidName(event.name) &&
-    isString(event.serializedPayload)
-  )
+  return isObject(event) && isValidName(event.name) && isString(event.payload)
 }

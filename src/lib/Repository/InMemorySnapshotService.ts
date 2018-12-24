@@ -10,14 +10,15 @@ interface Storage {
 export const InMemorySnapshotService = (): SnapshotService => {
   const snapshots: Storage = {}
 
-  const loadAggregateSnapshot = (key: string) => Promise.resolve(snapshots[key])
+  const loadAggregateSnapshot = async (key: string) => snapshots[key]
 
-  const saveAggregateSnapshot = (key: string, snapshot: AggregateSnapshot) => {
+  const saveAggregateSnapshot = async (
+    key: string,
+    snapshot: AggregateSnapshot
+  ) => {
     // tslint:disable no-expression-statement no-object-mutation
     snapshots[key] = snapshot
     // tslint:enable
-
-    return Promise.resolve()
   }
 
   return {

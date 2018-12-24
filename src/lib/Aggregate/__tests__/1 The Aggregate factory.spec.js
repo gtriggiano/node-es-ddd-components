@@ -8,7 +8,7 @@ import {
 } from 'lib-export'
 import { definition } from 'lib-tests/TodoList'
 
-describe('The Aggregate() factory', () => {
+describe('The Aggregate factory', () => {
   it('is a function', () => {
     expect(typeof Aggregate).toBe('function')
   })
@@ -190,7 +190,7 @@ describe('Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinit
   })
 })
 
-describe('Aggregate(definition: AggregateDefinition) returns an AggregateType() factory', () => {
+describe('Aggregate(definition: AggregateDefinition) returns an AggregateType factory', () => {
   it('AggregateType is a function', () => {
     const AggregateType = Aggregate(definition)
     expect(typeof AggregateType).toBe('function')

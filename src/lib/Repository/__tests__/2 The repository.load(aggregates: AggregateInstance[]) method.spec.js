@@ -6,6 +6,9 @@ import {
   Repository,
   InMemoryEventStore,
   InMemorySnapshotService,
+  RepositoryBadAggregatesListProvided,
+  RepositoryEventsLoadError,
+  RepositorySnapshotLoadError,
 } from 'lib-export'
 
 import TodoList, { definition as todoListDefinition } from 'lib-tests/TodoList'
@@ -14,6 +17,30 @@ const getDefinition = () => ({
   eventStore: InMemoryEventStore(),
   snapshotService: InMemorySnapshotService(),
   loadCanFailBecauseOfSnaphotService: false,
+})
+
+describe('Throwing cases', () => {
+  it('throws `RepositoryBadAggregatesListProvided` if `aggregates` is not a list of valid aggregate instances unique by context, type and identity', () => {
+    const definition = getDefinition()
+    const repository = Repository(definition)
+    const todoListX = TodoList('x')
+    const todoListY = TodoList('y')
+
+    expect(() => repository.load(1)).toThrowError(
+      RepositoryBadAggregatesListProvided
+    )
+    expect(() => repository.load([1])).toThrowError(
+      RepositoryBadAggregatesListProvided
+    )
+    expect(() => repository.load([todoListX, null])).toThrowError(
+      RepositoryBadAggregatesListProvided
+    )
+    expect(() => repository.load([todoListX, todoListX])).toThrowError(
+      RepositoryBadAggregatesListProvided
+    )
+
+    expect(() => repository.load([todoListX, todoListY])).not.toThrow()
+  })
 })
 
 describe('Returned value', () => {
@@ -90,7 +117,7 @@ describe('Interaction with `snapshotService`', () => {
     expect(spyLoadAggregateSnapshot.mock.calls[0][0]).toBe(todoList.snapshotKey)
   })
 
-  it('calls snapshotService.saveAggregateSnapshot(aggregate.snapshotKey, {version: aggregate.version, serializedState: aggregate.getSerializedState()}) after rebuilding an aggregate, if `!!aggregate.needsSnapshot` ', async () => {
+  it('calls snapshotService.saveAggregateSnapshot(aggregate.snapshotKey, {version: aggregate.version, serializedState: aggregate.getSerializedState()}) after rebuilding an aggregate, if aggregate.needsSnapshot === true', async () => {
     const definition = getDefinition()
     const spySaveAggregateSnapshot = jest.spyOn(
       definition.snapshotService,
@@ -144,30 +171,29 @@ describe('Behaviour in case of snpshotService.loadAggregateSnapshot() failure wi
 
     expect(spyLoadAggregateSnapshot.mock.calls.length).toBe(1)
   })
-  it('FAILS PASSING THE snpshotService ERROR if definition.loadCanFailBecauseOfSnaphotService is truthy', done => {
+  it('FAILS with `RepositorySnapshotLoadError` if definition.loadCanFailBecauseOfSnaphotService is truthy. error.data.originalError === error', async () => {
+    const definition = getDefinition()
     const errorMessage = `repository.load() should reject`
     const truthyValues = [true, {}, [], 1, 'x', () => {}]
-    const definition = {
-      ...getDefinition(),
-      loadCanFailBecauseOfSnaphotService: sample(truthyValues),
-    }
     const error = new Error()
-    const spyLoadAggregateSnapshot = jest
-      .spyOn(definition.snapshotService, 'loadAggregateSnapshot')
-      .mockImplementation(() => new Promise((_, reject) => reject(error)))
 
-    const repository = Repository(definition)
+    const repository = Repository({
+      ...definition,
+      snapshotService: {
+        ...definition.snapshotService,
+        loadAggregateSnapshot: () => Promise.reject(error),
+      },
+      loadCanFailBecauseOfSnaphotService: sample(truthyValues),
+    })
     const todoList = TodoList('x')
 
-    repository
-      .load([todoList])
-      .then(() => {
-        done(new Error(errorMessage))
-      })
-      .catch(e => {
-        expect(e).toBe(error)
-        done()
-      })
+    try {
+      await repository.load([todoList])
+      throw new Error(errorMessage)
+    } catch (e) {
+      expect(e instanceof RepositorySnapshotLoadError).toBe(true)
+      expect(e.data.originalError).toBe(error)
+    }
   })
 })
 
@@ -223,6 +249,25 @@ describe('Interaction with `eventStore`', () => {
     })
   })
 
+  describe('When a snapshot HAS NOT been retrieved through snapshotService', () => {
+    it('calls eventStore.getEventsOfAggregate(aggregate, 0)', async () => {
+      const definition = getDefinition()
+      const spyGetEventsOfAggregate = jest.spyOn(
+        definition.eventStore,
+        'getEventsOfAggregate'
+      )
+
+      const repository = Repository(definition)
+      const todoList = TodoList('x')
+
+      await repository.load([todoList])
+
+      expect(spyGetEventsOfAggregate.mock.calls.length).toBe(1)
+      expect(spyGetEventsOfAggregate.mock.calls[0][0]).toBe(todoList)
+      expect(spyGetEventsOfAggregate.mock.calls[0][1]).toBe(0)
+    })
+  })
+
   describe('When a `snapshot` has been retrieved through snapshotService', () => {
     it('calls eventStore.getEventsOfAggregate(aggregate, snapshot.version)', async () => {
       const definition = getDefinition()
@@ -250,46 +295,27 @@ describe('Interaction with `eventStore`', () => {
       expect(spyGetEventsOfAggregate.mock.calls[0][1]).toBe(randomVersion)
     })
   })
-
-  describe('When a snapshot has not been retrieved', () => {
-    it('calls eventStore.getEventsOfAggregate(aggregate, 0)', async () => {
-      const definition = getDefinition()
-      const spyGetEventsOfAggregate = jest.spyOn(
-        definition.eventStore,
-        'getEventsOfAggregate'
-      )
-
-      const repository = Repository(definition)
-      const todoList = TodoList('x')
-
-      await repository.load([todoList])
-
-      expect(spyGetEventsOfAggregate.mock.calls.length).toBe(1)
-      expect(spyGetEventsOfAggregate.mock.calls[0][0]).toBe(todoList)
-      expect(spyGetEventsOfAggregate.mock.calls[0][1]).toBe(0)
-    })
-  })
 })
 
 describe('Behaviour in case of eventStore.getEventsOfAggregate() failure with `error`', () => {
-  it('FAILS PASSING THE eventStore ERROR', done => {
+  it('FAILS with `RepositoryEventsLoadError`. error.data.originalError === error', async () => {
     const definition = getDefinition()
     const error = new Error()
-    const spyGetEventsOfAggregate = jest
-      .spyOn(definition.eventStore, 'getEventsOfAggregate')
-      .mockImplementation(() => new Promise((_, reject) => reject(error)))
-
-    const repository = Repository(definition)
+    const repository = Repository({
+      ...definition,
+      eventStore: {
+        ...definition.eventStore,
+        getEventsOfAggregate: () => Promise.reject(error),
+      },
+    })
     const todoList = TodoList('x')
 
-    repository
-      .load([todoList])
-      .then(() => {
-        done(new Error('repository.load() should reject'))
-      })
-      .catch(e => {
-        expect(e).toBe(error)
-        done()
-      })
+    try {
+      await repository.load([todoList])
+      throw new Error('repository.load() should reject')
+    } catch (e) {
+      expect(e instanceof RepositoryEventsLoadError).toBe(true)
+      expect(e.data.originalError).toBe(error)
+    }
   })
 })

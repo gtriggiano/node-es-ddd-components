@@ -192,9 +192,7 @@ export function Aggregate<
         const EvtType: EventType | undefined =
           emittableEventsDictionary[event.name]
         return EvtType
-          ? EvtType.fromSerializedPayload(event.serializedPayload).applyToState(
-              state
-            )
+          ? EvtType.fromSerializedPayload(event.payload).applyToState(state)
           : (() => {
               const error = new Error(
                 `Aggregate ${context}:${name} does not recognizes an event named "${
@@ -309,10 +307,7 @@ export function Aggregate<
         type: { value: type },
         version: { value: currentVersion },
         [Symbol.toStringTag]: {
-          get: () =>
-            `${aggregateToStringPrefix}${
-              emittedEvents.length ? `+${emittedEvents.length}` : ''
-            }`,
+          get: () => `${aggregateToStringPrefix}+${emittedEvents.length}`,
         },
       }
     )
