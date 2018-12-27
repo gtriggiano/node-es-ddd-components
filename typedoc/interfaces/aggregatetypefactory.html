@@ -59,7 +59,7 @@
 					<a href="aggregatetypefactory.html">AggregateTypeFactory</a>
 				</li>
 			</ul>
-			<h1>Interface AggregateTypeFactory&lt;BC, TypeName, Identity, State, Query, ErrorType, EventType, Command&gt;</h1>
+			<h1>Interface AggregateTypeFactory&lt;BC, TypeName, Identity, State, Query, ErrorTypeFactory, EventType, Command&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Returns an aggregate instance</p>
+						<p>An aggregate type factory</p>
 					</div>
 				</div>
 			</section>
@@ -92,13 +92,13 @@
 						<h4>Query<span class="tsd-signature-symbol">: </span><a href="aggregatequerydefinition.html" class="tsd-signature-type">AggregateQueryDefinition</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#aggregatequeryname" class="tsd-signature-type">AggregateQueryName</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatequeryinput" class="tsd-signature-type">AggregateQueryInput</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatequeryoutput" class="tsd-signature-type">AggregateQueryOutput</a><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>ErrorType<span class="tsd-signature-symbol">: </span><a href="../globals.html#customerrortype" class="tsd-signature-type">CustomErrorType</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#customerrorname" class="tsd-signature-type">CustomErrorName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#customerrordata" class="tsd-signature-type">CustomErrorData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>ErrorTypeFactory<span class="tsd-signature-symbol">: </span><a href="../globals.html#customerrortypefactory" class="tsd-signature-type">CustomErrorTypeFactory</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#customerrorname" class="tsd-signature-type">CustomErrorName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#customerrordata" class="tsd-signature-type">CustomErrorData</a><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>EventType<span class="tsd-signature-symbol">: </span><a href="domaineventtype.html" class="tsd-signature-type">DomainEventType</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>EventType<span class="tsd-signature-symbol">: </span><a href="domaineventtypefactory.html" class="tsd-signature-type">DomainEventTypeFactory</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>Command<span class="tsd-signature-symbol">: </span><a href="aggregatecommanddefinition.html" class="tsd-signature-type">AggregateCommandDefinition</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#aggregatecommandname" class="tsd-signature-type">AggregateCommandName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatecommandinput" class="tsd-signature-type">AggregateCommandInput</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType[&quot;name&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType[&quot;name&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>Command<span class="tsd-signature-symbol">: </span><a href="aggregatecommanddefinition.html" class="tsd-signature-type">AggregateCommandDefinition</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#aggregatecommandname" class="tsd-signature-type">AggregateCommandName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatecommandinput" class="tsd-signature-type">AggregateCommandInput</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorTypeFactory</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorTypeFactory[&quot;name&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType[&quot;name&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -113,33 +113,49 @@
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
 				<ul class="tsd-signatures tsd-kind-interface tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>identity<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">Identity</a>, snapshot<span class="tsd-signature-symbol">?: </span><a href="aggregatesnapshot.html" class="tsd-signature-type">AggregateSnapshot</a>, events<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="serializeddomainevent.html" class="tsd-signature-type">SerializedDomainEvent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>identity<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">Identity</a>, snapshot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="aggregatesnapshot.html" class="tsd-signature-type">AggregateSnapshot</a><span class="tsd-signature-symbol">&gt;</span>, events<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="serializeddomainevent.html" class="tsd-signature-type">SerializedDomainEvent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorTypeFactory</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/types.ts#L426">Aggregate/types.ts:426</a></li>
+								<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/types.ts#L447">Aggregate/types.ts:447</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Returns an aggregate instance</p>
+								<p>An aggregate type factory</p>
 							</div>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> identity: <a href="" class="tsd-signature-type">Identity</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The identity of the aggregate</p>
+									</div>
+								</div>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> snapshot: <a href="aggregatesnapshot.html" class="tsd-signature-type">AggregateSnapshot</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> snapshot: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="aggregatesnapshot.html" class="tsd-signature-type">AggregateSnapshot</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>A snapshot of the aggregate</p>
+									</div>
+								</div>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> events: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="serializeddomainevent.html" class="tsd-signature-type">SerializedDomainEvent</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>A list of serialized domain events representing the history of the aggregate</p>
+									</div>
+								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="aggregateinstance.html" class="tsd-signature-type">AggregateInstance</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BC</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Identity</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorTypeFactory</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<p>An instance of the aggregate type</p>
 					</li>
 				</ul>
 			</section>
@@ -166,15 +182,13 @@
 					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BC</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/types.ts#L445">Aggregate/types.ts:445</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/types.ts#L466">Aggregate/types.ts:466</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>see</dt>
-							<dd><p>BoundedContext</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>The name of the Bounded Context the aggregate belongs to</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -183,7 +197,7 @@
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/types.ts#L455">Aggregate/types.ts:455</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/types.ts#L476">Aggregate/types.ts:476</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -198,15 +212,13 @@
 					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TypeName</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/types.ts#L450">Aggregate/types.ts:450</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/types.ts#L471">Aggregate/types.ts:471</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>see</dt>
-							<dd><p>AggregateType</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>The name of the aggregate&#39;s type</p>
+						</div>
 					</div>
 				</section>
 			</section>

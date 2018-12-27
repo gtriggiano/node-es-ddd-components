@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/Aggregate/snapshotUtils.ts</title>
+    <title>Code coverage report for lib/Repository/validateAggregatesList.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">lib/Aggregate</a> snapshotUtils.ts
+      <a href="../../index.html">All files</a> / <a href="index.html">lib/Repository</a> validateAggregatesList.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>13/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>13/13</span>
       </div>
     </div>
   </div>
@@ -61,42 +61,93 @@
 16
 17
 18
-19</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</td><td class="line-coverage quiet"><span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">95x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">155x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * A function to generate the first part of a snaphot persistence key
- * @param snapshotPrefix The prefix to use to generate the snapshot key namespace
- * @param context The name of the bounded context the aggregate belongs to
- */
-export const getSnaphotNamespace = (
-  snapshotPrefix: string | void,
-  context: Readonly&lt;string&gt;
-): string =&gt;
-  `${snapshotPrefix ? `${snapshotPrefix}:` : ``}AGGREGATE_SNAPSHOT:${context}:`
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import assert from 'assert'
+import { every, uniq } from 'lodash'
 &nbsp;
-/**
- * A function to generate a snaphot persistence key
- * @param namespace The first part of a snaphot persistence key
- * @param name The name of the aggregate
- */
-export const getSnaphotKey = (namespace: string, name: string): string =&gt;
-  `${namespace}${name}`
+import { Aggregate } from '../Aggregate'
+import {
+  AggregateIdentity,
+  AggregateTypeName,
+  BoundedContext,
+} from '../Aggregate/types'
+&nbsp;
+const toSerial = ({
+  context,
+  type,
+  identity,
+}: {
+  readonly context: BoundedContext
+  readonly type: AggregateTypeName
+  readonly identity: AggregateIdentity
+}) =&gt; `${context}:${type}${identity ? `(${identity})` : ''}`
+&nbsp;
+export default function validateAggregatesList(aggregates: any): void {
+  assert(Array.isArray(aggregates), `aggregates MUST be an array`)
+  assert(
+    every(
+      aggregates,
+      aggregate =&gt;
+        aggregate &amp;&amp; aggregate.New &amp;&amp; aggregate.New instanceof Aggregate
+    ),
+    `every item should be an aggregate instance`
+  )
+  assert(
+    uniq(aggregates.map(toSerial)).length === aggregates.length,
+    'aggregates should be unique by context, type, identity'
+  )
+}
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

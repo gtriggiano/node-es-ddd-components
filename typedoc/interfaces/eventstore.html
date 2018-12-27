@@ -96,7 +96,7 @@
 					<div class="tsd-signature tsd-kind-icon">append<wbr>Events<wbr>ToAggregates<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Repository/types.ts#L37">Repository/types.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Repository/types.ts#L35">Repository/types.ts:35</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -130,7 +130,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Events<wbr>OfAggregate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Repository/types.ts#L28">Repository/types.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Repository/types.ts#L30">Repository/types.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -138,25 +138,14 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>aggregate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, fromVersion<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="serializeddomainevent.html" class="tsd-signature-type">SerializedDomainEvent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>aggregate<span class="tsd-signature-symbol">: </span><a href="aggregateidentifier.html" class="tsd-signature-type">AggregateIdentifier</a>, fromVersion<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="serializeddomainevent.html" class="tsd-signature-type">SerializedDomainEvent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
-												<h5>aggregate: <span class="tsd-signature-type">object</span></h5>
-												<ul class="tsd-parameters">
-													<li class="tsd-parameter">
-														<h5>context<span class="tsd-signature-symbol">: </span><a href="../globals.html#boundedcontext" class="tsd-signature-type">BoundedContext</a></h5>
-													</li>
-													<li class="tsd-parameter">
-														<h5>identity<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregateidentity" class="tsd-signature-type">AggregateIdentity</a></h5>
-													</li>
-													<li class="tsd-parameter">
-														<h5>type<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregatetypename" class="tsd-signature-type">AggregateTypeName</a></h5>
-													</li>
-												</ul>
+												<h5>aggregate: <a href="aggregateidentifier.html" class="tsd-signature-type">AggregateIdentifier</a></h5>
 											</li>
 											<li>
 												<h5>fromVersion: <span class="tsd-signature-type">number</span></h5>

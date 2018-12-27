@@ -5,230 +5,6 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 460,
-			"name": "AggregateCommand",
-			"kind": 256,
-			"kindString": "Interface",
-			"flags": {
-				"isExported": true
-			},
-			"typeParameter": [
-				{
-					"id": 461,
-					"name": "Name",
-					"kind": 131072,
-					"kindString": "Type parameter",
-					"flags": {},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					}
-				},
-				{
-					"id": 462,
-					"name": "Input",
-					"kind": 131072,
-					"kindString": "Type parameter",
-					"flags": {},
-					"type": {
-						"type": "intrinsic",
-						"name": "any"
-					}
-				}
-			],
-			"children": [
-				{
-					"id": 464,
-					"name": "description",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true,
-						"isOptional": true
-					},
-					"sources": [
-						{
-							"fileName": "Aggregate/index.ts",
-							"line": 75,
-							"character": 22
-						}
-					],
-					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "intrinsic",
-								"name": "undefined"
-							},
-							{
-								"type": "intrinsic",
-								"name": "string"
-							}
-						]
-					}
-				},
-				{
-					"id": 465,
-					"name": "errors",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "Aggregate/index.ts",
-							"line": 76,
-							"character": 17
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ReadonlyArray",
-						"typeArguments": [
-							{
-								"type": "intrinsic",
-								"name": "string"
-							}
-						]
-					}
-				},
-				{
-					"id": 466,
-					"name": "events",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "Aggregate/index.ts",
-							"line": 77,
-							"character": 17
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ReadonlyArray",
-						"typeArguments": [
-							{
-								"type": "intrinsic",
-								"name": "string"
-							}
-						]
-					}
-				},
-				{
-					"id": 467,
-					"name": "handler",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "Aggregate/index.ts",
-							"line": 78,
-							"character": 18
-						}
-					],
-					"type": {
-						"type": "reflection",
-						"declaration": {
-							"id": 468,
-							"name": "__type",
-							"kind": 65536,
-							"kindString": "Type literal",
-							"flags": {},
-							"signatures": [
-								{
-									"id": 469,
-									"name": "__call",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 470,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "typeParameter",
-												"name": "Input",
-												"constraint": {
-													"type": "intrinsic",
-													"name": "any"
-												}
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "Aggregate/index.ts",
-									"line": 78,
-									"character": 19
-								}
-							]
-						}
-					}
-				},
-				{
-					"id": 463,
-					"name": "name",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "Aggregate/index.ts",
-							"line": 74,
-							"character": 15
-						}
-					],
-					"type": {
-						"type": "typeParameter",
-						"name": "Name",
-						"constraint": {
-							"type": "intrinsic",
-							"name": "string"
-						}
-					}
-				}
-			],
-			"groups": [
-				{
-					"title": "Properties",
-					"kind": 1024,
-					"children": [
-						464,
-						465,
-						466,
-						467,
-						463
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "Aggregate/index.ts",
-					"line": 73,
-					"character": 33
-				}
-			]
-		},
-		{
 			"id": 149,
 			"name": "AggregateCommandDefinition",
 			"kind": 256,
@@ -310,13 +86,13 @@
 				},
 				{
 					"id": 154,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -334,13 +110,13 @@
 				},
 				{
 					"id": 155,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -368,7 +144,7 @@
 					"flags": {},
 					"type": {
 						"type": "unknown",
-						"name": "ErrorType[\"name\"]"
+						"name": "ErrorTypeFactory[\"name\"]"
 					}
 				},
 				{
@@ -379,7 +155,7 @@
 					"flags": {},
 					"type": {
 						"type": "unknown",
-						"name": "EventType[\"name\"]"
+						"name": "EventTypeFactory[\"name\"]"
 					}
 				}
 			],
@@ -396,7 +172,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 128,
+							"line": 149,
 							"character": 22
 						}
 					],
@@ -425,7 +201,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 130,
+							"line": 151,
 							"character": 26
 						}
 					],
@@ -438,7 +214,7 @@
 								"name": "EmittableEvent",
 								"constraint": {
 									"type": "unknown",
-									"name": "EventType[\"name\"]"
+									"name": "EventTypeFactory[\"name\"]"
 								}
 							}
 						]
@@ -455,7 +231,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 131,
+							"line": 152,
 							"character": 18
 						}
 					],
@@ -514,10 +290,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -535,10 +311,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -563,7 +339,7 @@
 								"name": "RaisableError",
 								"constraint": {
 									"type": "unknown",
-									"name": "ErrorType[\"name\"]"
+									"name": "ErrorTypeFactory[\"name\"]"
 								}
 							},
 							{
@@ -571,7 +347,7 @@
 								"name": "EmittableEvent",
 								"constraint": {
 									"type": "unknown",
-									"name": "EventType[\"name\"]"
+									"name": "EventTypeFactory[\"name\"]"
 								}
 							}
 						]
@@ -588,7 +364,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 127,
+							"line": 148,
 							"character": 15
 						}
 					],
@@ -612,7 +388,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 129,
+							"line": 150,
 							"character": 25
 						}
 					],
@@ -625,7 +401,7 @@
 								"name": "RaisableError",
 								"constraint": {
 									"type": "unknown",
-									"name": "ErrorType[\"name\"]"
+									"name": "ErrorTypeFactory[\"name\"]"
 								}
 							}
 						]
@@ -648,7 +424,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/commands.types.ts",
-					"line": 112,
+					"line": 126,
 					"character": 43
 				}
 			]
@@ -662,7 +438,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "An aggregate definition to pass to the @see Aggregate\nfactory function"
+				"shortText": "An object describing an aggregate type"
 			},
 			"typeParameter": [
 				{
@@ -679,7 +455,7 @@
 				},
 				{
 					"id": 244,
-					"name": "Type",
+					"name": "TypeName",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
@@ -736,13 +512,13 @@
 				},
 				{
 					"id": 247,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -760,13 +536,13 @@
 				},
 				{
 					"id": 248,
-					"name": "Event",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -817,19 +593,19 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
-								"name": "Event"
+								"name": "EventTypeFactory"
 							},
 							{
 								"type": "unknown",
-								"name": "ErrorType[\"name\"]"
+								"name": "ErrorTypeFactory[\"name\"]"
 							},
 							{
 								"type": "unknown",
-								"name": "Event[\"name\"]"
+								"name": "EventTypeFactory[\"name\"]"
 							}
 						]
 					}
@@ -845,12 +621,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The collection of commands that implement\nthe business logic of the aggregate"
+						"shortText": "A list of commands that implement the business logic of the aggregate.\nThe list will be tranformed into the aggregate's\n`.execute` interface"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 350,
+							"line": 358,
 							"character": 19
 						}
 					],
@@ -886,19 +662,19 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
-											"name": "Event"
+											"name": "EventTypeFactory"
 										},
 										{
 											"type": "unknown",
-											"name": "ErrorType[\"name\"]"
+											"name": "ErrorTypeFactory[\"name\"]"
 										},
 										{
 											"type": "unknown",
-											"name": "Event[\"name\"]"
+											"name": "EventTypeFactory[\"name\"]"
 										}
 									]
 								}
@@ -915,12 +691,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "A string representing a @see BoundedContext"
+						"shortText": "The name of the Bounded Context the aggregate belongs to"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 322,
+							"line": 330,
 							"character": 18
 						}
 					],
@@ -944,12 +720,12 @@
 						"isOptional": true
 					},
 					"comment": {
-						"shortText": "A description of the aggregate."
+						"shortText": "An optional description of the aggregate."
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 332,
+							"line": 340,
 							"character": 22
 						}
 					],
@@ -982,7 +758,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 397,
+							"line": 407,
 							"character": 27
 						}
 					],
@@ -1012,12 +788,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The collection of errors that can be raised\ninside the commands implementations.\nThe collection is converted into a dictionary of\nerror constructors that will be passed to the aggregate commands at runtime."
+						"shortText": "A list of factories that can be used to\ngenerate the errors that could be raised\nby the commands implementations.\nThe list will be used to craft the `.error` interface that\nwill be passed to each command implementation."
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 365,
+							"line": 375,
 							"character": 17
 						}
 					],
@@ -1027,10 +803,10 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -1058,12 +834,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The collection of events.\nThe collection is converted into a dictionary of\n_\"event emitters\"_ that will be passed to the aggregate commands at runtime."
+						"shortText": "A list of domain event factories.\nThe list will be used to craft the `.emit` interface that\nwill be passed to each command implementation"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 372,
+							"line": 382,
 							"character": 17
 						}
 					],
@@ -1073,10 +849,10 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "Event",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -1108,18 +884,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The initial state of the aggregate",
-						"tags": [
-							{
-								"tag": "see",
-								"text": "AggregateState\n"
-							}
-						]
+						"shortText": "The initial state of the aggregate"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 344,
+							"line": 351,
 							"character": 23
 						}
 					],
@@ -1142,12 +912,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "A collection of queries.\nThe collection is converted into a dictionary of\nqueries that will be passed to the aggregate commands at runtime."
+						"shortText": "A list of queries, whose hanlers will have access to the\naggregate's internal state.\nThe list will be transormed into the aggregate's\n`.query` interface"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 357,
+							"line": 366,
 							"character": 18
 						}
 					],
@@ -1203,7 +973,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 390,
+							"line": 400,
 							"character": 25
 						}
 					],
@@ -1239,7 +1009,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 338,
+							"line": 346,
 							"character": 20
 						}
 					],
@@ -1276,7 +1046,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 378,
+							"line": 388,
 							"character": 25
 						}
 					],
@@ -1309,7 +1079,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 383,
+							"line": 393,
 							"character": 28
 						}
 					],
@@ -1336,18 +1106,18 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The @see AggregateType"
+						"shortText": "The name of the aggregate's type"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 327,
+							"line": 335,
 							"character": 15
 						}
 					],
 					"type": {
 						"type": "typeParameter",
-						"name": "Type",
+						"name": "TypeName",
 						"constraint": {
 							"type": "reference",
 							"name": "AggregateTypeName",
@@ -1380,7 +1150,99 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 296,
+					"line": 297,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 493,
+			"name": "AggregateIdentifier",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 494,
+					"name": "context",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Repository/types.ts",
+							"line": 12,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "BoundedContext",
+						"id": 279
+					}
+				},
+				{
+					"id": 496,
+					"name": "identity",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Repository/types.ts",
+							"line": 14,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "AggregateIdentity",
+						"id": 281
+					}
+				},
+				{
+					"id": 495,
+					"name": "type",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Repository/types.ts",
+							"line": 13,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "AggregateTypeName",
+						"id": 280
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						494,
+						496,
+						495
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Repository/types.ts",
+					"line": 11,
 					"character": 36
 				}
 			]
@@ -1480,13 +1342,13 @@
 				},
 				{
 					"id": 208,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -1504,13 +1366,13 @@
 				},
 				{
 					"id": 209,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -1561,19 +1423,19 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType"
+								"name": "EventTypeFactory"
 							},
 							{
 								"type": "unknown",
-								"name": "ErrorType[\"name\"]"
+								"name": "ErrorTypeFactory[\"name\"]"
 							},
 							{
 								"type": "unknown",
-								"name": "EventType[\"name\"]"
+								"name": "EventTypeFactory[\"name\"]"
 							}
 						]
 					}
@@ -1589,12 +1451,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "A reference to the function which generated the instance"
+						"shortText": "A reference to the factory which generated the instance"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 215,
+							"line": 218,
 							"character": 14
 						}
 					],
@@ -1671,10 +1533,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -1692,10 +1554,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -1743,19 +1605,19 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
-											"name": "EventType"
+											"name": "EventTypeFactory"
 										},
 										{
 											"type": "unknown",
-											"name": "ErrorType[\"name\"]"
+											"name": "ErrorTypeFactory[\"name\"]"
 										},
 										{
 											"type": "unknown",
-											"name": "EventType[\"name\"]"
+											"name": "EventTypeFactory[\"name\"]"
 										}
 									]
 								}
@@ -1772,12 +1634,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Generates a new instance obtained\nadding new events to the aggregate's history"
+						"shortText": "A method to generate a new instance by\nadding new events to the aggregate's history"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 177,
+							"line": 186,
 							"character": 23
 						}
 					],
@@ -1809,55 +1671,8 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "DomainEventInstance",
-														"id": 296,
-														"typeArguments": [
-															{
-																"type": "unknown",
-																"name": "EventType[\"name\"]"
-															},
-															{
-																"type": "reference",
-																"name": "DomainEventTypePayload",
-																"id": 344,
-																"typeArguments": [
-																	{
-																		"type": "typeParameter",
-																		"name": "EventType",
-																		"constraint": {
-																			"type": "reference",
-																			"name": "DomainEventType",
-																			"id": 322,
-																			"typeArguments": [
-																				{
-																					"type": "reference",
-																					"name": "DomainEventName",
-																					"id": 331
-																				},
-																				{
-																					"type": "reference",
-																					"name": "DomaiEventPayload",
-																					"id": 332
-																				},
-																				{
-																					"type": "typeParameter",
-																					"name": "State"
-																				}
-																			]
-																		}
-																	}
-																]
-															},
-															{
-																"type": "typeParameter",
-																"name": "State",
-																"constraint": {
-																	"type": "reference",
-																	"name": "AggregateState",
-																	"id": 282
-																}
-															}
-														]
+														"name": "SerializedDomainEvent",
+														"id": 293
 													}
 												]
 											}
@@ -1936,10 +1751,10 @@
 											},
 											{
 												"type": "typeParameter",
-												"name": "ErrorType",
+												"name": "ErrorTypeFactory",
 												"constraint": {
 													"type": "reference",
-													"name": "CustomErrorType",
+													"name": "CustomErrorTypeFactory",
 													"id": 17,
 													"typeArguments": [
 														{
@@ -1957,10 +1772,10 @@
 											},
 											{
 												"type": "typeParameter",
-												"name": "EventType",
+												"name": "EventTypeFactory",
 												"constraint": {
 													"type": "reference",
-													"name": "DomainEventType",
+													"name": "DomainEventTypeFactory",
 													"id": 322,
 													"typeArguments": [
 														{
@@ -2008,19 +1823,19 @@
 														},
 														{
 															"type": "typeParameter",
-															"name": "ErrorType"
+															"name": "ErrorTypeFactory"
 														},
 														{
 															"type": "typeParameter",
-															"name": "EventType"
+															"name": "EventTypeFactory"
 														},
 														{
 															"type": "unknown",
-															"name": "ErrorType[\"name\"]"
+															"name": "ErrorTypeFactory[\"name\"]"
 														},
 														{
 															"type": "unknown",
-															"name": "EventType[\"name\"]"
+															"name": "EventTypeFactory[\"name\"]"
 														}
 													]
 												}
@@ -2032,7 +1847,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/types.ts",
-									"line": 177,
+									"line": 186,
 									"character": 24
 								}
 							]
@@ -2048,12 +1863,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Returns another instance of the same aggregate\nwith state and version as they where before any command\nwas executed"
+						"shortText": "A method to get another instance of the same aggregate\nwith state and version as they where before any command\nwas executed"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 201,
+							"line": 204,
 							"character": 16
 						}
 					],
@@ -2145,10 +1960,10 @@
 											},
 											{
 												"type": "typeParameter",
-												"name": "ErrorType",
+												"name": "ErrorTypeFactory",
 												"constraint": {
 													"type": "reference",
-													"name": "CustomErrorType",
+													"name": "CustomErrorTypeFactory",
 													"id": 17,
 													"typeArguments": [
 														{
@@ -2166,10 +1981,10 @@
 											},
 											{
 												"type": "typeParameter",
-												"name": "EventType",
+												"name": "EventTypeFactory",
 												"constraint": {
 													"type": "reference",
-													"name": "DomainEventType",
+													"name": "DomainEventTypeFactory",
 													"id": 322,
 													"typeArguments": [
 														{
@@ -2217,19 +2032,19 @@
 														},
 														{
 															"type": "typeParameter",
-															"name": "ErrorType"
+															"name": "ErrorTypeFactory"
 														},
 														{
 															"type": "typeParameter",
-															"name": "EventType"
+															"name": "EventTypeFactory"
 														},
 														{
 															"type": "unknown",
-															"name": "ErrorType[\"name\"]"
+															"name": "ErrorTypeFactory[\"name\"]"
 														},
 														{
 															"type": "unknown",
-															"name": "EventType[\"name\"]"
+															"name": "EventTypeFactory[\"name\"]"
 														}
 													]
 												}
@@ -2241,7 +2056,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/types.ts",
-									"line": 201,
+									"line": 204,
 									"character": 17
 								}
 							]
@@ -2257,18 +2072,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The name of the Bounded Context\nthe aggregate belongs to",
-						"tags": [
-							{
-								"tag": "see",
-								"text": "BoundedContext\n"
-							}
-						]
+						"shortText": "The name of the Bounded Context the aggregate belongs to"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 120,
+							"line": 125,
 							"character": 18
 						}
 					],
@@ -2291,12 +2100,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The behaviours interface of the aggregate"
+						"shortText": "The commands interface of the aggregate"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 164,
+							"line": 167,
 							"character": 18
 						}
 					],
@@ -2346,10 +2155,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -2367,10 +2176,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -2418,19 +2227,19 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
-											"name": "EventType"
+											"name": "EventTypeFactory"
 										},
 										{
 											"type": "unknown",
-											"name": "ErrorType[\"name\"]"
+											"name": "ErrorTypeFactory[\"name\"]"
 										},
 										{
 											"type": "unknown",
-											"name": "EventType[\"name\"]"
+											"name": "EventTypeFactory[\"name\"]"
 										}
 									]
 								}
@@ -2481,10 +2290,10 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "ErrorType",
+										"name": "ErrorTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "CustomErrorType",
+											"name": "CustomErrorTypeFactory",
 											"id": 17,
 											"typeArguments": [
 												{
@@ -2502,10 +2311,10 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType",
+										"name": "EventTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "DomainEventType",
+											"name": "DomainEventTypeFactory",
 											"id": 322,
 											"typeArguments": [
 												{
@@ -2553,19 +2362,19 @@
 												},
 												{
 													"type": "typeParameter",
-													"name": "ErrorType"
+													"name": "ErrorTypeFactory"
 												},
 												{
 													"type": "typeParameter",
-													"name": "EventType"
+													"name": "EventTypeFactory"
 												},
 												{
 													"type": "unknown",
-													"name": "ErrorType[\"name\"]"
+													"name": "ErrorTypeFactory[\"name\"]"
 												},
 												{
 													"type": "unknown",
-													"name": "EventType[\"name\"]"
+													"name": "EventTypeFactory[\"name\"]"
 												}
 											]
 										}
@@ -2584,17 +2393,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"tags": [
-							{
-								"tag": "see",
-								"text": "ConsistencyPolicy\n"
-							}
-						]
+						"shortText": "A method to get the consistency policy that the repository\nshould observe when attempting to persist the aggregate"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 243,
+							"line": 247,
 							"character": 31
 						}
 					],
@@ -2623,7 +2427,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/types.ts",
-									"line": 243,
+									"line": 247,
 									"character": 32
 								}
 							]
@@ -2639,12 +2443,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Returns the list of events emitted by the instance\nsince when it was created"
+						"shortText": "A method to get the list of events emitted by the instance\nduring its lifecycle"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 236,
+							"line": 239,
 							"character": 23
 						}
 					],
@@ -2700,7 +2504,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/types.ts",
-									"line": 236,
+									"line": 239,
 									"character": 24
 								}
 							]
@@ -2716,12 +2520,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Returns the serialized internal aggregate'state"
+						"shortText": "A method to get the serialized version of the aggregate's internal state"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 248,
+							"line": 252,
 							"character": 29
 						}
 					],
@@ -2749,7 +2553,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/types.ts",
-									"line": 248,
+									"line": 252,
 									"character": 30
 								}
 							]
@@ -2765,12 +2569,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Returns a snapshot of the internal state of the aggregate\npaired with its current version.\nShould be used just by the repository (after having rebuilt an instance)\nor for testing purposes"
+						"shortText": "A method to get a snapshot of the aggregate's internal state\npaired with its current version."
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 256,
+							"line": 258,
 							"character": 22
 						}
 					],
@@ -2799,7 +2603,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/types.ts",
-									"line": 256,
+									"line": 258,
 									"character": 23
 								}
 							]
@@ -2815,18 +2619,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The identity of the aggregate",
-						"tags": [
-							{
-								"tag": "see",
-								"text": "AggregateIdentity\n"
-							}
-						]
+						"shortText": "The identity of the aggregate"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 132,
+							"line": 135,
 							"character": 19
 						}
 					],
@@ -2849,12 +2647,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Reveals if the instance emitted new event\nsince when it was created"
+						"shortText": "A method to reveal if the instance produced new events\nduring its lifecycle"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 230,
+							"line": 233,
 							"character": 18
 						}
 					],
@@ -2882,7 +2680,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/types.ts",
-									"line": 230,
+									"line": 233,
 									"character": 19
 								}
 							]
@@ -2898,12 +2696,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Flag to signal if the instance should be\nsnapshotted"
+						"shortText": "Flag to signal if the instance should be snapshotted"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 145,
+							"line": 147,
 							"character": 24
 						}
 					],
@@ -2926,7 +2724,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 155,
+							"line": 158,
 							"character": 16
 						}
 					],
@@ -3032,12 +2830,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The snapshot key"
+						"shortText": "The snapshot key to use for snapshot\npersistence and retrieval"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 150,
+							"line": 153,
 							"character": 22
 						}
 					],
@@ -3055,18 +2853,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The aggregate type",
-						"tags": [
-							{
-								"tag": "see",
-								"text": "AggregateType\n"
-							}
-						]
+						"shortText": "The name of the aggregate type"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 126,
+							"line": 130,
 							"character": 15
 						}
 					],
@@ -3094,7 +2886,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 139,
+							"line": 142,
 							"character": 18
 						}
 					],
@@ -3332,7 +3124,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "An aggregate snapshot representation"
+				"shortText": "An object representing the snapshot\nof an aggregate's internal state"
 			},
 			"children": [
 				{
@@ -3344,7 +3136,7 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The serialized internal state of an aggregate"
+						"shortText": "The serialized version of the aggregate's internal state"
 					},
 					"sources": [
 						{
@@ -3367,12 +3159,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The version number of the aggregate that was\nsnapshotted"
+						"shortText": "The aggregate's version at the time thesnapshot was created"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 65,
+							"line": 64,
 							"character": 18
 						}
 					],
@@ -3409,7 +3201,8 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "Returns an aggregate instance"
+				"shortText": "An aggregate type factory",
+				"returns": "An instance of the aggregate type\n"
 			},
 			"typeParameter": [
 				{
@@ -3495,13 +3288,13 @@
 				},
 				{
 					"id": 269,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -3525,7 +3318,7 @@
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -3576,7 +3369,7 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
@@ -3584,7 +3377,7 @@
 							},
 							{
 								"type": "unknown",
-								"name": "ErrorType[\"name\"]"
+								"name": "ErrorTypeFactory[\"name\"]"
 							},
 							{
 								"type": "unknown",
@@ -3602,7 +3395,8 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Returns an aggregate instance"
+						"shortText": "An aggregate type factory",
+						"returns": "An instance of the aggregate type\n"
 					},
 					"parameters": [
 						{
@@ -3612,6 +3406,9 @@
 							"kindString": "Parameter",
 							"flags": {
 								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The identity of the aggregate"
 							},
 							"type": {
 								"type": "reference",
@@ -3627,10 +3424,19 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "A snapshot of the aggregate"
+							},
 							"type": {
 								"type": "reference",
-								"name": "AggregateSnapshot",
-								"id": 199
+								"name": "Readonly",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "AggregateSnapshot",
+										"id": 199
+									}
+								]
 							}
 						},
 						{
@@ -3640,6 +3446,9 @@
 							"kindString": "Parameter",
 							"flags": {
 								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A list of serialized domain events representing the history of the aggregate"
 							},
 							"type": {
 								"type": "reference",
@@ -3727,10 +3536,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -3751,7 +3560,7 @@
 								"name": "EventType",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -3799,7 +3608,7 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
@@ -3807,7 +3616,7 @@
 										},
 										{
 											"type": "unknown",
-											"name": "ErrorType[\"name\"]"
+											"name": "ErrorTypeFactory[\"name\"]"
 										},
 										{
 											"type": "unknown",
@@ -3830,17 +3639,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"tags": [
-							{
-								"tag": "see",
-								"text": "BoundedContext\n"
-							}
-						]
+						"shortText": "The name of the Bounded Context the aggregate belongs to"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 445,
+							"line": 466,
 							"character": 18
 						}
 					],
@@ -3868,7 +3672,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 455,
+							"line": 476,
 							"character": 22
 						}
 					],
@@ -3886,17 +3690,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"tags": [
-							{
-								"tag": "see",
-								"text": "AggregateType\n"
-							}
-						]
+						"shortText": "The name of the aggregate's type"
 					},
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 450,
+							"line": 471,
 							"character": 15
 						}
 					],
@@ -3925,7 +3724,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 403,
+					"line": 417,
 					"character": 37
 				}
 			]
@@ -3989,13 +3788,13 @@
 				},
 				{
 					"id": 142,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -4013,13 +3812,13 @@
 				},
 				{
 					"id": 143,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -4047,7 +3846,7 @@
 					"flags": {},
 					"type": {
 						"type": "unknown",
-						"name": "ErrorType[\"name\"]"
+						"name": "ErrorTypeFactory[\"name\"]"
 					}
 				},
 				{
@@ -4058,7 +3857,7 @@
 					"flags": {},
 					"type": {
 						"type": "unknown",
-						"name": "EventType[\"name\"]"
+						"name": "EventTypeFactory[\"name\"]"
 					}
 				}
 			],
@@ -4074,7 +3873,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 72,
+							"line": 79,
 							"character": 15
 						}
 					],
@@ -4094,10 +3893,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -4133,10 +3932,10 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType",
+										"name": "EventTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "DomainEventType",
+											"name": "DomainEventTypeFactory",
 											"id": 322,
 											"typeArguments": [
 												{
@@ -4163,7 +3962,7 @@
 								"name": "EmittableEvent",
 								"constraint": {
 									"type": "unknown",
-									"name": "EventType[\"name\"]"
+									"name": "EventTypeFactory[\"name\"]"
 								}
 							}
 						]
@@ -4180,7 +3979,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 66,
+							"line": 73,
 							"character": 16
 						}
 					],
@@ -4191,10 +3990,10 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -4217,10 +4016,10 @@
 								"typeArguments": [
 									{
 										"type": "typeParameter",
-										"name": "ErrorType",
+										"name": "ErrorTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "CustomErrorType",
+											"name": "CustomErrorTypeFactory",
 											"id": 17,
 											"typeArguments": [
 												{
@@ -4243,7 +4042,7 @@
 								"name": "RaisableError",
 								"constraint": {
 									"type": "unknown",
-									"name": "ErrorType[\"name\"]"
+									"name": "ErrorTypeFactory[\"name\"]"
 								}
 							}
 						]
@@ -4260,7 +4059,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 60,
+							"line": 67,
 							"character": 16
 						}
 					],
@@ -4378,7 +4177,7 @@
 			]
 		},
 		{
-			"id": 346,
+			"id": 342,
 			"name": "CommandInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -4387,7 +4186,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 347,
+					"id": 343,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4399,7 +4198,7 @@
 					}
 				},
 				{
-					"id": 348,
+					"id": 344,
 					"name": "Query",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4432,7 +4231,7 @@
 					}
 				},
 				{
-					"id": 349,
+					"id": 345,
 					"name": "QueryDictionary",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4454,14 +4253,14 @@
 					}
 				},
 				{
-					"id": 350,
-					"name": "ErrorType",
+					"id": 346,
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -4478,7 +4277,7 @@
 					}
 				},
 				{
-					"id": 351,
+					"id": 347,
 					"name": "ErrorDictionary",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4490,20 +4289,20 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							}
 						]
 					}
 				},
 				{
-					"id": 352,
+					"id": 348,
 					"name": "EventType",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -4524,7 +4323,7 @@
 					}
 				},
 				{
-					"id": 353,
+					"id": 349,
 					"name": "EventDictionary",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4546,7 +4345,7 @@
 					}
 				},
 				{
-					"id": 354,
+					"id": 350,
 					"name": "Command",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4576,7 +4375,7 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
@@ -4584,7 +4383,7 @@
 							},
 							{
 								"type": "unknown",
-								"name": "ErrorType[\"name\"]"
+								"name": "ErrorTypeFactory[\"name\"]"
 							},
 							{
 								"type": "unknown",
@@ -4596,7 +4395,7 @@
 			],
 			"children": [
 				{
-					"id": 358,
+					"id": 354,
 					"name": "availableCommands",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4606,7 +4405,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/CommandInterface.ts",
-							"line": 75,
+							"line": 85,
 							"character": 28
 						}
 					],
@@ -4642,7 +4441,7 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
@@ -4650,7 +4449,7 @@
 										},
 										{
 											"type": "unknown",
-											"name": "ErrorType[\"name\"]"
+											"name": "ErrorTypeFactory[\"name\"]"
 										},
 										{
 											"type": "unknown",
@@ -4663,7 +4462,7 @@
 					}
 				},
 				{
-					"id": 357,
+					"id": 353,
 					"name": "emissionInterface",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4673,7 +4472,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/CommandInterface.ts",
-							"line": 69,
+							"line": 79,
 							"character": 28
 						}
 					],
@@ -4696,7 +4495,7 @@
 								"name": "EventType",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -4739,7 +4538,7 @@
 					}
 				},
 				{
-					"id": 356,
+					"id": 352,
 					"name": "errorInterface",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4749,7 +4548,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/CommandInterface.ts",
-							"line": 67,
+							"line": 74,
 							"character": 25
 						}
 					],
@@ -4760,10 +4559,10 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -4789,7 +4588,7 @@
 									"typeArguments": [
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										}
 									]
 								}
@@ -4798,7 +4597,7 @@
 					}
 				},
 				{
-					"id": 355,
+					"id": 351,
 					"name": "queryInterface",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4808,7 +4607,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/CommandInterface.ts",
-							"line": 61,
+							"line": 68,
 							"character": 25
 						}
 					],
@@ -4884,10 +4683,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						358,
-						357,
-						356,
-						355
+						354,
+						353,
+						352,
+						351
 					]
 				}
 			],
@@ -4900,14 +4699,14 @@
 			]
 		},
 		{
-			"id": 424,
+			"id": 420,
 			"name": "ConstructorProps",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 425,
+					"id": 421,
 					"name": "events",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4925,7 +4724,7 @@
 					}
 				},
 				{
-					"id": 426,
+					"id": 422,
 					"name": "identity",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4943,7 +4742,7 @@
 					}
 				},
 				{
-					"id": 427,
+					"id": 423,
 					"name": "isSingleton",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4961,7 +4760,7 @@
 					}
 				},
 				{
-					"id": 428,
+					"id": 424,
 					"name": "snapshot",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4984,10 +4783,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						425,
-						426,
-						427,
-						428
+						421,
+						422,
+						423,
+						424
 					]
 				}
 			],
@@ -5008,7 +4807,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "An aggregate error definition"
+				"shortText": "An object describing a custom error type"
 			},
 			"typeParameter": [
 				{
@@ -5033,10 +4832,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "The name of the custom error type"
+					},
 					"sources": [
 						{
 							"fileName": "CustomError/types.ts",
-							"line": 34,
+							"line": 37,
 							"character": 15
 						}
 					],
@@ -5126,10 +4928,24 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "A method to apply the event reducer function to\nan aggregate internal state in order to obtain\na new state",
+						"tags": [
+							{
+								"tag": "param",
+								"text": "An object representing the aggregate's internal state",
+								"param": "state"
+							},
+							{
+								"tag": "returns",
+								"text": "An object representing the aggregate's new internal state\n"
+							}
+						]
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 41,
+							"line": 61,
 							"character": 23
 						}
 					],
@@ -5156,6 +4972,27 @@
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "State",
+														"constraint": {
+															"type": "reference",
+															"name": "AggregateState",
+															"id": 282
+														}
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
 												"type": "typeParameter",
 												"name": "State",
 												"constraint": {
@@ -5164,23 +5001,14 @@
 													"id": 282
 												}
 											}
-										}
-									],
-									"type": {
-										"type": "typeParameter",
-										"name": "State",
-										"constraint": {
-											"type": "reference",
-											"name": "AggregateState",
-											"id": 282
-										}
+										]
 									}
 								}
 							],
 							"sources": [
 								{
 									"fileName": "DomainEvent/types.ts",
-									"line": 41,
+									"line": 61,
 									"character": 24
 								}
 							]
@@ -5195,10 +5023,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "A method to get the serialized version of the event payload"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 40,
+							"line": 51,
 							"character": 31
 						}
 					],
@@ -5226,7 +5057,7 @@
 							"sources": [
 								{
 									"fileName": "DomainEvent/types.ts",
-									"line": 40,
+									"line": 51,
 									"character": 32
 								}
 							]
@@ -5241,10 +5072,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "The name of the event"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 38,
+							"line": 41,
 							"character": 15
 						}
 					],
@@ -5266,10 +5100,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "The payload of the event"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 39,
+							"line": 46,
 							"character": 18
 						}
 					],
@@ -5305,235 +5142,6 @@
 			]
 		},
 		{
-			"id": 322,
-			"name": "DomainEventType",
-			"kind": 256,
-			"kindString": "Interface",
-			"flags": {
-				"isExported": true
-			},
-			"comment": {
-				"shortText": "A domain event constructor"
-			},
-			"typeParameter": [
-				{
-					"id": 323,
-					"name": "Name",
-					"kind": 131072,
-					"kindString": "Type parameter",
-					"flags": {},
-					"type": {
-						"type": "reference",
-						"name": "DomainEventName",
-						"id": 331
-					}
-				},
-				{
-					"id": 324,
-					"name": "Payload",
-					"kind": 131072,
-					"kindString": "Type parameter",
-					"flags": {},
-					"type": {
-						"type": "reference",
-						"name": "DomaiEventPayload",
-						"id": 332
-					}
-				},
-				{
-					"id": 325,
-					"name": "State",
-					"kind": 131072,
-					"kindString": "Type parameter",
-					"flags": {},
-					"type": {
-						"type": "reference",
-						"name": "AggregateState",
-						"id": 282
-					}
-				}
-			],
-			"signatures": [
-				{
-					"id": 326,
-					"name": "__call",
-					"kind": 4096,
-					"kindString": "Call signature",
-					"flags": {},
-					"comment": {
-						"shortText": "A domain event constructor"
-					},
-					"parameters": [
-						{
-							"id": 327,
-							"name": "payload",
-							"kind": 32768,
-							"kindString": "Parameter",
-							"flags": {},
-							"type": {
-								"type": "typeParameter",
-								"name": "Payload",
-								"constraint": {
-									"type": "reference",
-									"name": "DomaiEventPayload",
-									"id": 332
-								}
-							}
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "DomainEventInstance",
-						"id": 296,
-						"typeArguments": [
-							{
-								"type": "typeParameter",
-								"name": "Name",
-								"constraint": {
-									"type": "reference",
-									"name": "DomainEventName",
-									"id": 331
-								}
-							},
-							{
-								"type": "typeParameter",
-								"name": "Payload",
-								"constraint": {
-									"type": "reference",
-									"name": "DomaiEventPayload",
-									"id": 332
-								}
-							},
-							{
-								"type": "typeParameter",
-								"name": "State",
-								"constraint": {
-									"type": "reference",
-									"name": "AggregateState",
-									"id": 282
-								}
-							}
-						]
-					}
-				}
-			],
-			"children": [
-				{
-					"id": 329,
-					"name": "description",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "DomainEvent/types.ts",
-							"line": 88,
-							"character": 22
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					}
-				},
-				{
-					"id": 330,
-					"name": "fromSerializedPayload",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "DomainEvent/types.ts",
-							"line": 89,
-							"character": 32
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "DomainEventInstanceFromSerializedPayloadFactory",
-						"id": 337,
-						"typeArguments": [
-							{
-								"type": "typeParameter",
-								"name": "Name",
-								"constraint": {
-									"type": "reference",
-									"name": "DomainEventName",
-									"id": 331
-								}
-							},
-							{
-								"type": "typeParameter",
-								"name": "Payload",
-								"constraint": {
-									"type": "reference",
-									"name": "DomaiEventPayload",
-									"id": 332
-								}
-							},
-							{
-								"type": "typeParameter",
-								"name": "State",
-								"constraint": {
-									"type": "reference",
-									"name": "AggregateState",
-									"id": 282
-								}
-							}
-						]
-					}
-				},
-				{
-					"id": 328,
-					"name": "name",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "DomainEvent/types.ts",
-							"line": 87,
-							"character": 15
-						}
-					],
-					"type": {
-						"type": "typeParameter",
-						"name": "Name",
-						"constraint": {
-							"type": "reference",
-							"name": "DomainEventName",
-							"id": 331
-						}
-					}
-				}
-			],
-			"groups": [
-				{
-					"title": "Properties",
-					"kind": 1024,
-					"children": [
-						329,
-						330,
-						328
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "DomainEvent/types.ts",
-					"line": 81,
-					"character": 32
-				}
-			]
-		},
-		{
 			"id": 309,
 			"name": "DomainEventTypeDefinition",
 			"kind": 256,
@@ -5542,7 +5150,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "The domain event definition type"
+				"shortText": "An object describing a domain event type"
 			},
 			"typeParameter": [
 				{
@@ -5592,10 +5200,13 @@
 						"isExported": true,
 						"isOptional": true
 					},
+					"comment": {
+						"shortText": "An optional description of the event"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 53,
+							"line": 80,
 							"character": 22
 						}
 					],
@@ -5622,10 +5233,13 @@
 						"isExported": true,
 						"isOptional": true
 					},
+					"comment": {
+						"shortText": "A pure function to deserialize the event payload.\nDefaults to JSON.parse"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 55,
+							"line": 92,
 							"character": 29
 						}
 					],
@@ -5654,10 +5268,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "The name of the event"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 52,
+							"line": 75,
 							"character": 15
 						}
 					],
@@ -5679,10 +5296,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "A pure function to obtain a new aggregate state given\nthe actual aggregate state and the event payload"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 56,
+							"line": 98,
 							"character": 18
 						}
 					],
@@ -5709,44 +5329,9 @@
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
-												"type": "typeParameter",
-												"name": "State",
-												"constraint": {
-													"type": "reference",
-													"name": "AggregateState",
-													"id": 282
-												}
-											}
-										},
-										{
-											"id": 321,
-											"name": "event",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
 												"type": "reference",
-												"name": "DomainEventInstance",
-												"id": 296,
+												"name": "Readonly",
 												"typeArguments": [
-													{
-														"type": "typeParameter",
-														"name": "Name",
-														"constraint": {
-															"type": "reference",
-															"name": "DomainEventName",
-															"id": 331
-														}
-													},
-													{
-														"type": "typeParameter",
-														"name": "Payload",
-														"constraint": {
-															"type": "reference",
-															"name": "DomaiEventPayload",
-															"id": 332
-														}
-													},
 													{
 														"type": "typeParameter",
 														"name": "State",
@@ -5758,23 +5343,51 @@
 													}
 												]
 											}
+										},
+										{
+											"id": 321,
+											"name": "payload",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "Payload",
+														"constraint": {
+															"type": "reference",
+															"name": "DomaiEventPayload",
+															"id": 332
+														}
+													}
+												]
+											}
 										}
 									],
 									"type": {
-										"type": "typeParameter",
-										"name": "State",
-										"constraint": {
-											"type": "reference",
-											"name": "AggregateState",
-											"id": 282
-										}
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "State",
+												"constraint": {
+													"type": "reference",
+													"name": "AggregateState",
+													"id": 282
+												}
+											}
+										]
 									}
 								}
 							],
 							"sources": [
 								{
 									"fileName": "DomainEvent/types.ts",
-									"line": 56,
+									"line": 98,
 									"character": 19
 								}
 							]
@@ -5790,10 +5403,13 @@
 						"isExported": true,
 						"isOptional": true
 					},
+					"comment": {
+						"shortText": "A pure function to get the serialized version\nof the event payload. Defaults to JSON.stringify"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 54,
+							"line": 86,
 							"character": 27
 						}
 					],
@@ -5831,13 +5447,262 @@
 			"sources": [
 				{
 					"fileName": "DomainEvent/types.ts",
-					"line": 47,
+					"line": 67,
 					"character": 42
 				}
 			]
 		},
 		{
-			"id": 371,
+			"id": 322,
+			"name": "DomainEventTypeFactory",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"comment": {
+				"shortText": "A factory to get an instance of a domain event from its payload",
+				"returns": "An instance of the domain event\n"
+			},
+			"typeParameter": [
+				{
+					"id": 323,
+					"name": "Name",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "DomainEventName",
+						"id": 331
+					}
+				},
+				{
+					"id": 324,
+					"name": "Payload",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "DomaiEventPayload",
+						"id": 332
+					}
+				},
+				{
+					"id": 325,
+					"name": "State",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "AggregateState",
+						"id": 282
+					}
+				}
+			],
+			"signatures": [
+				{
+					"id": 326,
+					"name": "__call",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "A factory to get an instance of a domain event from its payload",
+						"returns": "An instance of the domain event\n"
+					},
+					"parameters": [
+						{
+							"id": 327,
+							"name": "payload",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"shortText": "The domain event's payload"
+							},
+							"type": {
+								"type": "reference",
+								"name": "Readonly",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "Payload",
+										"constraint": {
+											"type": "reference",
+											"name": "DomaiEventPayload",
+											"id": 332
+										}
+									}
+								]
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "DomainEventInstance",
+						"id": 296,
+						"typeArguments": [
+							{
+								"type": "typeParameter",
+								"name": "Name",
+								"constraint": {
+									"type": "reference",
+									"name": "DomainEventName",
+									"id": 331
+								}
+							},
+							{
+								"type": "typeParameter",
+								"name": "Payload",
+								"constraint": {
+									"type": "reference",
+									"name": "DomaiEventPayload",
+									"id": 332
+								}
+							},
+							{
+								"type": "typeParameter",
+								"name": "State",
+								"constraint": {
+									"type": "reference",
+									"name": "AggregateState",
+									"id": 282
+								}
+							}
+						]
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 329,
+					"name": "description",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "The description of the domain event"
+					},
+					"sources": [
+						{
+							"fileName": "DomainEvent/types.ts",
+							"line": 147,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 330,
+					"name": "fromSerializedPayload",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A method to get a domain event instance from its serialized\npayload"
+					},
+					"sources": [
+						{
+							"fileName": "DomainEvent/types.ts",
+							"line": 153,
+							"character": 32
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "DomainEventTypeFactoryFromSerializedPayload",
+						"id": 333,
+						"typeArguments": [
+							{
+								"type": "typeParameter",
+								"name": "Name",
+								"constraint": {
+									"type": "reference",
+									"name": "DomainEventName",
+									"id": 331
+								}
+							},
+							{
+								"type": "typeParameter",
+								"name": "Payload",
+								"constraint": {
+									"type": "reference",
+									"name": "DomaiEventPayload",
+									"id": 332
+								}
+							},
+							{
+								"type": "typeParameter",
+								"name": "State",
+								"constraint": {
+									"type": "reference",
+									"name": "AggregateState",
+									"id": 282
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 328,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "The name of the domain event"
+					},
+					"sources": [
+						{
+							"fileName": "DomainEvent/types.ts",
+							"line": 142,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "typeParameter",
+						"name": "Name",
+						"constraint": {
+							"type": "reference",
+							"name": "DomainEventName",
+							"id": 331
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						329,
+						330,
+						328
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "DomainEvent/types.ts",
+					"line": 133,
+					"character": 39
+				}
+			]
+		},
+		{
+			"id": 367,
 			"name": "EmissionInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -5846,7 +5711,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 372,
+					"id": 368,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5858,14 +5723,14 @@
 					}
 				},
 				{
-					"id": 373,
-					"name": "EventType",
+					"id": 369,
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -5888,7 +5753,7 @@
 			],
 			"children": [
 				{
-					"id": 374,
+					"id": 370,
 					"name": "emittableEvents",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5898,7 +5763,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/EmissionInterface.ts",
-							"line": 17,
+							"line": 21,
 							"character": 26
 						}
 					],
@@ -5908,10 +5773,10 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -5935,7 +5800,7 @@
 					}
 				},
 				{
-					"id": 375,
+					"id": 371,
 					"name": "onNewEvent",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5945,28 +5810,28 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/EmissionInterface.ts",
-							"line": 18,
+							"line": 22,
 							"character": 21
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 376,
+							"id": 372,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 377,
+									"id": 373,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 378,
+											"id": 374,
 											"name": "event",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5999,7 +5864,7 @@
 											}
 										},
 										{
-											"id": 379,
+											"id": 375,
 											"name": "consistencyPolicy",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6020,7 +5885,7 @@
 							"sources": [
 								{
 									"fileName": "Aggregate/EmissionInterface.ts",
-									"line": 18,
+									"line": 22,
 									"character": 22
 								}
 							]
@@ -6033,8 +5898,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						374,
-						375
+						370,
+						371
 					]
 				}
 			],
@@ -6100,7 +5965,7 @@
 			]
 		},
 		{
-			"id": 386,
+			"id": 382,
 			"name": "ErrorInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6109,14 +5974,14 @@
 			},
 			"typeParameter": [
 				{
-					"id": 387,
-					"name": "ErrorType",
+					"id": 383,
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -6135,7 +6000,7 @@
 			],
 			"children": [
 				{
-					"id": 388,
+					"id": 384,
 					"name": "raisableErrors",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6145,7 +6010,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/ErrorInterface.ts",
-							"line": 14,
+							"line": 17,
 							"character": 25
 						}
 					],
@@ -6155,10 +6020,10 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -6183,7 +6048,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						388
+						384
 					]
 				}
 			],
@@ -6196,7 +6061,7 @@
 			]
 		},
 		{
-			"id": 519,
+			"id": 501,
 			"name": "EventStore",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6205,7 +6070,7 @@
 			},
 			"children": [
 				{
-					"id": 529,
+					"id": 507,
 					"name": "appendEventsToAggregates",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6215,28 +6080,28 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 37,
+							"line": 35,
 							"character": 35
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 530,
+							"id": 508,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 531,
+									"id": 509,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 532,
+											"id": 510,
 											"name": "insertions",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6248,13 +6113,13 @@
 													{
 														"type": "reference",
 														"name": "EventStoreInsertion",
-														"id": 508
+														"id": 497
 													}
 												]
 											}
 										},
 										{
-											"id": 533,
+											"id": 511,
 											"name": "correlationId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6276,7 +6141,7 @@
 													{
 														"type": "reference",
 														"name": "PersistedDomainEvent",
-														"id": 333
+														"id": 540
 													}
 												]
 											}
@@ -6287,7 +6152,7 @@
 							"sources": [
 								{
 									"fileName": "Repository/types.ts",
-									"line": 37,
+									"line": 35,
 									"character": 36
 								}
 							]
@@ -6295,7 +6160,7 @@
 					}
 				},
 				{
-					"id": 520,
+					"id": 502,
 					"name": "getEventsOfAggregate",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6305,122 +6170,40 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 28,
+							"line": 30,
 							"character": 31
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 521,
+							"id": 503,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 522,
+									"id": 504,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 523,
+											"id": 505,
 											"name": "aggregate",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
-												"type": "reflection",
-												"declaration": {
-													"id": 524,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"children": [
-														{
-															"id": 525,
-															"name": "context",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "Repository/types.ts",
-																	"line": 30,
-																	"character": 22
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "BoundedContext",
-																"id": 279
-															}
-														},
-														{
-															"id": 527,
-															"name": "identity",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "Repository/types.ts",
-																	"line": 32,
-																	"character": 23
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "AggregateIdentity",
-																"id": 281
-															}
-														},
-														{
-															"id": 526,
-															"name": "type",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "Repository/types.ts",
-																	"line": 31,
-																	"character": 19
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "AggregateTypeName",
-																"id": 280
-															}
-														}
-													],
-													"groups": [
-														{
-															"title": "Variables",
-															"kind": 32,
-															"children": [
-																525,
-																527,
-																526
-															]
-														}
-													],
-													"sources": [
-														{
-															"fileName": "Repository/types.ts",
-															"line": 29,
-															"character": 14
-														}
-													]
-												}
+												"type": "reference",
+												"name": "AggregateIdentifier",
+												"id": 493
 											}
 										},
 										{
-											"id": 528,
+											"id": 506,
 											"name": "fromVersion",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6453,7 +6236,7 @@
 							"sources": [
 								{
 									"fileName": "Repository/types.ts",
-									"line": 28,
+									"line": 30,
 									"character": 32
 								}
 							]
@@ -6466,21 +6249,21 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						529,
-						520
+						507,
+						502
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "Repository/types.ts",
-					"line": 27,
+					"line": 29,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 508,
+			"id": 497,
 			"name": "EventStoreInsertion",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6489,7 +6272,7 @@
 			},
 			"children": [
 				{
-					"id": 509,
+					"id": 498,
 					"name": "aggregate",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6499,100 +6282,18 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 15,
+							"line": 24,
 							"character": 20
 						}
 					],
 					"type": {
-						"type": "reflection",
-						"declaration": {
-							"id": 510,
-							"name": "__type",
-							"kind": 65536,
-							"kindString": "Type literal",
-							"flags": {},
-							"children": [
-								{
-									"id": 511,
-									"name": "context",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {},
-									"sources": [
-										{
-											"fileName": "Repository/types.ts",
-											"line": 16,
-											"character": 20
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "BoundedContext",
-										"id": 279
-									}
-								},
-								{
-									"id": 513,
-									"name": "identity",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {},
-									"sources": [
-										{
-											"fileName": "Repository/types.ts",
-											"line": 18,
-											"character": 21
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "AggregateIdentity",
-										"id": 281
-									}
-								},
-								{
-									"id": 512,
-									"name": "type",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {},
-									"sources": [
-										{
-											"fileName": "Repository/types.ts",
-											"line": 17,
-											"character": 17
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "AggregateTypeName",
-										"id": 280
-									}
-								}
-							],
-							"groups": [
-								{
-									"title": "Variables",
-									"kind": 32,
-									"children": [
-										511,
-										513,
-										512
-									]
-								}
-							],
-							"sources": [
-								{
-									"fileName": "Repository/types.ts",
-									"line": 15,
-									"character": 21
-								}
-							]
-						}
+						"type": "reference",
+						"name": "AggregateIdentifier",
+						"id": 493
 					}
 				},
 				{
-					"id": 515,
+					"id": 500,
 					"name": "eventsToAppend",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6602,7 +6303,7 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 21,
+							"line": 26,
 							"character": 25
 						}
 					],
@@ -6611,75 +6312,15 @@
 						"name": "ReadonlyArray",
 						"typeArguments": [
 							{
-								"type": "reflection",
-								"declaration": {
-									"id": 516,
-									"name": "__type",
-									"kind": 65536,
-									"kindString": "Type literal",
-									"flags": {},
-									"children": [
-										{
-											"id": 517,
-											"name": "name",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "Repository/types.ts",
-													"line": 22,
-													"character": 17
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 518,
-											"name": "payload",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "Repository/types.ts",
-													"line": 23,
-													"character": 20
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												517,
-												518
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "Repository/types.ts",
-											"line": 21,
-											"character": 41
-										}
-									]
-								}
+								"type": "reference",
+								"name": "SerializedDomainEvent",
+								"id": 293
 							}
 						]
 					}
 				},
 				{
-					"id": 514,
+					"id": 499,
 					"name": "expectedAggregateVersion",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6689,7 +6330,7 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 20,
+							"line": 25,
 							"character": 35
 						}
 					],
@@ -6704,22 +6345,22 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						509,
-						515,
-						514
+						498,
+						500,
+						499
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "Repository/types.ts",
-					"line": 14,
+					"line": 23,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 394,
+			"id": 390,
 			"name": "QueryInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6728,7 +6369,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 395,
+					"id": 391,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -6740,7 +6381,7 @@
 					}
 				},
 				{
-					"id": 396,
+					"id": 392,
 					"name": "Query",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -6775,7 +6416,7 @@
 			],
 			"children": [
 				{
-					"id": 400,
+					"id": 396,
 					"name": "availableQueries",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6827,7 +6468,7 @@
 					}
 				},
 				{
-					"id": 397,
+					"id": 393,
 					"name": "getState",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6844,14 +6485,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 398,
+							"id": 394,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 399,
+									"id": 395,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6883,8 +6524,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						400,
-						397
+						396,
+						393
 					]
 				}
 			],
@@ -6897,7 +6538,7 @@
 			]
 		},
 		{
-			"id": 544,
+			"id": 522,
 			"name": "RepositoryDefinition",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6906,7 +6547,7 @@
 			},
 			"children": [
 				{
-					"id": 545,
+					"id": 523,
 					"name": "eventStore",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6916,18 +6557,18 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 55,
+							"line": 53,
 							"character": 21
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "EventStore",
-						"id": 519
+						"id": 501
 					}
 				},
 				{
-					"id": 547,
+					"id": 525,
 					"name": "loadCanFailBecauseOfSnaphotService",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6938,7 +6579,7 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 58,
+							"line": 56,
 							"character": 45
 						}
 					],
@@ -6961,7 +6602,7 @@
 					}
 				},
 				{
-					"id": 546,
+					"id": 524,
 					"name": "snapshotService",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6972,14 +6613,14 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 56,
+							"line": 54,
 							"character": 26
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "SnapshotService",
-						"id": 534
+						"id": 512
 					}
 				}
 			],
@@ -6988,22 +6629,22 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						545,
-						547,
-						546
+						523,
+						525,
+						524
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "Repository/types.ts",
-					"line": 54,
+					"line": 52,
 					"character": 37
 				}
 			]
 		},
 		{
-			"id": 548,
+			"id": 526,
 			"name": "RepositoryInstance",
 			"kind": 256,
 			"kindString": "Interface",
@@ -7012,7 +6653,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 549,
+					"id": 527,
 					"name": "AggregatesCollection",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -7032,7 +6673,7 @@
 			],
 			"children": [
 				{
-					"id": 550,
+					"id": 528,
 					"name": "load",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7042,28 +6683,28 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 64,
+							"line": 62,
 							"character": 15
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 551,
+							"id": 529,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 552,
+									"id": 530,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 553,
+											"id": 531,
 											"name": "aggregates",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7111,7 +6752,7 @@
 							"sources": [
 								{
 									"fileName": "Repository/types.ts",
-									"line": 64,
+									"line": 62,
 									"character": 16
 								}
 							]
@@ -7119,7 +6760,7 @@
 					}
 				},
 				{
-					"id": 554,
+					"id": 532,
 					"name": "persist",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7129,28 +6770,28 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 68,
+							"line": 66,
 							"character": 18
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 555,
+							"id": 533,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 556,
+									"id": 534,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 557,
+											"id": 535,
 											"name": "aggregates",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7172,7 +6813,7 @@
 											}
 										},
 										{
-											"id": 558,
+											"id": 536,
 											"name": "correlationId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7201,43 +6842,35 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 559,
+													"id": 537,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 560,
+															"id": 538,
 															"name": "aggregates",
 															"kind": 32,
 															"kindString": "Variable",
-															"flags": {},
+															"flags": {
+																"isOptional": true
+															},
 															"sources": [
 																{
 																	"fileName": "Repository/types.ts",
-																	"line": 72,
+																	"line": 70,
 																	"character": 23
 																}
 															],
 															"type": {
-																"type": "typeParameter",
+																"type": "reference",
 																"name": "AggregatesCollection",
-																"constraint": {
-																	"type": "reference",
-																	"name": "ReadonlyArray",
-																	"typeArguments": [
-																		{
-																			"type": "reference",
-																			"name": "GenericAggregateInstance",
-																			"id": 284
-																		}
-																	]
-																}
+																"id": 527
 															}
 														},
 														{
-															"id": 561,
+															"id": 539,
 															"name": "persistedEvents",
 															"kind": 32,
 															"kindString": "Variable",
@@ -7245,7 +6878,7 @@
 															"sources": [
 																{
 																	"fileName": "Repository/types.ts",
-																	"line": 73,
+																	"line": 71,
 																	"character": 28
 																}
 															],
@@ -7256,7 +6889,7 @@
 																	{
 																		"type": "reference",
 																		"name": "PersistedDomainEvent",
-																		"id": 333
+																		"id": 540
 																	}
 																]
 															}
@@ -7267,15 +6900,15 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																560,
-																561
+																538,
+																539
 															]
 														}
 													],
 													"sources": [
 														{
 															"fileName": "Repository/types.ts",
-															"line": 71,
+															"line": 69,
 															"character": 15
 														}
 													]
@@ -7288,7 +6921,7 @@
 							"sources": [
 								{
 									"fileName": "Repository/types.ts",
-									"line": 68,
+									"line": 66,
 									"character": 19
 								}
 							]
@@ -7301,15 +6934,15 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						550,
-						554
+						528,
+						532
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "Repository/types.ts",
-					"line": 61,
+					"line": 59,
 					"character": 35
 				}
 			]
@@ -7323,7 +6956,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "An object representing a domain event,\nwhere the `serializedPayload` property is a serialized version\nof the payload"
+				"shortText": "An object representing a domain event"
 			},
 			"children": [
 				{
@@ -7334,10 +6967,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "The name of the event"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 21,
+							"line": 22,
 							"character": 15
 						}
 					],
@@ -7349,17 +6985,20 @@
 				},
 				{
 					"id": 295,
-					"name": "serializedPayload",
+					"name": "payload",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "The serialized payload of the event"
+					},
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 22,
-							"character": 28
+							"line": 27,
+							"character": 18
 						}
 					],
 					"type": {
@@ -7381,13 +7020,13 @@
 			"sources": [
 				{
 					"fileName": "DomainEvent/types.ts",
-					"line": 20,
+					"line": 18,
 					"character": 38
 				}
 			]
 		},
 		{
-			"id": 534,
+			"id": 512,
 			"name": "SnapshotService",
 			"kind": 256,
 			"kindString": "Interface",
@@ -7396,7 +7035,7 @@
 			},
 			"children": [
 				{
-					"id": 535,
+					"id": 513,
 					"name": "loadAggregateSnapshot",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7406,28 +7045,28 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 44,
+							"line": 42,
 							"character": 32
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 536,
+							"id": 514,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 537,
+									"id": 515,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 538,
+											"id": 516,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7463,7 +7102,7 @@
 							"sources": [
 								{
 									"fileName": "Repository/types.ts",
-									"line": 44,
+									"line": 42,
 									"character": 33
 								}
 							]
@@ -7471,7 +7110,7 @@
 					}
 				},
 				{
-					"id": 539,
+					"id": 517,
 					"name": "saveAggregateSnapshot",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7481,28 +7120,28 @@
 					"sources": [
 						{
 							"fileName": "Repository/types.ts",
-							"line": 48,
+							"line": 46,
 							"character": 32
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 540,
+							"id": 518,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 541,
+									"id": 519,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 542,
+											"id": 520,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7513,7 +7152,7 @@
 											}
 										},
 										{
-											"id": 543,
+											"id": 521,
 											"name": "snapshot",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7540,7 +7179,7 @@
 							"sources": [
 								{
 									"fileName": "Repository/types.ts",
-									"line": 48,
+									"line": 46,
 									"character": 33
 								}
 							]
@@ -7553,34 +7192,34 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						535,
-						539
+						513,
+						517
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "Repository/types.ts",
-					"line": 43,
+					"line": 41,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 562,
+			"id": 565,
 			"name": "Storage",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"indexSignature": {
-				"id": 563,
+				"id": 566,
 				"name": "__index",
 				"kind": 8192,
 				"kindString": "Index signature",
 				"flags": {},
 				"parameters": [
 					{
-						"id": 564,
+						"id": 567,
 						"name": "key",
 						"kind": 32768,
 						"kindString": "Parameter",
@@ -7615,14 +7254,14 @@
 			]
 		},
 		{
-			"id": 458,
+			"id": 454,
 			"name": "WithOriginalError",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 459,
+					"id": 455,
 					"name": "originalError",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7635,7 +7274,7 @@
 						},
 						{
 							"fileName": "Repository/index.ts",
-							"line": 14,
+							"line": 16,
 							"character": 24
 						}
 					],
@@ -7650,7 +7289,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						459
+						455
 					]
 				}
 			],
@@ -7662,7 +7301,7 @@
 				},
 				{
 					"fileName": "Repository/index.ts",
-					"line": 13,
+					"line": 15,
 					"character": 27
 				}
 			]
@@ -7723,13 +7362,13 @@
 				},
 				{
 					"id": 188,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -7747,13 +7386,13 @@
 				},
 				{
 					"id": 189,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -7804,19 +7443,19 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType"
+								"name": "EventTypeFactory"
 							},
 							{
 								"type": "unknown",
-								"name": "ErrorType[\"name\"]"
+								"name": "ErrorTypeFactory[\"name\"]"
 							},
 							{
 								"type": "unknown",
-								"name": "EventType[\"name\"]"
+								"name": "EventTypeFactory[\"name\"]"
 							}
 						]
 					}
@@ -7825,7 +7464,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/commands.types.ts",
-					"line": 178,
+					"line": 206,
 					"character": 38
 				}
 			],
@@ -7862,19 +7501,19 @@
 								},
 								{
 									"type": "typeParameter",
-									"name": "ErrorType"
+									"name": "ErrorTypeFactory"
 								},
 								{
 									"type": "typeParameter",
-									"name": "EventType"
+									"name": "EventTypeFactory"
 								},
 								{
 									"type": "unknown",
-									"name": "ErrorType[\"name\"]"
+									"name": "ErrorTypeFactory[\"name\"]"
 								},
 								{
 									"type": "unknown",
-									"name": "EventType[\"name\"]"
+									"name": "EventTypeFactory[\"name\"]"
 								}
 							]
 						}
@@ -7909,13 +7548,13 @@
 				},
 				{
 					"id": 101,
-					"name": "Event",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -7952,7 +7591,7 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "Event"
+								"name": "EventTypeFactory"
 							}
 						]
 					}
@@ -7976,7 +7615,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/events.types.ts",
-					"line": 38,
+					"line": 45,
 					"character": 45
 				}
 			],
@@ -7991,7 +7630,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/events.types.ts",
-							"line": 43,
+							"line": 54,
 							"character": 3
 						}
 					]
@@ -8009,13 +7648,13 @@
 			"typeParameter": [
 				{
 					"id": 79,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -8044,7 +7683,7 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							}
 						]
 					}
@@ -8068,7 +7707,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/errors.types.ts",
-					"line": 29,
+					"line": 35,
 					"character": 42
 				}
 			],
@@ -8083,7 +7722,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/errors.types.ts",
-							"line": 33,
+							"line": 42,
 							"character": 3
 						}
 					]
@@ -8161,13 +7800,13 @@
 				},
 				{
 					"id": 169,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -8185,13 +7824,13 @@
 				},
 				{
 					"id": 170,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -8219,7 +7858,7 @@
 					"flags": {},
 					"type": {
 						"type": "unknown",
-						"name": "ErrorType[\"name\"]"
+						"name": "ErrorTypeFactory[\"name\"]"
 					}
 				},
 				{
@@ -8230,14 +7869,14 @@
 					"flags": {},
 					"type": {
 						"type": "unknown",
-						"name": "EventType[\"name\"]"
+						"name": "EventTypeFactory[\"name\"]"
 					}
 				}
 			],
 			"sources": [
 				{
 					"fileName": "Aggregate/commands.types.ts",
-					"line": 83,
+					"line": 90,
 					"character": 42
 				}
 			],
@@ -8325,10 +7964,10 @@
 											},
 											{
 												"type": "typeParameter",
-												"name": "ErrorType",
+												"name": "ErrorTypeFactory",
 												"constraint": {
 													"type": "reference",
-													"name": "CustomErrorType",
+													"name": "CustomErrorTypeFactory",
 													"id": 17,
 													"typeArguments": [
 														{
@@ -8346,10 +7985,10 @@
 											},
 											{
 												"type": "typeParameter",
-												"name": "EventType",
+												"name": "EventTypeFactory",
 												"constraint": {
 													"type": "reference",
-													"name": "DomainEventType",
+													"name": "DomainEventTypeFactory",
 													"id": 322,
 													"typeArguments": [
 														{
@@ -8374,7 +8013,7 @@
 												"name": "RaisableError",
 												"constraint": {
 													"type": "unknown",
-													"name": "ErrorType[\"name\"]"
+													"name": "ErrorTypeFactory[\"name\"]"
 												}
 											},
 											{
@@ -8382,7 +8021,7 @@
 												"name": "EmittableEvent",
 												"constraint": {
 													"type": "unknown",
-													"name": "EventType[\"name\"]"
+													"name": "EventTypeFactory[\"name\"]"
 												}
 											}
 										]
@@ -8398,7 +8037,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 96,
+							"line": 110,
 							"character": 3
 						}
 					]
@@ -8487,13 +8126,13 @@
 				},
 				{
 					"id": 194,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -8511,13 +8150,13 @@
 				},
 				{
 					"id": 195,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -8568,19 +8207,19 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType"
+								"name": "EventTypeFactory"
 							},
 							{
 								"type": "unknown",
-								"name": "ErrorType[\"name\"]"
+								"name": "ErrorTypeFactory[\"name\"]"
 							},
 							{
 								"type": "unknown",
-								"name": "EventType[\"name\"]"
+								"name": "EventTypeFactory[\"name\"]"
 							}
 						]
 					}
@@ -8606,11 +8245,11 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType"
+								"name": "EventTypeFactory"
 							},
 							{
 								"type": "typeParameter",
@@ -8623,7 +8262,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/commands.types.ts",
-					"line": 203,
+					"line": 238,
 					"character": 37
 				}
 			],
@@ -8638,7 +8277,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/commands.types.ts",
-							"line": 230,
+							"line": 272,
 							"character": 3
 						}
 					]
@@ -8704,13 +8343,13 @@
 				},
 				{
 					"id": 182,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -8728,13 +8367,13 @@
 				},
 				{
 					"id": 183,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -8780,19 +8419,19 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType"
+								"name": "EventTypeFactory"
 							},
 							{
 								"type": "unknown",
-								"name": "ErrorType[\"name\"]"
+								"name": "ErrorTypeFactory[\"name\"]"
 							},
 							{
 								"type": "unknown",
-								"name": "EventType[\"name\"]"
+								"name": "EventTypeFactory[\"name\"]"
 							}
 						]
 					}
@@ -8801,13 +8440,13 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/commands.types.ts",
-					"line": 155,
+					"line": 176,
 					"character": 43
 				}
 			],
 			"type": {
 				"type": "unknown",
-				"name": "AggregateCommandInterfaceMethod<State, Query, ErrorType, EventType, CommandImplementation>"
+				"name": "AggregateCommandInterfaceMethod<State, Query, ErrorTypeFactory, EventTypeFactory, CommandImplementation>"
 			}
 		},
 		{
@@ -8856,13 +8495,13 @@
 				},
 				{
 					"id": 96,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -8899,7 +8538,7 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType"
+								"name": "EventTypeFactory"
 							}
 						]
 					}
@@ -8908,7 +8547,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/events.types.ts",
-					"line": 27,
+					"line": 30,
 					"character": 38
 				}
 			],
@@ -8923,7 +8562,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/events.types.ts",
-							"line": 31,
+							"line": 38,
 							"character": 3
 						}
 					]
@@ -8953,13 +8592,13 @@
 				},
 				{
 					"id": 87,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -8983,7 +8622,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/events.types.ts",
-					"line": 17,
+					"line": 12,
 					"character": 44
 				}
 			],
@@ -9016,10 +8655,10 @@
 										"typeArguments": [
 											{
 												"type": "typeParameter",
-												"name": "EventType",
+												"name": "EventTypeFactory",
 												"constraint": {
 													"type": "reference",
-													"name": "DomainEventType",
+													"name": "DomainEventTypeFactory",
 													"id": 322,
 													"typeArguments": [
 														{
@@ -9052,7 +8691,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/events.types.ts",
-							"line": 20,
+							"line": 19,
 							"character": 3
 						}
 					]
@@ -9070,13 +8709,13 @@
 			"typeParameter": [
 				{
 					"id": 73,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -9107,10 +8746,10 @@
 				"typeArguments": [
 					{
 						"type": "typeParameter",
-						"name": "ErrorType",
+						"name": "ErrorTypeFactory",
 						"constraint": {
 							"type": "reference",
-							"name": "CustomErrorType",
+							"name": "CustomErrorTypeFactory",
 							"id": 17,
 							"typeArguments": [
 								{
@@ -9144,13 +8783,13 @@
 			"typeParameter": [
 				{
 					"id": 75,
-					"name": "ErrorType",
+					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -9179,7 +8818,7 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType"
+								"name": "ErrorTypeFactory"
 							}
 						]
 					}
@@ -9188,7 +8827,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/errors.types.ts",
-					"line": 19,
+					"line": 22,
 					"character": 35
 				}
 			],
@@ -9203,7 +8842,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/errors.types.ts",
-							"line": 22,
+							"line": 28,
 							"character": 3
 						}
 					]
@@ -9233,13 +8872,13 @@
 				},
 				{
 					"id": 93,
-					"name": "EventType",
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -9263,7 +8902,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/events.types.ts",
-					"line": 22,
+					"line": 21,
 					"character": 36
 				}
 			],
@@ -9274,10 +8913,10 @@
 				"typeArguments": [
 					{
 						"type": "typeParameter",
-						"name": "EventType",
+						"name": "EventTypeFactory",
 						"constraint": {
 							"type": "reference",
-							"name": "DomainEventType",
+							"name": "DomainEventTypeFactory",
 							"id": 322,
 							"typeArguments": [
 								{
@@ -9318,7 +8957,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 45,
+					"line": 44,
 					"character": 29
 				}
 			],
@@ -9819,7 +9458,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 50,
+					"line": 49,
 					"character": 26
 				}
 			],
@@ -9842,7 +9481,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 40,
+					"line": 39,
 					"character": 29
 				}
 			],
@@ -9865,7 +9504,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 35,
+					"line": 34,
 					"character": 26
 				}
 			],
@@ -9897,7 +9536,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/commands.types.ts",
-					"line": 145,
+					"line": 166,
 					"character": 38
 				}
 			],
@@ -9915,7 +9554,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "When an aggregate emits new events it can\nalso specify the consistency policy to observe\nwhen the the repository attempts to persist them.",
+				"shortText": "When an aggregate's command implementation\nemits an event, it can specify the consistency policy to observe\nif the aggregate gets passed to the repository in order to persist\nthe new events.",
 				"text": "The meaning of the possible values are:\n\n `0`: Strict consistency policy.\n     We expect that the version of the persisted aggeggregate\n     matches the version of the aggregate passed to the repository\n\n `1`: Soft consisteny policy.\n     We expect that the aggregate just exists into the\n     persistence layer.\n\n `2`: No consistency policy.\n     We have no expectations regarding consistency\n"
 			},
 			"sources": [
@@ -9952,7 +9591,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "The `data` payload that is exposed\nby a custom error instance"
+				"shortText": "The `data` payload that could be exposed\nby a custom error instance"
 			},
 			"sources": [
 				{
@@ -9975,7 +9614,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "An instance of an error raised by an aggregate"
+				"shortText": "An instance of a custom error type"
 			},
 			"typeParameter": [
 				{
@@ -10073,14 +9712,26 @@
 		},
 		{
 			"id": 17,
-			"name": "CustomErrorType",
+			"name": "CustomErrorTypeFactory",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "A constructor function which return\nan instance of an aggregate error"
+				"shortText": "A factory to generate an instance of a custom error type",
+				"tags": [
+					{
+						"tag": "param",
+						"text": "The error message",
+						"param": "message"
+					},
+					{
+						"tag": "param",
+						"text": "A paylod to expose through `error.data`\n",
+						"param": "data"
+					}
+				]
 			},
 			"typeParameter": [
 				{
@@ -10111,13 +9762,13 @@
 			"sources": [
 				{
 					"fileName": "CustomError/types.ts",
-					"line": 41,
-					"character": 27
+					"line": 45,
+					"character": 34
 				}
 			],
 			"type": {
 				"type": "unknown",
-				"name": "CustomErrorType<Name, Data>"
+				"name": "CustomErrorTypeFactory<Name, Data>"
 			}
 		},
 		{
@@ -10234,7 +9885,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 458,
+					"line": 479,
 					"character": 30
 				}
 			],
@@ -10267,8 +9918,31 @@
 			}
 		},
 		{
-			"id": 337,
-			"name": "DomainEventInstanceFromSerializedPayloadFactory",
+			"id": 331,
+			"name": "DomainEventName",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true
+			},
+			"comment": {
+				"shortText": "The name of a domain event"
+			},
+			"sources": [
+				{
+					"fileName": "DomainEvent/types.ts",
+					"line": 8,
+					"character": 27
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "string"
+			}
+		},
+		{
+			"id": 83,
+			"name": "DomainEventPayloadType",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {
@@ -10276,7 +9950,50 @@
 			},
 			"typeParameter": [
 				{
-					"id": 338,
+					"id": 84,
+					"name": "EventTypeFactory",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Aggregate/events.types.ts",
+					"line": 8,
+					"character": 34
+				}
+			],
+			"type": {
+				"type": "unknown",
+				"name": "DomainEventPayloadType<EventTypeFactory>"
+			}
+		},
+		{
+			"id": 333,
+			"name": "DomainEventTypeFactoryFromSerializedPayload",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true
+			},
+			"comment": {
+				"shortText": "A factory to get an instance of a domain event from\nthe serialized version of its payload",
+				"tags": [
+					{
+						"tag": "param",
+						"text": "The serialized version of the domain event's payload",
+						"param": "serializePayload"
+					},
+					{
+						"tag": "returns",
+						"text": "An instance of the domain event\n"
+					}
+				]
+			},
+			"typeParameter": [
+				{
+					"id": 334,
 					"name": "Name",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10288,7 +10005,7 @@
 					}
 				},
 				{
-					"id": 339,
+					"id": 335,
 					"name": "Payload",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10300,7 +10017,7 @@
 					}
 				},
 				{
-					"id": 340,
+					"id": 336,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10315,29 +10032,29 @@
 			"sources": [
 				{
 					"fileName": "DomainEvent/types.ts",
-					"line": 62,
-					"character": 59
+					"line": 110,
+					"character": 55
 				}
 			],
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 341,
+					"id": 337,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 342,
+							"id": 338,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 343,
-									"name": "serializedData",
+									"id": 339,
+									"name": "serializedPayload",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
@@ -10386,7 +10103,7 @@
 					"sources": [
 						{
 							"fileName": "DomainEvent/types.ts",
-							"line": 66,
+							"line": 114,
 							"character": 3
 						}
 					]
@@ -10394,72 +10111,20 @@
 			}
 		},
 		{
-			"id": 331,
-			"name": "DomainEventName",
+			"id": 340,
+			"name": "DomainEventTypeFactoryPayload",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "The name of a domain event"
-			},
-			"sources": [
-				{
-					"fileName": "DomainEvent/types.ts",
-					"line": 8,
-					"character": 27
-				}
-			],
-			"type": {
-				"type": "intrinsic",
-				"name": "string"
-			}
-		},
-		{
-			"id": 83,
-			"name": "DomainEventPayloadType",
-			"kind": 4194304,
-			"kindString": "Type alias",
-			"flags": {
-				"isExported": true
+				"shortText": "The payload type inferred\nfrom a DomainEventTypeFactory signature"
 			},
 			"typeParameter": [
 				{
-					"id": 84,
-					"name": "EventConstructor",
-					"kind": 131072,
-					"kindString": "Type parameter",
-					"flags": {}
-				}
-			],
-			"sources": [
-				{
-					"fileName": "Aggregate/events.types.ts",
-					"line": 8,
-					"character": 34
-				}
-			],
-			"type": {
-				"type": "unknown",
-				"name": "DomainEventPayloadType<EventConstructor>"
-			}
-		},
-		{
-			"id": 344,
-			"name": "DomainEventTypePayload",
-			"kind": 4194304,
-			"kindString": "Type alias",
-			"flags": {
-				"isExported": true
-			},
-			"comment": {
-				"shortText": "The payload type inferred\nfrom a DomainEventType signature"
-			},
-			"typeParameter": [
-				{
-					"id": 345,
-					"name": "EventType",
+					"id": 341,
+					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {}
@@ -10468,13 +10133,13 @@
 			"sources": [
 				{
 					"fileName": "DomainEvent/types.ts",
-					"line": 72,
-					"character": 34
+					"line": 120,
+					"character": 41
 				}
 			],
 			"type": {
 				"type": "unknown",
-				"name": "DomainEventTypePayload<EventType>"
+				"name": "DomainEventTypeFactoryPayload<EventTypeFactory>"
 			}
 		},
 		{
@@ -10610,7 +10275,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 262,
+					"line": 264,
 					"character": 36
 				}
 			],
@@ -10668,7 +10333,7 @@
 					},
 					{
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -10685,7 +10350,7 @@
 					},
 					{
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -10754,7 +10419,7 @@
 							},
 							{
 								"type": "reference",
-								"name": "CustomErrorType",
+								"name": "CustomErrorTypeFactory",
 								"id": 17,
 								"typeArguments": [
 									{
@@ -10771,7 +10436,7 @@
 							},
 							{
 								"type": "reference",
-								"name": "DomainEventType",
+								"name": "DomainEventTypeFactory",
 								"id": 322,
 								"typeArguments": [
 									{
@@ -10855,7 +10520,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 464,
+					"line": 485,
 					"character": 33
 				}
 			],
@@ -10870,7 +10535,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 467,
+							"line": 488,
 							"character": 3
 						}
 					]
@@ -10968,7 +10633,7 @@
 			}
 		},
 		{
-			"id": 333,
+			"id": 540,
 			"name": "PersistedDomainEvent",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -10977,8 +10642,8 @@
 			},
 			"sources": [
 				{
-					"fileName": "DomainEvent/types.ts",
-					"line": 25,
+					"fileName": "Repository/types.ts",
+					"line": 17,
 					"character": 32
 				}
 			],
@@ -10993,22 +10658,41 @@
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 334,
+							"id": 541,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 336,
+									"id": 542,
+									"name": "aggregate",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "Repository/types.ts",
+											"line": 18,
+											"character": 20
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "AggregateIdentifier",
+										"id": 493
+									}
+								},
+								{
+									"id": 544,
 									"name": "correlationId",
 									"kind": 32,
 									"kindString": "Variable",
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "DomainEvent/types.ts",
-											"line": 27,
+											"fileName": "Repository/types.ts",
+											"line": 20,
 											"character": 24
 										}
 									],
@@ -11018,15 +10702,15 @@
 									}
 								},
 								{
-									"id": 335,
+									"id": 543,
 									"name": "id",
 									"kind": 32,
 									"kindString": "Variable",
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "DomainEvent/types.ts",
-											"line": 26,
+											"fileName": "Repository/types.ts",
+											"line": 19,
 											"character": 13
 										}
 									],
@@ -11041,15 +10725,16 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										336,
-										335
+										542,
+										544,
+										543
 									]
 								}
 							],
 							"sources": [
 								{
-									"fileName": "DomainEvent/types.ts",
-									"line": 25,
+									"fileName": "Repository/types.ts",
+									"line": 17,
 									"character": 58
 								}
 							]
@@ -11185,7 +10870,7 @@
 			}
 		},
 		{
-			"id": 583,
+			"id": 545,
 			"name": "StoredEvent",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -11195,7 +10880,7 @@
 			"sources": [
 				{
 					"fileName": "Repository/InMemoryEventStore.ts",
-					"line": 13,
+					"line": 11,
 					"character": 23
 				}
 			],
@@ -11205,19 +10890,19 @@
 					{
 						"type": "reference",
 						"name": "PersistedDomainEvent",
-						"id": 333
+						"id": 540
 					},
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 584,
+							"id": 546,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 585,
+									"id": 548,
 									"name": "aggregate",
 									"kind": 32,
 									"kindString": "Variable",
@@ -11225,21 +10910,21 @@
 									"sources": [
 										{
 											"fileName": "Repository/InMemoryEventStore.ts",
-											"line": 14,
+											"line": 13,
 											"character": 20
 										}
 									],
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 586,
+											"id": 549,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 587,
+													"id": 550,
 													"name": "context",
 													"kind": 32,
 													"kindString": "Variable",
@@ -11247,7 +10932,7 @@
 													"sources": [
 														{
 															"fileName": "Repository/InMemoryEventStore.ts",
-															"line": 15,
+															"line": 14,
 															"character": 20
 														}
 													],
@@ -11258,7 +10943,7 @@
 													}
 												},
 												{
-													"id": 589,
+													"id": 552,
 													"name": "identity",
 													"kind": 32,
 													"kindString": "Variable",
@@ -11266,7 +10951,7 @@
 													"sources": [
 														{
 															"fileName": "Repository/InMemoryEventStore.ts",
-															"line": 17,
+															"line": 16,
 															"character": 21
 														}
 													],
@@ -11277,7 +10962,7 @@
 													}
 												},
 												{
-													"id": 588,
+													"id": 551,
 													"name": "type",
 													"kind": 32,
 													"kindString": "Variable",
@@ -11285,7 +10970,7 @@
 													"sources": [
 														{
 															"fileName": "Repository/InMemoryEventStore.ts",
-															"line": 16,
+															"line": 15,
 															"character": 17
 														}
 													],
@@ -11301,16 +10986,16 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														587,
-														589,
-														588
+														550,
+														552,
+														551
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "Repository/InMemoryEventStore.ts",
-													"line": 14,
+													"line": 13,
 													"character": 21
 												}
 											]
@@ -11318,21 +11003,21 @@
 									}
 								},
 								{
-									"id": 590,
-									"name": "version",
+									"id": 547,
+									"name": "id",
 									"kind": 32,
 									"kindString": "Variable",
 									"flags": {},
 									"sources": [
 										{
 											"fileName": "Repository/InMemoryEventStore.ts",
-											"line": 19,
-											"character": 18
+											"line": 12,
+											"character": 13
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "number"
+										"name": "string"
 									}
 								}
 							],
@@ -11341,15 +11026,15 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										585,
-										590
+										548,
+										547
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Repository/InMemoryEventStore.ts",
-									"line": 13,
+									"line": 11,
 									"character": 48
 								}
 							]
@@ -11359,7 +11044,7 @@
 			}
 		},
 		{
-			"id": 411,
+			"id": 407,
 			"name": "TupleItem",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -11406,7 +11091,7 @@
 			}
 		},
 		{
-			"id": 474,
+			"id": 459,
 			"name": "BadAggregateConstruction",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11424,21 +11109,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 475,
+					"id": 460,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 476,
+							"id": 461,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 477,
+									"id": 462,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11458,7 +11143,7 @@
 									}
 								},
 								{
-									"id": 478,
+									"id": 463,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11488,7 +11173,7 @@
 					],
 					"children": [
 						{
-							"id": 479,
+							"id": 464,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11496,7 +11181,7 @@
 							"sources": [
 								{
 									"fileName": "CustomError/types.ts",
-									"line": 51,
+									"line": 55,
 									"character": 19
 								}
 							],
@@ -11511,7 +11196,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								479
+								464
 							]
 						}
 					]
@@ -11520,7 +11205,7 @@
 			"defaultValue": " CustomError<\n  'BadAggregateConstruction',\n  WithOriginalError\n>({\n  name: 'BadAggregateConstruction',\n})"
 		},
 		{
-			"id": 480,
+			"id": 465,
 			"name": "BadAggregateDefinition",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11538,21 +11223,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 481,
+					"id": 466,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 482,
+							"id": 467,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 483,
+									"id": 468,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11572,7 +11257,7 @@
 									}
 								},
 								{
-									"id": 484,
+									"id": 469,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11602,7 +11287,7 @@
 					],
 					"children": [
 						{
-							"id": 485,
+							"id": 470,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11610,7 +11295,7 @@
 							"sources": [
 								{
 									"fileName": "CustomError/types.ts",
-									"line": 51,
+									"line": 55,
 									"character": 19
 								}
 							],
@@ -11625,7 +11310,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								485
+								470
 							]
 						}
 					]
@@ -11634,7 +11319,7 @@
 			"defaultValue": " CustomError<\n  'BadAggregateDefinition',\n  WithOriginalError\n>({\n  name: 'BadAggregateDefinition',\n})"
 		},
 		{
-			"id": 496,
+			"id": 481,
 			"name": "BadDomainEventDefinition",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11652,21 +11337,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 497,
+					"id": 482,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 498,
+							"id": 483,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 499,
+									"id": 484,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11686,7 +11371,7 @@
 									}
 								},
 								{
-									"id": 500,
+									"id": 485,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11716,7 +11401,7 @@
 					],
 					"children": [
 						{
-							"id": 501,
+							"id": 486,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11724,7 +11409,7 @@
 							"sources": [
 								{
 									"fileName": "CustomError/types.ts",
-									"line": 51,
+									"line": 55,
 									"character": 19
 								}
 							],
@@ -11739,7 +11424,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								501
+								486
 							]
 						}
 					]
@@ -11748,7 +11433,7 @@
 			"defaultValue": " CustomError<\n  'DomainEventDefinitionError',\n  { readonly originalError: Error }\n>({\n  name: 'DomainEventDefinitionError',\n})"
 		},
 		{
-			"id": 567,
+			"id": 580,
 			"name": "BadRepositoryDefinition",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11759,28 +11444,28 @@
 			"sources": [
 				{
 					"fileName": "Repository/index.ts",
-					"line": 17,
+					"line": 19,
 					"character": 36
 				}
 			],
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 568,
+					"id": 581,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 569,
+							"id": 582,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 570,
+									"id": 583,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11800,7 +11485,7 @@
 									}
 								},
 								{
-									"id": 571,
+									"id": 584,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11830,7 +11515,7 @@
 					],
 					"children": [
 						{
-							"id": 572,
+							"id": 585,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11838,7 +11523,7 @@
 							"sources": [
 								{
 									"fileName": "CustomError/types.ts",
-									"line": 51,
+									"line": 55,
 									"character": 19
 								}
 							],
@@ -11853,7 +11538,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								572
+								585
 							]
 						}
 					]
@@ -11952,7 +11637,7 @@
 							"sources": [
 								{
 									"fileName": "CustomError/types.ts",
-									"line": 51,
+									"line": 55,
 									"character": 19
 								}
 							],
@@ -11976,7 +11661,7 @@
 			"defaultValue": " CustomError<\n  'DeserializationError',\n  ErrorData\n>({\n  name: 'DeserializationError',\n})"
 		},
 		{
-			"id": 473,
+			"id": 458,
 			"name": "NO_CONSISTENCY_POLICY",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11998,7 +11683,577 @@
 			"defaultValue": "2"
 		},
 		{
-			"id": 472,
+			"id": 592,
+			"name": "RepositoryBadAggregatesListProvided",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Repository/index.ts",
+					"line": 31,
+					"character": 48
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 593,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 594,
+							"name": "__call",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 595,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								},
+								{
+									"id": 596,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "CustomErrorInstance",
+								"id": 14,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "Name"
+									},
+									{
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								]
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 597,
+							"name": "name",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "CustomError/types.ts",
+									"line": 55,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "Name"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								597
+							]
+						}
+					]
+				}
+			},
+			"defaultValue": " CustomError<\n  'RepositoryBadAggregatesListProvided',\n  WithOriginalError\n>({\n  name: 'RepositoryBadAggregatesListProvided',\n})"
+		},
+		{
+			"id": 598,
+			"name": "RepositoryEventsLoadError",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Repository/index.ts",
+					"line": 38,
+					"character": 38
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 599,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 600,
+							"name": "__call",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 601,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								},
+								{
+									"id": 602,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "CustomErrorInstance",
+								"id": 14,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "Name"
+									},
+									{
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								]
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 603,
+							"name": "name",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "CustomError/types.ts",
+									"line": 55,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "Name"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								603
+							]
+						}
+					]
+				}
+			},
+			"defaultValue": " CustomError<\n  'RepositoryEventsLoadError',\n  WithOriginalError\n>({\n  name: 'RepositoryEventsLoadError',\n})"
+		},
+		{
+			"id": 586,
+			"name": "RepositorySnapshotLoadError",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Repository/index.ts",
+					"line": 24,
+					"character": 40
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 587,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 588,
+							"name": "__call",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 589,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								},
+								{
+									"id": 590,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "CustomErrorInstance",
+								"id": 14,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "Name"
+									},
+									{
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								]
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 591,
+							"name": "name",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "CustomError/types.ts",
+									"line": 55,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "Name"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								591
+							]
+						}
+					]
+				}
+			},
+			"defaultValue": " CustomError<\n  'RepositorySnapshotLoadError',\n  WithOriginalError\n>({\n  name: 'RepositorySnapshotLoadError',\n})"
+		},
+		{
+			"id": 610,
+			"name": "RepositoryWriteConcurrencyError",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Repository/index.ts",
+					"line": 51,
+					"character": 44
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 611,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 612,
+							"name": "__call",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 613,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								},
+								{
+									"id": 614,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "CustomErrorInstance",
+								"id": 14,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "Name"
+									},
+									{
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								]
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 615,
+							"name": "name",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "CustomError/types.ts",
+									"line": 55,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "Name"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								615
+							]
+						}
+					]
+				}
+			},
+			"defaultValue": " CustomError<\n  'RepositoryWriteConcurrencyError',\n  WithOriginalError\n>({\n  name: 'RepositoryWriteConcurrencyError',\n})"
+		},
+		{
+			"id": 604,
+			"name": "RepositoryWriteError",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Repository/index.ts",
+					"line": 45,
+					"character": 33
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 605,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 606,
+							"name": "__call",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 607,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								},
+								{
+									"id": 608,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "CustomErrorInstance",
+								"id": 14,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "Name"
+									},
+									{
+										"type": "typeParameter",
+										"name": "Data"
+									}
+								]
+							}
+						}
+					],
+					"children": [
+						{
+							"id": 609,
+							"name": "name",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "CustomError/types.ts",
+									"line": 55,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "Name"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								609
+							]
+						}
+					]
+				}
+			},
+			"defaultValue": " CustomError<\n  'RepositoryWriteError',\n  WithOriginalError\n>({\n  name: 'RepositoryWriteError',\n})"
+		},
+		{
+			"id": 457,
 			"name": "SOFT_CONSISTENCY_POLICY",
 			"kind": 32,
 			"kindString": "Variable",
@@ -12020,7 +12275,7 @@
 			"defaultValue": "1"
 		},
 		{
-			"id": 471,
+			"id": 456,
 			"name": "STRICT_CONSISTENCY_POLICY",
 			"kind": 32,
 			"kindString": "Variable",
@@ -12132,7 +12387,7 @@
 							"sources": [
 								{
 									"fileName": "CustomError/types.ts",
-									"line": 51,
+									"line": 55,
 									"character": 19
 								}
 							],
@@ -12154,133 +12409,6 @@
 				}
 			},
 			"defaultValue": " CustomError<'SerializationError', ErrorData>({\n  name: 'SerializationError',\n})"
-		},
-		{
-			"id": 573,
-			"name": "WriteConcurrencyError",
-			"kind": 32,
-			"kindString": "Variable",
-			"flags": {
-				"isExported": true,
-				"isConst": true
-			},
-			"sources": [
-				{
-					"fileName": "Repository/index.ts",
-					"line": 22,
-					"character": 34
-				}
-			],
-			"type": {
-				"type": "reflection",
-				"declaration": {
-					"id": 574,
-					"name": "__type",
-					"kind": 65536,
-					"kindString": "Type literal",
-					"flags": {},
-					"signatures": [
-						{
-							"id": 575,
-							"name": "__call",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"parameters": [
-								{
-									"id": 576,
-									"name": "message",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "intrinsic",
-												"name": "undefined"
-											},
-											{
-												"type": "intrinsic",
-												"name": "string"
-											}
-										]
-									}
-								},
-								{
-									"id": 577,
-									"name": "data",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "intrinsic",
-												"name": "undefined"
-											},
-											{
-												"type": "intrinsic",
-												"name": "void"
-											}
-										]
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "CustomErrorInstance",
-								"id": 14,
-								"typeArguments": [
-									{
-										"type": "typeParameter",
-										"name": "Name"
-									},
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								]
-							}
-						}
-					],
-					"children": [
-						{
-							"id": 578,
-							"name": "name",
-							"kind": 32,
-							"kindString": "Variable",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "CustomError/types.ts",
-									"line": 47,
-									"character": 19
-								}
-							],
-							"type": {
-								"type": "typeParameter",
-								"name": "Name"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Variables",
-							"kind": 32,
-							"children": [
-								578
-							]
-						}
-					]
-				}
-			},
-			"defaultValue": " CustomError<'WriteConcurrencyError'>({\n  name: 'WriteConcurrencyError',\n})"
 		},
 		{
 			"id": 23,
@@ -12305,7 +12433,7 @@
 			"defaultValue": " `string starting with a letter and composed by letters, numbers and underscores only`"
 		},
 		{
-			"id": 486,
+			"id": 471,
 			"name": "Aggregate",
 			"kind": 64,
 			"kindString": "Function",
@@ -12314,14 +12442,14 @@
 			},
 			"signatures": [
 				{
-					"id": 487,
+					"id": 472,
 					"name": "Aggregate",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 488,
+							"id": 473,
 							"name": "BC",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12333,7 +12461,7 @@
 							}
 						},
 						{
-							"id": 489,
+							"id": 474,
 							"name": "TypeName",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12345,7 +12473,7 @@
 							}
 						},
 						{
-							"id": 490,
+							"id": 475,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12357,7 +12485,7 @@
 							}
 						},
 						{
-							"id": 491,
+							"id": 476,
 							"name": "Query",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12390,14 +12518,14 @@
 							}
 						},
 						{
-							"id": 492,
-							"name": "ErrorType",
+							"id": 477,
+							"name": "ErrorTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "CustomErrorType",
+								"name": "CustomErrorTypeFactory",
 								"id": 17,
 								"typeArguments": [
 									{
@@ -12414,14 +12542,14 @@
 							}
 						},
 						{
-							"id": 493,
-							"name": "EventType",
+							"id": 478,
+							"name": "EventTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "DomainEventType",
+								"name": "DomainEventTypeFactory",
 								"id": 322,
 								"typeArguments": [
 									{
@@ -12442,7 +12570,7 @@
 							}
 						},
 						{
-							"id": 494,
+							"id": 479,
 							"name": "Command",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12472,19 +12600,19 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "ErrorType"
+										"name": "ErrorTypeFactory"
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType"
+										"name": "EventTypeFactory"
 									},
 									{
 										"type": "unknown",
-										"name": "ErrorType[\"name\"]"
+										"name": "ErrorTypeFactory[\"name\"]"
 									},
 									{
 										"type": "unknown",
-										"name": "EventType[\"name\"]"
+										"name": "EventTypeFactory[\"name\"]"
 									}
 								]
 							}
@@ -12492,7 +12620,7 @@
 					],
 					"parameters": [
 						{
-							"id": 495,
+							"id": 480,
 							"name": "definition",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12561,10 +12689,10 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "ErrorType",
+										"name": "ErrorTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "CustomErrorType",
+											"name": "CustomErrorTypeFactory",
 											"id": 17,
 											"typeArguments": [
 												{
@@ -12582,10 +12710,10 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType",
+										"name": "EventTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "DomainEventType",
+											"name": "DomainEventTypeFactory",
 											"id": 322,
 											"typeArguments": [
 												{
@@ -12633,19 +12761,19 @@
 												},
 												{
 													"type": "typeParameter",
-													"name": "ErrorType"
+													"name": "ErrorTypeFactory"
 												},
 												{
 													"type": "typeParameter",
-													"name": "EventType"
+													"name": "EventTypeFactory"
 												},
 												{
 													"type": "unknown",
-													"name": "ErrorType[\"name\"]"
+													"name": "ErrorTypeFactory[\"name\"]"
 												},
 												{
 													"type": "unknown",
-													"name": "EventType[\"name\"]"
+													"name": "EventTypeFactory[\"name\"]"
 												}
 											]
 										}
@@ -12723,10 +12851,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -12744,10 +12872,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -12795,19 +12923,19 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
-											"name": "EventType"
+											"name": "EventTypeFactory"
 										},
 										{
 											"type": "unknown",
-											"name": "ErrorType[\"name\"]"
+											"name": "ErrorTypeFactory[\"name\"]"
 										},
 										{
 											"type": "unknown",
-											"name": "EventType[\"name\"]"
+											"name": "EventTypeFactory[\"name\"]"
 										}
 									]
 								}
@@ -12819,13 +12947,13 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/index.ts",
-					"line": 81,
+					"line": 73,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 359,
+			"id": 355,
 			"name": "CommandInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -12834,14 +12962,14 @@
 			},
 			"signatures": [
 				{
-					"id": 360,
+					"id": 356,
 					"name": "CommandInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 361,
+							"id": 357,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12853,7 +12981,7 @@
 							}
 						},
 						{
-							"id": 362,
+							"id": 358,
 							"name": "Query",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12886,7 +13014,7 @@
 							}
 						},
 						{
-							"id": 363,
+							"id": 359,
 							"name": "QueryDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12908,14 +13036,14 @@
 							}
 						},
 						{
-							"id": 364,
-							"name": "ErrorType",
+							"id": 360,
+							"name": "ErrorTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "CustomErrorType",
+								"name": "CustomErrorTypeFactory",
 								"id": 17,
 								"typeArguments": [
 									{
@@ -12932,7 +13060,7 @@
 							}
 						},
 						{
-							"id": 365,
+							"id": 361,
 							"name": "ErrorDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12944,20 +13072,20 @@
 								"typeArguments": [
 									{
 										"type": "typeParameter",
-										"name": "ErrorType"
+										"name": "ErrorTypeFactory"
 									}
 								]
 							}
 						},
 						{
-							"id": 366,
-							"name": "EventType",
+							"id": 362,
+							"name": "EventTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "DomainEventType",
+								"name": "DomainEventTypeFactory",
 								"id": 322,
 								"typeArguments": [
 									{
@@ -12978,7 +13106,7 @@
 							}
 						},
 						{
-							"id": 367,
+							"id": 363,
 							"name": "EventDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12994,13 +13122,13 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType"
+										"name": "EventTypeFactory"
 									}
 								]
 							}
 						},
 						{
-							"id": 368,
+							"id": 364,
 							"name": "Command",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13030,25 +13158,25 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "ErrorType"
+										"name": "ErrorTypeFactory"
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType"
+										"name": "EventTypeFactory"
 									},
 									{
 										"type": "unknown",
-										"name": "ErrorType[\"name\"]"
+										"name": "ErrorTypeFactory[\"name\"]"
 									},
 									{
 										"type": "unknown",
-										"name": "EventType[\"name\"]"
+										"name": "EventTypeFactory[\"name\"]"
 									}
 								]
 							}
 						},
 						{
-							"id": 369,
+							"id": 365,
 							"name": "CommandDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13068,11 +13196,11 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "ErrorType"
+										"name": "ErrorTypeFactory"
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType"
+										"name": "EventTypeFactory"
 									},
 									{
 										"type": "typeParameter",
@@ -13084,7 +13212,7 @@
 					],
 					"parameters": [
 						{
-							"id": 370,
+							"id": 366,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13092,7 +13220,7 @@
 							"type": {
 								"type": "reference",
 								"name": "CommandInterfaceConfiguration",
-								"id": 346,
+								"id": 342,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -13154,10 +13282,10 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "ErrorType",
+										"name": "ErrorTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "CustomErrorType",
+											"name": "CustomErrorTypeFactory",
 											"id": 17,
 											"typeArguments": [
 												{
@@ -13183,17 +13311,17 @@
 											"typeArguments": [
 												{
 													"type": "typeParameter",
-													"name": "ErrorType"
+													"name": "ErrorTypeFactory"
 												}
 											]
 										}
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType",
+										"name": "EventTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "DomainEventType",
+											"name": "DomainEventTypeFactory",
 											"id": 322,
 											"typeArguments": [
 												{
@@ -13227,7 +13355,7 @@
 												},
 												{
 													"type": "typeParameter",
-													"name": "EventType"
+													"name": "EventTypeFactory"
 												}
 											]
 										}
@@ -13260,19 +13388,19 @@
 												},
 												{
 													"type": "typeParameter",
-													"name": "ErrorType"
+													"name": "ErrorTypeFactory"
 												},
 												{
 													"type": "typeParameter",
-													"name": "EventType"
+													"name": "EventTypeFactory"
 												},
 												{
 													"type": "unknown",
-													"name": "ErrorType[\"name\"]"
+													"name": "ErrorTypeFactory[\"name\"]"
 												},
 												{
 													"type": "unknown",
-													"name": "EventType[\"name\"]"
+													"name": "EventTypeFactory[\"name\"]"
 												}
 											]
 										}
@@ -13327,10 +13455,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -13348,10 +13476,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -13399,19 +13527,19 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
-											"name": "EventType"
+											"name": "EventTypeFactory"
 										},
 										{
 											"type": "unknown",
-											"name": "ErrorType[\"name\"]"
+											"name": "ErrorTypeFactory[\"name\"]"
 										},
 										{
 											"type": "unknown",
-											"name": "EventType[\"name\"]"
+											"name": "EventTypeFactory[\"name\"]"
 										}
 									]
 								}
@@ -13434,11 +13562,11 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										},
 										{
 											"type": "typeParameter",
-											"name": "EventType"
+											"name": "EventTypeFactory"
 										},
 										{
 											"type": "typeParameter",
@@ -13454,7 +13582,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/CommandInterface.ts",
-					"line": 78,
+					"line": 88,
 					"character": 40
 				}
 			]
@@ -13527,7 +13655,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "CustomErrorType",
+						"name": "CustomErrorTypeFactory",
 						"id": 17,
 						"typeArguments": [
 							{
@@ -13561,7 +13689,7 @@
 			]
 		},
 		{
-			"id": 502,
+			"id": 487,
 			"name": "DomainEvent",
 			"kind": 64,
 			"kindString": "Function",
@@ -13570,14 +13698,14 @@
 			},
 			"signatures": [
 				{
-					"id": 503,
+					"id": 488,
 					"name": "DomainEvent",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 504,
+							"id": 489,
 							"name": "Name",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13589,7 +13717,7 @@
 							}
 						},
 						{
-							"id": 505,
+							"id": 490,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13601,7 +13729,7 @@
 							}
 						},
 						{
-							"id": 506,
+							"id": 491,
 							"name": "Payload",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13615,7 +13743,7 @@
 					],
 					"parameters": [
 						{
-							"id": 507,
+							"id": 492,
 							"name": "definition",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13658,7 +13786,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "DomainEventType",
+						"name": "DomainEventTypeFactory",
 						"id": 322,
 						"typeArguments": [
 							{
@@ -13701,7 +13829,7 @@
 			]
 		},
 		{
-			"id": 380,
+			"id": 376,
 			"name": "EmissionInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -13710,17 +13838,14 @@
 			},
 			"signatures": [
 				{
-					"id": 381,
+					"id": 377,
 					"name": "EmissionInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
-					"comment": {
-						"shortText": "The constructor of an aggregate full `emit` interface"
-					},
 					"typeParameter": [
 						{
-							"id": 382,
+							"id": 378,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13732,14 +13857,14 @@
 							}
 						},
 						{
-							"id": 383,
-							"name": "EventType",
+							"id": 379,
+							"name": "EventTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "DomainEventType",
+								"name": "DomainEventTypeFactory",
 								"id": 322,
 								"typeArguments": [
 									{
@@ -13760,7 +13885,7 @@
 							}
 						},
 						{
-							"id": 384,
+							"id": 380,
 							"name": "EventDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13776,7 +13901,7 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType"
+										"name": "EventTypeFactory"
 									}
 								]
 							}
@@ -13784,18 +13909,15 @@
 					],
 					"parameters": [
 						{
-							"id": 385,
+							"id": 381,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "@see EmissionInterfaceConfiguration\n"
-							},
 							"type": {
 								"type": "reference",
 								"name": "EmissionInterfaceConfiguration",
-								"id": 371,
+								"id": 367,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -13808,10 +13930,10 @@
 									},
 									{
 										"type": "typeParameter",
-										"name": "EventType",
+										"name": "EventTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "DomainEventType",
+											"name": "DomainEventTypeFactory",
 											"id": 322,
 											"typeArguments": [
 												{
@@ -13851,10 +13973,10 @@
 							},
 							{
 								"type": "typeParameter",
-								"name": "EventType",
+								"name": "EventTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "DomainEventType",
+									"name": "DomainEventTypeFactory",
 									"id": 322,
 									"typeArguments": [
 										{
@@ -13888,7 +14010,7 @@
 										},
 										{
 											"type": "typeParameter",
-											"name": "EventType"
+											"name": "EventTypeFactory"
 										}
 									]
 								}
@@ -13906,7 +14028,7 @@
 			]
 		},
 		{
-			"id": 389,
+			"id": 385,
 			"name": "ErrorInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -13915,21 +14037,21 @@
 			},
 			"signatures": [
 				{
-					"id": 390,
+					"id": 386,
 					"name": "ErrorInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 391,
-							"name": "ErrorType",
+							"id": 387,
+							"name": "ErrorTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "CustomErrorType",
+								"name": "CustomErrorTypeFactory",
 								"id": 17,
 								"typeArguments": [
 									{
@@ -13946,7 +14068,7 @@
 							}
 						},
 						{
-							"id": 392,
+							"id": 388,
 							"name": "ErrorDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13958,7 +14080,7 @@
 								"typeArguments": [
 									{
 										"type": "typeParameter",
-										"name": "ErrorType"
+										"name": "ErrorTypeFactory"
 									}
 								]
 							}
@@ -13966,7 +14088,7 @@
 					],
 					"parameters": [
 						{
-							"id": 393,
+							"id": 389,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13974,14 +14096,14 @@
 							"type": {
 								"type": "reference",
 								"name": "ErrorInterfaceConfiguration",
-								"id": 386,
+								"id": 382,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
-										"name": "ErrorType",
+										"name": "ErrorTypeFactory",
 										"constraint": {
 											"type": "reference",
-											"name": "CustomErrorType",
+											"name": "CustomErrorTypeFactory",
 											"id": 17,
 											"typeArguments": [
 												{
@@ -14008,10 +14130,10 @@
 						"typeArguments": [
 							{
 								"type": "typeParameter",
-								"name": "ErrorType",
+								"name": "ErrorTypeFactory",
 								"constraint": {
 									"type": "reference",
-									"name": "CustomErrorType",
+									"name": "CustomErrorTypeFactory",
 									"id": 17,
 									"typeArguments": [
 										{
@@ -14037,7 +14159,7 @@
 									"typeArguments": [
 										{
 											"type": "typeParameter",
-											"name": "ErrorType"
+											"name": "ErrorTypeFactory"
 										}
 									]
 								}
@@ -14049,13 +14171,13 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/ErrorInterface.ts",
-					"line": 17,
+					"line": 20,
 					"character": 38
 				}
 			]
 		},
 		{
-			"id": 591,
+			"id": 553,
 			"name": "InMemoryEventStore",
 			"kind": 64,
 			"kindString": "Function",
@@ -14065,7 +14187,7 @@
 			},
 			"signatures": [
 				{
-					"id": 592,
+					"id": 554,
 					"name": "InMemoryEventStore",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -14073,20 +14195,20 @@
 					"type": {
 						"type": "reference",
 						"name": "EventStore",
-						"id": 519
+						"id": 501
 					}
 				}
 			],
 			"sources": [
 				{
 					"fileName": "Repository/InMemoryEventStore.ts",
-					"line": 22,
+					"line": 20,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 565,
+			"id": 568,
 			"name": "InMemorySnapshotService",
 			"kind": 64,
 			"kindString": "Function",
@@ -14096,7 +14218,7 @@
 			},
 			"signatures": [
 				{
-					"id": 566,
+					"id": 569,
 					"name": "InMemorySnapshotService",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -14104,7 +14226,7 @@
 					"type": {
 						"type": "reference",
 						"name": "SnapshotService",
-						"id": 534
+						"id": 512
 					}
 				}
 			],
@@ -14117,7 +14239,7 @@
 			]
 		},
 		{
-			"id": 401,
+			"id": 397,
 			"name": "QueryInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -14126,14 +14248,14 @@
 			},
 			"signatures": [
 				{
-					"id": 402,
+					"id": 398,
 					"name": "QueryInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 403,
+							"id": 399,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14145,7 +14267,7 @@
 							}
 						},
 						{
-							"id": 404,
+							"id": 400,
 							"name": "Query",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14178,7 +14300,7 @@
 							}
 						},
 						{
-							"id": 405,
+							"id": 401,
 							"name": "QueryDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14202,7 +14324,7 @@
 					],
 					"parameters": [
 						{
-							"id": 406,
+							"id": 402,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14210,7 +14332,7 @@
 							"type": {
 								"type": "reference",
 								"name": "QueryInterfaceConfiguration",
-								"id": 394,
+								"id": 390,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -14331,7 +14453,7 @@
 			]
 		},
 		{
-			"id": 579,
+			"id": 616,
 			"name": "Repository",
 			"kind": 64,
 			"kindString": "Function",
@@ -14340,14 +14462,14 @@
 			},
 			"signatures": [
 				{
-					"id": 580,
+					"id": 617,
 					"name": "Repository",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 581,
+							"id": 618,
 							"name": "AggregateInstance",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14361,7 +14483,7 @@
 					],
 					"parameters": [
 						{
-							"id": 582,
+							"id": 619,
 							"name": "definition",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14369,14 +14491,14 @@
 							"type": {
 								"type": "reference",
 								"name": "RepositoryDefinition",
-								"id": 544
+								"id": 522
 							}
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "RepositoryInstance",
-						"id": 548,
+						"id": 526,
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -14400,13 +14522,13 @@
 			"sources": [
 				{
 					"fileName": "Repository/index.ts",
-					"line": 26,
+					"line": 58,
 					"character": 26
 				}
 			]
 		},
 		{
-			"id": 443,
+			"id": 439,
 			"name": "areAllValidSerializedDomainEvents",
 			"kind": 64,
 			"kindString": "Function",
@@ -14415,14 +14537,14 @@
 			},
 			"signatures": [
 				{
-					"id": 444,
+					"id": 440,
 					"name": "areAllValidSerializedDomainEvents",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 445,
+							"id": 441,
 							"name": "events",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14454,7 +14576,7 @@
 			]
 		},
 		{
-			"id": 407,
+			"id": 403,
 			"name": "getAggregateName",
 			"kind": 64,
 			"kindString": "Function",
@@ -14464,14 +14586,14 @@
 			},
 			"signatures": [
 				{
-					"id": 408,
+					"id": 404,
 					"name": "getAggregateName",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 409,
+							"id": 405,
 							"name": "type",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14482,7 +14604,7 @@
 							}
 						},
 						{
-							"id": 410,
+							"id": 406,
 							"name": "identity",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14508,14 +14630,14 @@
 					}
 				},
 				{
-					"id": 593,
+					"id": 555,
 					"name": "getAggregateName",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 594,
+							"id": 556,
 							"name": "__namedParameters",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14524,14 +14646,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 595,
+									"id": 557,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 596,
+											"id": 558,
 											"name": "context",
 											"kind": 32,
 											"kindString": "Variable",
@@ -14539,7 +14661,7 @@
 											"sources": [
 												{
 													"fileName": "Repository/InMemoryEventStore.ts",
-													"line": 99,
+													"line": 97,
 													"character": 9
 												}
 											],
@@ -14549,7 +14671,7 @@
 											}
 										},
 										{
-											"id": 598,
+											"id": 560,
 											"name": "identity",
 											"kind": 32,
 											"kindString": "Variable",
@@ -14557,7 +14679,7 @@
 											"sources": [
 												{
 													"fileName": "Repository/InMemoryEventStore.ts",
-													"line": 101,
+													"line": 99,
 													"character": 10
 												}
 											],
@@ -14576,7 +14698,7 @@
 											}
 										},
 										{
-											"id": 597,
+											"id": 559,
 											"name": "type",
 											"kind": 32,
 											"kindString": "Variable",
@@ -14584,7 +14706,7 @@
 											"sources": [
 												{
 													"fileName": "Repository/InMemoryEventStore.ts",
-													"line": 100,
+													"line": 98,
 													"character": 6
 												}
 											],
@@ -14599,16 +14721,16 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												596,
-												598,
-												597
+												558,
+												560,
+												559
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "Repository/InMemoryEventStore.ts",
-											"line": 98,
+											"line": 96,
 											"character": 26
 										}
 									]
@@ -14630,7 +14752,7 @@
 				},
 				{
 					"fileName": "Repository/InMemoryEventStore.ts",
-					"line": 98,
+					"line": 96,
 					"character": 22
 				}
 			]
@@ -14725,35 +14847,6 @@
 			]
 		},
 		{
-			"id": 599,
-			"name": "getNewId",
-			"kind": 64,
-			"kindString": "Function",
-			"flags": {
-				"isConst": true
-			},
-			"signatures": [
-				{
-					"id": 600,
-					"name": "getNewId",
-					"kind": 4096,
-					"kindString": "Call signature",
-					"flags": {},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					}
-				}
-			],
-			"sources": [
-				{
-					"fileName": "Repository/InMemoryEventStore.ts",
-					"line": 108,
-					"character": 14
-				}
-			]
-		},
-		{
 			"id": 65,
 			"name": "getSerializer",
 			"kind": 64,
@@ -14843,7 +14936,7 @@
 			]
 		},
 		{
-			"id": 420,
+			"id": 416,
 			"name": "getSnaphotKey",
 			"kind": 64,
 			"kindString": "Function",
@@ -14851,31 +14944,43 @@
 				"isExported": true,
 				"isConst": true
 			},
+			"comment": {
+				"shortText": "A function to generate a snaphot persistence key"
+			},
 			"signatures": [
 				{
-					"id": 421,
+					"id": 417,
 					"name": "getSnaphotKey",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "A function to generate a snaphot persistence key"
+					},
 					"parameters": [
 						{
-							"id": 422,
+							"id": 418,
 							"name": "namespace",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"shortText": "The first part of a snaphot persistence key"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "string"
 							}
 						},
 						{
-							"id": 423,
+							"id": 419,
 							"name": "name",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"shortText": "The name of the aggregate\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "string"
@@ -14891,13 +14996,13 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/snapshotUtils.ts",
-					"line": 7,
+					"line": 17,
 					"character": 26
 				}
 			]
 		},
 		{
-			"id": 416,
+			"id": 412,
 			"name": "getSnaphotNamespace",
 			"kind": 64,
 			"kindString": "Function",
@@ -14905,20 +15010,29 @@
 				"isExported": true,
 				"isConst": true
 			},
+			"comment": {
+				"shortText": "A function to generate the first part of a snaphot persistence key"
+			},
 			"signatures": [
 				{
-					"id": 417,
+					"id": 413,
 					"name": "getSnaphotNamespace",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "A function to generate the first part of a snaphot persistence key"
+					},
 					"parameters": [
 						{
-							"id": 418,
+							"id": 414,
 							"name": "snapshotPrefix",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"shortText": "The prefix to use to generate the snapshot key namespace"
+							},
 							"type": {
 								"type": "union",
 								"types": [
@@ -14934,14 +15048,23 @@
 							}
 						},
 						{
-							"id": 419,
+							"id": 415,
 							"name": "context",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"shortText": "The name of the bounded context the aggregate belongs to\n"
+							},
 							"type": {
-								"type": "intrinsic",
-								"name": "string"
+								"type": "reference",
+								"name": "Readonly",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
 							}
 						}
 					],
@@ -14954,13 +15077,13 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/snapshotUtils.ts",
-					"line": 1,
+					"line": 6,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 452,
+			"id": 448,
 			"name": "isValidAggregateCommand",
 			"kind": 64,
 			"kindString": "Function",
@@ -14969,14 +15092,14 @@
 			},
 			"signatures": [
 				{
-					"id": 453,
+					"id": 449,
 					"name": "isValidAggregateCommand",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 454,
+							"id": 450,
 							"name": "command",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15002,7 +15125,7 @@
 			]
 		},
 		{
-			"id": 455,
+			"id": 451,
 			"name": "isValidAggregateQuery",
 			"kind": 64,
 			"kindString": "Function",
@@ -15011,14 +15134,14 @@
 			},
 			"signatures": [
 				{
-					"id": 456,
+					"id": 452,
 					"name": "isValidAggregateQuery",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 457,
+							"id": 453,
 							"name": "query",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15044,7 +15167,7 @@
 			]
 		},
 		{
-			"id": 449,
+			"id": 445,
 			"name": "isValidDomainEventConstructor",
 			"kind": 64,
 			"kindString": "Function",
@@ -15053,14 +15176,14 @@
 			},
 			"signatures": [
 				{
-					"id": 450,
+					"id": 446,
 					"name": "isValidDomainEventConstructor",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 451,
+							"id": 447,
 							"name": "ctor",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15086,7 +15209,7 @@
 			]
 		},
 		{
-			"id": 437,
+			"id": 433,
 			"name": "isValidIdentity",
 			"kind": 64,
 			"kindString": "Function",
@@ -15095,14 +15218,14 @@
 			},
 			"signatures": [
 				{
-					"id": 438,
+					"id": 434,
 					"name": "isValidIdentity",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 439,
+							"id": 435,
 							"name": "str",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15170,7 +15293,7 @@
 			]
 		},
 		{
-			"id": 446,
+			"id": 442,
 			"name": "isValidSerializedDomainEvent",
 			"kind": 64,
 			"kindString": "Function",
@@ -15179,14 +15302,14 @@
 			},
 			"signatures": [
 				{
-					"id": 447,
+					"id": 443,
 					"name": "isValidSerializedDomainEvent",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 448,
+							"id": 444,
 							"name": "event",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15212,7 +15335,7 @@
 			]
 		},
 		{
-			"id": 440,
+			"id": 436,
 			"name": "isValidSnapshot",
 			"kind": 64,
 			"kindString": "Function",
@@ -15221,14 +15344,14 @@
 			},
 			"signatures": [
 				{
-					"id": 441,
+					"id": 437,
 					"name": "isValidSnapshot",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 442,
+							"id": 438,
 							"name": "snapshot",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15254,23 +15377,24 @@
 			]
 		},
 		{
-			"id": 601,
-			"name": "pad0",
+			"id": 561,
+			"name": "padLeftWithZeroes",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
+				"isExported": true,
 				"isConst": true
 			},
 			"signatures": [
 				{
-					"id": 602,
-					"name": "pad0",
+					"id": 562,
+					"name": "padLeftWithZeroes",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 603,
+							"id": 563,
 							"name": "i",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15281,15 +15405,16 @@
 							}
 						},
 						{
-							"id": 604,
-							"name": "n",
+							"id": 564,
+							"name": "minLength",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
-							}
+							},
+							"defaultValue": "10"
 						}
 					],
 					"type": {
@@ -15301,8 +15426,8 @@
 			"sources": [
 				{
 					"fileName": "Repository/InMemoryEventStore.ts",
-					"line": 110,
-					"character": 10
+					"line": 106,
+					"character": 30
 				}
 			]
 		},
@@ -15361,13 +15486,145 @@
 			"sources": [
 				{
 					"fileName": "CustomError/index.ts",
-					"line": 43,
+					"line": 45,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 412,
+			"id": 570,
+			"name": "toSerial",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isConst": true
+			},
+			"signatures": [
+				{
+					"id": 571,
+					"name": "toSerial",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 572,
+							"name": "__namedParameters",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"originalName": "__0",
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 573,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 574,
+											"name": "context",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Repository/validateAggregatesList.ts",
+													"line": 12,
+													"character": 9
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 576,
+											"name": "identity",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Repository/validateAggregatesList.ts",
+													"line": 14,
+													"character": 10
+												}
+											],
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										},
+										{
+											"id": 575,
+											"name": "type",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Repository/validateAggregatesList.ts",
+													"line": 13,
+													"character": 6
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												574,
+												576,
+												575
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Repository/validateAggregatesList.ts",
+											"line": 11,
+											"character": 18
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Repository/validateAggregatesList.ts",
+					"line": 11,
+					"character": 14
+				}
+			]
+		},
+		{
+			"id": 408,
 			"name": "tuple",
 			"kind": 64,
 			"kindString": "Function",
@@ -15377,14 +15634,14 @@
 			},
 			"signatures": [
 				{
-					"id": 413,
+					"id": 409,
 					"name": "tuple",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 414,
+							"id": 410,
 							"name": "T",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -15394,14 +15651,14 @@
 								"elementType": {
 									"type": "reference",
 									"name": "TupleItem",
-									"id": 411
+									"id": 407
 								}
 							}
 						}
 					],
 					"parameters": [
 						{
-							"id": 415,
+							"id": 411,
 							"name": "args",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15416,7 +15673,7 @@
 									"elementType": {
 										"type": "reference",
 										"name": "TupleItem",
-										"id": 411
+										"id": 407
 									}
 								}
 							}
@@ -15437,7 +15694,49 @@
 			]
 		},
 		{
-			"id": 429,
+			"id": 577,
+			"name": "validateAggregatesList",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 578,
+					"name": "validateAggregatesList",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 579,
+							"name": "aggregates",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Repository/validateAggregatesList.ts",
+					"line": 21,
+					"character": 46
+				}
+			]
+		},
+		{
+			"id": 425,
 			"name": "validateConstructorProps",
 			"kind": 64,
 			"kindString": "Function",
@@ -15446,14 +15745,14 @@
 			},
 			"signatures": [
 				{
-					"id": 430,
+					"id": 426,
 					"name": "validateConstructorProps",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 431,
+							"id": 427,
 							"name": "__namedParameters",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15462,14 +15761,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 432,
+									"id": 428,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 433,
+											"id": 429,
 											"name": "events",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15487,7 +15786,7 @@
 											}
 										},
 										{
-											"id": 434,
+											"id": 430,
 											"name": "identity",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15505,7 +15804,7 @@
 											}
 										},
 										{
-											"id": 435,
+											"id": 431,
 											"name": "isSingleton",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15523,7 +15822,7 @@
 											}
 										},
 										{
-											"id": 436,
+											"id": 432,
 											"name": "snapshot",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15546,10 +15845,10 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												433,
-												434,
-												435,
-												436
+												429,
+												430,
+												431,
+												432
 											]
 										}
 									],
@@ -15641,32 +15940,32 @@
 			"title": "Interfaces",
 			"kind": 256,
 			"children": [
-				460,
 				149,
 				242,
+				493,
 				202,
 				105,
 				199,
 				263,
 				139,
-				346,
-				424,
+				342,
+				420,
 				1,
 				296,
-				322,
 				309,
-				371,
+				322,
+				367,
 				36,
-				386,
-				519,
-				508,
-				394,
-				544,
-				548,
+				382,
+				501,
+				497,
+				390,
+				522,
+				526,
 				293,
-				534,
-				562,
-				458
+				512,
+				565,
+				454
 			]
 		},
 		{
@@ -15706,37 +16005,41 @@
 				44,
 				285,
 				332,
-				337,
 				331,
 				83,
-				344,
+				333,
+				340,
 				70,
 				10,
 				284,
 				289,
 				6,
-				333,
+				540,
 				124,
 				126,
 				60,
-				583,
-				411
+				545,
+				407
 			]
 		},
 		{
 			"title": "Variables",
 			"kind": 32,
 			"children": [
-				474,
-				480,
-				496,
-				567,
+				459,
+				465,
+				481,
+				580,
 				38,
-				473,
-				472,
-				471,
+				458,
+				592,
+				598,
+				586,
+				610,
+				604,
+				457,
+				456,
 				54,
-				573,
 				23
 			]
 		},
@@ -15744,34 +16047,35 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				486,
-				359,
+				471,
+				355,
 				27,
-				502,
-				380,
-				389,
-				591,
-				565,
-				401,
-				579,
-				443,
-				407,
+				487,
+				376,
+				385,
+				553,
+				568,
+				397,
+				616,
+				439,
+				403,
 				49,
-				599,
 				65,
-				420,
 				416,
-				452,
-				455,
-				449,
-				437,
-				20,
-				446,
-				440,
-				601,
-				32,
 				412,
-				429,
+				448,
+				451,
+				445,
+				433,
+				20,
+				442,
+				436,
+				561,
+				32,
+				570,
+				408,
+				577,
+				425,
 				24
 			]
 		}

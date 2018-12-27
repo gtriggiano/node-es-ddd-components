@@ -59,7 +59,7 @@
 					<a href="commandinterfaceconfiguration.html">CommandInterfaceConfiguration</a>
 				</li>
 			</ul>
-			<h1>Interface CommandInterfaceConfiguration&lt;State, Query, QueryDictionary, ErrorType, ErrorDictionary, EventType, EventDictionary, Command&gt;</h1>
+			<h1>Interface CommandInterfaceConfiguration&lt;State, Query, QueryDictionary, ErrorTypeFactory, ErrorDictionary, EventType, EventDictionary, Command&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -79,19 +79,19 @@
 						<h4>QueryDictionary<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregatequerydictionary" class="tsd-signature-type">AggregateQueryDictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>ErrorType<span class="tsd-signature-symbol">: </span><a href="../globals.html#customerrortype" class="tsd-signature-type">CustomErrorType</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#customerrorname" class="tsd-signature-type">CustomErrorName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#customerrordata" class="tsd-signature-type">CustomErrorData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>ErrorTypeFactory<span class="tsd-signature-symbol">: </span><a href="../globals.html#customerrortypefactory" class="tsd-signature-type">CustomErrorTypeFactory</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#customerrorname" class="tsd-signature-type">CustomErrorName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#customerrordata" class="tsd-signature-type">CustomErrorData</a><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>ErrorDictionary<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregateerrordictionary" class="tsd-signature-type">AggregateErrorDictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>ErrorDictionary<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregateerrordictionary" class="tsd-signature-type">AggregateErrorDictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ErrorTypeFactory</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>EventType<span class="tsd-signature-symbol">: </span><a href="domaineventtype.html" class="tsd-signature-type">DomainEventType</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>EventType<span class="tsd-signature-symbol">: </span><a href="domaineventtypefactory.html" class="tsd-signature-type">DomainEventTypeFactory</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
 						<h4>EventDictionary<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregateeventdictionary" class="tsd-signature-type">AggregateEventDictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>Command<span class="tsd-signature-symbol">: </span><a href="aggregatecommanddefinition.html" class="tsd-signature-type">AggregateCommandDefinition</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#aggregatecommandname" class="tsd-signature-type">AggregateCommandName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatecommandinput" class="tsd-signature-type">AggregateCommandInput</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorType[&quot;name&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType[&quot;name&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>Command<span class="tsd-signature-symbol">: </span><a href="aggregatecommanddefinition.html" class="tsd-signature-type">AggregateCommandDefinition</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#aggregatecommandname" class="tsd-signature-type">AggregateCommandName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#aggregatecommandinput" class="tsd-signature-type">AggregateCommandInput</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorTypeFactory</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorTypeFactory[&quot;name&quot;]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType[&quot;name&quot;]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -127,7 +127,7 @@
 					<div class="tsd-signature tsd-kind-icon">available<wbr>Commands<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Command</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/CommandInterface.ts#L75">Aggregate/CommandInterface.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/CommandInterface.ts#L85">Aggregate/CommandInterface.ts:85</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -137,17 +137,17 @@
 					<div class="tsd-signature tsd-kind-icon">emission<wbr>Interface<span class="tsd-signature-symbol">:</span> <a href="../globals.html#aggregateemissioninterface" class="tsd-signature-type">AggregateEmissionInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">EventDictionary</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/CommandInterface.ts#L69">Aggregate/CommandInterface.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/CommandInterface.ts#L79">Aggregate/CommandInterface.ts:79</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="errorinterface" class="tsd-anchor"></a>
 					<h3>error<wbr>Interface</h3>
-					<div class="tsd-signature tsd-kind-icon">error<wbr>Interface<span class="tsd-signature-symbol">:</span> <a href="../globals.html#aggregateerrorinterface" class="tsd-signature-type">AggregateErrorInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ErrorType</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorDictionary</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">error<wbr>Interface<span class="tsd-signature-symbol">:</span> <a href="../globals.html#aggregateerrorinterface" class="tsd-signature-type">AggregateErrorInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ErrorTypeFactory</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ErrorDictionary</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/CommandInterface.ts#L67">Aggregate/CommandInterface.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/CommandInterface.ts#L74">Aggregate/CommandInterface.ts:74</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,7 +157,7 @@
 					<div class="tsd-signature tsd-kind-icon">query<wbr>Interface<span class="tsd-signature-symbol">:</span> <a href="../globals.html#aggregatequeryinterface" class="tsd-signature-type">AggregateQueryInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Query</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">QueryDictionary</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/CommandInterface.ts#L61">Aggregate/CommandInterface.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/CommandInterface.ts#L68">Aggregate/CommandInterface.ts:68</a></li>
 						</ul>
 					</aside>
 				</section>

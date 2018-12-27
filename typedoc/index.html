@@ -85,13 +85,13 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/aggregatecommand.html" class="tsd-kind-icon">Aggregate<wbr>Command</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/aggregatecommanddefinition.html" class="tsd-kind-icon">Aggregate<wbr>Command<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/aggregatedefinition.html" class="tsd-kind-icon">Aggregate<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/aggregateidentifier.html" class="tsd-kind-icon">Aggregate<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/aggregateinstance.html" class="tsd-kind-icon">Aggregate<wbr>Instance</a>
@@ -121,10 +121,10 @@
 						<a href="interfaces/domaineventinstance.html" class="tsd-kind-icon">Domain<wbr>Event<wbr>Instance</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/domaineventtype.html" class="tsd-kind-icon">Domain<wbr>Event<wbr>Type</a>
+						<a href="interfaces/domaineventtypedefinition.html" class="tsd-kind-icon">Domain<wbr>Event<wbr>Type<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/domaineventtypedefinition.html" class="tsd-kind-icon">Domain<wbr>Event<wbr>Type<wbr>Definition</a>
+						<a href="interfaces/domaineventtypefactory.html" class="tsd-kind-icon">Domain<wbr>Event<wbr>Type<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/emissioninterfaceconfiguration.html" class="tsd-kind-icon">Emission<wbr>Interface<wbr>Configuration</a>
@@ -250,7 +250,7 @@
 						<a href="globals.html#customerrorname" class="tsd-kind-icon">Custom<wbr>Error<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="globals.html#customerrortype" class="tsd-kind-icon">Custom<wbr>Error<wbr>Type</a>
+						<a href="globals.html#customerrortypefactory" class="tsd-kind-icon">Custom<wbr>Error<wbr>Type<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#deserializer" class="tsd-kind-icon">Deserializer</a>
@@ -261,9 +261,6 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#domaieventpayload" class="tsd-kind-icon">Domai<wbr>Event<wbr>Payload</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="globals.html#domaineventinstancefromserializedpayloadfactory" class="tsd-kind-icon">Domain<wbr>Event<wbr>Instance<wbr>From<wbr>Serialized<wbr>Payload<wbr>Factory</a>
-					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#domaineventname" class="tsd-kind-icon">Domain<wbr>Event<wbr>Name</a>
 					</li>
@@ -271,7 +268,10 @@
 						<a href="globals.html#domaineventpayloadtype" class="tsd-kind-icon">Domain<wbr>Event<wbr>Payload<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="globals.html#domaineventtypepayload" class="tsd-kind-icon">Domain<wbr>Event<wbr>Type<wbr>Payload</a>
+						<a href="globals.html#domaineventtypefactoryfromserializedpayload" class="tsd-kind-icon">Domain<wbr>Event<wbr>Type<wbr>Factory<wbr>From<wbr>Serialized<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#domaineventtypefactorypayload" class="tsd-kind-icon">Domain<wbr>Event<wbr>Type<wbr>Factory<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#errorconstructordata" class="tsd-kind-icon">Error<wbr>Constructor<wbr>Data</a>
@@ -325,6 +325,21 @@
 						<a href="globals.html#no_consistency_policy" class="tsd-kind-icon">NO_<wbr>CONSISTENCY_<wbr>POLICY</a>
 					</li>
 					<li class=" tsd-kind-variable">
+						<a href="globals.html#repositorybadaggregateslistprovided" class="tsd-kind-icon">Repository<wbr>Bad<wbr>Aggregates<wbr>List<wbr>Provided</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#repositoryeventsloaderror" class="tsd-kind-icon">Repository<wbr>Events<wbr>Load<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#repositorysnapshotloaderror" class="tsd-kind-icon">Repository<wbr>Snapshot<wbr>Load<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#repositorywriteconcurrencyerror" class="tsd-kind-icon">Repository<wbr>Write<wbr>Concurrency<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#repositorywriteerror" class="tsd-kind-icon">Repository<wbr>Write<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-variable">
 						<a href="globals.html#soft_consistency_policy" class="tsd-kind-icon">SOFT_<wbr>CONSISTENCY_<wbr>POLICY</a>
 					</li>
 					<li class=" tsd-kind-variable">
@@ -332,9 +347,6 @@
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#serializationerror" class="tsd-kind-icon">Serialization<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#writeconcurrencyerror" class="tsd-kind-icon">Write<wbr>Concurrency<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#validnamedescription" class="tsd-kind-icon">valid<wbr>Name<wbr>Description</a>
@@ -378,9 +390,6 @@
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#getdeserializer" class="tsd-kind-icon">get<wbr>Deserializer</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#getnewid" class="tsd-kind-icon">get<wbr>New<wbr>Id</a>
-					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#getserializer" class="tsd-kind-icon">get<wbr>Serializer</a>
 					</li>
@@ -411,14 +420,20 @@
 					<li class=" tsd-kind-function">
 						<a href="globals.html#isvalidsnapshot" class="tsd-kind-icon">is<wbr>Valid<wbr>Snapshot</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#pad0" class="tsd-kind-icon">pad0</a>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#padleftwithzeroes" class="tsd-kind-icon">pad<wbr>Left<wbr>With<wbr>Zeroes</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#parseerrorstack" class="tsd-kind-icon">parse<wbr>Error<wbr>Stack</a>
 					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="globals.html#toserial" class="tsd-kind-icon">to<wbr>Serial</a>
+					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#tuple" class="tsd-kind-icon">tuple</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#validateaggregateslist" class="tsd-kind-icon">validate<wbr>Aggregates<wbr>List</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#validateconstructorprops" class="tsd-kind-icon">validate<wbr>Constructor<wbr>Props</a>

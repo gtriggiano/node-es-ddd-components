@@ -59,7 +59,7 @@
 					<a href="emissioninterfaceconfiguration.html">EmissionInterfaceConfiguration</a>
 				</li>
 			</ul>
-			<h1>Interface EmissionInterfaceConfiguration&lt;State, EventType&gt;</h1>
+			<h1>Interface EmissionInterfaceConfiguration&lt;State, EventTypeFactory&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<h4>State<span class="tsd-signature-symbol">: </span><a href="../globals.html#aggregatestate" class="tsd-signature-type">AggregateState</a></h4>
 					</li>
 					<li>
-						<h4>EventType<span class="tsd-signature-symbol">: </span><a href="domaineventtype.html" class="tsd-signature-type">DomainEventType</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>EventTypeFactory<span class="tsd-signature-symbol">: </span><a href="domaineventtypefactory.html" class="tsd-signature-type">DomainEventTypeFactory</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#domaineventname" class="tsd-signature-type">DomainEventName</a><span class="tsd-signature-symbol">, </span><a href="../globals.html#domaieventpayload" class="tsd-signature-type">DomaiEventPayload</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -104,10 +104,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="emittableevents" class="tsd-anchor"></a>
 					<h3>emittable<wbr>Events</h3>
-					<div class="tsd-signature tsd-kind-icon">emittable<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventType</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">emittable<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EventTypeFactory</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/EmissionInterface.ts#L17">Aggregate/EmissionInterface.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/EmissionInterface.ts#L21">Aggregate/EmissionInterface.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -117,7 +117,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>New<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/fcca7e4/src/lib/Aggregate/EmissionInterface.ts#L18">Aggregate/EmissionInterface.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/gtriggiano/node-es-ddd-components/blob/0cdf49e/src/lib/Aggregate/EmissionInterface.ts#L22">Aggregate/EmissionInterface.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
