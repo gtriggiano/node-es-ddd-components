@@ -1,14 +1,13 @@
 import {
   CustomErrorData,
   CustomErrorName,
-  CustomErrorType,
+  CustomErrorTypeFactory,
 } from '../CustomError/types'
 import {
   DomaiEventPayload,
   DomainEventInstance,
   DomainEventName,
-  DomainEventType,
-  DomainEventTypePayload,
+  DomainEventTypeFactory,
   SerializedDomainEvent,
 } from '../DomainEvent/types'
 import { Deserializer } from '../utils/getDeserializer'
@@ -50,25 +49,26 @@ export type AggregateIdentity = string | undefined
 export type AggregateState = object
 
 /**
- * An aggregate snapshot representation
+ * An object representing the snapshot
+ * of an aggregate's internal state
  */
 export interface AggregateSnapshot {
   /**
-   * The serialized internal state of an aggregate
+   * The serialized version of the aggregate's internal state
    */
   readonly serializedState: string
 
   /**
-   * The version number of the aggregate that was
-   * snapshotted
+   * The aggregate's version at the time thesnapshot was created
    */
   readonly version: number
 }
 
 /**
- * When an aggregate emits new events it can
- * also specify the consistency policy to observe
- * when the the repository attempts to persist them.
+ * When an aggregate's command implementation
+ * emits an event, it can specify the consistency policy to observe
+ * if the aggregate gets passed to the repository in order to persist
+ * the new events.
  *
  * The meaning of the possible values are:
  *
@@ -99,35 +99,38 @@ export interface AggregateInstance<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
-    EventType,
-    ErrorType['name'],
-    EventType['name']
+    ErrorTypeFactory,
+    EventTypeFactory,
+    ErrorTypeFactory['name'],
+    EventTypeFactory['name']
   >
 > {
   /**
-   * The name of the Bounded Context
-   * the aggregate belongs to
-   * @see BoundedContext
+   * The name of the Bounded Context the aggregate belongs to
    */
   readonly context: BC
 
   /**
-   * The aggregate type
-   * @see AggregateType
+   * The name of the aggregate type
    */
   readonly type: TypeName
 
   /**
    * The identity of the aggregate
-   * @see AggregateIdentity
    */
   readonly identity: Identity
 
@@ -139,13 +142,13 @@ export interface AggregateInstance<
   readonly version: number
 
   /**
-   * Flag to signal if the instance should be
-   * snapshotted
+   * Flag to signal if the instance should be snapshotted
    */
   readonly needsSnapshot: boolean
 
   /**
-   * The snapshot key
+   * The snapshot key to use for snapshot
+   * persistence and retrieval
    */
   readonly snapshotKey: string
 
@@ -159,42 +162,42 @@ export interface AggregateInstance<
   >
 
   /**
-   * The behaviours interface of the aggregate
+   * The commands interface of the aggregate
    */
   readonly execute: AggregateCommandInterface<
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command,
-    AggregateCommandDictionary<State, Query, ErrorType, EventType, Command>
+    AggregateCommandDictionary<
+      State,
+      Query,
+      ErrorTypeFactory,
+      EventTypeFactory,
+      Command
+    >
   >
 
   /**
-   * Generates a new instance obtained
+   * A method to generate a new instance by
    * adding new events to the aggregate's history
    */
   readonly appendEvents: (
-    events: ReadonlyArray<
-      DomainEventInstance<
-        EventType['name'],
-        DomainEventTypePayload<EventType>,
-        State
-      >
-    >
+    events: ReadonlyArray<SerializedDomainEvent>
   ) => AggregateInstance<
     BC,
     TypeName,
     Identity,
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command
   >
 
   /**
-   * Returns another instance of the same aggregate
+   * A method to get another instance of the same aggregate
    * with state and version as they where before any command
    * was executed
    */
@@ -204,13 +207,13 @@ export interface AggregateInstance<
     Identity,
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command
   >
 
   /**
-   * A reference to the function which generated the instance
+   * A reference to the factory which generated the instance
    */
   readonly New: AggregateTypeFactory<
     BC,
@@ -218,40 +221,39 @@ export interface AggregateInstance<
     Identity,
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command
   >
 
   /**
-   * Reveals if the instance emitted new event
-   * since when it was created
+   * A method to reveal if the instance produced new events
+   * during its lifecycle
    */
   readonly isDirty: () => boolean
 
   /**
-   * Returns the list of events emitted by the instance
-   * since when it was created
+   * A method to get the list of events emitted by the instance
+   * during its lifecycle
    */
   readonly getNewEvents: () => ReadonlyArray<
     DomainEventInstance<DomainEventName, DomaiEventPayload, State>
   >
 
   /**
-   * @see ConsistencyPolicy
+   * A method to get the consistency policy that the repository
+   * should observe when attempting to persist the aggregate
    */
   readonly getConsistencyPolicy: () => ConsistencyPolicy
 
   /**
-   * Returns the serialized internal aggregate'state
+   * A method to get the serialized version of the aggregate's internal state
    */
   readonly getSerializedState: () => string
 
   /**
-   * Returns a snapshot of the internal state of the aggregate
+   * A method to get a snapshot of the aggregate's internal state
    * paired with its current version.
-   * Should be used just by the repository (after having rebuilt an instance)
-   * or for testing purposes
    */
   readonly getSnapshot: () => AggregateSnapshot
 }
@@ -270,8 +272,8 @@ export type GenericAggregateInstance = AggregateInstance<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  CustomErrorType<CustomErrorName, CustomErrorData>,
-  DomainEventType<DomainEventName, DomaiEventPayload, AggregateState>,
+  CustomErrorTypeFactory<CustomErrorName, CustomErrorData>,
+  DomainEventTypeFactory<DomainEventName, DomaiEventPayload, AggregateState>,
   AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
@@ -282,20 +284,19 @@ export type GenericAggregateInstance = AggregateInstance<
       AggregateQueryInput,
       AggregateQueryOutput
     >,
-    CustomErrorType<CustomErrorName, CustomErrorData>,
-    DomainEventType<DomainEventName, DomaiEventPayload, AggregateState>,
+    CustomErrorTypeFactory<CustomErrorName, CustomErrorData>,
+    DomainEventTypeFactory<DomainEventName, DomaiEventPayload, AggregateState>,
     CustomErrorName,
     DomainEventName
   >
 >
 
 /**
- * An aggregate definition to pass to the @see Aggregate
- * factory function
+ * An object describing an aggregate type
  */
 export interface AggregateDefinition<
   BC extends BoundedContext,
-  Type extends AggregateTypeName,
+  TypeName extends AggregateTypeName,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
     AggregateQueryName,
@@ -303,31 +304,38 @@ export interface AggregateDefinition<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  Event extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
-    Event,
-    ErrorType['name'],
-    Event['name']
+    ErrorTypeFactory,
+    EventTypeFactory,
+    ErrorTypeFactory['name'],
+    EventTypeFactory['name']
   >
 > {
   /**
-   * A string representing a @see BoundedContext
+   * The name of the Bounded Context the aggregate belongs to
    */
   readonly context: BC
 
   /**
-   * The @see AggregateType
+   * The name of the aggregate's type
    */
-  readonly type: Type
+  readonly type: TypeName
 
   /**
-   * A description of the aggregate.
+   * An optional description of the aggregate.
    */
   readonly description?: string
 
@@ -339,37 +347,39 @@ export interface AggregateDefinition<
 
   /**
    * The initial state of the aggregate
-   * @see AggregateState
    */
   readonly initialState: State
 
   /**
-   * The collection of commands that implement
-   * the business logic of the aggregate
+   * A list of commands that implement the business logic of the aggregate.
+   * The list will be tranformed into the aggregate's
+   * `.execute` interface
    */
   readonly commands: ReadonlyArray<Command>
 
   /**
-   * A collection of queries.
-   * The collection is converted into a dictionary of
-   * queries that will be passed to the aggregate commands at runtime.
+   * A list of queries, whose hanlers will have access to the
+   * aggregate's internal state.
+   * The list will be transormed into the aggregate's
+   * `.query` interface
    */
   readonly queries: ReadonlyArray<Query>
 
   /**
-   * The collection of errors that can be raised
-   * inside the commands implementations.
-   * The collection is converted into a dictionary of
-   * error constructors that will be passed to the aggregate commands at runtime.
+   * A list of factories that can be used to
+   * generate the errors that could be raised
+   * by the commands implementations.
+   * The list will be used to craft the `.error` interface that
+   * will be passed to each command implementation.
    */
-  readonly errors: ReadonlyArray<ErrorType>
+  readonly errors: ReadonlyArray<ErrorTypeFactory>
 
   /**
-   * The collection of events.
-   * The collection is converted into a dictionary of
-   * _"event emitters"_ that will be passed to the aggregate commands at runtime.
+   * A list of domain event factories.
+   * The list will be used to craft the `.emit` interface that
+   * will be passed to each command implementation
    */
-  readonly events: ReadonlyArray<Event>
+  readonly events: ReadonlyArray<EventTypeFactory>
 
   /**
    * A prefix to use to generate the
@@ -398,7 +408,11 @@ export interface AggregateDefinition<
 }
 
 /**
- * Returns an aggregate instance
+ * An aggregate type factory
+ * @param identity The identity of the aggregate
+ * @param snapshot A snapshot of the aggregate
+ * @param events A list of serialized domain events representing the history of the aggregate
+ * @returns An instance of the aggregate type
  */
 export interface AggregateTypeFactory<
   BC extends BoundedContext,
@@ -411,22 +425,29 @@ export interface AggregateTypeFactory<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventType extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
+    ErrorTypeFactory,
     EventType,
-    ErrorType['name'],
+    ErrorTypeFactory['name'],
     EventType['name']
   >
 > {
   (
     identity?: Identity,
-    snapshot?: AggregateSnapshot,
+    snapshot?: Readonly<AggregateSnapshot>,
     events?: ReadonlyArray<SerializedDomainEvent>
   ): AggregateInstance<
     BC,
@@ -434,18 +455,18 @@ export interface AggregateTypeFactory<
     Identity,
     State,
     Query,
-    ErrorType,
+    ErrorTypeFactory,
     EventType,
     Command
   >
 
   /**
-   * @see BoundedContext
+   * The name of the Bounded Context the aggregate belongs to
    */
   readonly context: BC
 
   /**
-   * @see AggregateType
+   * The name of the aggregate's type
    */
   readonly type: TypeName
 

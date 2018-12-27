@@ -4,7 +4,7 @@
 export type CustomErrorName = string
 
 /**
- * The `data` payload that is exposed
+ * The `data` payload that could be exposed
  * by a custom error instance
  */
 export type CustomErrorData = any
@@ -20,7 +20,7 @@ export type ErrorWithData<Data extends CustomErrorData> = Error & {
 }
 
 /**
- * An instance of an error raised by an aggregate
+ * An instance of a custom error type
  */
 export type CustomErrorInstance<
   Name extends CustomErrorName,
@@ -28,17 +28,21 @@ export type CustomErrorInstance<
 > = NamedError<Name> & ErrorWithData<Data>
 
 /**
- * An aggregate error definition
+ * An object describing a custom error type
  */
 export interface CustomErrorTypeDefinition<Name extends CustomErrorName> {
+  /**
+   * The name of the custom error type
+   */
   readonly name: Name
 }
 
 /**
- * A constructor function which return
- * an instance of an aggregate error
+ * A factory to generate an instance of a custom error type
+ * @param message The error message
+ * @param data A paylod to expose through `error.data`
  */
-export type CustomErrorType<
+export type CustomErrorTypeFactory<
   Name extends CustomErrorName,
   Data extends CustomErrorData
 > = Data extends void

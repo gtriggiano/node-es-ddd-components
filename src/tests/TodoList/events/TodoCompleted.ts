@@ -11,7 +11,7 @@ export default DomainEvent<'TodoCompleted', TodoListState, Payload>({
 
   description: 'A todo was completed',
 
-  reducer: (list, { payload: { identity: identityOfCompletedTodo } }) => ({
+  reducer: (list, { identity: identityOfCompletedTodo }) => ({
     ...list,
     todos: list.todos.map(todo =>
       todo.identity !== identityOfCompletedTodo

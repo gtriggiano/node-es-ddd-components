@@ -125,8 +125,8 @@ describe('aggregate.query', () => {
       events: [
         DomainEvent({
           name: 'AmountAdded',
-          reducer: (state, event) => ({
-            total: state.total + event.payload.amount,
+          reducer: (state, payload) => ({
+            total: state.total + payload.amount,
           }),
         }),
       ],

@@ -1,7 +1,7 @@
 import {
   CustomErrorData,
   CustomErrorName,
-  CustomErrorType,
+  CustomErrorTypeFactory,
 } from '../CustomError/types'
 import { MapDiscriminatedUnion } from './types'
 
@@ -13,25 +13,34 @@ export type ErrorConstructorData<Ctor> = Ctor extends (
   : never
 
 export type AggregateErrorDictionary<
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>
-> = MapDiscriminatedUnion<ErrorType, 'name'>
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >
+> = MapDiscriminatedUnion<ErrorTypeFactory, 'name'>
 
 export type AggregateErrorInterface<
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  ErrorDictionary extends AggregateErrorDictionary<ErrorType>
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  ErrorDictionary extends AggregateErrorDictionary<ErrorTypeFactory>
 > = {
-  [K in keyof ErrorDictionary]: CustomErrorType<
+  [K in keyof ErrorDictionary]: CustomErrorTypeFactory<
     ErrorDictionary[K]['name'],
     ErrorConstructorData<ErrorDictionary[K]>
   >
 }
 
 export type AggregateCommandErrorInterface<
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  ErrorDictionary extends AggregateErrorDictionary<ErrorType>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  ErrorDictionary extends AggregateErrorDictionary<ErrorTypeFactory>,
   RaisableErrorName extends keyof ErrorDictionary
 > = {
-  [K in RaisableErrorName]: CustomErrorType<
+  [K in RaisableErrorName]: CustomErrorTypeFactory<
     ErrorDictionary[K]['name'],
     ErrorConstructorData<ErrorDictionary[K]>
   >

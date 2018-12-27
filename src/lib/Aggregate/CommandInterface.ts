@@ -1,12 +1,12 @@
 import {
   CustomErrorData,
   CustomErrorName,
-  CustomErrorType,
+  CustomErrorTypeFactory,
 } from '../CustomError/types'
 import {
   DomaiEventPayload,
   DomainEventName,
-  DomainEventType,
+  DomainEventTypeFactory,
 } from '../DomainEvent/types'
 
 import {
@@ -43,18 +43,25 @@ export interface CommandInterfaceConfiguration<
     AggregateQueryOutput
   >,
   QueryDictionary extends AggregateQueryDictionary<State, Query>,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  ErrorDictionary extends AggregateErrorDictionary<ErrorType>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  ErrorDictionary extends AggregateErrorDictionary<ErrorTypeFactory>,
+  EventType extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   EventDictionary extends AggregateEventDictionary<State, EventType>,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
+    ErrorTypeFactory,
     EventType,
-    ErrorType['name'],
+    ErrorTypeFactory['name'],
     EventType['name']
   >
 > {
@@ -64,7 +71,10 @@ export interface CommandInterfaceConfiguration<
     QueryDictionary
   >
 
-  readonly errorInterface: AggregateErrorInterface<ErrorType, ErrorDictionary>
+  readonly errorInterface: AggregateErrorInterface<
+    ErrorTypeFactory,
+    ErrorDictionary
+  >
 
   readonly emissionInterface: AggregateEmissionInterface<
     State,
@@ -84,25 +94,32 @@ export default function CommandInterface<
     AggregateQueryOutput
   >,
   QueryDictionary extends AggregateQueryDictionary<State, Query>,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  ErrorDictionary extends AggregateErrorDictionary<ErrorType>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
-  EventDictionary extends AggregateEventDictionary<State, EventType>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  ErrorDictionary extends AggregateErrorDictionary<ErrorTypeFactory>,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  EventDictionary extends AggregateEventDictionary<State, EventTypeFactory>,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
-    EventType,
-    ErrorType['name'],
-    EventType['name']
+    ErrorTypeFactory,
+    EventTypeFactory,
+    ErrorTypeFactory['name'],
+    EventTypeFactory['name']
   >,
   CommandDictionary extends AggregateCommandDictionary<
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command
   >
 >(
@@ -110,17 +127,17 @@ export default function CommandInterface<
     State,
     Query,
     QueryDictionary,
-    ErrorType,
+    ErrorTypeFactory,
     ErrorDictionary,
-    EventType,
+    EventTypeFactory,
     EventDictionary,
     Command
   >
 ): AggregateCommandInterface<
   State,
   Query,
-  ErrorType,
-  EventType,
+  ErrorTypeFactory,
+  EventTypeFactory,
   Command,
   CommandDictionary
 > {
@@ -174,8 +191,8 @@ export default function CommandInterface<
   }, {}) as AggregateCommandInterface<
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command,
     CommandDictionary
   >

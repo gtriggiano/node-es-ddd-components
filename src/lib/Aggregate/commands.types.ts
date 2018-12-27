@@ -1,12 +1,12 @@
 import {
   CustomErrorData,
   CustomErrorName,
-  CustomErrorType,
+  CustomErrorTypeFactory,
 } from '../CustomError/types'
 import {
   DomaiEventPayload,
   DomainEventName,
-  DomainEventType,
+  DomainEventTypeFactory,
 } from '../DomainEvent/types'
 
 import {
@@ -52,10 +52,17 @@ export interface CommandHandlerInterface<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
-  RaisableError extends ErrorType['name'],
-  EmittableEvent extends EventType['name']
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  RaisableError extends ErrorTypeFactory['name'],
+  EmittableEvent extends EventTypeFactory['name']
 > {
   readonly query: AggregateQueryInterface<
     State,
@@ -64,15 +71,15 @@ export interface CommandHandlerInterface<
   >
 
   readonly error: AggregateCommandErrorInterface<
-    ErrorType,
-    AggregateErrorDictionary<ErrorType>,
+    ErrorTypeFactory,
+    AggregateErrorDictionary<ErrorTypeFactory>,
     RaisableError
   >
 
   readonly emit: AggregateCommandEmissionInterface<
     State,
-    EventType,
-    AggregateEventDictionary<State, EventType>,
+    EventTypeFactory,
+    AggregateEventDictionary<State, EventTypeFactory>,
     EmittableEvent
   >
 }
@@ -89,17 +96,24 @@ export type AggregateCommandImplementation<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
-  RaisableError extends ErrorType['name'],
-  EmittableEvent extends EventType['name']
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  RaisableError extends ErrorTypeFactory['name'],
+  EmittableEvent extends EventTypeFactory['name']
 > = (
   input: Input,
   commandInterface: CommandHandlerInterface<
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     RaisableError,
     EmittableEvent
   >
@@ -119,10 +133,17 @@ export interface AggregateCommandDefinition<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
-  RaisableError extends ErrorType['name'],
-  EmittableEvent extends EventType['name']
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  RaisableError extends ErrorTypeFactory['name'],
+  EmittableEvent extends EventTypeFactory['name']
 > {
   readonly name: Name
   readonly description?: string
@@ -132,8 +153,8 @@ export interface AggregateCommandDefinition<
     Input,
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     RaisableError,
     EmittableEvent
   >
@@ -160,16 +181,23 @@ export type AggregateCommandInterfaceMethod<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   CommandImplementation extends AggregateCommandImplementation<
     DomainEventName,
     State,
     Query,
-    ErrorType,
-    EventType,
-    ErrorType['name'],
-    EventType['name']
+    ErrorTypeFactory,
+    EventTypeFactory,
+    ErrorTypeFactory['name'],
+    EventTypeFactory['name']
   >
 > = CommandImplementationInput<CommandImplementation> extends void
   ? () => void
@@ -183,17 +211,24 @@ export type AggregateCommandDictionary<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
-    EventType,
-    ErrorType['name'],
-    EventType['name']
+    ErrorTypeFactory,
+    EventTypeFactory,
+    ErrorTypeFactory['name'],
+    EventTypeFactory['name']
   >
 > = MapDiscriminatedUnion<Command, 'name'>
 
@@ -208,31 +243,38 @@ export type AggregateCommandInterface<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
-    EventType,
-    ErrorType['name'],
-    EventType['name']
+    ErrorTypeFactory,
+    EventTypeFactory,
+    ErrorTypeFactory['name'],
+    EventTypeFactory['name']
   >,
   CommandDictionary extends AggregateCommandDictionary<
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command
   >
 > = {
   [K in keyof CommandDictionary]: AggregateCommandInterfaceMethod<
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     CommandDictionary[K]['handler']
   >
 }

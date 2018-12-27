@@ -99,10 +99,10 @@ export function Repository<
     // tslint:disable no-if-statement no-expression-statement
     if (loadedAggregate.needsSnapshot && snapshotService) {
       snapshotService
-        .saveAggregateSnapshot(loadedAggregate.snapshotKey, {
-          serializedState: loadedAggregate.getSerializedState(),
-          version: loadedAggregate.version,
-        })
+        .saveAggregateSnapshot(
+          loadedAggregate.snapshotKey,
+          loadedAggregate.getSnapshot()
+        )
         .catch(noop)
     }
     // tslint:enable

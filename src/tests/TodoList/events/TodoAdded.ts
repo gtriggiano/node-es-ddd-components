@@ -12,12 +12,12 @@ export default DomainEvent<'TodoAdded', TodoListState, Payload>({
 
   description: 'The TodoList name changed',
 
-  reducer: (list, event) => ({
+  reducer: (list, payload) => ({
     ...list,
     todos: [
       ...list.todos,
       {
-        ...event.payload,
+        ...payload,
         done: false,
       },
     ],

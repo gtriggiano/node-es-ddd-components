@@ -1,15 +1,17 @@
 import {
   CustomErrorData,
   CustomErrorName,
-  CustomErrorType,
   CustomErrorTypeDefinition,
+  CustomErrorTypeFactory,
 } from './types'
 import validateDefinition from './validateDefinition'
 
 export function CustomError<
   Name extends CustomErrorName,
   Data extends CustomErrorData = void
->(definition: CustomErrorTypeDefinition<Name>): CustomErrorType<Name, Data> {
+>(
+  definition: CustomErrorTypeDefinition<Name>
+): CustomErrorTypeFactory<Name, Data> {
   try {
     // tslint:disable no-expression-statement
     validateDefinition(definition)

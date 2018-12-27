@@ -1,7 +1,7 @@
 import {
   CustomErrorData,
   CustomErrorName,
-  CustomErrorType,
+  CustomErrorTypeFactory,
 } from '../CustomError/types'
 import {
   AggregateErrorDictionary,
@@ -9,17 +9,23 @@ import {
 } from './errors.types'
 
 export interface ErrorInterfaceConfiguration<
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >
 > {
-  readonly raisableErrors: ReadonlyArray<ErrorType>
+  readonly raisableErrors: ReadonlyArray<ErrorTypeFactory>
 }
 
 export default function ErrorInterface<
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  ErrorDictionary extends AggregateErrorDictionary<ErrorType>
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  ErrorDictionary extends AggregateErrorDictionary<ErrorTypeFactory>
 >(
-  config: ErrorInterfaceConfiguration<ErrorType>
-): AggregateErrorInterface<ErrorType, ErrorDictionary> {
+  config: ErrorInterfaceConfiguration<ErrorTypeFactory>
+): AggregateErrorInterface<ErrorTypeFactory, ErrorDictionary> {
   const { raisableErrors } = config
 
   return raisableErrors.reduce(
@@ -28,5 +34,5 @@ export default function ErrorInterface<
         value: EType,
       }),
     {}
-  ) as AggregateErrorInterface<ErrorType, ErrorDictionary>
+  ) as AggregateErrorInterface<ErrorTypeFactory, ErrorDictionary>
 }

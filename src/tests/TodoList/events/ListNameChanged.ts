@@ -11,8 +11,8 @@ export default DomainEvent<'ListNameChanged', TodoListState, Payload>({
 
   description: 'The TodoList name changed',
 
-  reducer: (list, event) => ({
+  reducer: (list, payload) => ({
     ...list,
-    name: event.payload,
+    name: payload.name,
   }),
 })

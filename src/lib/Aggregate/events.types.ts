@@ -1,33 +1,40 @@
 import {
   DomaiEventPayload,
   DomainEventName,
-  DomainEventType,
+  DomainEventTypeFactory,
 } from '../DomainEvent/types'
 import { AggregateState, MapDiscriminatedUnion } from './types'
 
 export type DomainEventPayloadType<
-  EventConstructor
-> = EventConstructor extends (
-  payload: infer Payload,
-  skipValidation?: boolean
-) => any
-  ? Payload
-  : never
+  EventTypeFactory
+> = EventTypeFactory extends (payload: infer Payload) => any ? Payload : never
 
 export type AggregateEmissionInterfaceMethod<
   State extends AggregateState,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>
-> = (input: DomainEventPayloadType<EventType>) => void
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >
+> = (input: DomainEventPayloadType<EventTypeFactory>) => void
 
 export type AggregateEventDictionary<
   State extends AggregateState,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>
-> = MapDiscriminatedUnion<EventType, 'name'>
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >
+> = MapDiscriminatedUnion<EventTypeFactory, 'name'>
 
 export type AggregateEmissionInterface<
   State extends AggregateState,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
-  EventDictionary extends AggregateEventDictionary<State, EventType>
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  EventDictionary extends AggregateEventDictionary<State, EventTypeFactory>
 > = {
   readonly [K in keyof EventDictionary]: AggregateEmissionInterfaceMethod<
     State,
@@ -37,8 +44,12 @@ export type AggregateEmissionInterface<
 
 export type AggregateCommandEmissionInterface<
   State extends AggregateState,
-  Event extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
-  EventDictionary extends AggregateEventDictionary<State, Event>,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  EventDictionary extends AggregateEventDictionary<State, EventTypeFactory>,
   EmittableEvent extends keyof EventDictionary
 > = {
   readonly [K in EmittableEvent]: AggregateEmissionInterfaceMethod<

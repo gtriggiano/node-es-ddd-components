@@ -12,9 +12,9 @@ export default DomainEvent<'ListCreated', TodoListState, Payload>({
 
   description: 'A new TodoList has been created',
 
-  reducer: (list, event) => ({
+  reducer: (list, payload) => ({
     ...list,
-    identity: event.payload.identity,
-    name: event.payload.name,
+    identity: payload.identity,
+    name: payload.name,
   }),
 })

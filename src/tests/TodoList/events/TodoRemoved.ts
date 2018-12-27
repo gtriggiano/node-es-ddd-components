@@ -11,7 +11,7 @@ export default DomainEvent<'TodoRemoved', TodoListState, Todo>({
 
   description: 'A todo was removed from the list',
 
-  reducer: (list, { payload: { identity: identityOfTheRemovedTodo } }) => ({
+  reducer: (list, { identity: identityOfTheRemovedTodo }) => ({
     ...list,
     todos: list.todos.filter(
       todo => todo.identity !== identityOfTheRemovedTodo
