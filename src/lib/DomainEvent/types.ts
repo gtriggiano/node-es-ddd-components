@@ -13,12 +13,17 @@ export type DomainEventName = string
 export type DomaiEventPayload = any
 
 /**
- * An object representing a domain event,
- * where the `serializedPayload` property is a serialized version
- * of the payload
+ * An object representing a domain event
  */
 export interface SerializedDomainEvent {
+  /**
+   * The name of the event
+   */
   readonly name: DomainEventName
+
+  /**
+   * The serialized payload of the event
+   */
   readonly payload: string
 }
 
@@ -30,58 +35,122 @@ export interface DomainEventInstance<
   Payload extends DomaiEventPayload,
   State extends AggregateState
 > {
+  /**
+   * The name of the event
+   */
   readonly name: Name
+
+  /**
+   * The payload of the event
+   */
   readonly payload: Payload
+
+  /**
+   * A method to get the serialized version of the event payload
+   */
   readonly getSerializedPayload: () => string
-  readonly applyToState: (state: State) => State
+
+  /**
+   * A method to apply the event reducer function to
+   * an aggregate internal state in order to obtain
+   * a new state
+   *
+   * @param state An object representing the aggregate's internal state
+   * @returns An object representing the aggregate's new internal state
+   */
+  readonly applyToState: (state: Readonly<State>) => Readonly<State>
 }
 
 /**
- * The domain event definition type
+ * An object describing a domain event type
  */
 export interface DomainEventTypeDefinition<
   Name extends DomainEventName,
   Payload extends DomaiEventPayload,
   State extends AggregateState
 > {
+  /**
+   * The name of the event
+   */
   readonly name: Name
+
+  /**
+   * An optional description of the event
+   */
   readonly description?: string
+
+  /**
+   * A pure function to get the serialized version
+   * of the event payload. Defaults to JSON.stringify
+   */
   readonly serializePayload?: Serializer<Payload>
+
+  /**
+   * A pure function to deserialize the event payload.
+   * Defaults to JSON.parse
+   */
   readonly deserializePayload?: Deserializer<Payload>
+
+  /**
+   * A pure function to obtain a new aggregate state given
+   * the actual aggregate state and the event payload
+   */
   readonly reducer: (
-    state: State,
-    event: DomainEventInstance<Name, Payload, State>
-  ) => State
+    state: Readonly<State>,
+    payload: Readonly<Payload>
+  ) => Readonly<State>
 }
 
-export type DomainEventInstanceFromSerializedPayloadFactory<
+/**
+ * A factory to get an instance of a domain event from
+ * the serialized version of its payload
+ * @param serializePayload The serialized version of the domain event's payload
+ * @return An instance of the domain event
+ */
+export type DomainEventTypeFactoryFromSerializedPayload<
   Name extends DomainEventName,
   Payload extends DomaiEventPayload,
   State extends AggregateState
-> = (serializedData: string) => DomainEventInstance<Name, Payload, State>
+> = (serializedPayload: string) => DomainEventInstance<Name, Payload, State>
 
 /**
  * The payload type inferred
- * from a DomainEventType signature
+ * from a DomainEventTypeFactory signature
  */
-export type DomainEventTypePayload<EventType> = EventType extends (
+export type DomainEventTypeFactoryPayload<
+  EventTypeFactory
+> = EventTypeFactory extends (
   payload: infer Payload
 ) => DomainEventInstance<DomainEventName, DomaiEventPayload, AggregateState>
-  ? Payload
+  ? Readonly<Payload>
   : never
 
 /**
- * A domain event constructor
+ * A factory to get an instance of a domain event from its payload
+ * @param payload The domain event's payload
+ * @return An instance of the domain event
  */
-export interface DomainEventType<
+export interface DomainEventTypeFactory<
   Name extends DomainEventName,
   Payload extends DomaiEventPayload,
   State extends AggregateState
 > {
-  (payload: Payload): DomainEventInstance<Name, Payload, State>
+  (payload: Readonly<Payload>): DomainEventInstance<Name, Payload, State>
+  /**
+   * The name of the domain event
+   */
   readonly name: Name
+
+  /**
+   * The description of the domain event
+   */
   readonly description: string
-  readonly fromSerializedPayload: DomainEventInstanceFromSerializedPayloadFactory<
+
+  /**
+   * A method to get a domain event instance from its serialized
+   * payload
+   */
+  readonly fromSerializedPayload: DomainEventTypeFactoryFromSerializedPayload<
     Name,
     Payload,
     State

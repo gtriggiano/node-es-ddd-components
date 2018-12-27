@@ -2,13 +2,13 @@ import { CustomError } from '../CustomError'
 import {
   CustomErrorData,
   CustomErrorName,
-  CustomErrorType,
+  CustomErrorTypeFactory,
 } from '../CustomError/types'
 import {
   DomaiEventPayload,
   DomainEventInstance,
   DomainEventName,
-  DomainEventType,
+  DomainEventTypeFactory,
   SerializedDomainEvent,
 } from '../DomainEvent/types'
 import { getDeserializer, getSerializer } from '../utils'
@@ -70,14 +70,6 @@ export const BadAggregateDefinition = CustomError<
   name: 'BadAggregateDefinition',
 })
 
-export interface AggregateCommand<Name extends string, Input extends any> {
-  readonly name: Name
-  readonly description?: string
-  readonly errors: ReadonlyArray<string>
-  readonly events: ReadonlyArray<string>
-  readonly handler: (input: Input) => void
-}
-
 export function Aggregate<
   BC extends BoundedContext,
   TypeName extends AggregateTypeName,
@@ -88,17 +80,24 @@ export function Aggregate<
     AggregateQueryInput,
     AggregateQueryOutput
   >,
-  ErrorType extends CustomErrorType<CustomErrorName, CustomErrorData>,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
   Command extends AggregateCommandDefinition<
     AggregateCommandName,
     AggregateCommandInput,
     State,
     Query,
-    ErrorType,
-    EventType,
-    ErrorType['name'],
-    EventType['name']
+    ErrorTypeFactory,
+    EventTypeFactory,
+    ErrorTypeFactory['name'],
+    EventTypeFactory['name']
   >
 >(
   definition: AggregateDefinition<
@@ -106,8 +105,8 @@ export function Aggregate<
     TypeName,
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command
   >
 ): AggregateTypeFactory<
@@ -116,8 +115,8 @@ export function Aggregate<
   AggregateIdentity,
   State,
   Query,
-  ErrorType,
-  EventType,
+  ErrorTypeFactory,
+  EventTypeFactory,
   Command
 > {
   try {
@@ -144,8 +143,6 @@ export function Aggregate<
     deserializeState: providedDeserializer,
   } = definition
 
-  // const isProduction: boolean =
-  //   process && process.env && process.env.NODE_ENV === 'production'
   const snapshotNamespace = getSnaphotNamespace(snapshotPrefix, context)
   const serializeState = getSerializer<State>(providedSerializer)
   const deserializeState = getDeserializer<State>(providedDeserializer)
@@ -155,7 +152,7 @@ export function Aggregate<
       [EvtType.name]: EvtType,
     }),
     {}
-  ) as { readonly [k: string]: EventType }
+  ) as { readonly [k: string]: EventTypeFactory }
 
   const Factory = (
     identity?: AggregateIdentity,
@@ -167,8 +164,8 @@ export function Aggregate<
     typeof identity,
     State,
     Query,
-    ErrorType,
-    EventType,
+    ErrorTypeFactory,
+    EventTypeFactory,
     Command
   > => {
     const history = events || []
@@ -189,7 +186,7 @@ export function Aggregate<
 
     const rebuiltState = history.reduce(
       (state, event, idx) => {
-        const EvtType: EventType | undefined =
+        const EvtType: EventTypeFactory | undefined =
           emittableEventsDictionary[event.name]
         return EvtType
           ? EvtType.fromSerializedPayload(event.payload).applyToState(state)
@@ -233,16 +230,16 @@ export function Aggregate<
     })
 
     const errorInterface = ErrorInterface<
-      ErrorType,
-      AggregateErrorDictionary<ErrorType>
+      ErrorTypeFactory,
+      AggregateErrorDictionary<ErrorTypeFactory>
     >({
       raisableErrors,
     })
 
     const emissionInterface = EmissionInterface<
       State,
-      EventType,
-      AggregateEventDictionary<State, EventType>
+      EventTypeFactory,
+      AggregateEventDictionary<State, EventTypeFactory>
     >({
       emittableEvents,
       onNewEvent: (event, consistencyPolicy) => {
@@ -262,12 +259,18 @@ export function Aggregate<
       State,
       Query,
       AggregateQueryDictionary<State, Query>,
-      ErrorType,
-      AggregateErrorDictionary<ErrorType>,
-      EventType,
-      AggregateEventDictionary<State, EventType>,
+      ErrorTypeFactory,
+      AggregateErrorDictionary<ErrorTypeFactory>,
+      EventTypeFactory,
+      AggregateEventDictionary<State, EventTypeFactory>,
       Command,
-      AggregateCommandDictionary<State, Query, ErrorType, EventType, Command>
+      AggregateCommandDictionary<
+        State,
+        Query,
+        ErrorTypeFactory,
+        EventTypeFactory,
+        Command
+      >
     >({
       availableCommands,
       emissionInterface,

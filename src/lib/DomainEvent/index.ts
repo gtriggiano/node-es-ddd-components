@@ -7,8 +7,8 @@ import {
   DomaiEventPayload,
   DomainEventInstance,
   DomainEventName,
-  DomainEventType,
   DomainEventTypeDefinition,
+  DomainEventTypeFactory,
 } from './types'
 import validateDefinition from './validateDefinition'
 
@@ -25,7 +25,7 @@ export function DomainEvent<
   Payload extends DomaiEventPayload
 >(
   definition: DomainEventTypeDefinition<Name, Payload, State>
-): DomainEventType<Name, Payload, State> {
+): DomainEventTypeFactory<Name, Payload, State> {
   try {
     // tslint:disable no-expression-statement
     validateDefinition(definition)
@@ -46,7 +46,7 @@ export function DomainEvent<
   const deserializePayload = getDeserializer<Payload>(providedDeserializer)
 
   function EventTypeFactory(
-    payload: Payload
+    payload: Readonly<Payload>
   ): DomainEventInstance<Name, Payload, State> {
     const event = {}
     // tslint:disable no-let
@@ -55,8 +55,8 @@ export function DomainEvent<
     return Object.defineProperties(event, {
       __factory: { value: EventTypeFactory },
       applyToState: {
-        value: (state: State) =>
-          reducer(state, event as DomainEventInstance<Name, Payload, State>),
+        value: (state: Readonly<State>): Readonly<State> =>
+          reducer(state, payload),
       },
       getSerializedPayload: {
         value: () =>
@@ -85,7 +85,7 @@ export function DomainEvent<
       value: (event: any) =>
         isObject(event) && event.__factory === EventTypeFactory,
     },
-  }) as DomainEventType<Name, Payload, State>
+  }) as DomainEventTypeFactory<Name, Payload, State>
 }
 
 // tslint:disable no-expression-statement

@@ -5,12 +5,12 @@ import { DomainEvent } from '../../../../dist/main/lib'
 const definition = {
   description: 'A description',
   name: 'SomethingHappened',
-  reducer: (state, event) =>
+  reducer: (state, payload) =>
     Array.isArray(state)
-      ? [...state, event.payload]
+      ? [...state, payload]
       : {
           ...state,
-          [event.payload.key]: event.payload.value,
+          [payload.key]: payload.value,
         },
 }
 

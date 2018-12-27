@@ -88,9 +88,9 @@ describe('The CommandHandlerInterface object', () => {
   describe('interface.emit', () => {
     const TestEvent = DomainEvent({
       name: 'TestEvent',
-      reducer: (state, event) => ({
+      reducer: (state, payload) => ({
         ...state,
-        total: state.total + event.payload,
+        total: state.total + payload,
       }),
     })
     const TestCommandImplicit = {

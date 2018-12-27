@@ -2,7 +2,7 @@ import {
   DomaiEventPayload,
   DomainEventInstance,
   DomainEventName,
-  DomainEventType,
+  DomainEventTypeFactory,
 } from '../DomainEvent/types'
 import {
   AggregateEmissionInterface,
@@ -12,26 +12,30 @@ import { AggregateState, ConsistencyPolicy } from './types'
 
 export interface EmissionInterfaceConfiguration<
   State extends AggregateState,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >
 > {
-  readonly emittableEvents: ReadonlyArray<EventType>
+  readonly emittableEvents: ReadonlyArray<EventTypeFactory>
   readonly onNewEvent: (
     event: DomainEventInstance<DomainEventName, DomaiEventPayload, State>,
     consistencyPolicy: ConsistencyPolicy
   ) => void
 }
 
-/**
- * The constructor of an aggregate full `emit` interface
- * @param config @see EmissionInterfaceConfiguration
- */
 export default function EmissionInterface<
   State extends AggregateState,
-  EventType extends DomainEventType<DomainEventName, DomaiEventPayload, State>,
-  EventDictionary extends AggregateEventDictionary<State, EventType>
+  EventTypeFactory extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  EventDictionary extends AggregateEventDictionary<State, EventTypeFactory>
 >(
-  config: EmissionInterfaceConfiguration<State, EventType>
-): AggregateEmissionInterface<State, EventType, EventDictionary> {
+  config: EmissionInterfaceConfiguration<State, EventTypeFactory>
+): AggregateEmissionInterface<State, EventTypeFactory, EventDictionary> {
   const { emittableEvents, onNewEvent } = config
 
   return emittableEvents.reduce((emissionInterface, EvType) => {
@@ -44,5 +48,5 @@ export default function EmissionInterface<
         { value: EvType.name }
       ),
     })
-  }, {}) as AggregateEmissionInterface<State, EventType, EventDictionary>
+  }, {}) as AggregateEmissionInterface<State, EventTypeFactory, EventDictionary>
 }
