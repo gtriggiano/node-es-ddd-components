@@ -11,6 +11,7 @@ src
 .nojekyll
 .prettierignore
 jest.config.js
+jest.processor.js
 tsconfig.json
 tsconfig.module.json
 tslint.json
