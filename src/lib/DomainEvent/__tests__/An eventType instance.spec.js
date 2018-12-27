@@ -14,7 +14,7 @@ const definition = {
         },
 }
 
-describe('eventType = EventType(payload)', () => {
+describe('An eventType instance. eventType = EventType(payload)', () => {
   it('eventType.name === EventType.name', () => {
     const EventType = DomainEvent(definition)
     const eventType = EventType({ key: 'a', value: 'b' })

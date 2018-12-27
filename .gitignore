@@ -9,4 +9,5 @@ pages
 .nyc_output
 *.log
 
-package-lock.json
+# Yarn supports package-lock.json
+yarn.lock

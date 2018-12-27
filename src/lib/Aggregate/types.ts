@@ -81,7 +81,7 @@ export interface AggregateSnapshot {
  *      persistence layer.
  *
  *  `2`: No consistency policy.
- *      We have no expectations regarding consistency *
+ *      We have no expectations regarding consistency
  */
 export type ConsistencyPolicy = 0 | 1 | 2
 
@@ -257,6 +257,39 @@ export interface AggregateInstance<
 }
 
 /**
+ * A generic instance of an aggregate
+ */
+export type GenericAggregateInstance = AggregateInstance<
+  BoundedContext,
+  AggregateTypeName,
+  AggregateIdentity,
+  AggregateState,
+  AggregateQueryDefinition<
+    AggregateQueryName,
+    AggregateState,
+    AggregateQueryInput,
+    AggregateQueryOutput
+  >,
+  CustomErrorType<CustomErrorName, CustomErrorData>,
+  DomainEventType<DomainEventName, DomaiEventPayload, AggregateState>,
+  AggregateCommandDefinition<
+    AggregateCommandName,
+    AggregateCommandInput,
+    AggregateState,
+    AggregateQueryDefinition<
+      AggregateQueryName,
+      AggregateState,
+      AggregateQueryInput,
+      AggregateQueryOutput
+    >,
+    CustomErrorType<CustomErrorName, CustomErrorData>,
+    DomainEventType<DomainEventName, DomaiEventPayload, AggregateState>,
+    CustomErrorName,
+    DomainEventName
+  >
+>
+
+/**
  * An aggregate definition to pass to the @see Aggregate
  * factory function
  */
@@ -394,7 +427,7 @@ export interface AggregateTypeFactory<
   (
     identity?: Identity,
     snapshot?: AggregateSnapshot,
-    events?: ReadonlyArray<SerializedDomainEvent<EventType['name']>>
+    events?: ReadonlyArray<SerializedDomainEvent>
   ): AggregateInstance<
     BC,
     TypeName,

@@ -10,4 +10,7 @@ export * from './CustomError/types'
 
 export * from './DomainEvent'
 export * from './DomainEvent/types'
+
+export * from './Repository'
+
 export * from './utils'

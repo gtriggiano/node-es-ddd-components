@@ -11,7 +11,7 @@ const definition = {
   deserializeData: noop,
 }
 
-describe('DomainEvent(definition)', () => {
+describe('The DomainEvent factory. DomainEvent(definition)', () => {
   it('is a function', () => {
     expect(typeof DomainEvent).toBe('function')
   })

@@ -14,7 +14,7 @@ const definition = {
   deserializeData: noop,
 }
 
-describe('DomainEvent(definition) throws `BadDomainEventDefinition when:', () => {
+describe('Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:', () => {
   it('definition is not an object', () => {
     expect(() => DomainEvent(noop)).toThrow(BadDomainEventDefinition)
     expect(() => DomainEvent(2)).toThrow(BadDomainEventDefinition)

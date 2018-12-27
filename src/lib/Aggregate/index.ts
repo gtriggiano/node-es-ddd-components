@@ -160,7 +160,7 @@ export function Aggregate<
   const Factory = (
     identity?: AggregateIdentity,
     snapshot?: AggregateSnapshot,
-    events?: ReadonlyArray<SerializedDomainEvent<DomainEventName>>
+    events?: ReadonlyArray<SerializedDomainEvent>
   ): AggregateInstance<
     BC,
     TypeName,
@@ -192,9 +192,7 @@ export function Aggregate<
         const EvtType: EventType | undefined =
           emittableEventsDictionary[event.name]
         return EvtType
-          ? EvtType.fromSerializedPayload(event.serializedPayload).applyToState(
-              state
-            )
+          ? EvtType.fromSerializedPayload(event.payload).applyToState(state)
           : (() => {
               const error = new Error(
                 `Aggregate ${context}:${name} does not recognizes an event named "${
@@ -282,11 +280,8 @@ export function Aggregate<
       {
         New: { value: Factory },
         appendEvents: {
-          value: (
-            eventsToAppend: ReadonlyArray<
-              SerializedDomainEvent<DomainEventName>
-            >
-          ) => Factory(identity, snapshot, history.concat(eventsToAppend)),
+          value: (eventsToAppend: ReadonlyArray<SerializedDomainEvent>) =>
+            Factory(identity, snapshot, history.concat(eventsToAppend)),
         },
         clone: {
           value: () => Factory(identity, snapshot, events),
@@ -312,10 +307,7 @@ export function Aggregate<
         type: { value: type },
         version: { value: currentVersion },
         [Symbol.toStringTag]: {
-          get: () =>
-            `${aggregateToStringPrefix}${
-              emittedEvents.length ? `+${emittedEvents.length}` : ''
-            }`,
+          get: () => `${aggregateToStringPrefix}+${emittedEvents.length}`,
         },
       }
     )

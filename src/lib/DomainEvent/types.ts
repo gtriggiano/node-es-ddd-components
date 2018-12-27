@@ -14,12 +14,12 @@ export type DomaiEventPayload = any
 
 /**
  * An object representing a domain event,
- * where the `data` property is a serialized version
+ * where the `serializedPayload` property is a serialized version
  * of the payload
  */
-export interface SerializedDomainEvent<Name extends DomainEventName> {
-  readonly name: Name
-  readonly serializedPayload: string
+export interface SerializedDomainEvent {
+  readonly name: DomainEventName
+  readonly payload: string
 }
 
 /**
