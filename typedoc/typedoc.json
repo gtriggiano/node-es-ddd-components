@@ -48,7 +48,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -117,17 +117,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -255,7 +255,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -315,17 +315,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -450,7 +450,7 @@
 					"type": {
 						"type": "reference",
 						"name": "BoundedContext",
-						"id": 279
+						"id": 280
 					}
 				},
 				{
@@ -462,7 +462,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateTypeName",
-						"id": 280
+						"id": 281
 					}
 				},
 				{
@@ -474,7 +474,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -543,17 +543,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -706,7 +706,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "BoundedContext",
-							"id": 279
+							"id": 280
 						}
 					}
 				},
@@ -773,7 +773,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							}
 						]
@@ -853,17 +853,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -899,7 +899,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "AggregateState",
-							"id": 282
+							"id": 283
 						}
 					}
 				},
@@ -988,7 +988,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							}
 						]
@@ -1121,7 +1121,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "AggregateTypeName",
-							"id": 280
+							"id": 281
 						}
 					}
 				}
@@ -1156,7 +1156,7 @@
 			]
 		},
 		{
-			"id": 493,
+			"id": 494,
 			"name": "AggregateIdentifier",
 			"kind": 256,
 			"kindString": "Interface",
@@ -1165,7 +1165,7 @@
 			},
 			"children": [
 				{
-					"id": 494,
+					"id": 495,
 					"name": "context",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1182,11 +1182,11 @@
 					"type": {
 						"type": "reference",
 						"name": "BoundedContext",
-						"id": 279
+						"id": 280
 					}
 				},
 				{
-					"id": 496,
+					"id": 497,
 					"name": "identity",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1203,11 +1203,11 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateIdentity",
-						"id": 281
+						"id": 282
 					}
 				},
 				{
-					"id": 495,
+					"id": 496,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1224,7 +1224,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateTypeName",
-						"id": 280
+						"id": 281
 					}
 				}
 			],
@@ -1233,9 +1233,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						494,
-						496,
-						495
+						495,
+						497,
+						496
 					]
 				}
 			],
@@ -1268,7 +1268,7 @@
 					"type": {
 						"type": "reference",
 						"name": "BoundedContext",
-						"id": 279
+						"id": 280
 					}
 				},
 				{
@@ -1280,7 +1280,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateTypeName",
-						"id": 280
+						"id": 281
 					}
 				},
 				{
@@ -1292,7 +1292,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateIdentity",
-						"id": 281
+						"id": 282
 					}
 				},
 				{
@@ -1304,7 +1304,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -1373,17 +1373,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -1471,7 +1471,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "BoundedContext",
-									"id": 279
+									"id": 280
 								}
 							},
 							{
@@ -1480,7 +1480,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateTypeName",
-									"id": 280
+									"id": 281
 								}
 							},
 							{
@@ -1489,7 +1489,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateIdentity",
-									"id": 281
+									"id": 282
 								}
 							},
 							{
@@ -1498,7 +1498,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -1558,17 +1558,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -1672,7 +1672,7 @@
 													{
 														"type": "reference",
 														"name": "SerializedDomainEvent",
-														"id": 293
+														"id": 294
 													}
 												]
 											}
@@ -1689,7 +1689,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "BoundedContext",
-													"id": 279
+													"id": 280
 												}
 											},
 											{
@@ -1698,7 +1698,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateTypeName",
-													"id": 280
+													"id": 281
 												}
 											},
 											{
@@ -1707,7 +1707,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateIdentity",
-													"id": 281
+													"id": 282
 												}
 											},
 											{
@@ -1716,7 +1716,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateState",
-													"id": 282
+													"id": 283
 												}
 											},
 											{
@@ -1776,17 +1776,17 @@
 												"constraint": {
 													"type": "reference",
 													"name": "DomainEventTypeFactory",
-													"id": 322,
+													"id": 323,
 													"typeArguments": [
 														{
 															"type": "reference",
 															"name": "DomainEventName",
-															"id": 331
+															"id": 332
 														},
 														{
 															"type": "reference",
 															"name": "DomaiEventPayload",
-															"id": 332
+															"id": 333
 														},
 														{
 															"type": "typeParameter",
@@ -1898,7 +1898,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "BoundedContext",
-													"id": 279
+													"id": 280
 												}
 											},
 											{
@@ -1907,7 +1907,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateTypeName",
-													"id": 280
+													"id": 281
 												}
 											},
 											{
@@ -1916,7 +1916,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateIdentity",
-													"id": 281
+													"id": 282
 												}
 											},
 											{
@@ -1925,7 +1925,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateState",
-													"id": 282
+													"id": 283
 												}
 											},
 											{
@@ -1985,17 +1985,17 @@
 												"constraint": {
 													"type": "reference",
 													"name": "DomainEventTypeFactory",
-													"id": 322,
+													"id": 323,
 													"typeArguments": [
 														{
 															"type": "reference",
 															"name": "DomainEventName",
-															"id": 331
+															"id": 332
 														},
 														{
 															"type": "reference",
 															"name": "DomaiEventPayload",
-															"id": 332
+															"id": 333
 														},
 														{
 															"type": "typeParameter",
@@ -2087,7 +2087,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "BoundedContext",
-							"id": 279
+							"id": 280
 						}
 					}
 				},
@@ -2120,7 +2120,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -2180,17 +2180,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -2255,7 +2255,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -2315,17 +2315,17 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomainEventTypeFactory",
-											"id": 322,
+											"id": 323,
 											"typeArguments": [
 												{
 													"type": "reference",
 													"name": "DomainEventName",
-													"id": 331
+													"id": 332
 												},
 												{
 													"type": "reference",
 													"name": "DomaiEventPayload",
-													"id": 332
+													"id": 333
 												},
 												{
 													"type": "typeParameter",
@@ -2420,7 +2420,7 @@
 									"type": {
 										"type": "reference",
 										"name": "ConsistencyPolicy",
-										"id": 283
+										"id": 284
 									}
 								}
 							],
@@ -2474,17 +2474,17 @@
 											{
 												"type": "reference",
 												"name": "DomainEventInstance",
-												"id": 296,
+												"id": 297,
 												"typeArguments": [
 													{
 														"type": "reference",
 														"name": "DomainEventName",
-														"id": 331
+														"id": 332
 													},
 													{
 														"type": "reference",
 														"name": "DomaiEventPayload",
-														"id": 332
+														"id": 333
 													},
 													{
 														"type": "typeParameter",
@@ -2492,7 +2492,7 @@
 														"constraint": {
 															"type": "reference",
 															"name": "AggregateState",
-															"id": 282
+															"id": 283
 														}
 													}
 												]
@@ -2634,7 +2634,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "AggregateIdentity",
-							"id": 281
+							"id": 282
 						}
 					}
 				},
@@ -2739,7 +2739,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -2783,7 +2783,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -2868,7 +2868,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "AggregateTypeName",
-							"id": 280
+							"id": 281
 						}
 					}
 				},
@@ -2961,7 +2961,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -3046,7 +3046,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -3214,7 +3214,7 @@
 					"type": {
 						"type": "reference",
 						"name": "BoundedContext",
-						"id": 279
+						"id": 280
 					}
 				},
 				{
@@ -3226,7 +3226,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateTypeName",
-						"id": 280
+						"id": 281
 					}
 				},
 				{
@@ -3238,7 +3238,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateIdentity",
-						"id": 281
+						"id": 282
 					}
 				},
 				{
@@ -3250,7 +3250,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -3319,17 +3319,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -3457,7 +3457,7 @@
 									{
 										"type": "reference",
 										"name": "SerializedDomainEvent",
-										"id": 293
+										"id": 294
 									}
 								]
 							}
@@ -3474,7 +3474,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "BoundedContext",
-									"id": 279
+									"id": 280
 								}
 							},
 							{
@@ -3483,7 +3483,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateTypeName",
-									"id": 280
+									"id": 281
 								}
 							},
 							{
@@ -3492,7 +3492,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateIdentity",
-									"id": 281
+									"id": 282
 								}
 							},
 							{
@@ -3501,7 +3501,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -3561,17 +3561,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -3654,12 +3654,12 @@
 						"constraint": {
 							"type": "reference",
 							"name": "BoundedContext",
-							"id": 279
+							"id": 280
 						}
 					}
 				},
 				{
-					"id": 278,
+					"id": 279,
 					"name": "description",
 					"kind": 1024,
 					"kindString": "Property",
@@ -3672,13 +3672,36 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 476,
+							"line": 481,
 							"character": 22
 						}
 					],
 					"type": {
 						"type": "intrinsic",
 						"name": "string"
+					}
+				},
+				{
+					"id": 278,
+					"name": "singleton",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Tells if aggregate type is a singleton"
+					},
+					"sources": [
+						{
+							"fileName": "Aggregate/types.ts",
+							"line": 476,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
 					}
 				},
 				{
@@ -3705,7 +3728,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "AggregateTypeName",
-							"id": 280
+							"id": 281
 						}
 					}
 				}
@@ -3716,6 +3739,7 @@
 					"kind": 1024,
 					"children": [
 						276,
+						279,
 						278,
 						277
 					]
@@ -3750,7 +3774,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -3819,17 +3843,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -3888,7 +3912,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -3897,17 +3921,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -3927,7 +3951,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -3936,17 +3960,17 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomainEventTypeFactory",
-											"id": 322,
+											"id": 323,
 											"typeArguments": [
 												{
 													"type": "reference",
 													"name": "DomainEventName",
-													"id": 331
+													"id": 332
 												},
 												{
 													"type": "reference",
 													"name": "DomaiEventPayload",
-													"id": 332
+													"id": 333
 												},
 												{
 													"type": "typeParameter",
@@ -4074,7 +4098,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -4118,7 +4142,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -4177,7 +4201,7 @@
 			]
 		},
 		{
-			"id": 342,
+			"id": 343,
 			"name": "CommandInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -4186,7 +4210,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 343,
+					"id": 344,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4194,11 +4218,11 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
-					"id": 344,
+					"id": 345,
 					"name": "Query",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4231,7 +4255,7 @@
 					}
 				},
 				{
-					"id": 345,
+					"id": 346,
 					"name": "QueryDictionary",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4253,7 +4277,7 @@
 					}
 				},
 				{
-					"id": 346,
+					"id": 347,
 					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4277,7 +4301,7 @@
 					}
 				},
 				{
-					"id": 347,
+					"id": 348,
 					"name": "ErrorDictionary",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4295,7 +4319,7 @@
 					}
 				},
 				{
-					"id": 348,
+					"id": 349,
 					"name": "EventType",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4303,17 +4327,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -4323,7 +4347,7 @@
 					}
 				},
 				{
-					"id": 349,
+					"id": 350,
 					"name": "EventDictionary",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4345,7 +4369,7 @@
 					}
 				},
 				{
-					"id": 350,
+					"id": 351,
 					"name": "Command",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4395,7 +4419,7 @@
 			],
 			"children": [
 				{
-					"id": 354,
+					"id": 355,
 					"name": "availableCommands",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4462,7 +4486,7 @@
 					}
 				},
 				{
-					"id": 353,
+					"id": 354,
 					"name": "emissionInterface",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4487,7 +4511,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -4496,17 +4520,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -4538,7 +4562,7 @@
 					}
 				},
 				{
-					"id": 352,
+					"id": 353,
 					"name": "errorInterface",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4597,7 +4621,7 @@
 					}
 				},
 				{
-					"id": 351,
+					"id": 352,
 					"name": "queryInterface",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4622,7 +4646,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -4683,10 +4707,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
+						355,
 						354,
 						353,
-						352,
-						351
+						352
 					]
 				}
 			],
@@ -4699,14 +4723,14 @@
 			]
 		},
 		{
-			"id": 420,
+			"id": 421,
 			"name": "ConstructorProps",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 421,
+					"id": 422,
 					"name": "events",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4724,7 +4748,7 @@
 					}
 				},
 				{
-					"id": 422,
+					"id": 423,
 					"name": "identity",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4742,7 +4766,7 @@
 					}
 				},
 				{
-					"id": 423,
+					"id": 424,
 					"name": "isSingleton",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4760,7 +4784,7 @@
 					}
 				},
 				{
-					"id": 424,
+					"id": 425,
 					"name": "snapshot",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4783,10 +4807,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						421,
 						422,
 						423,
-						424
+						424,
+						425
 					]
 				}
 			],
@@ -4871,7 +4895,7 @@
 			]
 		},
 		{
-			"id": 296,
+			"id": 297,
 			"name": "DomainEventInstance",
 			"kind": 256,
 			"kindString": "Interface",
@@ -4883,7 +4907,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 297,
+					"id": 298,
 					"name": "Name",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4891,11 +4915,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventName",
-						"id": 331
+						"id": 332
 					}
 				},
 				{
-					"id": 298,
+					"id": 299,
 					"name": "Payload",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4903,11 +4927,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomaiEventPayload",
-						"id": 332
+						"id": 333
 					}
 				},
 				{
-					"id": 299,
+					"id": 300,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -4915,13 +4939,13 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				}
 			],
 			"children": [
 				{
-					"id": 305,
+					"id": 306,
 					"name": "applyToState",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4952,21 +4976,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 306,
+							"id": 307,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 307,
+									"id": 308,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 308,
+											"id": 309,
 											"name": "state",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4981,7 +5005,7 @@
 														"constraint": {
 															"type": "reference",
 															"name": "AggregateState",
-															"id": 282
+															"id": 283
 														}
 													}
 												]
@@ -4998,7 +5022,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateState",
-													"id": 282
+													"id": 283
 												}
 											}
 										]
@@ -5016,7 +5040,7 @@
 					}
 				},
 				{
-					"id": 302,
+					"id": 303,
 					"name": "getSerializedPayload",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5036,14 +5060,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 303,
+							"id": 304,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 304,
+									"id": 305,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5065,7 +5089,7 @@
 					}
 				},
 				{
-					"id": 300,
+					"id": 301,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5088,12 +5112,12 @@
 						"constraint": {
 							"type": "reference",
 							"name": "DomainEventName",
-							"id": 331
+							"id": 332
 						}
 					}
 				},
 				{
-					"id": 301,
+					"id": 302,
 					"name": "payload",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5116,7 +5140,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "DomaiEventPayload",
-							"id": 332
+							"id": 333
 						}
 					}
 				}
@@ -5126,10 +5150,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						305,
-						302,
-						300,
-						301
+						306,
+						303,
+						301,
+						302
 					]
 				}
 			],
@@ -5142,7 +5166,7 @@
 			]
 		},
 		{
-			"id": 309,
+			"id": 310,
 			"name": "DomainEventTypeDefinition",
 			"kind": 256,
 			"kindString": "Interface",
@@ -5154,7 +5178,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 310,
+					"id": 311,
 					"name": "Name",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5162,11 +5186,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventName",
-						"id": 331
+						"id": 332
 					}
 				},
 				{
-					"id": 311,
+					"id": 312,
 					"name": "Payload",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5174,11 +5198,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomaiEventPayload",
-						"id": 332
+						"id": 333
 					}
 				},
 				{
-					"id": 312,
+					"id": 313,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5186,13 +5210,13 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				}
 			],
 			"children": [
 				{
-					"id": 314,
+					"id": 315,
 					"name": "description",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5225,7 +5249,7 @@
 					}
 				},
 				{
-					"id": 316,
+					"id": 317,
 					"name": "deserializePayload",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5254,14 +5278,14 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomaiEventPayload",
-									"id": 332
+									"id": 333
 								}
 							}
 						]
 					}
 				},
 				{
-					"id": 313,
+					"id": 314,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5284,12 +5308,12 @@
 						"constraint": {
 							"type": "reference",
 							"name": "DomainEventName",
-							"id": 331
+							"id": 332
 						}
 					}
 				},
 				{
-					"id": 317,
+					"id": 318,
 					"name": "reducer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5309,21 +5333,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 318,
+							"id": 319,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 319,
+									"id": 320,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 320,
+											"id": 321,
 											"name": "state",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5338,14 +5362,14 @@
 														"constraint": {
 															"type": "reference",
 															"name": "AggregateState",
-															"id": 282
+															"id": 283
 														}
 													}
 												]
 											}
 										},
 										{
-											"id": 321,
+											"id": 322,
 											"name": "payload",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5360,7 +5384,7 @@
 														"constraint": {
 															"type": "reference",
 															"name": "DomaiEventPayload",
-															"id": 332
+															"id": 333
 														}
 													}
 												]
@@ -5377,7 +5401,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateState",
-													"id": 282
+													"id": 283
 												}
 											}
 										]
@@ -5395,7 +5419,7 @@
 					}
 				},
 				{
-					"id": 315,
+					"id": 316,
 					"name": "serializePayload",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5424,7 +5448,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomaiEventPayload",
-									"id": 332
+									"id": 333
 								}
 							}
 						]
@@ -5436,11 +5460,11 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						314,
-						316,
-						313,
+						315,
 						317,
-						315
+						314,
+						318,
+						316
 					]
 				}
 			],
@@ -5453,7 +5477,7 @@
 			]
 		},
 		{
-			"id": 322,
+			"id": 323,
 			"name": "DomainEventTypeFactory",
 			"kind": 256,
 			"kindString": "Interface",
@@ -5466,7 +5490,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 323,
+					"id": 324,
 					"name": "Name",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5474,11 +5498,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventName",
-						"id": 331
+						"id": 332
 					}
 				},
 				{
-					"id": 324,
+					"id": 325,
 					"name": "Payload",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5486,11 +5510,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomaiEventPayload",
-						"id": 332
+						"id": 333
 					}
 				},
 				{
-					"id": 325,
+					"id": 326,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5498,13 +5522,13 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				}
 			],
 			"signatures": [
 				{
-					"id": 326,
+					"id": 327,
 					"name": "__call",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -5515,7 +5539,7 @@
 					},
 					"parameters": [
 						{
-							"id": 327,
+							"id": 328,
 							"name": "payload",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5533,7 +5557,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										}
 									}
 								]
@@ -5543,7 +5567,7 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventInstance",
-						"id": 296,
+						"id": 297,
 						"typeArguments": [
 							{
 								"type": "typeParameter",
@@ -5551,7 +5575,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventName",
-									"id": 331
+									"id": 332
 								}
 							},
 							{
@@ -5560,7 +5584,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomaiEventPayload",
-									"id": 332
+									"id": 333
 								}
 							},
 							{
@@ -5569,7 +5593,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							}
 						]
@@ -5578,7 +5602,7 @@
 			],
 			"children": [
 				{
-					"id": 329,
+					"id": 330,
 					"name": "description",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5601,7 +5625,7 @@
 					}
 				},
 				{
-					"id": 330,
+					"id": 331,
 					"name": "fromSerializedPayload",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5621,7 +5645,7 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactoryFromSerializedPayload",
-						"id": 333,
+						"id": 334,
 						"typeArguments": [
 							{
 								"type": "typeParameter",
@@ -5629,7 +5653,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventName",
-									"id": 331
+									"id": 332
 								}
 							},
 							{
@@ -5638,7 +5662,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomaiEventPayload",
-									"id": 332
+									"id": 333
 								}
 							},
 							{
@@ -5647,14 +5671,14 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							}
 						]
 					}
 				},
 				{
-					"id": 328,
+					"id": 329,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5677,7 +5701,7 @@
 						"constraint": {
 							"type": "reference",
 							"name": "DomainEventName",
-							"id": 331
+							"id": 332
 						}
 					}
 				}
@@ -5687,9 +5711,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						329,
 						330,
-						328
+						331,
+						329
 					]
 				}
 			],
@@ -5702,7 +5726,7 @@
 			]
 		},
 		{
-			"id": 367,
+			"id": 368,
 			"name": "EmissionInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -5711,7 +5735,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 368,
+					"id": 369,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5719,11 +5743,11 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
-					"id": 369,
+					"id": 370,
 					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -5731,17 +5755,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -5753,7 +5777,7 @@
 			],
 			"children": [
 				{
-					"id": 370,
+					"id": 371,
 					"name": "emittableEvents",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5777,17 +5801,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -5800,7 +5824,7 @@
 					}
 				},
 				{
-					"id": 371,
+					"id": 372,
 					"name": "onNewEvent",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5817,21 +5841,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 372,
+							"id": 373,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 373,
+									"id": 374,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 374,
+											"id": 375,
 											"name": "event",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5839,17 +5863,17 @@
 											"type": {
 												"type": "reference",
 												"name": "DomainEventInstance",
-												"id": 296,
+												"id": 297,
 												"typeArguments": [
 													{
 														"type": "reference",
 														"name": "DomainEventName",
-														"id": 331
+														"id": 332
 													},
 													{
 														"type": "reference",
 														"name": "DomaiEventPayload",
-														"id": 332
+														"id": 333
 													},
 													{
 														"type": "typeParameter",
@@ -5857,14 +5881,14 @@
 														"constraint": {
 															"type": "reference",
 															"name": "AggregateState",
-															"id": 282
+															"id": 283
 														}
 													}
 												]
 											}
 										},
 										{
-											"id": 375,
+											"id": 376,
 											"name": "consistencyPolicy",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5872,7 +5896,7 @@
 											"type": {
 												"type": "reference",
 												"name": "ConsistencyPolicy",
-												"id": 283
+												"id": 284
 											}
 										}
 									],
@@ -5898,8 +5922,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						370,
-						371
+						371,
+						372
 					]
 				}
 			],
@@ -5965,7 +5989,7 @@
 			]
 		},
 		{
-			"id": 382,
+			"id": 383,
 			"name": "ErrorInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -5974,7 +5998,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 383,
+					"id": 384,
 					"name": "ErrorTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -6000,7 +6024,7 @@
 			],
 			"children": [
 				{
-					"id": 384,
+					"id": 385,
 					"name": "raisableErrors",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6048,7 +6072,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						384
+						385
 					]
 				}
 			],
@@ -6061,7 +6085,7 @@
 			]
 		},
 		{
-			"id": 501,
+			"id": 502,
 			"name": "EventStore",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6070,7 +6094,7 @@
 			},
 			"children": [
 				{
-					"id": 507,
+					"id": 508,
 					"name": "appendEventsToAggregates",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6087,21 +6111,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 508,
+							"id": 509,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 509,
+									"id": 510,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 510,
+											"id": 511,
 											"name": "insertions",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6113,13 +6137,13 @@
 													{
 														"type": "reference",
 														"name": "EventStoreInsertion",
-														"id": 497
+														"id": 498
 													}
 												]
 											}
 										},
 										{
-											"id": 511,
+											"id": 512,
 											"name": "correlationId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6141,7 +6165,7 @@
 													{
 														"type": "reference",
 														"name": "PersistedDomainEvent",
-														"id": 540
+														"id": 541
 													}
 												]
 											}
@@ -6160,7 +6184,7 @@
 					}
 				},
 				{
-					"id": 502,
+					"id": 503,
 					"name": "getEventsOfAggregate",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6177,21 +6201,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 503,
+							"id": 504,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 504,
+									"id": 505,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 505,
+											"id": 506,
 											"name": "aggregate",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6199,11 +6223,11 @@
 											"type": {
 												"type": "reference",
 												"name": "AggregateIdentifier",
-												"id": 493
+												"id": 494
 											}
 										},
 										{
-											"id": 506,
+											"id": 507,
 											"name": "fromVersion",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6225,7 +6249,7 @@
 													{
 														"type": "reference",
 														"name": "SerializedDomainEvent",
-														"id": 293
+														"id": 294
 													}
 												]
 											}
@@ -6249,8 +6273,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						507,
-						502
+						508,
+						503
 					]
 				}
 			],
@@ -6263,7 +6287,7 @@
 			]
 		},
 		{
-			"id": 497,
+			"id": 498,
 			"name": "EventStoreInsertion",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6272,7 +6296,7 @@
 			},
 			"children": [
 				{
-					"id": 498,
+					"id": 499,
 					"name": "aggregate",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6289,11 +6313,11 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateIdentifier",
-						"id": 493
+						"id": 494
 					}
 				},
 				{
-					"id": 500,
+					"id": 501,
 					"name": "eventsToAppend",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6314,13 +6338,13 @@
 							{
 								"type": "reference",
 								"name": "SerializedDomainEvent",
-								"id": 293
+								"id": 294
 							}
 						]
 					}
 				},
 				{
-					"id": 499,
+					"id": 500,
 					"name": "expectedAggregateVersion",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6345,9 +6369,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						498,
-						500,
-						499
+						499,
+						501,
+						500
 					]
 				}
 			],
@@ -6360,7 +6384,7 @@
 			]
 		},
 		{
-			"id": 390,
+			"id": 391,
 			"name": "QueryInterfaceConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6369,7 +6393,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 391,
+					"id": 392,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -6377,11 +6401,11 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
-					"id": 392,
+					"id": 393,
 					"name": "Query",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -6416,7 +6440,7 @@
 			],
 			"children": [
 				{
-					"id": 396,
+					"id": 397,
 					"name": "availableQueries",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6468,7 +6492,7 @@
 					}
 				},
 				{
-					"id": 393,
+					"id": 394,
 					"name": "getState",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6485,14 +6509,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 394,
+							"id": 395,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 395,
+									"id": 396,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6503,7 +6527,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									}
 								}
@@ -6524,8 +6548,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						396,
-						393
+						397,
+						394
 					]
 				}
 			],
@@ -6538,7 +6562,7 @@
 			]
 		},
 		{
-			"id": 522,
+			"id": 523,
 			"name": "RepositoryDefinition",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6547,7 +6571,7 @@
 			},
 			"children": [
 				{
-					"id": 523,
+					"id": 524,
 					"name": "eventStore",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6564,11 +6588,11 @@
 					"type": {
 						"type": "reference",
 						"name": "EventStore",
-						"id": 501
+						"id": 502
 					}
 				},
 				{
-					"id": 525,
+					"id": 526,
 					"name": "loadCanFailBecauseOfSnaphotService",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6602,7 +6626,7 @@
 					}
 				},
 				{
-					"id": 524,
+					"id": 525,
 					"name": "snapshotService",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6620,7 +6644,7 @@
 					"type": {
 						"type": "reference",
 						"name": "SnapshotService",
-						"id": 512
+						"id": 513
 					}
 				}
 			],
@@ -6629,9 +6653,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						523,
-						525,
-						524
+						524,
+						526,
+						525
 					]
 				}
 			],
@@ -6644,7 +6668,7 @@
 			]
 		},
 		{
-			"id": 526,
+			"id": 527,
 			"name": "RepositoryInstance",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6653,7 +6677,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 527,
+					"id": 528,
 					"name": "AggregatesCollection",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -6665,7 +6689,7 @@
 							{
 								"type": "reference",
 								"name": "GenericAggregateInstance",
-								"id": 284
+								"id": 285
 							}
 						]
 					}
@@ -6673,7 +6697,7 @@
 			],
 			"children": [
 				{
-					"id": 528,
+					"id": 529,
 					"name": "load",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6690,21 +6714,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 529,
+							"id": 530,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 530,
+									"id": 531,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 531,
+											"id": 532,
 											"name": "aggregates",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6719,7 +6743,7 @@
 														{
 															"type": "reference",
 															"name": "GenericAggregateInstance",
-															"id": 284
+															"id": 285
 														}
 													]
 												}
@@ -6740,7 +6764,7 @@
 														{
 															"type": "reference",
 															"name": "GenericAggregateInstance",
-															"id": 284
+															"id": 285
 														}
 													]
 												}
@@ -6760,7 +6784,7 @@
 					}
 				},
 				{
-					"id": 532,
+					"id": 533,
 					"name": "persist",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6777,21 +6801,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 533,
+							"id": 534,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 534,
+									"id": 535,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 535,
+											"id": 536,
 											"name": "aggregates",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6806,14 +6830,14 @@
 														{
 															"type": "reference",
 															"name": "GenericAggregateInstance",
-															"id": 284
+															"id": 285
 														}
 													]
 												}
 											}
 										},
 										{
-											"id": 536,
+											"id": 537,
 											"name": "correlationId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6842,14 +6866,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 537,
+													"id": 538,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 538,
+															"id": 539,
 															"name": "aggregates",
 															"kind": 32,
 															"kindString": "Variable",
@@ -6866,11 +6890,11 @@
 															"type": {
 																"type": "reference",
 																"name": "AggregatesCollection",
-																"id": 527
+																"id": 528
 															}
 														},
 														{
-															"id": 539,
+															"id": 540,
 															"name": "persistedEvents",
 															"kind": 32,
 															"kindString": "Variable",
@@ -6889,7 +6913,7 @@
 																	{
 																		"type": "reference",
 																		"name": "PersistedDomainEvent",
-																		"id": 540
+																		"id": 541
 																	}
 																]
 															}
@@ -6900,8 +6924,8 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																538,
-																539
+																539,
+																540
 															]
 														}
 													],
@@ -6934,8 +6958,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						528,
-						532
+						529,
+						533
 					]
 				}
 			],
@@ -6948,7 +6972,7 @@
 			]
 		},
 		{
-			"id": 293,
+			"id": 294,
 			"name": "SerializedDomainEvent",
 			"kind": 256,
 			"kindString": "Interface",
@@ -6960,7 +6984,7 @@
 			},
 			"children": [
 				{
-					"id": 294,
+					"id": 295,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -6980,11 +7004,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventName",
-						"id": 331
+						"id": 332
 					}
 				},
 				{
-					"id": 295,
+					"id": 296,
 					"name": "payload",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7012,8 +7036,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						294,
-						295
+						295,
+						296
 					]
 				}
 			],
@@ -7026,7 +7050,7 @@
 			]
 		},
 		{
-			"id": 512,
+			"id": 513,
 			"name": "SnapshotService",
 			"kind": 256,
 			"kindString": "Interface",
@@ -7035,7 +7059,7 @@
 			},
 			"children": [
 				{
-					"id": 513,
+					"id": 514,
 					"name": "loadAggregateSnapshot",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7052,21 +7076,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 514,
+							"id": 515,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 515,
+									"id": 516,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 516,
+											"id": 517,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7110,7 +7134,7 @@
 					}
 				},
 				{
-					"id": 517,
+					"id": 518,
 					"name": "saveAggregateSnapshot",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7127,21 +7151,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 518,
+							"id": 519,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 519,
+									"id": 520,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 520,
+											"id": 521,
 											"name": "key",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7152,7 +7176,7 @@
 											}
 										},
 										{
-											"id": 521,
+											"id": 522,
 											"name": "snapshot",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7192,8 +7216,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						513,
-						517
+						514,
+						518
 					]
 				}
 			],
@@ -7206,20 +7230,20 @@
 			]
 		},
 		{
-			"id": 565,
+			"id": 566,
 			"name": "Storage",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"indexSignature": {
-				"id": 566,
+				"id": 567,
 				"name": "__index",
 				"kind": 8192,
 				"kindString": "Index signature",
 				"flags": {},
 				"parameters": [
 					{
-						"id": 567,
+						"id": 568,
 						"name": "key",
 						"kind": 32768,
 						"kindString": "Parameter",
@@ -7254,14 +7278,14 @@
 			]
 		},
 		{
-			"id": 454,
+			"id": 455,
 			"name": "WithOriginalError",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 455,
+					"id": 456,
 					"name": "originalError",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7289,7 +7313,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						455
+						456
 					]
 				}
 			],
@@ -7324,7 +7348,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -7393,17 +7417,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -7471,7 +7495,7 @@
 			"type": {
 				"type": "reference",
 				"name": "MapDiscriminatedUnion",
-				"id": 289,
+				"id": 290,
 				"typeArguments": [
 					{
 						"type": "typeParameter",
@@ -7543,7 +7567,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -7555,17 +7579,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -7762,7 +7786,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -7831,17 +7855,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -7929,7 +7953,7 @@
 												"constraint": {
 													"type": "reference",
 													"name": "AggregateState",
-													"id": 282
+													"id": 283
 												}
 											},
 											{
@@ -7989,17 +8013,17 @@
 												"constraint": {
 													"type": "reference",
 													"name": "DomainEventTypeFactory",
-													"id": 322,
+													"id": 323,
 													"typeArguments": [
 														{
 															"type": "reference",
 															"name": "DomainEventName",
-															"id": 331
+															"id": 332
 														},
 														{
 															"type": "reference",
 															"name": "DomaiEventPayload",
-															"id": 332
+															"id": 333
 														},
 														{
 															"type": "typeParameter",
@@ -8088,7 +8112,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -8157,17 +8181,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -8305,7 +8329,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -8374,17 +8398,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -8407,7 +8431,7 @@
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "typeParameter",
@@ -8490,7 +8514,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -8502,17 +8526,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -8587,7 +8611,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -8599,17 +8623,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -8659,17 +8683,17 @@
 												"constraint": {
 													"type": "reference",
 													"name": "DomainEventTypeFactory",
-													"id": 322,
+													"id": 323,
 													"typeArguments": [
 														{
 															"type": "reference",
 															"name": "DomainEventName",
-															"id": 331
+															"id": 332
 														},
 														{
 															"type": "reference",
 															"name": "DomaiEventPayload",
-															"id": 332
+															"id": 333
 														},
 														{
 															"type": "typeParameter",
@@ -8742,7 +8766,7 @@
 			"type": {
 				"type": "reference",
 				"name": "MapDiscriminatedUnion",
-				"id": 289,
+				"id": 290,
 				"typeArguments": [
 					{
 						"type": "typeParameter",
@@ -8867,7 +8891,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -8879,17 +8903,17 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							},
 							{
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							},
 							{
 								"type": "typeParameter",
@@ -8909,7 +8933,7 @@
 			"type": {
 				"type": "reference",
 				"name": "MapDiscriminatedUnion",
-				"id": 289,
+				"id": 290,
 				"typeArguments": [
 					{
 						"type": "typeParameter",
@@ -8917,17 +8941,17 @@
 						"constraint": {
 							"type": "reference",
 							"name": "DomainEventTypeFactory",
-							"id": 322,
+							"id": 323,
 							"typeArguments": [
 								{
 									"type": "reference",
 									"name": "DomainEventName",
-									"id": 331
+									"id": 332
 								},
 								{
 									"type": "reference",
 									"name": "DomaiEventPayload",
-									"id": 332
+									"id": 333
 								},
 								{
 									"type": "typeParameter",
@@ -8944,7 +8968,7 @@
 			}
 		},
 		{
-			"id": 281,
+			"id": 282,
 			"name": "AggregateIdentity",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -8993,7 +9017,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -9040,7 +9064,7 @@
 			"type": {
 				"type": "reference",
 				"name": "MapDiscriminatedUnion",
-				"id": 289,
+				"id": 290,
 				"typeArguments": [
 					{
 						"type": "typeParameter",
@@ -9100,7 +9124,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -9163,7 +9187,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									}
 								},
@@ -9249,7 +9273,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -9354,7 +9378,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				},
 				{
@@ -9445,7 +9469,7 @@
 			}
 		},
 		{
-			"id": 282,
+			"id": 283,
 			"name": "AggregateState",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9468,7 +9492,7 @@
 			}
 		},
 		{
-			"id": 280,
+			"id": 281,
 			"name": "AggregateTypeName",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9491,7 +9515,7 @@
 			}
 		},
 		{
-			"id": 279,
+			"id": 280,
 			"name": "BoundedContext",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9546,7 +9570,7 @@
 			}
 		},
 		{
-			"id": 283,
+			"id": 284,
 			"name": "ConsistencyPolicy",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9840,7 +9864,7 @@
 			}
 		},
 		{
-			"id": 285,
+			"id": 286,
 			"name": "DiscriminatedUnion",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9849,14 +9873,14 @@
 			},
 			"typeParameter": [
 				{
-					"id": 286,
+					"id": 287,
 					"name": "T",
 					"kind": 131072,
 					"kindString": "Type parameter",
 					"flags": {}
 				},
 				{
-					"id": 287,
+					"id": 288,
 					"name": "K",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -9871,7 +9895,7 @@
 					}
 				},
 				{
-					"id": 288,
+					"id": 289,
 					"name": "V",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -9885,7 +9909,7 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 479,
+					"line": 484,
 					"character": 30
 				}
 			],
@@ -9895,7 +9919,7 @@
 			}
 		},
 		{
-			"id": 332,
+			"id": 333,
 			"name": "DomaiEventPayload",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9918,7 +9942,7 @@
 			}
 		},
 		{
-			"id": 331,
+			"id": 332,
 			"name": "DomainEventName",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9970,7 +9994,7 @@
 			}
 		},
 		{
-			"id": 333,
+			"id": 334,
 			"name": "DomainEventTypeFactoryFromSerializedPayload",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9993,7 +10017,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 334,
+					"id": 335,
 					"name": "Name",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10001,11 +10025,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventName",
-						"id": 331
+						"id": 332
 					}
 				},
 				{
-					"id": 335,
+					"id": 336,
 					"name": "Payload",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10013,11 +10037,11 @@
 					"type": {
 						"type": "reference",
 						"name": "DomaiEventPayload",
-						"id": 332
+						"id": 333
 					}
 				},
 				{
-					"id": 336,
+					"id": 337,
 					"name": "State",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10025,7 +10049,7 @@
 					"type": {
 						"type": "reference",
 						"name": "AggregateState",
-						"id": 282
+						"id": 283
 					}
 				}
 			],
@@ -10039,21 +10063,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 337,
+					"id": 338,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 338,
+							"id": 339,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 339,
+									"id": 340,
 									"name": "serializedPayload",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10067,7 +10091,7 @@
 							"type": {
 								"type": "reference",
 								"name": "DomainEventInstance",
-								"id": 296,
+								"id": 297,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -10075,7 +10099,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										}
 									},
 									{
@@ -10084,7 +10108,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										}
 									},
 									{
@@ -10093,7 +10117,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									}
 								]
@@ -10111,7 +10135,7 @@
 			}
 		},
 		{
-			"id": 340,
+			"id": 341,
 			"name": "DomainEventTypeFactoryPayload",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -10123,7 +10147,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 341,
+					"id": 342,
 					"name": "EventTypeFactory",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10262,7 +10286,7 @@
 			}
 		},
 		{
-			"id": 284,
+			"id": 285,
 			"name": "GenericAggregateInstance",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -10287,22 +10311,22 @@
 					{
 						"type": "reference",
 						"name": "BoundedContext",
-						"id": 279
-					},
-					{
-						"type": "reference",
-						"name": "AggregateTypeName",
 						"id": 280
 					},
 					{
 						"type": "reference",
-						"name": "AggregateIdentity",
+						"name": "AggregateTypeName",
 						"id": 281
 					},
 					{
 						"type": "reference",
-						"name": "AggregateState",
+						"name": "AggregateIdentity",
 						"id": 282
+					},
+					{
+						"type": "reference",
+						"name": "AggregateState",
+						"id": 283
 					},
 					{
 						"type": "reference",
@@ -10317,7 +10341,7 @@
 							{
 								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							},
 							{
 								"type": "reference",
@@ -10351,22 +10375,22 @@
 					{
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
-							},
-							{
-								"type": "reference",
-								"name": "DomaiEventPayload",
 								"id": 332
 							},
 							{
 								"type": "reference",
+								"name": "DomaiEventPayload",
+								"id": 333
+							},
+							{
+								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							}
 						]
 					},
@@ -10388,7 +10412,7 @@
 							{
 								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							},
 							{
 								"type": "reference",
@@ -10403,7 +10427,7 @@
 									{
 										"type": "reference",
 										"name": "AggregateState",
-										"id": 282
+										"id": 283
 									},
 									{
 										"type": "reference",
@@ -10437,22 +10461,22 @@
 							{
 								"type": "reference",
 								"name": "DomainEventTypeFactory",
-								"id": 322,
+								"id": 323,
 								"typeArguments": [
 									{
 										"type": "reference",
 										"name": "DomainEventName",
-										"id": 331
-									},
-									{
-										"type": "reference",
-										"name": "DomaiEventPayload",
 										"id": 332
 									},
 									{
 										"type": "reference",
+										"name": "DomaiEventPayload",
+										"id": 333
+									},
+									{
+										"type": "reference",
 										"name": "AggregateState",
-										"id": 282
+										"id": 283
 									}
 								]
 							},
@@ -10464,7 +10488,7 @@
 							{
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							}
 						]
 					}
@@ -10472,7 +10496,7 @@
 			}
 		},
 		{
-			"id": 289,
+			"id": 290,
 			"name": "MapDiscriminatedUnion",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -10481,7 +10505,7 @@
 			},
 			"typeParameter": [
 				{
-					"id": 290,
+					"id": 291,
 					"name": "T",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10502,7 +10526,7 @@
 					}
 				},
 				{
-					"id": 291,
+					"id": 292,
 					"name": "K",
 					"kind": 131072,
 					"kindString": "Type parameter",
@@ -10520,14 +10544,14 @@
 			"sources": [
 				{
 					"fileName": "Aggregate/types.ts",
-					"line": 485,
+					"line": 490,
 					"character": 33
 				}
 			],
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 292,
+					"id": 293,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
@@ -10535,7 +10559,7 @@
 					"sources": [
 						{
 							"fileName": "Aggregate/types.ts",
-							"line": 488,
+							"line": 493,
 							"character": 3
 						}
 					]
@@ -10633,7 +10657,7 @@
 			}
 		},
 		{
-			"id": 540,
+			"id": 541,
 			"name": "PersistedDomainEvent",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -10653,19 +10677,19 @@
 					{
 						"type": "reference",
 						"name": "SerializedDomainEvent",
-						"id": 293
+						"id": 294
 					},
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 541,
+							"id": 542,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 542,
+									"id": 543,
 									"name": "aggregate",
 									"kind": 32,
 									"kindString": "Variable",
@@ -10680,11 +10704,11 @@
 									"type": {
 										"type": "reference",
 										"name": "AggregateIdentifier",
-										"id": 493
+										"id": 494
 									}
 								},
 								{
-									"id": 544,
+									"id": 545,
 									"name": "correlationId",
 									"kind": 32,
 									"kindString": "Variable",
@@ -10702,7 +10726,7 @@
 									}
 								},
 								{
-									"id": 543,
+									"id": 544,
 									"name": "id",
 									"kind": 32,
 									"kindString": "Variable",
@@ -10725,9 +10749,9 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										542,
-										544,
-										543
+										543,
+										545,
+										544
 									]
 								}
 							],
@@ -10870,7 +10894,7 @@
 			}
 		},
 		{
-			"id": 545,
+			"id": 546,
 			"name": "StoredEvent",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -10890,19 +10914,19 @@
 					{
 						"type": "reference",
 						"name": "PersistedDomainEvent",
-						"id": 540
+						"id": 541
 					},
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 546,
+							"id": 547,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 548,
+									"id": 549,
 									"name": "aggregate",
 									"kind": 32,
 									"kindString": "Variable",
@@ -10917,14 +10941,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 549,
+											"id": 550,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 550,
+													"id": 551,
 													"name": "context",
 													"kind": 32,
 													"kindString": "Variable",
@@ -10939,11 +10963,11 @@
 													"type": {
 														"type": "reference",
 														"name": "BoundedContext",
-														"id": 279
+														"id": 280
 													}
 												},
 												{
-													"id": 552,
+													"id": 553,
 													"name": "identity",
 													"kind": 32,
 													"kindString": "Variable",
@@ -10958,11 +10982,11 @@
 													"type": {
 														"type": "reference",
 														"name": "AggregateIdentity",
-														"id": 281
+														"id": 282
 													}
 												},
 												{
-													"id": 551,
+													"id": 552,
 													"name": "type",
 													"kind": 32,
 													"kindString": "Variable",
@@ -10977,7 +11001,7 @@
 													"type": {
 														"type": "reference",
 														"name": "AggregateTypeName",
-														"id": 280
+														"id": 281
 													}
 												}
 											],
@@ -10986,9 +11010,9 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														550,
-														552,
-														551
+														551,
+														553,
+														552
 													]
 												}
 											],
@@ -11003,7 +11027,7 @@
 									}
 								},
 								{
-									"id": 547,
+									"id": 548,
 									"name": "id",
 									"kind": 32,
 									"kindString": "Variable",
@@ -11026,8 +11050,8 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										548,
-										547
+										549,
+										548
 									]
 								}
 							],
@@ -11044,7 +11068,7 @@
 			}
 		},
 		{
-			"id": 407,
+			"id": 408,
 			"name": "TupleItem",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -11091,7 +11115,7 @@
 			}
 		},
 		{
-			"id": 459,
+			"id": 460,
 			"name": "BadAggregateConstruction",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11109,21 +11133,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 460,
+					"id": 461,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 461,
+							"id": 462,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 462,
+									"id": 463,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11143,7 +11167,7 @@
 									}
 								},
 								{
-									"id": 463,
+									"id": 464,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11173,7 +11197,7 @@
 					],
 					"children": [
 						{
-							"id": 464,
+							"id": 465,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11196,7 +11220,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								464
+								465
 							]
 						}
 					]
@@ -11205,7 +11229,7 @@
 			"defaultValue": " CustomError<\n  'BadAggregateConstruction',\n  WithOriginalError\n>({\n  name: 'BadAggregateConstruction',\n})"
 		},
 		{
-			"id": 465,
+			"id": 466,
 			"name": "BadAggregateDefinition",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11223,21 +11247,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 466,
+					"id": 467,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 467,
+							"id": 468,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 468,
+									"id": 469,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11257,7 +11281,7 @@
 									}
 								},
 								{
-									"id": 469,
+									"id": 470,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11287,7 +11311,7 @@
 					],
 					"children": [
 						{
-							"id": 470,
+							"id": 471,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11310,7 +11334,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								470
+								471
 							]
 						}
 					]
@@ -11319,7 +11343,7 @@
 			"defaultValue": " CustomError<\n  'BadAggregateDefinition',\n  WithOriginalError\n>({\n  name: 'BadAggregateDefinition',\n})"
 		},
 		{
-			"id": 481,
+			"id": 482,
 			"name": "BadDomainEventDefinition",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11337,21 +11361,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 482,
+					"id": 483,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 483,
+							"id": 484,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 484,
+									"id": 485,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11371,7 +11395,7 @@
 									}
 								},
 								{
-									"id": 485,
+									"id": 486,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11401,7 +11425,7 @@
 					],
 					"children": [
 						{
-							"id": 486,
+							"id": 487,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11424,7 +11448,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								486
+								487
 							]
 						}
 					]
@@ -11433,7 +11457,7 @@
 			"defaultValue": " CustomError<\n  'DomainEventDefinitionError',\n  { readonly originalError: Error }\n>({\n  name: 'DomainEventDefinitionError',\n})"
 		},
 		{
-			"id": 580,
+			"id": 581,
 			"name": "BadRepositoryDefinition",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11451,21 +11475,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 581,
+					"id": 582,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 582,
+							"id": 583,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 583,
+									"id": 584,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11485,7 +11509,7 @@
 									}
 								},
 								{
-									"id": 584,
+									"id": 585,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11515,7 +11539,7 @@
 					],
 					"children": [
 						{
-							"id": 585,
+							"id": 586,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11538,7 +11562,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								585
+								586
 							]
 						}
 					]
@@ -11661,7 +11685,7 @@
 			"defaultValue": " CustomError<\n  'DeserializationError',\n  ErrorData\n>({\n  name: 'DeserializationError',\n})"
 		},
 		{
-			"id": 458,
+			"id": 459,
 			"name": "NO_CONSISTENCY_POLICY",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11683,7 +11707,7 @@
 			"defaultValue": "2"
 		},
 		{
-			"id": 592,
+			"id": 593,
 			"name": "RepositoryBadAggregatesListProvided",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11701,21 +11725,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 593,
+					"id": 594,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 594,
+							"id": 595,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 595,
+									"id": 596,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11735,7 +11759,7 @@
 									}
 								},
 								{
-									"id": 596,
+									"id": 597,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11765,7 +11789,7 @@
 					],
 					"children": [
 						{
-							"id": 597,
+							"id": 598,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11788,7 +11812,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								597
+								598
 							]
 						}
 					]
@@ -11797,7 +11821,7 @@
 			"defaultValue": " CustomError<\n  'RepositoryBadAggregatesListProvided',\n  WithOriginalError\n>({\n  name: 'RepositoryBadAggregatesListProvided',\n})"
 		},
 		{
-			"id": 598,
+			"id": 599,
 			"name": "RepositoryEventsLoadError",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11815,21 +11839,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 599,
+					"id": 600,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 600,
+							"id": 601,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 601,
+									"id": 602,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11849,7 +11873,7 @@
 									}
 								},
 								{
-									"id": 602,
+									"id": 603,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11879,7 +11903,7 @@
 					],
 					"children": [
 						{
-							"id": 603,
+							"id": 604,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -11902,7 +11926,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								603
+								604
 							]
 						}
 					]
@@ -11911,7 +11935,7 @@
 			"defaultValue": " CustomError<\n  'RepositoryEventsLoadError',\n  WithOriginalError\n>({\n  name: 'RepositoryEventsLoadError',\n})"
 		},
 		{
-			"id": 586,
+			"id": 587,
 			"name": "RepositorySnapshotLoadError",
 			"kind": 32,
 			"kindString": "Variable",
@@ -11929,21 +11953,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 587,
+					"id": 588,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 588,
+							"id": 589,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 589,
+									"id": 590,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11963,7 +11987,7 @@
 									}
 								},
 								{
-									"id": 590,
+									"id": 591,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -11993,7 +12017,7 @@
 					],
 					"children": [
 						{
-							"id": 591,
+							"id": 592,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -12016,7 +12040,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								591
+								592
 							]
 						}
 					]
@@ -12025,7 +12049,7 @@
 			"defaultValue": " CustomError<\n  'RepositorySnapshotLoadError',\n  WithOriginalError\n>({\n  name: 'RepositorySnapshotLoadError',\n})"
 		},
 		{
-			"id": 610,
+			"id": 611,
 			"name": "RepositoryWriteConcurrencyError",
 			"kind": 32,
 			"kindString": "Variable",
@@ -12043,21 +12067,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 611,
+					"id": 612,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 612,
+							"id": 613,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 613,
+									"id": 614,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -12077,7 +12101,7 @@
 									}
 								},
 								{
-									"id": 614,
+									"id": 615,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -12107,7 +12131,7 @@
 					],
 					"children": [
 						{
-							"id": 615,
+							"id": 616,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -12130,7 +12154,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								615
+								616
 							]
 						}
 					]
@@ -12139,7 +12163,7 @@
 			"defaultValue": " CustomError<\n  'RepositoryWriteConcurrencyError',\n  WithOriginalError\n>({\n  name: 'RepositoryWriteConcurrencyError',\n})"
 		},
 		{
-			"id": 604,
+			"id": 605,
 			"name": "RepositoryWriteError",
 			"kind": 32,
 			"kindString": "Variable",
@@ -12157,21 +12181,21 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 605,
+					"id": 606,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 606,
+							"id": 607,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 607,
+									"id": 608,
 									"name": "message",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -12191,7 +12215,7 @@
 									}
 								},
 								{
-									"id": 608,
+									"id": 609,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -12221,7 +12245,7 @@
 					],
 					"children": [
 						{
-							"id": 609,
+							"id": 610,
 							"name": "name",
 							"kind": 32,
 							"kindString": "Variable",
@@ -12244,7 +12268,7 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								609
+								610
 							]
 						}
 					]
@@ -12253,7 +12277,7 @@
 			"defaultValue": " CustomError<\n  'RepositoryWriteError',\n  WithOriginalError\n>({\n  name: 'RepositoryWriteError',\n})"
 		},
 		{
-			"id": 457,
+			"id": 458,
 			"name": "SOFT_CONSISTENCY_POLICY",
 			"kind": 32,
 			"kindString": "Variable",
@@ -12275,7 +12299,7 @@
 			"defaultValue": "1"
 		},
 		{
-			"id": 456,
+			"id": 457,
 			"name": "STRICT_CONSISTENCY_POLICY",
 			"kind": 32,
 			"kindString": "Variable",
@@ -12433,7 +12457,7 @@
 			"defaultValue": " `string starting with a letter and composed by letters, numbers and underscores only`"
 		},
 		{
-			"id": 471,
+			"id": 472,
 			"name": "Aggregate",
 			"kind": 64,
 			"kindString": "Function",
@@ -12442,14 +12466,14 @@
 			},
 			"signatures": [
 				{
-					"id": 472,
+					"id": 473,
 					"name": "Aggregate",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 473,
+							"id": 474,
 							"name": "BC",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12457,11 +12481,11 @@
 							"type": {
 								"type": "reference",
 								"name": "BoundedContext",
-								"id": 279
+								"id": 280
 							}
 						},
 						{
-							"id": 474,
+							"id": 475,
 							"name": "TypeName",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12469,11 +12493,11 @@
 							"type": {
 								"type": "reference",
 								"name": "AggregateTypeName",
-								"id": 280
+								"id": 281
 							}
 						},
 						{
-							"id": 475,
+							"id": 476,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12481,11 +12505,11 @@
 							"type": {
 								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							}
 						},
 						{
-							"id": 476,
+							"id": 477,
 							"name": "Query",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12518,7 +12542,7 @@
 							}
 						},
 						{
-							"id": 477,
+							"id": 478,
 							"name": "ErrorTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12542,7 +12566,7 @@
 							}
 						},
 						{
-							"id": 478,
+							"id": 479,
 							"name": "EventTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12550,17 +12574,17 @@
 							"type": {
 								"type": "reference",
 								"name": "DomainEventTypeFactory",
-								"id": 322,
+								"id": 323,
 								"typeArguments": [
 									{
 										"type": "reference",
 										"name": "DomainEventName",
-										"id": 331
+										"id": 332
 									},
 									{
 										"type": "reference",
 										"name": "DomaiEventPayload",
-										"id": 332
+										"id": 333
 									},
 									{
 										"type": "typeParameter",
@@ -12570,7 +12594,7 @@
 							}
 						},
 						{
-							"id": 479,
+							"id": 480,
 							"name": "Command",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12620,7 +12644,7 @@
 					],
 					"parameters": [
 						{
-							"id": 480,
+							"id": 481,
 							"name": "definition",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12636,7 +12660,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "BoundedContext",
-											"id": 279
+											"id": 280
 										}
 									},
 									{
@@ -12645,7 +12669,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateTypeName",
-											"id": 280
+											"id": 281
 										}
 									},
 									{
@@ -12654,7 +12678,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -12714,17 +12738,17 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomainEventTypeFactory",
-											"id": 322,
+											"id": 323,
 											"typeArguments": [
 												{
 													"type": "reference",
 													"name": "DomainEventName",
-													"id": 331
+													"id": 332
 												},
 												{
 													"type": "reference",
 													"name": "DomaiEventPayload",
-													"id": 332
+													"id": 333
 												},
 												{
 													"type": "typeParameter",
@@ -12793,7 +12817,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "BoundedContext",
-									"id": 279
+									"id": 280
 								}
 							},
 							{
@@ -12802,13 +12826,13 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateTypeName",
-									"id": 280
+									"id": 281
 								}
 							},
 							{
 								"type": "reference",
 								"name": "AggregateIdentity",
-								"id": 281
+								"id": 282
 							},
 							{
 								"type": "typeParameter",
@@ -12816,7 +12840,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -12876,17 +12900,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -12953,7 +12977,7 @@
 			]
 		},
 		{
-			"id": 355,
+			"id": 356,
 			"name": "CommandInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -12962,14 +12986,14 @@
 			},
 			"signatures": [
 				{
-					"id": 356,
+					"id": 357,
 					"name": "CommandInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 357,
+							"id": 358,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -12977,11 +13001,11 @@
 							"type": {
 								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							}
 						},
 						{
-							"id": 358,
+							"id": 359,
 							"name": "Query",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13014,7 +13038,7 @@
 							}
 						},
 						{
-							"id": 359,
+							"id": 360,
 							"name": "QueryDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13036,7 +13060,7 @@
 							}
 						},
 						{
-							"id": 360,
+							"id": 361,
 							"name": "ErrorTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13060,7 +13084,7 @@
 							}
 						},
 						{
-							"id": 361,
+							"id": 362,
 							"name": "ErrorDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13078,7 +13102,7 @@
 							}
 						},
 						{
-							"id": 362,
+							"id": 363,
 							"name": "EventTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13086,17 +13110,17 @@
 							"type": {
 								"type": "reference",
 								"name": "DomainEventTypeFactory",
-								"id": 322,
+								"id": 323,
 								"typeArguments": [
 									{
 										"type": "reference",
 										"name": "DomainEventName",
-										"id": 331
+										"id": 332
 									},
 									{
 										"type": "reference",
 										"name": "DomaiEventPayload",
-										"id": 332
+										"id": 333
 									},
 									{
 										"type": "typeParameter",
@@ -13106,7 +13130,7 @@
 							}
 						},
 						{
-							"id": 363,
+							"id": 364,
 							"name": "EventDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13128,7 +13152,7 @@
 							}
 						},
 						{
-							"id": 364,
+							"id": 365,
 							"name": "Command",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13176,7 +13200,7 @@
 							}
 						},
 						{
-							"id": 365,
+							"id": 366,
 							"name": "CommandDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13212,7 +13236,7 @@
 					],
 					"parameters": [
 						{
-							"id": 366,
+							"id": 367,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13220,7 +13244,7 @@
 							"type": {
 								"type": "reference",
 								"name": "CommandInterfaceConfiguration",
-								"id": 342,
+								"id": 343,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -13228,7 +13252,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -13322,17 +13346,17 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomainEventTypeFactory",
-											"id": 322,
+											"id": 323,
 											"typeArguments": [
 												{
 													"type": "reference",
 													"name": "DomainEventName",
-													"id": 331
+													"id": 332
 												},
 												{
 													"type": "reference",
 													"name": "DomaiEventPayload",
-													"id": 332
+													"id": 333
 												},
 												{
 													"type": "typeParameter",
@@ -13420,7 +13444,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -13480,17 +13504,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -13689,7 +13713,7 @@
 			]
 		},
 		{
-			"id": 487,
+			"id": 488,
 			"name": "DomainEvent",
 			"kind": 64,
 			"kindString": "Function",
@@ -13698,14 +13722,14 @@
 			},
 			"signatures": [
 				{
-					"id": 488,
+					"id": 489,
 					"name": "DomainEvent",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 489,
+							"id": 490,
 							"name": "Name",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13713,11 +13737,11 @@
 							"type": {
 								"type": "reference",
 								"name": "DomainEventName",
-								"id": 331
+								"id": 332
 							}
 						},
 						{
-							"id": 490,
+							"id": 491,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13725,11 +13749,11 @@
 							"type": {
 								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							}
 						},
 						{
-							"id": 491,
+							"id": 492,
 							"name": "Payload",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13737,13 +13761,13 @@
 							"type": {
 								"type": "reference",
 								"name": "DomaiEventPayload",
-								"id": 332
+								"id": 333
 							}
 						}
 					],
 					"parameters": [
 						{
-							"id": 492,
+							"id": 493,
 							"name": "definition",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13751,7 +13775,7 @@
 							"type": {
 								"type": "reference",
 								"name": "DomainEventTypeDefinition",
-								"id": 309,
+								"id": 310,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -13759,7 +13783,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										}
 									},
 									{
@@ -13768,7 +13792,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										}
 									},
 									{
@@ -13777,7 +13801,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									}
 								]
@@ -13787,7 +13811,7 @@
 					"type": {
 						"type": "reference",
 						"name": "DomainEventTypeFactory",
-						"id": 322,
+						"id": 323,
 						"typeArguments": [
 							{
 								"type": "typeParameter",
@@ -13795,7 +13819,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventName",
-									"id": 331
+									"id": 332
 								}
 							},
 							{
@@ -13804,7 +13828,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomaiEventPayload",
-									"id": 332
+									"id": 333
 								}
 							},
 							{
@@ -13813,7 +13837,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							}
 						]
@@ -13829,7 +13853,7 @@
 			]
 		},
 		{
-			"id": 376,
+			"id": 377,
 			"name": "EmissionInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -13838,14 +13862,14 @@
 			},
 			"signatures": [
 				{
-					"id": 377,
+					"id": 378,
 					"name": "EmissionInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 378,
+							"id": 379,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13853,11 +13877,11 @@
 							"type": {
 								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							}
 						},
 						{
-							"id": 379,
+							"id": 380,
 							"name": "EventTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13865,17 +13889,17 @@
 							"type": {
 								"type": "reference",
 								"name": "DomainEventTypeFactory",
-								"id": 322,
+								"id": 323,
 								"typeArguments": [
 									{
 										"type": "reference",
 										"name": "DomainEventName",
-										"id": 331
+										"id": 332
 									},
 									{
 										"type": "reference",
 										"name": "DomaiEventPayload",
-										"id": 332
+										"id": 333
 									},
 									{
 										"type": "typeParameter",
@@ -13885,7 +13909,7 @@
 							}
 						},
 						{
-							"id": 380,
+							"id": 381,
 							"name": "EventDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -13909,7 +13933,7 @@
 					],
 					"parameters": [
 						{
-							"id": 381,
+							"id": 382,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13917,7 +13941,7 @@
 							"type": {
 								"type": "reference",
 								"name": "EmissionInterfaceConfiguration",
-								"id": 367,
+								"id": 368,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -13925,7 +13949,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -13934,17 +13958,17 @@
 										"constraint": {
 											"type": "reference",
 											"name": "DomainEventTypeFactory",
-											"id": 322,
+											"id": 323,
 											"typeArguments": [
 												{
 													"type": "reference",
 													"name": "DomainEventName",
-													"id": 331
+													"id": 332
 												},
 												{
 													"type": "reference",
 													"name": "DomaiEventPayload",
-													"id": 332
+													"id": 333
 												},
 												{
 													"type": "typeParameter",
@@ -13968,7 +13992,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -13977,17 +14001,17 @@
 								"constraint": {
 									"type": "reference",
 									"name": "DomainEventTypeFactory",
-									"id": 322,
+									"id": 323,
 									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "DomainEventName",
-											"id": 331
+											"id": 332
 										},
 										{
 											"type": "reference",
 											"name": "DomaiEventPayload",
-											"id": 332
+											"id": 333
 										},
 										{
 											"type": "typeParameter",
@@ -14028,7 +14052,7 @@
 			]
 		},
 		{
-			"id": 385,
+			"id": 386,
 			"name": "ErrorInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -14037,14 +14061,14 @@
 			},
 			"signatures": [
 				{
-					"id": 386,
+					"id": 387,
 					"name": "ErrorInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 387,
+							"id": 388,
 							"name": "ErrorTypeFactory",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14068,7 +14092,7 @@
 							}
 						},
 						{
-							"id": 388,
+							"id": 389,
 							"name": "ErrorDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14088,7 +14112,7 @@
 					],
 					"parameters": [
 						{
-							"id": 389,
+							"id": 390,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14096,7 +14120,7 @@
 							"type": {
 								"type": "reference",
 								"name": "ErrorInterfaceConfiguration",
-								"id": 382,
+								"id": 383,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -14177,7 +14201,7 @@
 			]
 		},
 		{
-			"id": 553,
+			"id": 554,
 			"name": "InMemoryEventStore",
 			"kind": 64,
 			"kindString": "Function",
@@ -14187,7 +14211,7 @@
 			},
 			"signatures": [
 				{
-					"id": 554,
+					"id": 555,
 					"name": "InMemoryEventStore",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -14195,7 +14219,7 @@
 					"type": {
 						"type": "reference",
 						"name": "EventStore",
-						"id": 501
+						"id": 502
 					}
 				}
 			],
@@ -14208,7 +14232,7 @@
 			]
 		},
 		{
-			"id": 568,
+			"id": 569,
 			"name": "InMemorySnapshotService",
 			"kind": 64,
 			"kindString": "Function",
@@ -14218,7 +14242,7 @@
 			},
 			"signatures": [
 				{
-					"id": 569,
+					"id": 570,
 					"name": "InMemorySnapshotService",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -14226,7 +14250,7 @@
 					"type": {
 						"type": "reference",
 						"name": "SnapshotService",
-						"id": 512
+						"id": 513
 					}
 				}
 			],
@@ -14239,7 +14263,7 @@
 			]
 		},
 		{
-			"id": 397,
+			"id": 398,
 			"name": "QueryInterface",
 			"kind": 64,
 			"kindString": "Function",
@@ -14248,14 +14272,14 @@
 			},
 			"signatures": [
 				{
-					"id": 398,
+					"id": 399,
 					"name": "QueryInterface",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 399,
+							"id": 400,
 							"name": "State",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14263,11 +14287,11 @@
 							"type": {
 								"type": "reference",
 								"name": "AggregateState",
-								"id": 282
+								"id": 283
 							}
 						},
 						{
-							"id": 400,
+							"id": 401,
 							"name": "Query",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14300,7 +14324,7 @@
 							}
 						},
 						{
-							"id": 401,
+							"id": 402,
 							"name": "QueryDictionary",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14324,7 +14348,7 @@
 					],
 					"parameters": [
 						{
-							"id": 402,
+							"id": 403,
 							"name": "config",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14332,7 +14356,7 @@
 							"type": {
 								"type": "reference",
 								"name": "QueryInterfaceConfiguration",
-								"id": 390,
+								"id": 391,
 								"typeArguments": [
 									{
 										"type": "typeParameter",
@@ -14340,7 +14364,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "AggregateState",
-											"id": 282
+											"id": 283
 										}
 									},
 									{
@@ -14388,7 +14412,7 @@
 								"constraint": {
 									"type": "reference",
 									"name": "AggregateState",
-									"id": 282
+									"id": 283
 								}
 							},
 							{
@@ -14453,7 +14477,7 @@
 			]
 		},
 		{
-			"id": 616,
+			"id": 617,
 			"name": "Repository",
 			"kind": 64,
 			"kindString": "Function",
@@ -14462,14 +14486,14 @@
 			},
 			"signatures": [
 				{
-					"id": 617,
+					"id": 618,
 					"name": "Repository",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 618,
+							"id": 619,
 							"name": "AggregateInstance",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -14477,13 +14501,13 @@
 							"type": {
 								"type": "reference",
 								"name": "GenericAggregateInstance",
-								"id": 284
+								"id": 285
 							}
 						}
 					],
 					"parameters": [
 						{
-							"id": 619,
+							"id": 620,
 							"name": "definition",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14491,14 +14515,14 @@
 							"type": {
 								"type": "reference",
 								"name": "RepositoryDefinition",
-								"id": 522
+								"id": 523
 							}
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "RepositoryInstance",
-						"id": 526,
+						"id": 527,
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -14510,7 +14534,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "GenericAggregateInstance",
-											"id": 284
+											"id": 285
 										}
 									}
 								]
@@ -14528,7 +14552,7 @@
 			]
 		},
 		{
-			"id": 439,
+			"id": 440,
 			"name": "areAllValidSerializedDomainEvents",
 			"kind": 64,
 			"kindString": "Function",
@@ -14537,14 +14561,14 @@
 			},
 			"signatures": [
 				{
-					"id": 440,
+					"id": 441,
 					"name": "areAllValidSerializedDomainEvents",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 441,
+							"id": 442,
 							"name": "events",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14576,7 +14600,7 @@
 			]
 		},
 		{
-			"id": 403,
+			"id": 404,
 			"name": "getAggregateName",
 			"kind": 64,
 			"kindString": "Function",
@@ -14586,14 +14610,14 @@
 			},
 			"signatures": [
 				{
-					"id": 404,
+					"id": 405,
 					"name": "getAggregateName",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 405,
+							"id": 406,
 							"name": "type",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14604,7 +14628,7 @@
 							}
 						},
 						{
-							"id": 406,
+							"id": 407,
 							"name": "identity",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14630,14 +14654,14 @@
 					}
 				},
 				{
-					"id": 555,
+					"id": 556,
 					"name": "getAggregateName",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 556,
+							"id": 557,
 							"name": "__namedParameters",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14646,14 +14670,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 557,
+									"id": 558,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 558,
+											"id": 559,
 											"name": "context",
 											"kind": 32,
 											"kindString": "Variable",
@@ -14671,7 +14695,7 @@
 											}
 										},
 										{
-											"id": 560,
+											"id": 561,
 											"name": "identity",
 											"kind": 32,
 											"kindString": "Variable",
@@ -14698,7 +14722,7 @@
 											}
 										},
 										{
-											"id": 559,
+											"id": 560,
 											"name": "type",
 											"kind": 32,
 											"kindString": "Variable",
@@ -14721,9 +14745,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												558,
-												560,
-												559
+												559,
+												561,
+												560
 											]
 										}
 									],
@@ -14936,7 +14960,7 @@
 			]
 		},
 		{
-			"id": 416,
+			"id": 417,
 			"name": "getSnaphotKey",
 			"kind": 64,
 			"kindString": "Function",
@@ -14949,7 +14973,7 @@
 			},
 			"signatures": [
 				{
-					"id": 417,
+					"id": 418,
 					"name": "getSnaphotKey",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -14959,7 +14983,7 @@
 					},
 					"parameters": [
 						{
-							"id": 418,
+							"id": 419,
 							"name": "namespace",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -14973,7 +14997,7 @@
 							}
 						},
 						{
-							"id": 419,
+							"id": 420,
 							"name": "name",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15002,7 +15026,7 @@
 			]
 		},
 		{
-			"id": 412,
+			"id": 413,
 			"name": "getSnaphotNamespace",
 			"kind": 64,
 			"kindString": "Function",
@@ -15015,7 +15039,7 @@
 			},
 			"signatures": [
 				{
-					"id": 413,
+					"id": 414,
 					"name": "getSnaphotNamespace",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -15025,7 +15049,7 @@
 					},
 					"parameters": [
 						{
-							"id": 414,
+							"id": 415,
 							"name": "snapshotPrefix",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15048,7 +15072,7 @@
 							}
 						},
 						{
-							"id": 415,
+							"id": 416,
 							"name": "context",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15083,7 +15107,7 @@
 			]
 		},
 		{
-			"id": 448,
+			"id": 449,
 			"name": "isValidAggregateCommand",
 			"kind": 64,
 			"kindString": "Function",
@@ -15092,14 +15116,14 @@
 			},
 			"signatures": [
 				{
-					"id": 449,
+					"id": 450,
 					"name": "isValidAggregateCommand",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 450,
+							"id": 451,
 							"name": "command",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15125,7 +15149,7 @@
 			]
 		},
 		{
-			"id": 451,
+			"id": 452,
 			"name": "isValidAggregateQuery",
 			"kind": 64,
 			"kindString": "Function",
@@ -15134,14 +15158,14 @@
 			},
 			"signatures": [
 				{
-					"id": 452,
+					"id": 453,
 					"name": "isValidAggregateQuery",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 453,
+							"id": 454,
 							"name": "query",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15167,7 +15191,7 @@
 			]
 		},
 		{
-			"id": 445,
+			"id": 446,
 			"name": "isValidDomainEventConstructor",
 			"kind": 64,
 			"kindString": "Function",
@@ -15176,14 +15200,14 @@
 			},
 			"signatures": [
 				{
-					"id": 446,
+					"id": 447,
 					"name": "isValidDomainEventConstructor",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 447,
+							"id": 448,
 							"name": "ctor",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15209,7 +15233,7 @@
 			]
 		},
 		{
-			"id": 433,
+			"id": 434,
 			"name": "isValidIdentity",
 			"kind": 64,
 			"kindString": "Function",
@@ -15218,14 +15242,14 @@
 			},
 			"signatures": [
 				{
-					"id": 434,
+					"id": 435,
 					"name": "isValidIdentity",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 435,
+							"id": 436,
 							"name": "str",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15293,7 +15317,7 @@
 			]
 		},
 		{
-			"id": 442,
+			"id": 443,
 			"name": "isValidSerializedDomainEvent",
 			"kind": 64,
 			"kindString": "Function",
@@ -15302,14 +15326,14 @@
 			},
 			"signatures": [
 				{
-					"id": 443,
+					"id": 444,
 					"name": "isValidSerializedDomainEvent",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 444,
+							"id": 445,
 							"name": "event",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15335,7 +15359,7 @@
 			]
 		},
 		{
-			"id": 436,
+			"id": 437,
 			"name": "isValidSnapshot",
 			"kind": 64,
 			"kindString": "Function",
@@ -15344,14 +15368,14 @@
 			},
 			"signatures": [
 				{
-					"id": 437,
+					"id": 438,
 					"name": "isValidSnapshot",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 438,
+							"id": 439,
 							"name": "snapshot",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15377,7 +15401,7 @@
 			]
 		},
 		{
-			"id": 561,
+			"id": 562,
 			"name": "padLeftWithZeroes",
 			"kind": 64,
 			"kindString": "Function",
@@ -15387,14 +15411,14 @@
 			},
 			"signatures": [
 				{
-					"id": 562,
+					"id": 563,
 					"name": "padLeftWithZeroes",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 563,
+							"id": 564,
 							"name": "i",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15405,7 +15429,7 @@
 							}
 						},
 						{
-							"id": 564,
+							"id": 565,
 							"name": "minLength",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15492,7 +15516,7 @@
 			]
 		},
 		{
-			"id": 570,
+			"id": 571,
 			"name": "toSerial",
 			"kind": 64,
 			"kindString": "Function",
@@ -15501,14 +15525,14 @@
 			},
 			"signatures": [
 				{
-					"id": 571,
+					"id": 572,
 					"name": "toSerial",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 572,
+							"id": 573,
 							"name": "__namedParameters",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15517,14 +15541,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 573,
+									"id": 574,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 574,
+											"id": 575,
 											"name": "context",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15542,7 +15566,7 @@
 											}
 										},
 										{
-											"id": 576,
+											"id": 577,
 											"name": "identity",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15569,7 +15593,7 @@
 											}
 										},
 										{
-											"id": 575,
+											"id": 576,
 											"name": "type",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15592,9 +15616,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												574,
-												576,
-												575
+												575,
+												577,
+												576
 											]
 										}
 									],
@@ -15624,7 +15648,7 @@
 			]
 		},
 		{
-			"id": 408,
+			"id": 409,
 			"name": "tuple",
 			"kind": 64,
 			"kindString": "Function",
@@ -15634,14 +15658,14 @@
 			},
 			"signatures": [
 				{
-					"id": 409,
+					"id": 410,
 					"name": "tuple",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 410,
+							"id": 411,
 							"name": "T",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -15651,14 +15675,14 @@
 								"elementType": {
 									"type": "reference",
 									"name": "TupleItem",
-									"id": 407
+									"id": 408
 								}
 							}
 						}
 					],
 					"parameters": [
 						{
-							"id": 411,
+							"id": 412,
 							"name": "args",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15673,7 +15697,7 @@
 									"elementType": {
 										"type": "reference",
 										"name": "TupleItem",
-										"id": 407
+										"id": 408
 									}
 								}
 							}
@@ -15694,7 +15718,7 @@
 			]
 		},
 		{
-			"id": 577,
+			"id": 578,
 			"name": "validateAggregatesList",
 			"kind": 64,
 			"kindString": "Function",
@@ -15703,14 +15727,14 @@
 			},
 			"signatures": [
 				{
-					"id": 578,
+					"id": 579,
 					"name": "validateAggregatesList",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 579,
+							"id": 580,
 							"name": "aggregates",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15736,7 +15760,7 @@
 			]
 		},
 		{
-			"id": 425,
+			"id": 426,
 			"name": "validateConstructorProps",
 			"kind": 64,
 			"kindString": "Function",
@@ -15745,14 +15769,14 @@
 			},
 			"signatures": [
 				{
-					"id": 426,
+					"id": 427,
 					"name": "validateConstructorProps",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 427,
+							"id": 428,
 							"name": "__namedParameters",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -15761,14 +15785,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 428,
+									"id": 429,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 429,
+											"id": 430,
 											"name": "events",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15786,7 +15810,7 @@
 											}
 										},
 										{
-											"id": 430,
+											"id": 431,
 											"name": "identity",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15804,7 +15828,7 @@
 											}
 										},
 										{
-											"id": 431,
+											"id": 432,
 											"name": "isSingleton",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15822,7 +15846,7 @@
 											}
 										},
 										{
-											"id": 432,
+											"id": 433,
 											"name": "snapshot",
 											"kind": 32,
 											"kindString": "Variable",
@@ -15845,10 +15869,10 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												429,
 												430,
 												431,
-												432
+												432,
+												433
 											]
 										}
 									],
@@ -15942,30 +15966,30 @@
 			"children": [
 				149,
 				242,
-				493,
+				494,
 				202,
 				105,
 				199,
 				263,
 				139,
-				342,
-				420,
+				343,
+				421,
 				1,
-				296,
-				309,
-				322,
-				367,
+				297,
+				310,
+				323,
+				368,
 				36,
-				382,
-				501,
-				497,
-				390,
-				522,
-				526,
-				293,
-				512,
-				565,
-				454
+				383,
+				502,
+				498,
+				391,
+				523,
+				527,
+				294,
+				513,
+				566,
+				455
 			]
 		},
 		{
@@ -15985,7 +16009,7 @@
 				72,
 				74,
 				91,
-				281,
+				282,
 				131,
 				116,
 				114,
@@ -15993,52 +16017,52 @@
 				128,
 				113,
 				115,
-				282,
-				280,
-				279,
-				177,
 				283,
+				281,
+				280,
+				177,
+				284,
 				5,
 				14,
 				4,
 				17,
 				44,
-				285,
-				332,
-				331,
-				83,
+				286,
 				333,
-				340,
+				332,
+				83,
+				334,
+				341,
 				70,
 				10,
-				284,
-				289,
+				285,
+				290,
 				6,
-				540,
+				541,
 				124,
 				126,
 				60,
-				545,
-				407
+				546,
+				408
 			]
 		},
 		{
 			"title": "Variables",
 			"kind": 32,
 			"children": [
-				459,
-				465,
-				481,
-				580,
+				460,
+				466,
+				482,
+				581,
 				38,
+				459,
+				593,
+				599,
+				587,
+				611,
+				605,
 				458,
-				592,
-				598,
-				586,
-				610,
-				604,
 				457,
-				456,
 				54,
 				23
 			]
@@ -16047,35 +16071,35 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				471,
-				355,
+				472,
+				356,
 				27,
-				487,
-				376,
-				385,
-				553,
-				568,
-				397,
-				616,
-				439,
-				403,
+				488,
+				377,
+				386,
+				554,
+				569,
+				398,
+				617,
+				440,
+				404,
 				49,
 				65,
-				416,
-				412,
-				448,
-				451,
-				445,
-				433,
+				417,
+				413,
+				449,
+				452,
+				446,
+				434,
 				20,
-				442,
-				436,
-				561,
+				443,
+				437,
+				562,
 				32,
-				570,
-				408,
-				577,
-				425,
+				571,
+				409,
+				578,
+				426,
 				24
 			]
 		}
