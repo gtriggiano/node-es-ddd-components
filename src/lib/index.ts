@@ -12,5 +12,6 @@ export * from './DomainEvent'
 export * from './DomainEvent/types'
 
 export * from './Repository'
+export * from './Repository/types'
 
 export * from './utils'
