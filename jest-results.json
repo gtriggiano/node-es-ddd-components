@@ -24,7 +24,7 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1545912628604,
+  "startTime": 1546180525442,
   "success": true,
   "testResults": [
     {
@@ -34,8 +34,8 @@
       "numPassingTests": 25,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631380,
-        "start": 1545912630173
+        "end": 1546180527807,
+        "start": 1546180526836
       },
       "snapshot": {
         "added": 0,
@@ -52,7 +52,7 @@
           "ancestorTitles": [
             "The Aggregate factory"
           ],
-          "duration": 18,
+          "duration": 12,
           "failureMessages": [],
           "fullName": "The Aggregate factory is a function",
           "location": null,
@@ -64,7 +64,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 56,
+          "duration": 52,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition is not an object",
           "location": null,
@@ -76,7 +76,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 10,
+          "duration": 7,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.context is not a string starting with a letter and composed by letters, numbers and underscores only",
           "location": null,
@@ -88,7 +88,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 8,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.type is not a string starting with a letter and composed by letters, numbers and underscores only",
           "location": null,
@@ -100,7 +100,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.singleton is neither nil nor a boolean",
           "location": null,
@@ -112,7 +112,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.description is neither nil nor a string",
           "location": null,
@@ -124,7 +124,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 7,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.initialState is not an object",
           "location": null,
@@ -136,7 +136,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 19,
+          "duration": 5,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.snapshotThreshold is neither nil nor an integer > 0",
           "location": null,
@@ -148,7 +148,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.snapshotPrefix is neither nil nor a string",
           "location": null,
@@ -160,7 +160,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 6,
+          "duration": 7,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.[commands|queries|events|errors] are not array",
           "location": null,
@@ -172,7 +172,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.commands are not unique by .name",
           "location": null,
@@ -184,7 +184,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.commands are not all valid commands",
           "location": null,
@@ -196,7 +196,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.queries are not unique by .name",
           "location": null,
@@ -208,7 +208,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 6,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.queries are not all valid queries",
           "location": null,
@@ -220,7 +220,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 9,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.events are not unique by .type",
           "location": null,
@@ -232,7 +232,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.errors are not unique by .name",
           "location": null,
@@ -244,7 +244,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 7,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.serializeState is neither nil nor a function",
           "location": null,
@@ -256,7 +256,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when:"
           ],
-          "duration": 7,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) throws `BadAggregateDefinition` when: definition.deserializeState is neither nil nor a function",
           "location": null,
@@ -268,7 +268,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 2,
+          "duration": 6,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType is a function",
           "location": null,
@@ -280,7 +280,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.name === definition.type",
           "location": null,
@@ -304,7 +304,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 3,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.type === definition.type",
           "location": null,
@@ -316,7 +316,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.description === definition.description || ``",
           "location": null,
@@ -340,7 +340,7 @@
           "ancestorTitles": [
             "Aggregate(definition: AggregateDefinition) returns an AggregateType factory"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "Aggregate(definition: AggregateDefinition) returns an AggregateType factory AggregateType.toString() === `[Function ${definition.context}:${definition.type}]`",
           "location": null,
@@ -350,7 +350,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -385,8 +385,8 @@
       "numPassingTests": 22,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631375,
-        "start": 1545912630194
+        "end": 1546180527736,
+        "start": 1546180526820
       },
       "snapshot": {
         "added": 0,
@@ -403,7 +403,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 84,
+          "duration": 72,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when: identity is neither nil nor a string",
           "location": null,
@@ -415,7 +415,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when: identity is undefined and aggregate is NOT a singleton",
           "location": null,
@@ -427,7 +427,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 3,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when: identity is a string and aggregate is a singleton",
           "location": null,
@@ -439,7 +439,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 10,
+          "duration": 7,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when: snapshot is neither falsy nor a valid snapshot object",
           "location": null,
@@ -451,7 +451,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when:"
           ],
-          "duration": 12,
+          "duration": 6,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) throws `BadAggregateConstruction` when: events is neither falsy nor an array of serialized domain events recognized by the aggregate",
           "location": null,
@@ -463,7 +463,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate is recognized as an `instanceof AggregateType`",
           "location": null,
@@ -475,7 +475,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.context === AggregateType.context",
           "location": null,
@@ -487,7 +487,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.type === AggregateType.type",
           "location": null,
@@ -499,7 +499,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.identity === identity",
           "location": null,
@@ -511,7 +511,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.version is a number",
           "location": null,
@@ -523,7 +523,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.needsSnapshot is a boolean",
           "location": null,
@@ -535,7 +535,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 15,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.snapshotKey is a string: [{definition.snapshotPrefix}:]AGGREGATE_SNAPSHOT:{definition.context}:{definition.type}[(id)]",
           "location": null,
@@ -547,7 +547,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 4,
+          "duration": 5,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.query is a dictionary of functions keyed by definition.queries[*].name",
           "location": null,
@@ -559,7 +559,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.execute is a dictionary of functions keyed by definition.commands[*].name",
           "location": null,
@@ -571,7 +571,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.appendEvents is a function",
           "location": null,
@@ -595,7 +595,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.New is a function",
           "location": null,
@@ -607,7 +607,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.isDirty is a function",
           "location": null,
@@ -619,7 +619,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.getNewEvents is a function",
           "location": null,
@@ -631,7 +631,7 @@
           "ancestorTitles": [
             "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "AggregateType(identity: AggregateIdentity, snapshot?: AggregateSnapshot, events?: SerializedDomainEvent[]) returns an `aggregate` instance aggregate.getConsistencyPolicy is a function",
           "location": null,
@@ -665,7 +665,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -700,8 +700,8 @@
       "numPassingTests": 21,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631300,
-        "start": 1545912630170
+        "end": 1546180527723,
+        "start": 1546180526811
       },
       "snapshot": {
         "added": 0,
@@ -718,7 +718,7 @@
           "ancestorTitles": [
             "aggregate.version"
           ],
-          "duration": 26,
+          "duration": 20,
           "failureMessages": [],
           "fullName": "aggregate.version it is calculated as ((snapshot && snapshot.version) || 0) + ((events && events.length) || 0)",
           "location": null,
@@ -742,7 +742,7 @@
           "ancestorTitles": [
             "aggregate.needsSnapshot"
           ],
-          "duration": 5,
+          "duration": 10,
           "failureMessages": [],
           "fullName": "aggregate.needsSnapshot is true if aggregate was rebuilt from a number of events >= of definition.snapshotThreshold",
           "location": null,
@@ -754,7 +754,7 @@
           "ancestorTitles": [
             "aggregate.needsSnapshot"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "aggregate.needsSnapshot is always false if a snapshotThreshold was not specified in definition",
           "location": null,
@@ -766,7 +766,7 @@
           "ancestorTitles": [
             "aggregate.query"
           ],
-          "duration": 4,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "aggregate.query is a dictionary of functions keyed by definition.queries[*].name",
           "location": null,
@@ -778,7 +778,7 @@
           "ancestorTitles": [
             "aggregate.query"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "aggregate.query every query[queryName](input: any) maps to the corresponding query handler. Current aggregate state is passed as first argument, while `input` as second argument",
           "location": null,
@@ -802,7 +802,7 @@
           "ancestorTitles": [
             "aggregate.execute"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "aggregate.execute is a dictionary of functions keyed by definition.commands[*].name",
           "location": null,
@@ -814,7 +814,7 @@
           "ancestorTitles": [
             "aggregate.execute"
           ],
-          "duration": 5,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "aggregate.execute every aggregate.execute[commandName](input: any) maps to the corresponding command handler. `input` is passed as first argument while a CommandHandlerInterface as second argument",
           "location": null,
@@ -826,7 +826,7 @@
           "ancestorTitles": [
             "aggregate.execute"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "aggregate.execute aggregate.execute[commandName](input: any) does not catch errors thrown by the corresponding command handler",
           "location": null,
@@ -838,7 +838,7 @@
           "ancestorTitles": [
             "aggregate.appendEvents(events: SerializedDomainEvent[]): AggregateInstance "
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "aggregate.appendEvents(events: SerializedDomainEvent[]): AggregateInstance  returns a new instance of the same aggregate with events appended to its history",
           "location": null,
@@ -850,7 +850,7 @@
           "ancestorTitles": [
             "aggregate.clone(): AggregateInstance"
           ],
-          "duration": 5,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "aggregate.clone(): AggregateInstance returns another instance of the same aggregate, as it was before producing any event",
           "location": null,
@@ -862,7 +862,7 @@
           "ancestorTitles": [
             "aggregate.New"
           ],
-          "duration": 4,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "aggregate.New is a reference to the AggregateType factory which generated the instance",
           "location": null,
@@ -874,7 +874,7 @@
           "ancestorTitles": [
             "aggregate.isDirty(): boolen"
           ],
-          "duration": 2,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "aggregate.isDirty(): boolen returns true if aggregate produced new events, false otherwise",
           "location": null,
@@ -886,7 +886,7 @@
           "ancestorTitles": [
             "aggregate.isDirty(): boolen"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "aggregate.isDirty(): boolen returns false if aggregate did not produce new events",
           "location": null,
@@ -898,7 +898,7 @@
           "ancestorTitles": [
             "aggregate.getNewEvents(): DomainEventInstance[]"
           ],
-          "duration": 4,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "aggregate.getNewEvents(): DomainEventInstance[] returns the list of produced events",
           "location": null,
@@ -910,7 +910,7 @@
           "ancestorTitles": [
             "aggregate.consistencyPolicy(): ConsistencyPolicy"
           ],
-          "duration": 4,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "aggregate.consistencyPolicy(): ConsistencyPolicy returns the consistency policy to use to persist the new events. defaults to 0.",
           "location": null,
@@ -934,7 +934,7 @@
           "ancestorTitles": [
             "aggregate.getSnapshot(): AggregateSnapshot"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "aggregate.getSnapshot(): AggregateSnapshot returns a snapshot of the aggregate as it was before producing new events",
           "location": null,
@@ -946,7 +946,7 @@
           "ancestorTitles": [
             "aggregate.toString(): string"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "aggregate.toString(): string returns `[object {context}:{type}(identity) #{version}+{newEvents.length}]` if aggregate is not a singleton",
           "location": null,
@@ -958,7 +958,7 @@
           "ancestorTitles": [
             "aggregate.toString(): string"
           ],
-          "duration": 11,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "aggregate.toString(): string returns `[object {context}:{type} #{version}+{newEvents.length}]` if aggregate is a singleton",
           "location": null,
@@ -968,7 +968,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1003,8 +1003,8 @@
       "numPassingTests": 10,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631278,
-        "start": 1545912630213
+        "end": 1546180527720,
+        "start": 1546180526858
       },
       "snapshot": {
         "added": 0,
@@ -1035,7 +1035,7 @@
             "The CommandHandlerInterface object",
             "interface.error"
           ],
-          "duration": 8,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "The CommandHandlerInterface object interface.error is a dictionary of functions keyed by the intersection of aggregate definition.errors[*].name and command definition.raisableErrors",
           "location": null,
@@ -1048,7 +1048,7 @@
             "The CommandHandlerInterface object",
             "interface.error"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "The CommandHandlerInterface object interface.error every value of the dictionary is one member of the aggregate definition.errors[] list",
           "location": null,
@@ -1075,7 +1075,7 @@
             "interface.emit",
             "interface.emit.SomethingHappened(payload?: any)"
           ],
-          "duration": 6,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "The CommandHandlerInterface object interface.emit interface.emit.SomethingHappened(payload?: any) a SomethingHappened event instance is added to the list of the produced events. event.payload === payload",
           "location": null,
@@ -1089,7 +1089,7 @@
             "interface.emit",
             "interface.emit.SomethingHappened(payload?: any)"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "The CommandHandlerInterface object interface.emit interface.emit.SomethingHappened(payload?: any) the aggregate internal state is updated through the produced event reducer",
           "location": null,
@@ -1103,7 +1103,7 @@
             "interface.emit",
             "interface.emit.SomethingHappened(payload?: any)"
           ],
-          "duration": 8,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "The CommandHandlerInterface object interface.emit interface.emit.SomethingHappened(payload?: any) the aggregate version does not change",
           "location": null,
@@ -1131,7 +1131,7 @@
             "interface.emit",
             "interface.emit.SomethingHappened(payload?: any, SOFT_CONSISTENCY_POLICY)"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "The CommandHandlerInterface object interface.emit interface.emit.SomethingHappened(payload?: any, SOFT_CONSISTENCY_POLICY) aggregate internal consistency policy is set to SOFT_CONSISTENCY_POLICY if no events were emitted before with `undefined` or STRICT_CONSISTENCY_POLICY, otherwise it remains equal to STRICT_CONSISTENCY_POLICY",
           "location": null,
@@ -1145,7 +1145,7 @@
             "interface.emit",
             "interface.emit.SomethingHappened(payload?: any, NO_CONSISTENCY_POLICY)"
           ],
-          "duration": 5,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "The CommandHandlerInterface object interface.emit interface.emit.SomethingHappened(payload?: any, NO_CONSISTENCY_POLICY) aggregate internal consistency policy is set to NO_CONSISTENCY_POLICY if no events were emitted before with `undefined`, STRICT_CONSISTENCY_POLICY or SOFT_CONSISTENCY_POLICY, otherwise it remains equal to either STRICT_CONSISTENCY_POLICY or SOFT_CONSISTENCY_POLICY",
           "location": null,
@@ -1155,7 +1155,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1190,8 +1190,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631655,
-        "start": 1545912631455
+        "end": 1546180528035,
+        "start": 1546180527843
       },
       "snapshot": {
         "added": 0,
@@ -1208,7 +1208,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 21,
+          "duration": 17,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) error is an instance of Error",
           "location": null,
@@ -1232,7 +1232,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) error.message === message || ErrorType.name",
           "location": null,
@@ -1244,7 +1244,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) error.data === data",
           "location": null,
@@ -1256,7 +1256,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) customErrorType.stack is populated",
           "location": null,
@@ -1280,7 +1280,7 @@
           "ancestorTitles": [
             "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data])"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "error = ErrorType([message] [, data]) or error = new ErrorType([message] [, data]) the second line of the stack refers to the file where you invoke CustomErrorType()",
           "location": null,
@@ -1290,7 +1290,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1325,8 +1325,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631610,
-        "start": 1545912631416
+        "end": 1546180528065,
+        "start": 1546180527880
       },
       "snapshot": {
         "added": 0,
@@ -1343,7 +1343,7 @@
           "ancestorTitles": [
             "The CustomError() factory"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "The CustomError() factory is a function",
           "location": null,
@@ -1367,7 +1367,7 @@
           "ancestorTitles": [
             "CustomError(definition) throws `TypeError` when:"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "CustomError(definition) throws `TypeError` when: definition.name is not a string starting with a letter and composed by letters, numbers and underscores only",
           "location": null,
@@ -1403,7 +1403,7 @@
           "ancestorTitles": [
             "CustomError(definition) returns an ErrorType() factory"
           ],
-          "duration": 11,
+          "duration": 10,
           "failureMessages": [],
           "fullName": "CustomError(definition) returns an ErrorType() factory ErrorType is an error constructor",
           "location": null,
@@ -1425,7 +1425,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1460,8 +1460,8 @@
       "numPassingTests": 5,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631193,
-        "start": 1545912630233
+        "end": 1546180527657,
+        "start": 1546180526873
       },
       "snapshot": {
         "added": 0,
@@ -1478,7 +1478,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 11,
+          "duration": 15,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType.name === EventType.name",
           "location": null,
@@ -1490,7 +1490,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType.data === payload",
           "location": null,
@@ -1514,7 +1514,7 @@
           "ancestorTitles": [
             "An eventType instance. eventType = EventType(payload)"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "An eventType instance. eventType = EventType(payload) eventType.applyToState(state) returns definition.reducer(state, eventType)",
           "location": null,
@@ -1536,7 +1536,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1571,8 +1571,8 @@
       "numPassingTests": 6,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631236,
-        "start": 1545912630223
+        "end": 1546180527682,
+        "start": 1546180526860
       },
       "snapshot": {
         "added": 0,
@@ -1589,7 +1589,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 48,
+          "duration": 31,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition is not an object",
           "location": null,
@@ -1601,7 +1601,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 5,
+          "duration": 10,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.name is not a valid name",
           "location": null,
@@ -1613,7 +1613,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 6,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.description is neither nnil nor a string",
           "location": null,
@@ -1625,7 +1625,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 2,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.reducer is not a function",
           "location": null,
@@ -1649,7 +1649,7 @@
           "ancestorTitles": [
             "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when:"
           ],
-          "duration": 4,
+          "duration": 8,
           "failureMessages": [],
           "fullName": "Domain event definition validation. DomainEvent(definition) throws `BadDomainEventDefinition` when: definition.deserializePayload is neither nil nor a function",
           "location": null,
@@ -1659,7 +1659,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1694,8 +1694,8 @@
       "numPassingTests": 2,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631958,
-        "start": 1545912631772
+        "end": 1546180528287,
+        "start": 1546180528134
       },
       "snapshot": {
         "added": 0,
@@ -1712,7 +1712,7 @@
           "ancestorTitles": [
             "The DomainEvent factory. DomainEvent(definition)"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "The DomainEvent factory. DomainEvent(definition) is a function",
           "location": null,
@@ -1734,7 +1734,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1769,8 +1769,8 @@
       "numPassingTests": 5,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631686,
-        "start": 1545912631513
+        "end": 1546180528374,
+        "start": 1546180528225
       },
       "snapshot": {
         "added": 0,
@@ -1787,7 +1787,7 @@
           "ancestorTitles": [
             "An EventType factory. EventType = DomainEvent(definition)"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "An EventType factory. EventType = DomainEvent(definition) EventType is a function",
           "location": null,
@@ -1799,7 +1799,7 @@
           "ancestorTitles": [
             "An EventType factory. EventType = DomainEvent(definition)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "An EventType factory. EventType = DomainEvent(definition) EventType.name === definition.name",
           "location": null,
@@ -1845,7 +1845,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -1880,8 +1880,8 @@
       "numPassingTests": 6,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631214,
-        "start": 1545912630196
+        "end": 1546180527661,
+        "start": 1546180526821
       },
       "snapshot": {
         "added": 0,
@@ -1910,7 +1910,7 @@
           "ancestorTitles": [
             "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when:"
           ],
-          "duration": 38,
+          "duration": 29,
           "failureMessages": [],
           "fullName": "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when: definition is not an object",
           "location": null,
@@ -1922,7 +1922,7 @@
           "ancestorTitles": [
             "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when:"
           ],
-          "duration": 9,
+          "duration": 6,
           "failureMessages": [],
           "fullName": "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when: definition.eventStore is not an EventStore",
           "location": null,
@@ -1934,7 +1934,7 @@
           "ancestorTitles": [
             "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when:"
           ],
-          "duration": 14,
+          "duration": 8,
           "failureMessages": [],
           "fullName": "Repository(definition: RepositoryDefinition) throws `BadRepositoryDefinition` when: definition.snapshotService is neither falsy nor a SnapshotService",
           "location": null,
@@ -1946,7 +1946,7 @@
           "ancestorTitles": [
             "Repository(definition) returns a `respository` instance"
           ],
-          "duration": 6,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "Repository(definition) returns a `respository` instance repository.load is a function",
           "location": null,
@@ -1968,7 +1968,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2003,8 +2003,8 @@
       "numPassingTests": 13,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631382,
-        "start": 1545912630222
+        "end": 1546180527794,
+        "start": 1546180526825
       },
       "snapshot": {
         "added": 0,
@@ -2021,7 +2021,7 @@
           "ancestorTitles": [
             "Throwing cases"
           ],
-          "duration": 83,
+          "duration": 90,
           "failureMessages": [],
           "fullName": "Throwing cases throws `RepositoryBadAggregatesListProvided` if `aggregates` is not a list of valid aggregate instances unique by context, type and identity",
           "location": null,
@@ -2033,7 +2033,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Returned value is a promise",
           "location": null,
@@ -2045,7 +2045,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 18,
+          "duration": 13,
           "failureMessages": [],
           "fullName": "Returned value promised value is a list of rebuilt aggregate instances",
           "location": null,
@@ -2057,7 +2057,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Returned value the order of entities received as argument in mantained in the returned list",
           "location": null,
@@ -2069,7 +2069,7 @@
           "ancestorTitles": [
             "Interaction with `snapshotService`"
           ],
-          "duration": 4,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Interaction with `snapshotService` calls snapshotService.loadAggregateSnapshot(aggregate.snapshotKey)",
           "location": null,
@@ -2117,7 +2117,7 @@
           "ancestorTitles": [
             "Behaviour in case of snapshotService.saveAggregateSnapshot() failure"
           ],
-          "duration": 13,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Behaviour in case of snapshotService.saveAggregateSnapshot() failure DOES NOT FAIL",
           "location": null,
@@ -2130,7 +2130,7 @@
             "Interaction with `eventStore`",
             "When a `snapshotService` is not specified in the repository definition"
           ],
-          "duration": 6,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` When a `snapshotService` is not specified in the repository definition calls eventStore.getEventsOfAggregate(aggregate, 0)",
           "location": null,
@@ -2143,7 +2143,7 @@
             "Interaction with `eventStore`",
             "When a snapshot HAS NOT been retrieved through snapshotService"
           ],
-          "duration": 5,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` When a snapshot HAS NOT been retrieved through snapshotService calls eventStore.getEventsOfAggregate(aggregate, 0)",
           "location": null,
@@ -2156,7 +2156,7 @@
             "Interaction with `eventStore`",
             "When a `snapshot` has been retrieved through snapshotService"
           ],
-          "duration": 5,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` When a `snapshot` has been retrieved through snapshotService calls eventStore.getEventsOfAggregate(aggregate, snapshot.version)",
           "location": null,
@@ -2168,7 +2168,7 @@
           "ancestorTitles": [
             "Behaviour in case of eventStore.getEventsOfAggregate() failure with `error`"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Behaviour in case of eventStore.getEventsOfAggregate() failure with `error` FAILS with `RepositoryEventsLoadError`. error.data.originalError === error",
           "location": null,
@@ -2178,7 +2178,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2213,8 +2213,8 @@
       "numPassingTests": 15,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631430,
-        "start": 1545912630227
+        "end": 1546180527778,
+        "start": 1546180526811
       },
       "snapshot": {
         "added": 0,
@@ -2231,7 +2231,7 @@
           "ancestorTitles": [
             "Throwing cases"
           ],
-          "duration": 100,
+          "duration": 83,
           "failureMessages": [],
           "fullName": "Throwing cases throws `RepositoryBadAggregatesListProvided` if `aggregates` is not a list of valid aggregate instances unique by context, type and identity",
           "location": null,
@@ -2243,7 +2243,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 16,
+          "duration": 11,
           "failureMessages": [],
           "fullName": "Returned value is a promise of a `result` object with `.aggregates` and `.persistedEvents` keys",
           "location": null,
@@ -2255,7 +2255,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 7,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Returned value result.aggregates is a list of reloaded instances. The order of entities is preserved",
           "location": null,
@@ -2267,7 +2267,7 @@
           "ancestorTitles": [
             "Returned value"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Returned value result.persistedEvents is the value promised by the call to eventStore.appendEventsToAggregates()",
           "location": null,
@@ -2280,7 +2280,7 @@
             "Interaction with `eventStore`",
             "The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string)"
           ],
-          "duration": 7,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) happens if there is at least one dirty aggregate to persist",
           "location": null,
@@ -2293,7 +2293,7 @@
             "Interaction with `eventStore`",
             "The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string)"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) the length of the insertions list is equal to the number of dirty aggregates",
           "location": null,
@@ -2306,7 +2306,7 @@
             "Interaction with `eventStore`",
             "The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string)"
           ],
-          "duration": 5,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) corrId === correlationId || ``",
           "location": null,
@@ -2320,7 +2320,7 @@
             "The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string)",
             "The insertion: EventStoreInsertion object"
           ],
-          "duration": 6,
+          "duration": 7,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) The insertion: EventStoreInsertion object insertion.aggregate is an object to identify the aggregate: {context, type, identity}",
           "location": null,
@@ -2334,7 +2334,7 @@
             "The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string)",
             "The insertion: EventStoreInsertion object"
           ],
-          "duration": 3,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) The insertion: EventStoreInsertion object insertion.eventsToAppend is the list of aggregate.getNewEvents(), but each event's `.payload` is serialized",
           "location": null,
@@ -2349,7 +2349,7 @@
             "The insertion: EventStoreInsertion object",
             "insertion.expectedAggregateVersion"
           ],
-          "duration": 4,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) The insertion: EventStoreInsertion object insertion.expectedAggregateVersion === aggregate.version if aggregate.getConsistencyPolicy === STRICT_CONSISTENCY_POLICY",
           "location": null,
@@ -2364,7 +2364,7 @@
             "The insertion: EventStoreInsertion object",
             "insertion.expectedAggregateVersion"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) The insertion: EventStoreInsertion object insertion.expectedAggregateVersion === -1 if aggregate.getConsistencyPolicy === SOFT_CONSISTENCY_POLICY",
           "location": null,
@@ -2379,7 +2379,7 @@
             "The insertion: EventStoreInsertion object",
             "insertion.expectedAggregateVersion"
           ],
-          "duration": 5,
+          "duration": 4,
           "failureMessages": [],
           "fullName": "Interaction with `eventStore` The call to eventStore.appendEventsToAggregates(insertions: EventStoreInsertion[], corrId: string) The insertion: EventStoreInsertion object insertion.expectedAggregateVersion === -2 if aggregate.getConsistencyPolicy === NO_CONSISTENCY_POLICY",
           "location": null,
@@ -2391,7 +2391,7 @@
           "ancestorTitles": [
             "Behaviour in case of eventStore.appendEventsToAggregates() failure with `error`"
           ],
-          "duration": 16,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Behaviour in case of eventStore.appendEventsToAggregates() failure with `error` fails with `RepositoryWriteError` exposing the eventStore error at error.data.originalError",
           "location": null,
@@ -2403,7 +2403,7 @@
           "ancestorTitles": [
             "Behaviour in case of eventStore.appendEventsToAggregates() failure with `error`"
           ],
-          "duration": 4,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "Behaviour in case of eventStore.appendEventsToAggregates() failure with `error` if error.concurrency === true fails with `RepositoryWriteConcurrencyError` exposing the eventStore error at error.data.originalError",
           "location": null,
@@ -2425,7 +2425,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2460,8 +2460,8 @@
       "numPassingTests": 3,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631868,
-        "start": 1545912631674
+        "end": 1546180528135,
+        "start": 1546180527965
       },
       "snapshot": {
         "added": 0,
@@ -2478,7 +2478,7 @@
           "ancestorTitles": [
             "The InMemorySnapshotService factory"
           ],
-          "duration": 1,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "The InMemorySnapshotService factory is a function",
           "location": null,
@@ -2512,7 +2512,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2547,8 +2547,8 @@
       "numPassingTests": 2,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631990,
-        "start": 1545912631810
+        "end": 1546180528105,
+        "start": 1546180527934
       },
       "snapshot": {
         "added": 0,
@@ -2577,7 +2577,7 @@
           "ancestorTitles": [
             "An InMemorySnapshotService instance `mss`"
           ],
-          "duration": 1,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "An InMemorySnapshotService instance `mss` mss.loadAggregateSnapshot works as expected",
           "location": null,
@@ -2587,7 +2587,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2622,8 +2622,8 @@
       "numPassingTests": 3,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631925,
-        "start": 1545912631732
+        "end": 1546180528171,
+        "start": 1546180527991
       },
       "snapshot": {
         "added": 0,
@@ -2640,7 +2640,7 @@
           "ancestorTitles": [
             "The InMemoryEventStore factory"
           ],
-          "duration": 1,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "The InMemoryEventStore factory is a function",
           "location": null,
@@ -2652,7 +2652,7 @@
           "ancestorTitles": [
             "InMemoryEventStore() return an eventStore instance"
           ],
-          "duration": 0,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "InMemoryEventStore() return an eventStore instance eventStore.getEventsOfAggregate is a function",
           "location": null,
@@ -2674,7 +2674,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2709,8 +2709,8 @@
       "numPassingTests": 5,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631733,
-        "start": 1545912631549
+        "end": 1546180528254,
+        "start": 1546180528063
       },
       "snapshot": {
         "added": 0,
@@ -2728,7 +2728,7 @@
             "An InMemoryEventStore instance `es`",
             "es.appendEventsToAggregates(insertions: EventStoreInsertion[], correlationId: string)"
           ],
-          "duration": 12,
+          "duration": 6,
           "failureMessages": [],
           "fullName": "An InMemoryEventStore instance `es` es.appendEventsToAggregates(insertions: EventStoreInsertion[], correlationId: string) respects expectedAggregateVersion === -1 and expectedAggregateVersion === -2 meanings",
           "location": null,
@@ -2741,7 +2741,7 @@
             "An InMemoryEventStore instance `es`",
             "es.appendEventsToAggregates(insertions: EventStoreInsertion[], correlationId: string)"
           ],
-          "duration": 1,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "An InMemoryEventStore instance `es` es.appendEventsToAggregates(insertions: EventStoreInsertion[], correlationId: string) rejects with an error decorated with .concurrency = true if there is a concurrency issue",
           "location": null,
@@ -2754,7 +2754,7 @@
             "An InMemoryEventStore instance `es`",
             "es.appendEventsToAggregates(insertions: EventStoreInsertion[], correlationId: string)"
           ],
-          "duration": 4,
+          "duration": 3,
           "failureMessages": [],
           "fullName": "An InMemoryEventStore instance `es` es.appendEventsToAggregates(insertions: EventStoreInsertion[], correlationId: string) return the promise of a PersistedDomainEvent[] collection",
           "location": null,
@@ -2790,7 +2790,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2825,8 +2825,8 @@
       "numPassingTests": 3,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631822,
-        "start": 1545912631635
+        "end": 1546180528207,
+        "start": 1546180528033
       },
       "snapshot": {
         "added": 0,
@@ -2843,7 +2843,7 @@
           "ancestorTitles": [
             "padLeftWithZeroes(s: string, minLength: number): string"
           ],
-          "duration": 3,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "padLeftWithZeroes(s: string, minLength: number): string is a function",
           "location": null,
@@ -2855,7 +2855,7 @@
           "ancestorTitles": [
             "padLeftWithZeroes(s: string, minLength: number): string"
           ],
-          "duration": 1,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "padLeftWithZeroes(s: string, minLength: number): string returns a string of at least `minLength` chars",
           "location": null,
@@ -2867,7 +2867,7 @@
           "ancestorTitles": [
             "padLeftWithZeroes(s: string, minLength: number): string"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "padLeftWithZeroes(s: string, minLength: number): string pads left `s` with 0s to reach `minLength`. padLeftWithZeroes('hello', 10) === `00000hello`",
           "location": null,
@@ -2877,7 +2877,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -2912,8 +2912,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631194,
-        "start": 1545912630215
+        "end": 1546180527726,
+        "start": 1546180526882
       },
       "snapshot": {
         "added": 0,
@@ -2930,7 +2930,7 @@
           "ancestorTitles": [
             "getDeserializer(deserializer?: function, errorMessage?: string)"
           ],
-          "duration": 8,
+          "duration": 12,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) is a function",
           "location": null,
@@ -2969,7 +2969,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(JSON.parse)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(JSON.parse) deserialize defaults to JSON.parse",
           "location": null,
@@ -2982,7 +2982,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(JSON.parse)"
           ],
-          "duration": 22,
+          "duration": 26,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(JSON.parse) if deserialize() throws, the error is encapsulated in DeserializationError.data.originalError",
           "location": null,
@@ -3008,7 +3008,7 @@
             "getDeserializer(deserializer?: function, errorMessage?: string)",
             "const deserialize = getDeserializer(null, `a message`)"
           ],
-          "duration": 1,
+          "duration": 2,
           "failureMessages": [],
           "fullName": "getDeserializer(deserializer?: function, errorMessage?: string) const deserialize = getDeserializer(null, `a message`) if deserialize() throws the error message is `a message`",
           "location": null,
@@ -3018,7 +3018,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -3053,8 +3053,8 @@
       "numPassingTests": 7,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631227,
-        "start": 1545912630233
+        "end": 1546180527730,
+        "start": 1546180526909
       },
       "snapshot": {
         "added": 0,
@@ -3071,7 +3071,7 @@
           "ancestorTitles": [
             "getSerializer(serializer?: function, errorMessage?: string)"
           ],
-          "duration": 8,
+          "duration": 7,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) is a function",
           "location": null,
@@ -3097,7 +3097,7 @@
             "getSerializer(serializer?: function, errorMessage?: string)",
             "const serialize = getSerializer(JSON.stringify)"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) const serialize = getSerializer(JSON.stringify) serialize returns the result of serializer",
           "location": null,
@@ -3123,7 +3123,7 @@
             "getSerializer(serializer?: function, errorMessage?: string)",
             "const serialize = getSerializer(JSON.stringify)"
           ],
-          "duration": 36,
+          "duration": 25,
           "failureMessages": [],
           "fullName": "getSerializer(serializer?: function, errorMessage?: string) const serialize = getSerializer(JSON.stringify) if serializer() throws the original error is encapsulated in SerializationError.data.originalError",
           "location": null,
@@ -3159,7 +3159,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -3194,8 +3194,8 @@
       "numPassingTests": 1,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912632017,
-        "start": 1545912631842
+        "end": 1546180528327,
+        "start": 1546180528171
       },
       "snapshot": {
         "added": 0,
@@ -3212,7 +3212,7 @@
           "ancestorTitles": [
             "isValidName(x)"
           ],
-          "duration": 5,
+          "duration": 6,
           "failureMessages": [],
           "fullName": "isValidName(x) return TRUE if x is a string starting with a letter and composed by letters, numbers and underscores only, false otherwise",
           "location": null,
@@ -3222,7 +3222,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -3257,8 +3257,8 @@
       "numPassingTests": 1,
       "numPendingTests": 0,
       "perfStats": {
-        "end": 1545912631781,
-        "start": 1545912631597
+        "end": 1546180528268,
+        "start": 1546180528108
       },
       "snapshot": {
         "added": 0,
@@ -3275,7 +3275,7 @@
           "ancestorTitles": [
             "tuple(...args: any[])"
           ],
-          "duration": 3,
+          "duration": 1,
           "failureMessages": [],
           "fullName": "tuple(...args: any[]) returns the provided arguments as an array",
           "location": null,
@@ -3285,7 +3285,7 @@
         }
       ],
       "sourceMaps": {
-        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e1/index_e1d2d189021c04a6435bacdbb808c947.map",
+        "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/d4/index_d46ba1bfc0dd073b449f6e65fb3ca560.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/Aggregate/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/1f/index_1f9b384a5057f753c91fcb8ca2d2341e.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/index.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/index_e2e8f01ab0fe9c66f7ee36588edcd7a2.map",
         "/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/dist/main/lib/CustomError/validateDefinition.js": "/var/folders/ly/3xdrrvz53lv0g78_93p4tkv80000gn/T/jest_dx/jest-transform-cache-6d1ae2d6532dd7210cb26abc0cc662be-f76fc0f5a340d2e577c36707663f8d56/e2/validateDefinition_e283c2c6ea4f99215470aa106cd84047.map",
@@ -3361,11 +3361,11 @@
         },
         "4": {
           "start": {
-            "line": 16,
+            "line": 17,
             "column": 0
           },
           "end": {
-            "line": 16,
+            "line": 17,
             "column": 23
           }
         }
@@ -5015,7 +5015,7 @@
         "32": 95,
         "33": 95,
         "34": 95,
-        "35": 623,
+        "35": 616,
         "36": 95,
         "37": 168,
         "38": 168,
@@ -5023,8 +5023,8 @@
         "40": 12,
         "41": 156,
         "42": 156,
-        "43": 52,
-        "44": 52,
+        "43": 45,
+        "44": 45,
         "45": 1,
         "46": 1,
         "47": 155,
@@ -5034,12 +5034,12 @@
         "51": 155,
         "52": 155,
         "53": 155,
-        "54": 55,
+        "54": 48,
         "55": 155,
         "56": 155,
-        "57": 71,
-        "58": 71,
-        "59": 71,
+        "57": 64,
+        "58": 64,
+        "59": 64,
         "60": 155,
         "61": 155,
         "62": 3,
@@ -5060,12 +5060,12 @@
       },
       "f": {
         "0": 126,
-        "1": 623,
+        "1": 616,
         "2": 168,
-        "3": 52,
+        "3": 45,
         "4": 1,
-        "5": 55,
-        "6": 71,
+        "5": 48,
+        "6": 64,
         "7": 3,
         "8": 1,
         "9": 32,
@@ -5084,7 +5084,7 @@
           120
         ],
         "1": [
-          51,
+          44,
           1
         ],
         "2": [
@@ -5101,12 +5101,12 @@
           144
         ],
         "5": [
-          26,
+          19,
           45
         ],
         "6": [
-          71,
-          26
+          64,
+          19
         ],
         "7": [
           32,
@@ -5838,17 +5838,17 @@
       },
       "s": {
         "0": 22,
-        "1": 4546,
+        "1": 4538,
         "2": 22,
         "3": 22
       },
       "f": {
-        "0": 4546
+        "0": 4538
       },
       "b": {
         "0": [
-          4546,
-          4536
+          4538,
+          4528
         ]
       }
     },
@@ -6116,14 +6116,14 @@
         "1": 22,
         "2": 166,
         "3": 166,
-        "4": 69,
-        "5": 69,
+        "4": 62,
+        "5": 62,
         "6": 5,
         "7": 22
       },
       "f": {
         "0": 166,
-        "1": 69
+        "1": 62
       },
       "b": {
         "0": [
@@ -6345,14 +6345,14 @@
         "1": 22,
         "2": 166,
         "3": 166,
-        "4": 73,
-        "5": 73,
+        "4": 66,
+        "5": 66,
         "6": 5,
         "7": 22
       },
       "f": {
         "0": 166,
-        "1": 73
+        "1": 66
       },
       "b": {
         "0": [
@@ -6881,7 +6881,7 @@
         "8": 1693,
         "9": 969,
         "10": 969,
-        "11": 78,
+        "11": 71,
         "12": 22
       },
       "f": {
@@ -6889,7 +6889,7 @@
         "1": 969,
         "2": 962,
         "3": 1693,
-        "4": 78
+        "4": 71
       },
       "b": {
         "0": [
@@ -7079,18 +7079,18 @@
         "1": 155,
         "2": 155,
         "3": 977,
-        "4": 71,
+        "4": 64,
         "5": 22
       },
       "f": {
         "0": 155,
         "1": 977,
-        "2": 71
+        "2": 64
       },
       "b": {
         "0": [
-          71,
-          61
+          64,
+          54
         ]
       }
     },
@@ -7340,13 +7340,13 @@
         "1": 155,
         "2": 155,
         "3": 855,
-        "4": 55,
+        "4": 48,
         "5": 22
       },
       "f": {
         "0": 155,
         "1": 855,
-        "2": 55
+        "2": 48
       },
       "b": {}
     },
@@ -8189,9 +8189,9 @@
         "13": 14,
         "14": 22,
         "15": 157,
-        "16": 53,
+        "16": 46,
         "17": 22,
-        "18": 53,
+        "18": 46,
         "19": 22
       },
       "f": {
@@ -8199,8 +8199,8 @@
         "1": 158,
         "2": 14,
         "3": 157,
-        "4": 53,
-        "5": 53
+        "4": 46,
+        "5": 46
       },
       "b": {
         "0": [
@@ -8232,13 +8232,13 @@
           11
         ],
         "6": [
-          53,
-          53
+          46,
+          46
         ],
         "7": [
-          53,
-          52,
-          52
+          46,
+          45,
+          45
         ]
       }
     },
@@ -9545,8 +9545,8 @@
         "22": 112,
         "23": 109,
         "24": 108,
-        "25": 618,
-        "26": 618,
+        "25": 624,
+        "26": 624,
         "27": 108,
         "28": 107,
         "29": 106,
@@ -9559,8 +9559,8 @@
         "36": 105,
         "37": 104,
         "38": 104,
-        "39": 687,
-        "40": 687,
+        "39": 680,
+        "40": 680,
         "41": 104,
         "42": 103,
         "43": 102,
@@ -9568,21 +9568,21 @@
         "45": 97,
         "46": 22,
         "47": 22,
-        "48": 687,
+        "48": 680,
         "49": 22,
         "50": 673,
         "51": 22,
-        "52": 625
+        "52": 631
       },
       "f": {
         "0": 126,
-        "1": 618,
+        "1": 624,
         "2": 665,
         "3": 716,
-        "4": 687,
-        "5": 687,
+        "4": 680,
+        "5": 680,
         "6": 673,
-        "7": 625
+        "7": 631
       },
       "b": {
         "0": [
@@ -9599,9 +9599,9 @@
         ],
         "3": [
           112,
-          109,
-          109,
-          109
+          112,
+          112,
+          112
         ],
         "4": [
           103,
@@ -9621,10 +9621,10 @@
           3
         ],
         "8": [
-          687,
-          687,
-          687,
-          687
+          680,
+          680,
+          680,
+          680
         ],
         "9": [
           673,
@@ -9640,11 +9640,11 @@
           672
         ],
         "10": [
+          631,
+          630,
+          630,
           625,
-          624,
-          624,
-          619,
-          624
+          630
         ]
       }
     },
@@ -10276,15 +10276,15 @@
         "12": 64,
         "13": 64,
         "14": 64,
-        "15": 131,
-        "16": 131,
-        "17": 131,
-        "18": 125,
-        "19": 50,
-        "20": 48,
-        "21": 48,
+        "15": 117,
+        "16": 117,
+        "17": 117,
+        "18": 111,
+        "19": 43,
+        "20": 41,
+        "21": 41,
         "22": 64,
-        "23": 51,
+        "23": 44,
         "24": 3,
         "25": 22,
         "26": 22,
@@ -10292,18 +10292,18 @@
       },
       "f": {
         "0": 78,
-        "1": 131,
-        "2": 125,
-        "3": 50,
-        "4": 48,
-        "5": 51,
+        "1": 117,
+        "2": 111,
+        "3": 43,
+        "4": 41,
+        "5": 44,
         "6": 3,
         "7": 1
       },
       "b": {
         "0": [
-          50,
-          48
+          43,
+          41
         ],
         "1": [
           64,
