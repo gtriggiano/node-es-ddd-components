@@ -471,6 +471,11 @@ export interface AggregateTypeFactory<
   readonly type: TypeName
 
   /**
+   * Tells if aggregate type is a singleton
+   */
+  readonly singleton: boolean
+
+  /**
    * A description of the aggregate.
    */
   readonly description: string

@@ -323,6 +323,7 @@ export function Aggregate<
     context: { value: context, enumerable: true },
     description: { value: description || '' },
     name: { value: type },
+    singleton: { value: singleton },
     toString: { value: () => aggregateCtorToStringOutput },
     type: { value: type },
     [Symbol.hasInstance]: {

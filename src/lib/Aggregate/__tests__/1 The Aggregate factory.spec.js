@@ -207,6 +207,13 @@ describe('Aggregate(definition: AggregateDefinition) returns an AggregateType fa
     const AggregateType = Aggregate(definition)
     expect(AggregateType.type).toBe(definition.type)
   })
+  it('AggregateType.singleton === definition.singleton', () => {
+    const nonSingletonDefinition = { ...definition, singleton: false }
+    const singletonDefinition = { ...definition, singleton: true }
+
+    expect(Aggregate(nonSingletonDefinition).singleton).toBe(false)
+    expect(Aggregate(singletonDefinition).singleton).toBe(true)
+  })
   it('AggregateType.description === definition.description || ``', () => {
     const AggregateType = Aggregate({ ...definition, description: 'x' })
     expect(AggregateType.description).toBe('x')
