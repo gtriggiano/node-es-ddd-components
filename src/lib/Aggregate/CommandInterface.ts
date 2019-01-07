@@ -17,10 +17,12 @@ import {
   AggregateCommandName,
 } from './commands.types'
 import {
+  AggregateCommandErrorInterface,
   AggregateErrorDictionary,
   AggregateErrorInterface,
 } from './errors.types'
 import {
+  AggregateCommandEmissionInterface,
   AggregateEmissionInterface,
   AggregateEventDictionary,
 } from './events.types'
@@ -148,8 +150,24 @@ export default function CommandInterface<
     availableCommands,
   } = config
 
-  return availableCommands.reduce((commandInterface, command) => {
-    const filteredEmissionInterface = command.emittableEvents.reduce(
+  return availableCommands.reduce<
+    AggregateCommandInterface<
+      State,
+      Query,
+      ErrorTypeFactory,
+      EventTypeFactory,
+      Command,
+      CommandDictionary
+    >
+  >((commandInterface, command) => {
+    const filteredEmissionInterface = command.emittableEvents.reduce<
+      AggregateCommandEmissionInterface<
+        State,
+        EventTypeFactory,
+        EventDictionary,
+        EventTypeFactory['name']
+      >
+    >(
       (fEmissionInterface, eventName) =>
         emissionInterface[eventName]
           ? Object.defineProperty(fEmissionInterface, eventName, {
@@ -157,10 +175,16 @@ export default function CommandInterface<
               value: emissionInterface[eventName],
             })
           : fEmissionInterface,
-      {}
+      Object.create(null)
     )
 
-    const filteredErrorInterface = command.raisableErrors.reduce(
+    const filteredErrorInterface = command.raisableErrors.reduce<
+      AggregateCommandErrorInterface<
+        ErrorTypeFactory,
+        ErrorDictionary,
+        ErrorTypeFactory['name']
+      >
+    >(
       (fErrorInterface, errorName) =>
         errorInterface[errorName]
           ? Object.defineProperty(fErrorInterface, errorName, {
@@ -168,7 +192,7 @@ export default function CommandInterface<
               value: errorInterface[errorName],
             })
           : fErrorInterface,
-      {}
+      Object.create(null)
     )
 
     const commandImplementationInterface = Object.defineProperties(
@@ -188,12 +212,5 @@ export default function CommandInterface<
         { value: command.name }
       ),
     })
-  }, {}) as AggregateCommandInterface<
-    State,
-    Query,
-    ErrorTypeFactory,
-    EventTypeFactory,
-    Command,
-    CommandDictionary
-  >
+  }, Object.create(null))
 }

@@ -7,7 +7,7 @@ import {
 import validateDefinition from './validateDefinition'
 
 export function CustomError<
-  Name extends CustomErrorName,
+  Name extends CustomErrorName = CustomErrorName,
   Data extends CustomErrorData = void
 >(
   definition: CustomErrorTypeDefinition<Name>

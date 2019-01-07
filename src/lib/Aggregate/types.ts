@@ -218,7 +218,7 @@ export interface AggregateInstance<
   readonly New: AggregateTypeFactory<
     BC,
     TypeName,
-    Identity,
+    Identity extends string ? false : true,
     State,
     Query,
     ErrorTypeFactory,
@@ -259,44 +259,12 @@ export interface AggregateInstance<
 }
 
 /**
- * A generic instance of an aggregate
- */
-export type GenericAggregateInstance = AggregateInstance<
-  BoundedContext,
-  AggregateTypeName,
-  AggregateIdentity,
-  AggregateState,
-  AggregateQueryDefinition<
-    AggregateQueryName,
-    AggregateState,
-    AggregateQueryInput,
-    AggregateQueryOutput
-  >,
-  CustomErrorTypeFactory<CustomErrorName, CustomErrorData>,
-  DomainEventTypeFactory<DomainEventName, DomaiEventPayload, AggregateState>,
-  AggregateCommandDefinition<
-    AggregateCommandName,
-    AggregateCommandInput,
-    AggregateState,
-    AggregateQueryDefinition<
-      AggregateQueryName,
-      AggregateState,
-      AggregateQueryInput,
-      AggregateQueryOutput
-    >,
-    CustomErrorTypeFactory<CustomErrorName, CustomErrorData>,
-    DomainEventTypeFactory<DomainEventName, DomaiEventPayload, AggregateState>,
-    CustomErrorName,
-    DomainEventName
-  >
->
-
-/**
  * An object describing an aggregate type
  */
 export interface AggregateDefinition<
   BC extends BoundedContext,
   TypeName extends AggregateTypeName,
+  Singleton extends boolean,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
     AggregateQueryName,
@@ -343,7 +311,7 @@ export interface AggregateDefinition<
    * A flag to specify if this aggregate is supposed
    * to be a "singleton" in your domain model
    */
-  readonly singleton?: boolean
+  readonly singleton: Singleton
 
   /**
    * The initial state of the aggregate
@@ -407,17 +375,10 @@ export interface AggregateDefinition<
   readonly deserializeState?: Deserializer<State>
 }
 
-/**
- * An aggregate type factory
- * @param identity The identity of the aggregate
- * @param snapshot A snapshot of the aggregate
- * @param events A list of serialized domain events representing the history of the aggregate
- * @returns An instance of the aggregate type
- */
-export interface AggregateTypeFactory<
+export type AggregateTypeFactoryConstructor<
   BC extends BoundedContext,
   TypeName extends AggregateTypeName,
-  Identity extends AggregateIdentity,
+  Singleton extends boolean,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
     AggregateQueryName,
@@ -444,22 +405,83 @@ export interface AggregateTypeFactory<
     ErrorTypeFactory['name'],
     EventType['name']
   >
-> {
-  (
-    identity?: Identity,
-    snapshot?: Readonly<AggregateSnapshot>,
-    events?: ReadonlyArray<SerializedDomainEvent>
-  ): AggregateInstance<
-    BC,
-    TypeName,
-    Identity,
+> = Singleton extends true
+  ? (
+      identity?: undefined,
+      snapshot?: AggregateSnapshot,
+      events?: ReadonlyArray<SerializedDomainEvent>
+    ) => AggregateInstance<
+      BC,
+      TypeName,
+      undefined,
+      State,
+      Query,
+      ErrorTypeFactory,
+      EventType,
+      Command
+    >
+  : <Identity extends string>(
+      identity: Identity,
+      snapshot?: AggregateSnapshot,
+      events?: ReadonlyArray<SerializedDomainEvent>
+    ) => AggregateInstance<
+      BC,
+      TypeName,
+      Identity,
+      State,
+      Query,
+      ErrorTypeFactory,
+      EventType,
+      Command
+    >
+
+/**
+ * An aggregate type factory
+ * @param identity The identity of the aggregate
+ * @param snapshot A snapshot of the aggregate
+ * @param events A list of serialized domain events representing the history of the aggregate
+ * @returns An instance of the aggregate type
+ */
+export type AggregateTypeFactory<
+  BC extends BoundedContext,
+  TypeName extends AggregateTypeName,
+  Singleton extends boolean,
+  State extends AggregateState,
+  Query extends AggregateQueryDefinition<
+    AggregateQueryName,
+    State,
+    AggregateQueryInput,
+    AggregateQueryOutput
+  >,
+  ErrorTypeFactory extends CustomErrorTypeFactory<
+    CustomErrorName,
+    CustomErrorData
+  >,
+  EventType extends DomainEventTypeFactory<
+    DomainEventName,
+    DomaiEventPayload,
+    State
+  >,
+  Command extends AggregateCommandDefinition<
+    AggregateCommandName,
+    AggregateCommandInput,
     State,
     Query,
     ErrorTypeFactory,
     EventType,
-    Command
+    ErrorTypeFactory['name'],
+    EventType['name']
   >
-
+> = AggregateTypeFactoryConstructor<
+  BC,
+  TypeName,
+  Singleton,
+  State,
+  Query,
+  ErrorTypeFactory,
+  EventType,
+  Command
+> & {
   /**
    * The name of the Bounded Context the aggregate belongs to
    */
@@ -473,7 +495,7 @@ export interface AggregateTypeFactory<
   /**
    * Tells if aggregate type is a singleton
    */
-  readonly singleton: boolean
+  readonly singleton: Singleton
 
   /**
    * A description of the aggregate.

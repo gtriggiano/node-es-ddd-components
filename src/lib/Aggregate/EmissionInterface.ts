@@ -38,15 +38,17 @@ export default function EmissionInterface<
 ): AggregateEmissionInterface<State, EventTypeFactory, EventDictionary> {
   const { emittableEvents, onNewEvent } = config
 
-  return emittableEvents.reduce((emissionInterface, EvType) => {
-    return Object.defineProperty(emissionInterface, EvType.name, {
+  return emittableEvents.reduce<
+    AggregateEmissionInterface<State, EventTypeFactory, EventDictionary>
+  >((emissionInterface, EventType) => {
+    return Object.defineProperty(emissionInterface, EventType.name, {
       enumerable: true,
       value: Object.defineProperty(
         (input?: any, consistencyPolicy?: ConsistencyPolicy) =>
-          onNewEvent(EvType(input), consistencyPolicy || 0),
+          onNewEvent(EventType(input), consistencyPolicy || 0),
         'name',
-        { value: EvType.name }
+        { value: EventType.name }
       ),
     })
-  }, {}) as AggregateEmissionInterface<State, EventTypeFactory, EventDictionary>
+  }, Object.create(null))
 }
