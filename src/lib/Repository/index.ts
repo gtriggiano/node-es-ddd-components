@@ -1,7 +1,6 @@
 import { noop, pick } from 'lodash'
 
 import { NO_CONSISTENCY_POLICY, SOFT_CONSISTENCY_POLICY } from '../Aggregate'
-import { GenericAggregateInstance } from '../Aggregate/types'
 import { CustomError } from '../CustomError'
 
 import {
@@ -55,11 +54,9 @@ export const RepositoryWriteConcurrencyError = CustomError<
   name: 'RepositoryWriteConcurrencyError',
 })
 
-export function Repository<
-  AggregateInstance extends GenericAggregateInstance = GenericAggregateInstance
->(
+export function Repository<T>(
   definition: RepositoryDefinition
-): RepositoryInstance<ReadonlyArray<AggregateInstance>> {
+): RepositoryInstance<T> {
   try {
     // tslint:disable no-expression-statement
     validateDefinition(definition)
@@ -74,9 +71,7 @@ export function Repository<
     loadCanFailBecauseOfSnaphotService,
   } = definition
 
-  const loadAggregate = async (
-    aggregate: AggregateInstance
-  ): Promise<AggregateInstance> => {
+  const loadAggregate = async (aggregate: any): Promise<any> => {
     const snapshot = snapshotService
       ? await snapshotService
           .loadAggregateSnapshot(aggregate.snapshotKey)
@@ -107,12 +102,12 @@ export function Repository<
     }
     // tslint:enable
 
-    return loadedAggregate as AggregateInstance
+    return loadedAggregate
   }
 
-  const load: RepositoryInstance<
-    ReadonlyArray<AggregateInstance>
-  >['load'] = aggregates => {
+  const load = <Aggregates extends ReadonlyArray<T>>(
+    aggregates: Aggregates
+  ) => {
     // tslint:disable no-expression-statement
     try {
       validateAggregatesList(aggregates)
@@ -123,12 +118,15 @@ export function Repository<
     }
     // tslint:enable
 
-    return Promise.all(aggregates.map(loadAggregate))
+    return (Promise.all(aggregates.map(loadAggregate)) as unknown) as Promise<
+      Aggregates
+    >
   }
 
-  const persist: RepositoryInstance<
-    ReadonlyArray<AggregateInstance>
-  >['persist'] = (aggregates, correlationId) => {
+  const persist = <Aggregates extends ReadonlyArray<T>>(
+    aggregates: Aggregates,
+    correlationId?: string
+  ) => {
     // tslint:disable no-expression-statement
     try {
       validateAggregatesList(aggregates)
@@ -140,17 +138,17 @@ export function Repository<
     // tslint:enable
 
     const insertions = aggregates
-      .filter(aggregate => aggregate.isDirty())
-      .reduce<ReadonlyArray<EventStoreInsertion>>((list, aggregate) => {
+      .filter((aggregate: any) => aggregate.isDirty())
+      .reduce<ReadonlyArray<EventStoreInsertion>>((list, aggregate: any) => {
         const eventsToAppend = aggregate
           .getNewEvents()
-          .map(({ name, getSerializedPayload }) => ({
+          .map(({ name, getSerializedPayload }: any) => ({
             name,
             payload: getSerializedPayload(),
           }))
         const consistencyPolicy = aggregate.getConsistencyPolicy()
         return list.concat({
-          aggregate: pick(aggregate, ['context', 'type', 'identity']),
+          aggregate: pick(aggregate, ['context', 'type', 'identity']) as any,
           eventsToAppend,
           expectedAggregateVersion:
             consistencyPolicy === NO_CONSISTENCY_POLICY

@@ -73,6 +73,7 @@ export const BadAggregateDefinition = CustomError<
 export function Aggregate<
   BC extends BoundedContext,
   TypeName extends AggregateTypeName,
+  Singleton extends boolean,
   State extends AggregateState,
   Query extends AggregateQueryDefinition<
     AggregateQueryName,
@@ -103,6 +104,7 @@ export function Aggregate<
   definition: AggregateDefinition<
     BC,
     TypeName,
+    Singleton,
     State,
     Query,
     ErrorTypeFactory,
@@ -112,7 +114,7 @@ export function Aggregate<
 ): AggregateTypeFactory<
   BC,
   TypeName,
-  AggregateIdentity,
+  Singleton,
   State,
   Query,
   ErrorTypeFactory,
@@ -161,7 +163,7 @@ export function Aggregate<
   ): AggregateInstance<
     BC,
     TypeName,
-    typeof identity,
+    AggregateIdentity,
     State,
     Query,
     ErrorTypeFactory,

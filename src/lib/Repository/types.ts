@@ -3,7 +3,6 @@ import {
   AggregateSnapshot,
   AggregateTypeName,
   BoundedContext,
-  GenericAggregateInstance,
 } from '../Aggregate/types'
 
 import { SerializedDomainEvent } from '../DomainEvent/types'
@@ -55,18 +54,16 @@ export interface RepositoryDefinition {
   readonly loadCanFailBecauseOfSnaphotService?: boolean
 }
 
-export interface RepositoryInstance<
-  AggregatesCollection extends ReadonlyArray<GenericAggregateInstance>
-> {
-  readonly load: (
-    aggregates: AggregatesCollection
-  ) => Promise<AggregatesCollection>
+export interface RepositoryInstance<T> {
+  readonly load: <Aggregates extends ReadonlyArray<T>>(
+    aggregates: Aggregates
+  ) => Promise<Aggregates>
 
-  readonly persist: (
-    aggregates: AggregatesCollection,
+  readonly persist: <Aggregates extends ReadonlyArray<T>>(
+    aggregates: Aggregates,
     correlationId?: string
   ) => Promise<{
-    readonly aggregates?: AggregatesCollection
+    readonly aggregates?: Aggregates
     readonly persistedEvents: ReadonlyArray<PersistedDomainEvent>
   }>
 }

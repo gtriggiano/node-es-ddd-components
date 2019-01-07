@@ -1,5 +1,5 @@
 import { CustomError } from '../../../lib'
 
-export default CustomError<'ATodoCannotBeRemovedFromAClosedList'>({
+export default CustomError({
   name: 'ATodoCannotBeRemovedFromAClosedList',
 })

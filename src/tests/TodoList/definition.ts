@@ -9,6 +9,7 @@ import { initialState, TodoListState } from './state'
 export const definition: AggregateDefinition<
   'TodosManagement',
   'TodoList',
+  false,
   TodoListState,
   Query,
   Error,

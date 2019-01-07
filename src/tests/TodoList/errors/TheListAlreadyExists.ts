@@ -1,5 +1,5 @@
 import { CustomError } from '../../../lib'
 
-export default CustomError<'TheListAlreadyExists'>({
+export default CustomError({
   name: 'TheListAlreadyExists',
 })

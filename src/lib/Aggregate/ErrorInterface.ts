@@ -28,11 +28,13 @@ export default function ErrorInterface<
 ): AggregateErrorInterface<ErrorTypeFactory, ErrorDictionary> {
   const { raisableErrors } = config
 
-  return raisableErrors.reduce(
-    (errorInterface, EType) =>
-      Object.defineProperty(errorInterface, EType.name, {
-        value: EType,
+  return raisableErrors.reduce<
+    AggregateErrorInterface<ErrorTypeFactory, ErrorDictionary>
+  >(
+    (errorInterface, ErrorType) =>
+      Object.defineProperty(errorInterface, ErrorType.name, {
+        value: ErrorType,
       }),
-    {}
-  ) as AggregateErrorInterface<ErrorTypeFactory, ErrorDictionary>
+    Object.create(null)
+  )
 }
