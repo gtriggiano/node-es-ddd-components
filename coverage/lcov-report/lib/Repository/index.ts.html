@@ -232,12 +232,9 @@
 187
 188
 189
-190
-191
-192</td><td class="line-coverage quiet"><span class="cline-any cline-yes">22x</span>
+190</td><td class="line-coverage quiet"><span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -292,8 +289,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">44x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">44x</span>
@@ -311,8 +306,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">31x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -346,9 +339,9 @@
 <span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
@@ -365,6 +358,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -428,7 +424,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { noop, pick } from 'lodash'
 &nbsp;
 import { NO_CONSISTENCY_POLICY, SOFT_CONSISTENCY_POLICY } from '../Aggregate'
-import { GenericAggregateInstance } from '../Aggregate/types'
 import { CustomError } from '../CustomError'
 &nbsp;
 import {
@@ -482,11 +477,9 @@ export const RepositoryWriteConcurrencyError = CustomError&lt;
   name: 'RepositoryWriteConcurrencyError',
 })
 &nbsp;
-export function Repository&lt;
-  AggregateInstance extends GenericAggregateInstance = GenericAggregateInstance
-&gt;(
+export function Repository&lt;T&gt;(
   definition: RepositoryDefinition
-): RepositoryInstance&lt;ReadonlyArray&lt;AggregateInstance&gt;&gt; {
+): RepositoryInstance&lt;T&gt; {
   try {
     // tslint:disable no-expression-statement
     validateDefinition(definition)
@@ -501,9 +494,7 @@ export function Repository&lt;
     loadCanFailBecauseOfSnaphotService,
   } = definition
 &nbsp;
-  const loadAggregate = async (
-    aggregate: AggregateInstance
-  ): Promise&lt;AggregateInstance&gt; =&gt; {
+  const loadAggregate = async (aggregate: any): Promise&lt;any&gt; =&gt; {
     const snapshot = snapshotService
       ? await snapshotService
           .loadAggregateSnapshot(aggregate.snapshotKey)
@@ -534,12 +525,12 @@ export function Repository&lt;
     }
     // tslint:enable
 &nbsp;
-    return loadedAggregate as AggregateInstance
+    return loadedAggregate
   }
 &nbsp;
-  const load: RepositoryInstance&lt;
-    ReadonlyArray&lt;AggregateInstance&gt;
-  &gt;['load'] = aggregates =&gt; {
+  const load = &lt;Aggregates extends ReadonlyArray&lt;T&gt;&gt;(
+    aggregates: Aggregates
+  ) =&gt; {
     // tslint:disable no-expression-statement
     try {
       validateAggregatesList(aggregates)
@@ -550,12 +541,15 @@ export function Repository&lt;
     }
     // tslint:enable
 &nbsp;
-    return Promise.all(aggregates.map(loadAggregate))
+    return (Promise.all(aggregates.map(loadAggregate)) as unknown) as Promise&lt;
+      Aggregates
+    &gt;
   }
 &nbsp;
-  const persist: RepositoryInstance&lt;
-    ReadonlyArray&lt;AggregateInstance&gt;
-  &gt;['persist'] = (aggregates, correlationId) =&gt; {
+  const persist = &lt;Aggregates extends ReadonlyArray&lt;T&gt;&gt;(
+    aggregates: Aggregates,
+    correlationId?: string
+  ) =&gt; {
     // tslint:disable no-expression-statement
     try {
       validateAggregatesList(aggregates)
@@ -567,17 +561,17 @@ export function Repository&lt;
     // tslint:enable
 &nbsp;
     const insertions = aggregates
-      .filter(aggregate =&gt; aggregate.isDirty())
-      .reduce&lt;ReadonlyArray&lt;EventStoreInsertion&gt;&gt;((list, aggregate) =&gt; {
+      .filter((aggregate: any) =&gt; aggregate.isDirty())
+      .reduce&lt;ReadonlyArray&lt;EventStoreInsertion&gt;&gt;((list, aggregate: any) =&gt; {
         const eventsToAppend = aggregate
           .getNewEvents()
-          .map(({ name, getSerializedPayload }) =&gt; ({
+          .map(({ name, getSerializedPayload }: any) =&gt; ({
             name,
             payload: getSerializedPayload(),
           }))
         const consistencyPolicy = aggregate.getConsistencyPolicy()
         return list.concat({
-          aggregate: pick(aggregate, ['context', 'type', 'identity']),
+          aggregate: pick(aggregate, ['context', 'type', 'identity']) as any,
           eventsToAppend,
           expectedAggregateVersion:
             consistencyPolicy === NO_CONSISTENCY_POLICY
@@ -622,7 +616,7 @@ export * from './InMemorySnapshotService'
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 30 2018 17:53:51 GMT+0100 (CET)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 07 2019 12:43:58 GMT+0100 (CET)
 </div>
 </div>
 <script src="../../prettify.js"></script>

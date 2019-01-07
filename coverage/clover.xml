@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1546188831816" clover="3.2.0">
-  <project timestamp="1546188831816" name="All files">
+<coverage generated="1546861438419" clover="3.2.0">
+  <project timestamp="1546861438419" name="All files">
     <metrics statements="394" coveredstatements="394" conditionals="177" coveredconditionals="177" methods="102" coveredmethods="102" elements="673" coveredelements="673" complexity="0" loc="394" ncloc="394" packages="6" files="24" classes="24">
       <package name="lib">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -17,34 +17,34 @@
         <metrics statements="175" coveredstatements="175" conditionals="94" coveredconditionals="94" methods="48" coveredmethods="48"/>
         <file name="CommandInterface.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Aggregate/CommandInterface.ts">
           <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
-          <line num="88" count="22" type="stmt"/>
-          <line num="145" count="155" type="stmt"/>
-          <line num="146" count="155" type="stmt"/>
+          <line num="90" count="22" type="stmt"/>
           <line num="147" count="155" type="stmt"/>
           <line num="148" count="155" type="stmt"/>
-          <line num="151" count="155" type="stmt"/>
-          <line num="152" count="969" type="stmt"/>
-          <line num="154" count="962" type="stmt"/>
+          <line num="149" count="155" type="stmt"/>
+          <line num="150" count="155" type="stmt"/>
+          <line num="153" count="155" type="stmt"/>
           <line num="163" count="969" type="stmt"/>
-          <line num="165" count="1693" type="stmt"/>
-          <line num="174" count="969" type="stmt"/>
-          <line num="183" count="969" type="stmt"/>
-          <line num="186" count="76" type="stmt"/>
+          <line num="172" count="962" type="stmt"/>
+          <line num="181" count="969" type="stmt"/>
+          <line num="189" count="1693" type="stmt"/>
+          <line num="198" count="969" type="stmt"/>
+          <line num="207" count="969" type="stmt"/>
+          <line num="210" count="73" type="stmt"/>
         </file>
         <file name="EmissionInterface.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Aggregate/EmissionInterface.ts">
           <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
           <line num="28" count="22" type="stmt"/>
           <line num="39" count="155" type="stmt"/>
           <line num="41" count="155" type="stmt"/>
-          <line num="42" count="977" type="stmt"/>
-          <line num="46" count="69" type="cond" truecount="2" falsecount="0"/>
+          <line num="44" count="977" type="stmt"/>
+          <line num="48" count="66" type="cond" truecount="2" falsecount="0"/>
         </file>
         <file name="ErrorInterface.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Aggregate/ErrorInterface.ts">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
           <line num="20" count="22" type="stmt"/>
           <line num="29" count="155" type="stmt"/>
           <line num="31" count="155" type="stmt"/>
-          <line num="33" count="1065" type="stmt"/>
+          <line num="35" count="1065" type="stmt"/>
         </file>
         <file name="QueryInterface.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Aggregate/QueryInterface.ts">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -52,7 +52,7 @@
           <line num="36" count="155" type="stmt"/>
           <line num="38" count="155" type="stmt"/>
           <line num="40" count="855" type="stmt"/>
-          <line num="43" count="53" type="stmt"/>
+          <line num="43" count="50" type="stmt"/>
         </file>
         <file name="aggregateUtils.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Aggregate/aggregateUtils.ts">
           <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -77,11 +77,9 @@
           <line num="59" count="22" type="stmt"/>
           <line num="66" count="22" type="stmt"/>
           <line num="73" count="22" type="stmt"/>
-          <line num="122" count="128" type="stmt"/>
           <line num="124" count="128" type="stmt"/>
-          <line num="127" count="31" type="stmt"/>
-          <line num="131" count="97" type="stmt"/>
-          <line num="132" count="97" type="stmt"/>
+          <line num="126" count="128" type="stmt"/>
+          <line num="129" count="31" type="stmt"/>
           <line num="133" count="97" type="stmt"/>
           <line num="134" count="97" type="stmt"/>
           <line num="135" count="97" type="stmt"/>
@@ -93,51 +91,53 @@
           <line num="141" count="97" type="stmt"/>
           <line num="142" count="97" type="stmt"/>
           <line num="143" count="97" type="stmt"/>
-          <line num="146" count="97" type="stmt"/>
-          <line num="147" count="97" type="stmt"/>
+          <line num="144" count="97" type="stmt"/>
+          <line num="145" count="97" type="stmt"/>
           <line num="148" count="97" type="stmt"/>
           <line num="149" count="97" type="stmt"/>
-          <line num="150" count="637" type="stmt"/>
-          <line num="157" count="97" type="stmt"/>
-          <line num="171" count="168" type="cond" truecount="2" falsecount="0"/>
-          <line num="174" count="168" type="stmt"/>
-          <line num="175" count="168" type="stmt"/>
-          <line num="182" count="12" type="stmt"/>
-          <line num="185" count="156" type="stmt"/>
+          <line num="150" count="97" type="stmt"/>
+          <line num="151" count="97" type="stmt"/>
+          <line num="152" count="637" type="stmt"/>
+          <line num="159" count="97" type="stmt"/>
+          <line num="173" count="168" type="cond" truecount="2" falsecount="0"/>
+          <line num="176" count="168" type="stmt"/>
+          <line num="177" count="168" type="stmt"/>
+          <line num="184" count="12" type="stmt"/>
           <line num="187" count="156" type="stmt"/>
-          <line num="190" count="50" type="stmt"/>
-          <line num="191" count="50" type="stmt"/>
-          <line num="194" count="1" type="stmt"/>
-          <line num="199" count="1" type="stmt"/>
-          <line num="206" count="155" type="stmt"/>
-          <line num="211" count="155" type="stmt"/>
-          <line num="214" count="155" type="stmt"/>
-          <line num="216" count="155" type="cond" truecount="2" falsecount="0"/>
-          <line num="219" count="155" type="cond" truecount="3" falsecount="0"/>
-          <line num="221" count="155" type="stmt"/>
+          <line num="189" count="156" type="stmt"/>
+          <line num="192" count="47" type="stmt"/>
+          <line num="193" count="47" type="stmt"/>
+          <line num="196" count="1" type="stmt"/>
+          <line num="201" count="1" type="stmt"/>
+          <line num="208" count="155" type="stmt"/>
+          <line num="213" count="155" type="stmt"/>
+          <line num="216" count="155" type="stmt"/>
+          <line num="218" count="155" type="cond" truecount="2" falsecount="0"/>
+          <line num="221" count="155" type="cond" truecount="3" falsecount="0"/>
           <line num="223" count="155" type="stmt"/>
-          <line num="229" count="53" type="stmt"/>
-          <line num="232" count="155" type="stmt"/>
-          <line num="239" count="155" type="stmt"/>
-          <line num="247" count="69" type="stmt"/>
-          <line num="248" count="69" type="stmt"/>
-          <line num="249" count="69" type="stmt"/>
-          <line num="258" count="155" type="stmt"/>
-          <line num="281" count="155" type="stmt"/>
-          <line num="287" count="3" type="stmt"/>
-          <line num="290" count="1" type="stmt"/>
-          <line num="295" count="32" type="cond" truecount="2" falsecount="0"/>
-          <line num="297" count="37" type="stmt"/>
-          <line num="298" count="15" type="stmt"/>
-          <line num="300" count="3" type="stmt"/>
-          <line num="306" count="28" type="stmt"/>
-          <line num="313" count="4" type="stmt"/>
-          <line num="319" count="97" type="stmt"/>
+          <line num="225" count="155" type="stmt"/>
+          <line num="231" count="50" type="stmt"/>
+          <line num="234" count="155" type="stmt"/>
+          <line num="241" count="155" type="stmt"/>
+          <line num="249" count="66" type="stmt"/>
+          <line num="250" count="66" type="stmt"/>
+          <line num="251" count="66" type="stmt"/>
+          <line num="260" count="155" type="stmt"/>
+          <line num="283" count="155" type="stmt"/>
+          <line num="289" count="3" type="stmt"/>
+          <line num="292" count="1" type="stmt"/>
+          <line num="297" count="32" type="cond" truecount="2" falsecount="0"/>
+          <line num="299" count="37" type="stmt"/>
+          <line num="300" count="15" type="stmt"/>
+          <line num="302" count="3" type="stmt"/>
+          <line num="308" count="28" type="stmt"/>
+          <line num="315" count="4" type="stmt"/>
           <line num="321" count="97" type="stmt"/>
-          <line num="327" count="1" type="stmt"/>
-          <line num="331" count="4" type="cond" truecount="3" falsecount="0"/>
-          <line num="337" count="22" type="stmt"/>
-          <line num="338" count="71" type="cond" truecount="2" falsecount="0"/>
+          <line num="323" count="97" type="stmt"/>
+          <line num="329" count="1" type="stmt"/>
+          <line num="333" count="4" type="cond" truecount="3" falsecount="0"/>
+          <line num="339" count="22" type="stmt"/>
+          <line num="340" count="71" type="cond" truecount="2" falsecount="0"/>
         </file>
         <file name="snapshotUtils.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Aggregate/snapshotUtils.ts">
           <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
@@ -165,9 +165,9 @@
           <line num="42" count="14" type="stmt"/>
           <line num="50" count="22" type="stmt"/>
           <line num="53" count="157" type="stmt"/>
-          <line num="54" count="51" type="cond" truecount="2" falsecount="0"/>
+          <line num="54" count="48" type="cond" truecount="2" falsecount="0"/>
           <line num="59" count="22" type="stmt"/>
-          <line num="60" count="51" type="cond" truecount="3" falsecount="0"/>
+          <line num="60" count="48" type="cond" truecount="3" falsecount="0"/>
         </file>
         <file name="validateDefinition.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Aggregate/validateDefinition.ts">
           <metrics statements="45" coveredstatements="45" conditionals="39" coveredconditionals="39" methods="8" coveredmethods="8"/>
@@ -196,10 +196,10 @@
           <line num="50" count="118" type="stmt"/>
           <line num="55" count="114" type="stmt"/>
           <line num="63" count="111" type="stmt"/>
-          <line num="67" count="630" type="stmt"/>
+          <line num="67" count="636" type="stmt"/>
           <line num="68" count="110" type="stmt"/>
           <line num="73" count="109" type="stmt"/>
-          <line num="78" count="679" type="stmt"/>
+          <line num="78" count="672" type="stmt"/>
           <line num="79" count="108" type="stmt"/>
           <line num="84" count="730" type="stmt"/>
           <line num="85" count="107" type="stmt"/>
@@ -213,9 +213,9 @@
           <line num="122" count="22" type="stmt"/>
           <line num="123" count="701" type="stmt"/>
           <line num="131" count="22" type="stmt"/>
-          <line num="132" count="687" type="stmt"/>
+          <line num="132" count="680" type="stmt"/>
           <line num="146" count="22" type="stmt"/>
-          <line num="147" count="637" type="stmt"/>
+          <line num="147" count="643" type="stmt"/>
         </file>
       </package>
       <package name="lib.CustomError">
@@ -268,15 +268,15 @@
           <line num="42" count="64" type="stmt"/>
           <line num="45" count="64" type="stmt"/>
           <line num="46" count="64" type="stmt"/>
-          <line num="51" count="127" type="stmt"/>
-          <line num="53" count="127" type="stmt"/>
-          <line num="55" count="127" type="stmt"/>
-          <line num="59" count="121" type="stmt"/>
-          <line num="63" count="48" type="cond" truecount="2" falsecount="0"/>
-          <line num="66" count="46" type="stmt"/>
-          <line num="68" count="46" type="stmt"/>
+          <line num="51" count="121" type="stmt"/>
+          <line num="53" count="121" type="stmt"/>
+          <line num="55" count="121" type="stmt"/>
+          <line num="59" count="115" type="stmt"/>
+          <line num="63" count="45" type="cond" truecount="2" falsecount="0"/>
+          <line num="66" count="43" type="stmt"/>
+          <line num="68" count="43" type="stmt"/>
           <line num="76" count="64" type="stmt"/>
-          <line num="81" count="49" type="stmt"/>
+          <line num="81" count="46" type="stmt"/>
           <line num="86" count="3" type="cond" truecount="2" falsecount="0"/>
           <line num="92" count="22" type="stmt"/>
           <line num="95" count="1" type="cond" truecount="2" falsecount="0"/>
@@ -357,59 +357,59 @@
           <metrics statements="55" coveredstatements="55" conditionals="18" coveredconditionals="18" methods="13" coveredmethods="13"/>
           <line num="1" count="22" type="stmt"/>
           <line num="3" count="22" type="stmt"/>
-          <line num="5" count="22" type="stmt"/>
+          <line num="4" count="22" type="stmt"/>
+          <line num="11" count="22" type="stmt"/>
           <line num="12" count="22" type="stmt"/>
-          <line num="13" count="22" type="stmt"/>
-          <line num="19" count="22" type="stmt"/>
-          <line num="24" count="22" type="stmt"/>
-          <line num="31" count="22" type="stmt"/>
-          <line num="38" count="22" type="stmt"/>
-          <line num="45" count="22" type="stmt"/>
-          <line num="51" count="22" type="stmt"/>
-          <line num="58" count="44" type="stmt"/>
-          <line num="63" count="44" type="stmt"/>
-          <line num="65" count="44" type="stmt"/>
-          <line num="68" count="13" type="stmt"/>
-          <line num="72" count="31" type="stmt"/>
-          <line num="73" count="31" type="stmt"/>
+          <line num="18" count="22" type="stmt"/>
+          <line num="23" count="22" type="stmt"/>
+          <line num="30" count="22" type="stmt"/>
+          <line num="37" count="22" type="stmt"/>
+          <line num="44" count="22" type="stmt"/>
+          <line num="50" count="22" type="stmt"/>
+          <line num="57" count="44" type="stmt"/>
+          <line num="60" count="44" type="stmt"/>
+          <line num="62" count="44" type="stmt"/>
+          <line num="65" count="13" type="stmt"/>
+          <line num="69" count="31" type="stmt"/>
+          <line num="70" count="31" type="stmt"/>
+          <line num="71" count="31" type="stmt"/>
           <line num="74" count="31" type="stmt"/>
-          <line num="77" count="31" type="stmt"/>
-          <line num="80" count="37" type="stmt"/>
-          <line num="81" count="74" type="stmt"/>
-          <line num="85" count="2" type="cond" truecount="2" falsecount="0"/>
-          <line num="87" count="1" type="stmt"/>
-          <line num="91" count="1" type="stmt"/>
-          <line num="92" count="37" type="stmt"/>
-          <line num="95" count="2" type="stmt"/>
-          <line num="97" count="35" type="stmt"/>
-          <line num="100" count="35" type="cond" truecount="4" falsecount="0"/>
-          <line num="101" count="2" type="stmt"/>
-          <line num="110" count="35" type="stmt"/>
-          <line num="115" count="31" type="stmt"/>
-          <line num="117" count="34" type="stmt"/>
-          <line num="118" count="34" type="stmt"/>
-          <line num="120" count="4" type="stmt"/>
-          <line num="126" count="30" type="stmt"/>
-          <line num="131" count="31" type="stmt"/>
-          <line num="133" count="25" type="stmt"/>
-          <line num="134" count="25" type="stmt"/>
-          <line num="136" count="4" type="stmt"/>
-          <line num="142" count="21" type="stmt"/>
-          <line num="143" count="26" type="stmt"/>
-          <line num="145" count="19" type="stmt"/>
-          <line num="147" count="25" type="stmt"/>
-          <line num="151" count="19" type="stmt"/>
-          <line num="152" count="19" type="stmt"/>
-          <line num="164" count="21" type="stmt"/>
-          <line num="168" count="4" type="stmt"/>
-          <line num="171" count="4" type="stmt"/>
-          <line num="177" count="21" type="stmt"/>
-          <line num="178" count="17" type="stmt"/>
-          <line num="179" count="16" type="stmt"/>
-          <line num="183" count="1" type="stmt"/>
-          <line num="187" count="31" type="stmt"/>
-          <line num="190" count="22" type="stmt"/>
-          <line num="191" count="22" type="stmt"/>
+          <line num="75" count="37" type="stmt"/>
+          <line num="76" count="74" type="stmt"/>
+          <line num="80" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="82" count="1" type="stmt"/>
+          <line num="86" count="1" type="stmt"/>
+          <line num="87" count="37" type="stmt"/>
+          <line num="90" count="2" type="stmt"/>
+          <line num="92" count="35" type="stmt"/>
+          <line num="95" count="35" type="cond" truecount="4" falsecount="0"/>
+          <line num="96" count="2" type="stmt"/>
+          <line num="105" count="35" type="stmt"/>
+          <line num="108" count="31" type="stmt"/>
+          <line num="112" count="34" type="stmt"/>
+          <line num="113" count="34" type="stmt"/>
+          <line num="115" count="4" type="stmt"/>
+          <line num="121" count="30" type="stmt"/>
+          <line num="126" count="31" type="stmt"/>
+          <line num="131" count="25" type="stmt"/>
+          <line num="132" count="25" type="stmt"/>
+          <line num="134" count="4" type="stmt"/>
+          <line num="140" count="21" type="stmt"/>
+          <line num="141" count="26" type="stmt"/>
+          <line num="143" count="19" type="stmt"/>
+          <line num="145" count="25" type="stmt"/>
+          <line num="149" count="19" type="stmt"/>
+          <line num="150" count="19" type="stmt"/>
+          <line num="162" count="21" type="stmt"/>
+          <line num="166" count="4" type="stmt"/>
+          <line num="169" count="4" type="stmt"/>
+          <line num="175" count="21" type="stmt"/>
+          <line num="176" count="17" type="stmt"/>
+          <line num="177" count="16" type="stmt"/>
+          <line num="181" count="1" type="stmt"/>
+          <line num="185" count="31" type="stmt"/>
+          <line num="188" count="22" type="stmt"/>
+          <line num="189" count="22" type="stmt"/>
         </file>
         <file name="validateAggregatesList.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/Repository/validateAggregatesList.ts">
           <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
@@ -452,8 +452,8 @@
           <line num="16" count="22" type="stmt"/>
           <line num="20" count="168" type="cond" truecount="2" falsecount="0"/>
           <line num="21" count="168" type="stmt"/>
-          <line num="22" count="67" type="stmt"/>
-          <line num="23" count="67" type="stmt"/>
+          <line num="22" count="64" type="stmt"/>
+          <line num="23" count="64" type="stmt"/>
           <line num="25" count="5" type="cond" truecount="2" falsecount="0"/>
         </file>
         <file name="getSerializer.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/utils/getSerializer.ts">
@@ -463,8 +463,8 @@
           <line num="13" count="22" type="stmt"/>
           <line num="17" count="168" type="cond" truecount="2" falsecount="0"/>
           <line num="18" count="168" type="stmt"/>
-          <line num="19" count="71" type="stmt"/>
-          <line num="20" count="71" type="stmt"/>
+          <line num="19" count="68" type="stmt"/>
+          <line num="20" count="68" type="stmt"/>
           <line num="22" count="5" type="cond" truecount="2" falsecount="0"/>
         </file>
         <file name="index.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/utils/index.ts">
@@ -478,7 +478,7 @@
           <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
           <line num="1" count="22" type="stmt"/>
           <line num="3" count="22" type="stmt"/>
-          <line num="4" count="4628" type="cond" truecount="2" falsecount="0"/>
+          <line num="4" count="4604" type="cond" truecount="2" falsecount="0"/>
           <line num="7" count="22" type="stmt"/>
         </file>
         <file name="tuple.ts" path="/Users/giacomotriggiano/github.com/gtriggiano/node-es-ddd-components/src/lib/utils/tuple.ts">
