@@ -1,3 +1,6 @@
+// tslint:disable no-submodule-imports
+import { Either } from 'fp-ts/lib/Either'
+
 import {
   AggregateIdentity,
   AggregateSnapshot,
@@ -13,7 +16,7 @@ export interface AggregateIdentifier {
   readonly identity: AggregateIdentity
 }
 
-export type PersistedDomainEvent = SerializedDomainEvent & {
+export interface PersistedDomainEvent extends SerializedDomainEvent {
   readonly aggregate: AggregateIdentifier
   readonly id: string
   readonly correlationId: string
@@ -25,28 +28,60 @@ export interface EventStoreInsertion {
   readonly eventsToAppend: ReadonlyArray<SerializedDomainEvent>
 }
 
+export interface UnknownError extends Error {
+  readonly type: 'UNKNOWN'
+}
+export interface AvailabilityError extends Error {
+  readonly type: 'AVAILABILITY'
+}
+export interface ConcurrencyError extends Error {
+  readonly type: 'CONCURRENCY'
+}
+
 export interface EventStore {
   readonly getEventsOfAggregate: (
     aggregate: AggregateIdentifier,
     fromVersion: number
-  ) => Promise<ReadonlyArray<SerializedDomainEvent>>
+  ) => Promise<EventStoreGetResult>
 
   readonly appendEventsToAggregates: (
     insertions: ReadonlyArray<EventStoreInsertion>,
     correlationId: string
-  ) => Promise<ReadonlyArray<PersistedDomainEvent>>
+  ) => Promise<EventStoreAppendResult>
 }
+
+export type EventStoreGetResult = Either<
+  AvailabilityError | UnknownError,
+  SerializedEventsList
+>
+
+export type EventStoreAppendResult = Either<
+  AvailabilityError | ConcurrencyError | UnknownError,
+  SerializedEventsList
+>
+
+export type SerializedEventsList = ReadonlyArray<SerializedDomainEvent>
 
 export interface SnapshotService {
   readonly loadAggregateSnapshot: (
     key: string
-  ) => Promise<AggregateSnapshot | undefined>
+  ) => Promise<SnapshotServiceLoadResult>
 
   readonly saveAggregateSnapshot: (
     key: string,
     snapshot: AggregateSnapshot
-  ) => Promise<void>
+  ) => Promise<SnapshotServiceSaveResult>
 }
+
+export type SnapshotServiceLoadResult = Either<
+  AvailabilityError | UnknownError,
+  AggregateSnapshot | undefined
+>
+
+export type SnapshotServiceSaveResult = Either<
+  AvailabilityError | UnknownError,
+  void
+>
 
 export interface RepositoryDefinition {
   readonly eventStore: EventStore
@@ -57,13 +92,23 @@ export interface RepositoryDefinition {
 export interface RepositoryInstance<T> {
   readonly load: <Aggregates extends ReadonlyArray<T>>(
     aggregates: Aggregates
-  ) => Promise<Aggregates>
+  ) => Promise<RepositoryInstanceLoadResult<Aggregates>>
 
   readonly persist: <Aggregates extends ReadonlyArray<T>>(
     aggregates: Aggregates,
     correlationId?: string
-  ) => Promise<{
+  ) => Promise<RepositoryInstancePersistResult<Aggregates>>
+}
+
+export type RepositoryInstanceLoadResult<Aggregates> = Either<
+  AvailabilityError | UnknownError,
+  Aggregates
+>
+
+export type RepositoryInstancePersistResult<Aggregates> = Either<
+  AvailabilityError | ConcurrencyError | UnknownError,
+  {
     readonly aggregates?: Aggregates
     readonly persistedEvents: ReadonlyArray<PersistedDomainEvent>
-  }>
-}
+  }
+>

@@ -1,3 +1,5 @@
+// tslint:disable no-submodule-imports
+import { left, right } from 'fp-ts/lib/Either'
 import { range } from 'lodash'
 
 import {
@@ -6,20 +8,11 @@ import {
   BoundedContext,
 } from '../Aggregate/types'
 
-import { EventStore, PersistedDomainEvent } from './types'
-
-export type StoredEvent = PersistedDomainEvent & {
-  readonly id: string
-  readonly aggregate: {
-    readonly context: BoundedContext
-    readonly type: AggregateTypeName
-    readonly identity: AggregateIdentity
-  }
-}
+import { ConcurrencyError, EventStore, PersistedDomainEvent } from './types'
 
 export const InMemoryEventStore = (): EventStore => {
   // tslint:disable readonly-array
-  const events: StoredEvent[] = []
+  const events: PersistedDomainEvent[] = []
   // tslint:enable
 
   const getAggregateEvents = (aggregate: {
@@ -48,31 +41,36 @@ export const InMemoryEventStore = (): EventStore => {
        * Concurrency check
        */
       // tslint:disable no-expression-statement no-if-statement no-object-mutation
-      insertions.forEach(({ aggregate, expectedAggregateVersion }) => {
-        if (expectedAggregateVersion === -2) return
+      try {
+        insertions.forEach(({ aggregate, expectedAggregateVersion }) => {
+          if (expectedAggregateVersion === -2) return
 
-        const aggregateEvents = getAggregateEvents(aggregate)
-        const aggregateVersion = aggregateEvents.length
-        if (expectedAggregateVersion === -1 && aggregateVersion) return
-        if (expectedAggregateVersion === aggregateVersion) return
+          const aggregateEvents = getAggregateEvents(aggregate)
+          const aggregateVersion = aggregateEvents.length
+          if (expectedAggregateVersion === -1 && aggregateVersion) return
+          if (expectedAggregateVersion === aggregateVersion) return
 
-        const aggregateName = getAggregateName(aggregate)
-        const errorMessage =
-          expectedAggregateVersion === -1
-            ? `Aggregate ${aggregateName} was expected to exist but it does not`
-            : `Aggregate ${aggregateName} was expected to be at version ${expectedAggregateVersion} but it is at version ${aggregateVersion}`
-        const error = new Error(errorMessage)
-        ;(error as any).concurrency = true
+          const aggregateName = getAggregateName(aggregate)
+          const errorMessage =
+            expectedAggregateVersion === -1
+              ? `Aggregate ${aggregateName} was expected to exist but it does not`
+              : `Aggregate ${aggregateName} was expected to be at version ${expectedAggregateVersion} but it is at version ${aggregateVersion}`
 
-        throw error
-      })
+          throw new Error(errorMessage)
+        })
+      } catch (error) {
+        // tslint:disable-next-line:prefer-object-spread
+        return left(Object.assign(error, {
+          type: 'CONCURRENCY',
+        }) as ConcurrencyError)
+      }
 
       /**
        * Events storage operation
        */
       insertions.forEach(({ aggregate, eventsToAppend }) => {
         eventsToAppend.forEach(({ name, payload }) => {
-          const eventToPersist = {
+          const eventToPersist: PersistedDomainEvent = {
             aggregate: { ...aggregate },
             correlationId,
             id: getNewId(),
@@ -85,11 +83,10 @@ export const InMemoryEventStore = (): EventStore => {
       })
       // tslint:enable
 
-      return persistedEvents as ReadonlyArray<PersistedDomainEvent>
+      return right(persistedEvents)
     },
-    getEventsOfAggregate: async (aggregate, fromVersion = 0) => {
-      return getAggregateEvents(aggregate).slice(fromVersion)
-    },
+    getEventsOfAggregate: async (aggregate, fromVersion = 0) =>
+      right(getAggregateEvents(aggregate).slice(fromVersion)),
   }
 }
 

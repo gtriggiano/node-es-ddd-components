@@ -9,8 +9,8 @@ import {
   DomainEventInstance,
   DomainEventName,
   DomainEventTypeFactory,
-  SerializedDomainEvent,
 } from '../DomainEvent/types'
+import { SerializedEventsList } from '../Repository'
 import { getDeserializer, getSerializer } from '../utils'
 
 import { getAggregateName } from './aggregateUtils'
@@ -159,7 +159,7 @@ export function Aggregate<
   const Factory = (
     identity?: AggregateIdentity,
     snapshot?: AggregateSnapshot,
-    events?: ReadonlyArray<SerializedDomainEvent>
+    events?: SerializedEventsList
   ): AggregateInstance<
     BC,
     TypeName,
@@ -285,7 +285,7 @@ export function Aggregate<
       {
         New: { value: Factory },
         appendEvents: {
-          value: (eventsToAppend: ReadonlyArray<SerializedDomainEvent>) =>
+          value: (eventsToAppend: SerializedEventsList) =>
             Factory(identity, snapshot, history.concat(eventsToAppend)),
         },
         clone: {

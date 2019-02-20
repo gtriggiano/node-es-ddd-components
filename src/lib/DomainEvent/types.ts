@@ -13,7 +13,7 @@ export type DomainEventName = string
 export type DomaiEventPayload = any
 
 /**
- * An object representing a domain event
+ * An object representing a domain event with a serialized payload
  */
 export interface SerializedDomainEvent {
   /**

@@ -1,3 +1,6 @@
+// tslint:disable no-submodule-imports
+import { right } from 'fp-ts/lib/Either'
+
 import { AggregateSnapshot } from '../Aggregate/types'
 
 import { SnapshotService } from './types'
@@ -10,19 +13,13 @@ interface Storage {
 export const InMemorySnapshotService = (): SnapshotService => {
   const snapshots: Storage = {}
 
-  const loadAggregateSnapshot = async (key: string) => snapshots[key]
-
-  const saveAggregateSnapshot = async (
-    key: string,
-    snapshot: AggregateSnapshot
-  ) => {
-    // tslint:disable no-expression-statement no-object-mutation
-    snapshots[key] = snapshot
-    // tslint:enable
-  }
-
   return {
-    loadAggregateSnapshot,
-    saveAggregateSnapshot,
+    loadAggregateSnapshot: async (key: string) => right(snapshots[key]),
+    saveAggregateSnapshot: async (key: string, snapshot: AggregateSnapshot) => {
+      // tslint:disable no-expression-statement no-object-mutation
+      snapshots[key] = snapshot
+      // tslint:enable
+      return right(void 0)
+    },
   }
 }

@@ -1,15 +1,32 @@
+// tslint:disable no-submodule-imports no-if-statement no-expression-statement no-unnecessary-type-assertion
+import { Either, left, Left, right, Right } from 'fp-ts/lib/Either'
 import { noop, pick } from 'lodash'
 
 import { NO_CONSISTENCY_POLICY, SOFT_CONSISTENCY_POLICY } from '../Aggregate'
 import { CustomError } from '../CustomError'
 
+import { AggregateSnapshot, ConsistencyPolicy } from '../Aggregate/types'
 import {
+  DomainEventInstance,
+  SerializedDomainEvent,
+} from '../DomainEvent/types'
+import {
+  AggregateIdentifier,
+  AvailabilityError,
+  EventStoreAppendResult,
   EventStoreInsertion,
   RepositoryDefinition,
   RepositoryInstance,
+  RepositoryInstanceLoadResult,
+  RepositoryInstancePersistResult,
+  UnknownError,
 } from './types'
 import validateAggregatesList from './validateAggregatesList'
 import validateDefinition from './validateDefinition'
+
+export * from './InMemoryEventStore'
+export * from './InMemorySnapshotService'
+export { EventStore, SerializedEventsList } from './types'
 
 interface WithOriginalError {
   readonly originalError: Error
@@ -20,13 +37,6 @@ export const BadRepositoryDefinition = CustomError<
   WithOriginalError
 >({ name: 'BadRepositoryDefinition' })
 
-export const RepositorySnapshotLoadError = CustomError<
-  'RepositorySnapshotLoadError',
-  WithOriginalError
->({
-  name: 'RepositorySnapshotLoadError',
-})
-
 export const RepositoryBadAggregatesListProvided = CustomError<
   'RepositoryBadAggregatesListProvided',
   WithOriginalError
@@ -34,33 +44,11 @@ export const RepositoryBadAggregatesListProvided = CustomError<
   name: 'RepositoryBadAggregatesListProvided',
 })
 
-export const RepositoryEventsLoadError = CustomError<
-  'RepositoryEventsLoadError',
-  WithOriginalError
->({
-  name: 'RepositoryEventsLoadError',
-})
-
-export const RepositoryWriteError = CustomError<
-  'RepositoryWriteError',
-  WithOriginalError
->({
-  name: 'RepositoryWriteError',
-})
-export const RepositoryWriteConcurrencyError = CustomError<
-  'RepositoryWriteConcurrencyError',
-  WithOriginalError
->({
-  name: 'RepositoryWriteConcurrencyError',
-})
-
 export function Repository<T>(
   definition: RepositoryDefinition
 ): RepositoryInstance<T> {
   try {
-    // tslint:disable no-expression-statement
     validateDefinition(definition)
-    // tslint:enable
   } catch (e) {
     throw BadRepositoryDefinition(e.message, { originalError: e })
   }
@@ -71,27 +59,55 @@ export function Repository<T>(
     loadCanFailBecauseOfSnaphotService,
   } = definition
 
-  const loadAggregate = async (aggregate: any): Promise<any> => {
-    const snapshot = snapshotService
+  const loadAggregate = async (
+    aggregate: any
+  ): Promise<Either<AvailabilityError | UnknownError, any>> => {
+    const snapshotServiceResult = snapshotService
       ? await snapshotService
           .loadAggregateSnapshot(aggregate.snapshotKey)
-          .catch(error => {
-            // tslint:disable no-if-statement
-            if (!loadCanFailBecauseOfSnaphotService) return undefined
-            // tslint:enable
-            throw RepositorySnapshotLoadError(error.message, {
-              originalError: error,
-            })
-          })
-      : undefined
-    const events = await eventStore
-      .getEventsOfAggregate(aggregate, snapshot ? snapshot.version : 0)
-      .catch(error => {
-        throw RepositoryEventsLoadError(error.message, { originalError: error })
-      })
-    const loadedAggregate = aggregate.New(aggregate.identity, snapshot, events)
+          .catch(
+            error =>
+              left({
+                type: 'UNKNOWN',
+                ...error,
+              }) as Left<UnknownError, any>
+          )
+      : (right(undefined) as Right<any, AggregateSnapshot | undefined>)
 
-    // tslint:disable no-if-statement no-expression-statement
+    if (snapshotServiceResult.isLeft() && loadCanFailBecauseOfSnaphotService) {
+      return left(snapshotServiceResult.value) as Left<
+        typeof snapshotServiceResult.value,
+        any
+      >
+    }
+
+    const snapshot = snapshotServiceResult.isRight()
+      ? snapshotServiceResult.value
+      : undefined
+
+    const eventStoreResult = await eventStore
+      .getEventsOfAggregate(aggregate, snapshot ? snapshot.version : 0)
+      .catch(
+        error =>
+          left({
+            type: 'UNKNOWN',
+            ...error,
+          }) as Left<UnknownError, any>
+      )
+
+    if (eventStoreResult.isLeft()) {
+      return left(eventStoreResult.value) as Left<
+        typeof eventStoreResult.value,
+        any
+      >
+    }
+
+    const loadedAggregate = aggregate.New(
+      aggregate.identity,
+      snapshot,
+      eventStoreResult.value
+    )
+
     if (loadedAggregate.needsSnapshot && snapshotService) {
       snapshotService
         .saveAggregateSnapshot(
@@ -100,15 +116,13 @@ export function Repository<T>(
         )
         .catch(noop)
     }
-    // tslint:enable
 
-    return loadedAggregate
+    return right(loadedAggregate) as Right<any, any>
   }
 
   const load = <Aggregates extends ReadonlyArray<T>>(
     aggregates: Aggregates
   ) => {
-    // tslint:disable no-expression-statement
     try {
       validateAggregatesList(aggregates)
     } catch (error) {
@@ -116,18 +130,37 @@ export function Repository<T>(
         originalError: error,
       })
     }
-    // tslint:enable
 
-    return (Promise.all(aggregates.map(loadAggregate)) as unknown) as Promise<
-      Aggregates
-    >
+    return Promise.all(aggregates.map(loadAggregate))
+      .then(results => {
+        const errors = results.reduce<
+          ReadonlyArray<AvailabilityError | UnknownError>
+        >(
+          (errorsList, result) =>
+            result.isLeft() ? errorsList.concat(result.value) : errorsList,
+          []
+        )
+
+        if (errors.length) {
+          return left(errors[0]) as RepositoryInstanceLoadResult<Aggregates>
+        }
+
+        return (right(
+          results.map(result => result.value)
+        ) as unknown) as RepositoryInstanceLoadResult<Aggregates>
+      })
+      .catch(
+        error =>
+          left({ type: 'UNKNOWN', ...error }) as RepositoryInstanceLoadResult<
+            Aggregates
+          >
+      )
   }
 
   const persist = <Aggregates extends ReadonlyArray<T>>(
     aggregates: Aggregates,
     correlationId?: string
   ) => {
-    // tslint:disable no-expression-statement
     try {
       validateAggregatesList(aggregates)
     } catch (error) {
@@ -135,21 +168,34 @@ export function Repository<T>(
         originalError: error,
       })
     }
-    // tslint:enable
 
-    const insertions = aggregates
-      .filter((aggregate: any) => aggregate.isDirty())
-      .reduce<ReadonlyArray<EventStoreInsertion>>((list, aggregate: any) => {
-        const eventsToAppend = aggregate
-          .getNewEvents()
-          .map(({ name, getSerializedPayload }: any) => ({
+    const insertions = aggregates.reduce<ReadonlyArray<EventStoreInsertion>>(
+      (list, aggregate: any) => {
+        const eventsToAppend = aggregate.getNewEvents() as ReadonlyArray<
+          DomainEventInstance<string, any, object>
+        >
+
+        const serializedEventsToAppend = eventsToAppend.map<
+          SerializedDomainEvent
+        >(
+          ({
+            name,
+            getSerializedPayload,
+          }: DomainEventInstance<string, any, object>) => ({
             name,
             payload: getSerializedPayload(),
-          }))
-        const consistencyPolicy = aggregate.getConsistencyPolicy()
+          })
+        )
+
+        const consistencyPolicy = aggregate.getConsistencyPolicy() as ConsistencyPolicy
+
         return list.concat({
-          aggregate: pick(aggregate, ['context', 'type', 'identity']) as any,
-          eventsToAppend,
+          aggregate: pick(aggregate, [
+            'context',
+            'type',
+            'identity',
+          ]) as AggregateIdentifier,
+          eventsToAppend: serializedEventsToAppend,
           expectedAggregateVersion:
             consistencyPolicy === NO_CONSISTENCY_POLICY
               ? -2
@@ -157,33 +203,34 @@ export function Repository<T>(
               ? -1
               : aggregate.version,
         })
-      }, [])
-
-    const persistenceIO = insertions.length
-      ? eventStore
-          .appendEventsToAggregates(insertions, correlationId || '')
-          .catch(error => {
-            const ErrorType = error.concurrency
-              ? RepositoryWriteConcurrencyError
-              : RepositoryWriteError
-            return Promise.reject(
-              ErrorType(error.message, { originalError: error })
-            )
-          })
-      : Promise.resolve([])
-
-    return persistenceIO.then(persistedEvents =>
-      load(aggregates)
-        .then(reloadedAggregates => ({
-          aggregates: reloadedAggregates,
-          persistedEvents,
-        }))
-        .catch(() => ({ persistedEvents }))
+      },
+      []
     )
+
+    const appendOperationResult = eventStore
+      .appendEventsToAggregates(insertions, correlationId || '')
+      .catch(
+        error =>
+          left({
+            type: 'UNKNOWN',
+            ...error,
+          }) as EventStoreAppendResult
+      )
+
+    return appendOperationResult.then(result => {
+      if (result.isLeft()) {
+        return left(result.value) as RepositoryInstancePersistResult<Aggregates>
+      }
+
+      return load(aggregates).then(
+        loadResult =>
+          right({
+            aggregates: loadResult.isRight() ? loadResult.value : undefined,
+            persistedEvents: result.value,
+          }) as RepositoryInstancePersistResult<Aggregates>
+      )
+    })
   }
 
   return { load, persist }
 }
-
-export * from './InMemoryEventStore'
-export * from './InMemorySnapshotService'
