@@ -8,7 +8,7 @@ import {
   BoundedContext,
 } from '../Aggregate/types'
 
-import { ConcurrencyError, EventStore, PersistedDomainEvent } from './types'
+import { EventStore, PersistedDomainEvent } from './types'
 
 export const InMemoryEventStore = (): EventStore => {
   // tslint:disable readonly-array
@@ -60,9 +60,10 @@ export const InMemoryEventStore = (): EventStore => {
         })
       } catch (error) {
         // tslint:disable-next-line:prefer-object-spread
-        return left(Object.assign(error, {
-          type: 'CONCURRENCY',
-        }) as ConcurrencyError)
+        return left(
+          {...error, 
+            type: 'CONCURRENCY'}
+        )
       }
 
       /**
