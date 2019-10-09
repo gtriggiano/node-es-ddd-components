@@ -65,6 +65,7 @@
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
     "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.142",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "codecov": "^3.6.1",
